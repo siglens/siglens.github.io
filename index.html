@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SigLens</title>
+  <link rel="icon" href="/favicon.svg">
+
+  <!-- Font-awesome Family -->
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--  Main CSS File -->
+  <link rel="stylesheet" href="css/style.css">
+  <!--Meta Tags-->
+  <meta name="description"
+    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://www.sigscalr.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SigScalr - Unified Observability">
+  <meta property="og:description"
+    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
+  <meta property="og:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="sigscalr.io">
+  <meta property="twitter:url" content="https://www.sigscalr.io/">
+  <meta name="twitter:title" content="SigScalr - Unified Observability">
+  <meta name="twitter:description"
+    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
+  <meta name="twitter:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
+</head>
+<!--gtag-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0P5EF9CN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-J0P5EF9CN4');
+</script>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+    <div class="container">
+      <a class="navbar-brand " href="index.html"> 
+        <div class="d-flex">
+          <div class="pr-1"><img src="./assets/ss-logo.svg" alt=""></div>
+          <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://siglens.github.io/siglens-docs/" target="_blank">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigscalr.io/blog/allblogs.html">Blogs</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+              <a class="dropdown-item" href="/slack.html">Slack</a>
+            </div>
+          </li>
+          <li>
+            <a href="#getting-started" id="try-now-btn">Try Now</a>
+          </li>
+          <li>
+            <a href="https://github.com/siglens/siglens" target="_blank">
+              <img src="assets/github.svg" width="26" height="26" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Landing Section -->
+  <section class="landing-container container text-white my-md-5 my-0">
+    <div class="d-flex justify-content-center align-items-center flex-column">
+      <div class="main-heading text-center">
+        Industry's Fastest Log Management
+      </div>
+      <div class="sub-heading text-center"><strong>100x</strong> Lower Compute and Storage than Splunk, Elastic, Loki</div>
+      <div class="sub-heading text-center">Cost Reduction by <strong>90%</strong></div>
+    </div>
+    <img src="./assets/main-gradient.svg" alt="" class="main-gradient position-absolute">
+
+    <div class="video-container mx-auto"></div>
+  </section>
+
+  <section class="my-5 py-5">
+    <div class="container my-5 py-5 position-relative">
+      <img src="./assets/light-gradient.svg" alt="" class="light-gradient">
+      <div class="row d-flex justify-content-center align-items-center px-5">
+        <div class="col-md-8 col-12">
+          <div class="text-left git-text text-white font-weight-light">
+            Open Source single binary with no third party dependencies. Drop-in replacement with many query languages support.
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center flex-column">
+          <i class="fa-brands fa-github"></i>
+          <button class="btn mt-4">
+            <a href="https://github.com/siglens/siglens">SigLens on Github</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why SigLens  -->
+  <section id="why-siglens">
+    <div class="container my-5">
+      <div class="main-heading text-center text-white font-weight-light mb-5">Why SigLens</div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="vertical-tab" role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" >
+                <a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="active">Efficient Scale</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Full Text Search</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Query Time Field
+                  Extraction</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section4" aria-controls="messages" role="tab" data-toggle="tab">Fast Ingestion</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section5" aria-controls="messages" role="tab" data-toggle="tab">Query Compatibility</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section6" aria-controls="messages" role="tab" data-toggle="tab">Ingestion Formats</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section7" aria-controls="messages" role="tab" data-toggle="tab">Fast Install</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section8" aria-controls="messages" role="tab" data-toggle="tab">Simple Architecture</a>
+              </li>
+              <li role="presentation">
+                <a href="#Section9" aria-controls="messages" role="tab" data-toggle="tab">Single Pane of Glass</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabs">
+              <div role="tabpanel" class="tab-pane active" id="Section1">
+                <h3>Efficient Scale</h3>
+                <p>Scales linearly with your needs. From a work load of 8 TB/day on 8 vCPU to 1 PB/day on 800 vCPU.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section2">
+                <h3>Full Text Search</h3>
+                <p>
+                  Search on any field and any sub-text of your log line. Support for wildcard and regex support.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section3">
+                <h3>Query Time Field Extraction</h3>
+                <p>
+                  Create new fields from an existing log line sub-text and use it in later stages of your pipeline query.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section4">
+                <h3>Fast Ingestion</h3>
+                <p>
+                  Innovative MicroIndexing lets your index at lightening fast speeds.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section5">
+                <h3>Query Compatibility</h3>
+                <p>
+                  Many query languages supported including Splunk QL, Elastic DSL, SQL, Loki LogQL.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section6">
+                <h3>Ingestion Formats</h3>
+                <p>
+                  Wide variety of ingestion protocols supported: Open Telemetry, Elasticsearch, Splunk HEC, Loki,
+                  Vector, FluentD/FluentBit, Logstash, S3/SQS/SNS, Promtail.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section7">
+                <h3>Fast Install</h3>
+                <p>
+                  Quick 1-min install with multiple methods of installation: Binary, Docker, Helm.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section8">
+                <h3>Simple Architecture</h3>
+                <p>
+                  Single binary solution that reduces operational burden and increases reliability
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="Section9">
+                <h3>Single Pane of Glass</h3>
+                <p>
+                  Single UI, Single Database for logs, metrics and traces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="siglens-differentiator">
+    <div class="container my-5">
+      <div class="main-heading text-center text-white font-weight-light mb-5">SigLens Differentiator</div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="vertical-tab" role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" >
+                <a href="#compare1" aria-controls="home" role="tab" data-toggle="tab" class="active">SigLens v/s Loki</a>
+              </li>
+              <li role="presentation">
+                <a href="#compare2" aria-controls="profile" role="tab" data-toggle="tab">SigLens v/s Elasticsearch</a>
+              </li>
+              <li role="presentation">
+                <a href="#compare3" aria-controls="messages" role="tab" data-toggle="tab">
+                  SigLens v/s InfluxDB/parquet/Arrow</a>
+              </li>
+              <li role="presentation">
+                <a href="#compare4" aria-controls="messages" role="tab" data-toggle="tab">SigLens v/s ClickHouse</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabs">
+              <div role="tabpanel" class="tab-pane active" id="compare1">
+                <h3>SigLens v/s Loki</h3>
+                <p>
+                  Loki indexes only the metadata fields (labels) and not the actual log lines, enabling fast ingestion and smaller index sizes. However, this has an adverse effect on query times. If you are querying on the logline—most queries fall into this category—the query response times are in minutes. Additionally, it uses S3 for storing the loglines, incurring a lot of round trips to the S3 bucket. This further increases query response times and results in a higher AWS bill due to the repeated head/get requests to S3.
+                  <br> <br>
+                  SigLens indexes all fields including the logline using an innovative approach of microindexing. The micro indices are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speed is fast. It does not suffer the disadvantage that loki has. Micro indices achieve almost the similar query performance that an actual index has although at 1/100th the cost. SigLens also invented AgileAggsTree which helps run aggregation queries at lightening fast speed. Aggregations queries with Loki are super slow.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="compare2">
+                <h3>SigLens v/s Elasticsearch</h3>
+      <p>
+        Elasticsearch uses an inverted index that helps it in doing fast searches. The inverted index works well when there is more structured repeatable data. However, with the log lines, the data is almost always very unstructured. Due to this the index size grows. It is not uncommon to see the actual disk usage of ES to be 110% or more of the incoming volume due to its index. And as the index size grows , it does not fit on one machine requiring a cluster of machines. Elasticsearch also suffers from slow query times if you search on the log lines sub-texts. Aggregation queries also super slow with ES. Due to a need of multiple machines, it is quite common for elastic indices to be yellow/red routinely due to infra/security updates. This causes slower query and slower ingestion times.
+
+        <br> <br>
+SigLens invented microindexing technology. The micro indices are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during query times and lower storage/compute requirements. The search/filter kind of queries perform 4x-8x faster than Elastic due to the microindexing tech. SigLens also invented the AigileAgssTree which helps run aggregation queries at lightening fast speed. Overall SigLens uses several magnitudes lower compute and storage compared to ES and has several magnitudes faster ingest and query times.
+      </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="compare3">
+                <h3>SigLens v/s InfluxDB/parquet/Arrow</h3>
+               <p> There are many products coming up in recent years like the InfluxDB IOx. This architecture involves converting incoming data into parquet files, storing them in S3, mapping the files in memory using Apache Arrow, and using the memory-mapped files to serve queries. This architecture has advantages of better compression ratios, faster ingestion, lower storage requirements. But it suffers on query response times. If your query touches on parquet files that are non memory mapped, then Apache Arrow drops the in-memory files, downloads/pulls the required parquet files and then serves the query. This has significant impact on query response times. If you have a set of queries that constantly query old and new data, then there is repeated loop of drop/pull causing queries to further slow down. Not to mention the repeated round trips to S3 thereby increasing your AWS bill. You are then forced to allocate a set of nodes to handle the queries, thereby increasing your infra cost and higher S3 transport costs.
+                <br> <br>
+                SigLens does not suffer from these issues. Due to its innovative approach it achieves a balance of faster ingestion, faster queries and lower hardware requirements The micro indices that SigLens invented are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during query times and lower storage/compute requirements. The search/filter kind of queries perform several magintudes faster than Influx due to the microindexing tech. SigLens also invented the AigileAgssTree which helps run aggregation queries at lightening fast speed. Overall SigLens uses several magnitudes lower compute  compared to Influx/Parquet/Arrow and has several magnitudes faster ingest and query times.</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="compare4">
+                <h3>SigLens v/s ClickHouse</h3>
+                <p>
+                 SigLens and ClickHouse have quite a few things in common. Both are columnar databases. Both achieve great compression ratios. The places where SigLens differs are dynamic columnar compression algorithms, Microindexing tech and AgileAggsTree. In ClickHouse you have to predefine the Engines on columns (MergeTree, etc..) and the Materialized views. For log related workload, the data changes quite often so it is an operational overhead that you have to bear with. SigLens on the other hand uses dynamic columnar compression and dynamic micro indices, wherein you don't need to predefine anything. SigLens reduces your operational overhead while still achieving similar or superior query performances.
+                 <br> <br>
+                 Due to its dynamic columnar compression algorithms it also achieves better compression ratios than ClickHouse. ClickHouse achieves faster ingestion speeds provided you send row updates in bulk. For analytical workloads its fine however for logging related workloads the log data is constantly coming in. If you wait for rows to accumulate in order to do bulk updates, then your queries can't search for the latest data. For observability and live debugging uses cases this is a problem. SigLens does not suffer from this issue.
+                 <br><br>
+                 ClickHouse does not support read-time field extraction, a very popular feature that developers use during production issues. Splunk is the only product that supports this. But now SigLens is the only other product that has this feature. During ingestion you can ingest whatever format and whatever you want and during query SigLens/Splunk will let you create dynamic fields based on the log line and use it in further pipelining of the queries. SigLens/Splunk support the pipe-based query language, a very popular feature amongst developers, ClickHouse does not support this.
+                </p>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- Getting Started -->
+  <section id="getting-started" class="pt-5"> 
+    <div class="container getting-started-container">
+      <div class="main-heading text-center text-white font-weight-light mb-4">Getting Started</div>
+      <div class="m-auto text-center">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a href="#binary" role="tab" data-toggle="tab" class="nav-link active">Binary</a>
+          </li>
+          <li class="nav-item">
+            <a href="#docker" role="tab" data-toggle="tab" class="nav-link">Docker</a>
+          </li>
+        </ul>
+        <div class="tab-content mt-4">
+          <div id="binary" role="tabpanel" class="tab-pane active">
+            <p class="para-light">
+              SigLens can be installed on Linux or macOS. 
+              <br> Click 👉 
+              <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_binary.sh" download="">
+                <strong>here</strong>
+              </a> 👈 to download the install script.</p>
+            <div class="code">
+              chmod +x install_with_binary.sh
+              <br>
+              ./install_with_binary.sh
+            </div>
+          </div>
+          <div id="docker" role="tabpanel" class="tab-pane">
+            <p class="para-light">
+              Click 👉 <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_docker.sh"
+                download=""><strong>here</strong></a> 👈 to download the install script.
+            </p>
+        <div class="code">
+          chmod +x install_with_docker.sh
+          <br>
+          ./install_with_docker.sh
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contribute and Community Section  -->
+  <section class="pt-5">
+    <div class="container position-relative">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="./assets/gradient-3.svg" alt="" class="light-gradient">
+        <div class="bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center" onclick="redirectToPage('https://github.com/siglens/siglens')">
+          <div>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="heading my-3">
+            Star and Contribute
+          </div>
+          <div class="para-light">
+            SigLens is open source and Apache-2.0 licensed.
+            We love contributions.
+          </div>
+        </div>
+        <div
+          class="bottom-cards community-card d-flex justify-content-center align-items-center flex-column text-center"
+          onclick="redirectToPage('/slack.html')">
+          <div>
+            <i class="fa-brands fa-slack"></i>
+            <img src="./assets/slack.svg" alt="slack-icon" class="slack-icon">
+          </div>
+          <div class="heading my-3">
+            Join the community
+          </div>
+          <div class="para-light">
+            Join our community for instant support and rich conversations.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="mb-5">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-7 d-flex flex-row pl-5">
+          <div>
+            <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+              class="footer-nav-heading">Documentation</a>
+          </div>
+          <div>
+            <a href="https://sigscalr.io/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+          </div>
+          <div class="d-flex flex-column">
+            <a href="#" class="footer-nav-heading">Community</a>
+            <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+            <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+          </div>
+        </div>
+        <div class="col-md-5 text-md-start">
+          <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+          <form class="d-flex flex-column gap-4 align-items-end flex-md-row " id="newsletter-form">
+            <div class="flex-fill w-100 mt-4">
+              <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
+            </div>
+            <div class="flex-grow w-auto">
+              <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-3 d-flex justify-content-center text-secondary credits flex-column align-items-center">
+        <img src="./assets/ss-logo.svg" alt="" style="height: 50px;">
+        <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+        <div>Made with ❤️ in New Hampshire, California, Montana and India.</div>
+        <div>Copyright © 2024 - <strong class="text-white pointer-event"><a href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
