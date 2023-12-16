@@ -324,14 +324,14 @@ a:focus {
     font-size: 14px !important;
 }
 
-#footer a {
+#footer .footer-links a {
     color: var(--white-0);
     margin-right: 32px;
     font-weight: 200;
     letter-spacing: 0.03em;
 }
 
-#footer a:hover {
+#footer .footer-links a:hover {
     color: var(--purple-0);
     text-decoration: none;
 }
@@ -344,6 +344,20 @@ a:focus {
 
 .credits{
     font-size: 14px;
+}
+
+.icon-container{
+    border: 1px solid #C6B1DD;
+    background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-0);
+    font-size: 18px;
 }
 
 /* Button  */
