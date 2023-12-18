@@ -27,14 +27,6 @@ body {
     text-decoration: none;
 }
 
-.main-header{
-    font-size: 42px;
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-family: 'IBM Plex Sans', sans-serif;
-    text-align: center;
-}
-
 .card {
     filter: drop-shadow(2px 2px 9px rgba(22, 15, 41, 0.2));
     border-radius: 20px;

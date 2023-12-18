@@ -28,7 +28,7 @@ a {
     width: 0;/* This will hide the scrollbar */
 }
 
-#index-page{
+#dark-theme{
     background-color: var(--main-color);
 }
 /*NAVBAR*/
@@ -484,6 +484,13 @@ line-height: 26px;}
    line-height: 27px;
 }
 
+.main-header{
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+}
 
 /* Mobile View  */
 
