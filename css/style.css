@@ -263,11 +263,10 @@ a:focus {
 .bottom-cards{
     color: var(--white-0);
     padding: 40px;
-    width: 500px;
     border: 1px solid #ffffff37;
     border-radius: 5px;
     cursor: pointer;
-    height: 250px;
+    min-height: 250px;
 }
 .git-card{
     border-right: none;
@@ -344,6 +343,11 @@ a:focus {
 
 .credits{
     font-size: 14px;
+    color: #d3d3d3;
+}
+
+.credits a{
+    color: var(--purple-0);
 }
 
 .icon-container{
@@ -530,6 +534,10 @@ line-height: 26px;}
     }
 
     /* landing page */
+    .landing-container{
+        overflow-x: clip;
+    }
+
     .main-heading {
         font-size: 30px;
         margin-bottom: 10px;
@@ -553,6 +561,27 @@ line-height: 26px;}
         height: 184px;
     }
 
+    .git-text{
+        font-size: 20px;
+        line-height: 38px;
+    }
+
+    .code{
+        width: 90%;
+        padding: 20px;
+    }
+
+    .git-card,.community-card{
+        border: 1px solid #ffffff37;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    #footer{
+        margin-top: 60px;
+    }
 
     .vertical-tab .nav-tabs {
         width: 100%;
