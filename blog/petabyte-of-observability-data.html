@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigScalr | Petabyte of Observability Data</title>
+    <link rel="icon" href="../favicon.svg">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- Font-awesome Family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Include Prism.js CSS -->
+    <link rel="stylesheet" href="./dark-theme-prismjs.css">
+
+    <link rel="canonical" href="https://www.sigscalr.io/blog/petabyte-of-observability-data.html">
+    <!--OG Tags-->
+    <meta property="og:url" content="https://www.sigscalr.io/blog/petabyte-of-observability-data.html" />
+    <meta property="og:title" content="Petabyte of Observability Data" />
+    <meta property="og:description" content="SigScalr — a powerful solution designed to handle massive data volumes." />
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.sigscalr.io/assets/petabyte-blog-cover.jpg" />
+    <meta property="og:image:secure_url" content="https://www.sigscalr.io/assets/petabyte-blog-cover.jpg" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta name="image" property="og:image" content="https://www.sigscalr.io/assets/petabyte-blog-cover.jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+
+    <!--Twitter OG Tag-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sigscalr.io" />
+    <meta name="twitter:image" content="https://www.sigscalr.io/assets/petabyte-blog-cover.jpg">
+    </meta>
+    <meta name="twitter:image:alt" content="Petabyte of Observability Data" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+        <div class="container">
+            <a class="navbar-brand " href="../index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt=""></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
+                            target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="../assets/github.svg" width="26" height="26" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5 pt-5 blog-post">
+        <div class="row mb-5 px-0 justify-content-center align-items-center d-flex flex-column">
+            <div class="col-md-10">
+                <div class="mx-auto d-flex flex-column align-items-start">
+                    <div class="row">
+                        <div class="col-md-8 col-12">
+                            <h1 class="main-heading section mt-0 mt-md-4" id="section0">
+                                Petabyte of Observability Data
+                            </h1>
+                        </div>
+                        <div class="col-md-4 col-12 main-blog-img-2">
+                            <img class="my-3 observability-blog-img" src="../assets/petabyte-blog-cover.jpg" />
+                        </div>
+                    </div>
+                    <p class="my-2 para-bold pr-3 mt-4">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are thrilled to
+                        announce the groundbreaking success of <span class="font-weight-bold">SigScalr—a cutting-edge
+                            technology designed to alleviate the burden of data volume overload faced by many companies
+                            today.</span> Through an intensive and meticulous testing process, we have achieved
+                        a significant milestone: SigScalr can now seamlessly ingest a staggering <span
+                            class="font-weight-bold">1 PB</span> of data per day. What is even more remarkable is our
+                        achievement of sub-one second query performance,
+                        utilizing a mere <span class="font-weight-bold">805 vCPUs.</span> This lightning-fast response
+                        time ensures that critical insights are delivered instantaneously. Moreover, our cost-effective
+                        solution translates into an
+                        astonishingly low AWS bill of just <span class="font-weight-bold">$1200</span> per day. To put
+                        this into perspective, traditional platforms like Splunk, Elastic, or Grafana would result in an
+                        astronomical AWS bill <span class="font-weight-bold">exceeding $100,000.</span>
+                        SigScalr emerges as the clear choice for organizations seeking both unmatched scalability and
+                        cost-efficiency in handling their observability data.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To provide you with a
+                        comprehensive understanding of
+                        our testing process and its remarkable outcomes, we have detailed all the pertinent information
+                        here. If you are interested in verifying our findings
+                        or need assistance in setting up a similar test environment, please don't hesitate to <a
+                            href="mailto:info@sigscalr.io">reach out to us.</a> We'll be more than happy to assist you.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you're interested in
+                        trying SigScalr for your company, contact us at <a
+                            href="mailto:info@sigscalr.io">info@sigscalr.io</a> for more
+                        information or <a href="https://calendly.com/knawale/30min" target="_blank">book a demo</a> to
+                        learn more.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="d-flex">
+                <div>
+                    <div id="sidebar">
+                        <nav id="sidebar-nav">
+                            <ul class="nav flex-column">
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section0">
+                                        <h5>Overview</h5>
+                                    </a></li>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section1">Dataset</a>
+                                </li>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Deployment
+                                        Setup</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-1">Ingest
+                                            Resources:</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-2">Query
+                                            Resources:</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-3">Client
+                                            Resources:</a></li>
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section3">Ingestion
+                                        Statistics</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-1">Ingestion Byte
+                                            Rate:</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-2">Ingestion Event
+                                            Rate:</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-3">Ingestion CPU
+                                            Usage</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-4">Ingestion RAM
+                                            Usage:</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-5">Storage
+                                            Statistics:</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-6">Individual Index
+                                            Counts:</a></li>
+
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Querying</a>
+                                </li>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section5">AWS Cost</a>
+                                </li>
+                                <li class="nav-item main-link"><a class="section-nav-link"
+                                        href="#section6">Conclusion</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div id="all-sections">
+                    <div id="section1" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Dataset
+                            </h3>
+                            <p class="mt-4 blog-para">We utilized a public <a
+                                    href="https://github.com/sigscalr/sigscalr-client">Git repository</a> to generate a
+                                dynamic dataset with high cardinality.
+                                Here are some key details about this dataset:
+                            </p>
+
+                            <table class="ShapeDataTable">
+                                <tr>
+                                    <td>Num. of log lines</td>
+                                    <td>1 Trillion</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Bytes</td>
+                                    <td>1 Petabyte</td>
+                                </tr>
+                                <tr>
+                                    <td>Log line size</td>
+                                    <td>1000 bytes</td>
+                                </tr>
+                                <tr>
+                                    <td>Num. of Columns</td>
+                                    <td>34</td>
+                                </tr>
+                                <tr>
+                                    <td>Num. of Columns with 1 Trillion cardinality</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Num. of Columns with 100 Billion cardinality</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>Num. of Columns with free text</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>Num. of numeric columns</td>
+                                    <td>5</td>
+                                </tr>
+                            </table>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="section2" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Deployment Setup
+                            </h3>
+                            <div>
+                                <div class="my-2 blog-para mt-4">
+                                    <span class="font-weight-bold">AWS EKS Cluster</span><br>
+                                    <span class="font-weight-bold">EC2 Node Type:</span> c6g.8xlarge <small>(32 vCPU, 64
+                                        GB RAM, EBS)</small> <br>
+                                    <h4 class="sub-heading mt-4 section" id="section2-1">Ingest Resources:
+                                    </h4>
+                                    <h4 class="sub-heading-2 mt-4">Pod Details:</h4>
+                                    <table class="ShapeDataTable">
+                                        <tr>
+                                            <td>POD Type:</td>
+                                            <td>10 <small>vCPU</small>,&nbsp;&nbsp;20 GB
+                                                <small>RAM</small>,&nbsp;&nbsp;40 GB <small>EBS</small> ,&nbsp;&nbsp;S3
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Num of pods</td>
+                                            <td>100</td>
+                                        </tr>
+                                    </table>
+                                    <h4 class="sub-heading-2 mt-4">Total Ingest Resources Allocated:</h4>
+                                    <table class="ShapeDataTable">
+                                        <tr>
+                                            <td>Num vCPU</td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RAM</td>
+                                            <td>2 TB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>EBS</td>
+                                            <td>4 TB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>S3</td>
+                                            <td>200 TB</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-2">
+                                <h4 class="sub-heading">Query Resources:
+                                </h4>
+                                <h4 class="sub-heading-2 mt-4">Pod Details:</h4>
+                                <table class="ShapeDataTable">
+                                    <tr>
+                                        <td>POD Type:</td>
+                                        <td>10 <small>vCPU</small>,&nbsp;&nbsp;25 GB <small>RAM</small>,&nbsp;&nbsp;50
+                                            GB <small>EBS</small></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Num of pods</td>
+                                        <td>1</td>
+                                    </tr>
+                                </table>
+                                <h4 class="sub-heading-2 mt-4">Total Query Resources Allocated:</h4>
+                                <table class="ShapeDataTable">
+                                    <tr>
+                                        <td>Num vCPU</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td>25 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EBS</td>
+                                        <td>50 GB</td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-3">
+                                <h4 class="sub-heading mt-2">Client Resources:</h4>
+                                <h4 class="sub-heading-2 mt-4">Pod Details:</h4>
+                                <table class="ShapeDataTable">
+                                    <tr>
+                                        <td>POD Type:</td>
+                                        <td>7 <small>vCPU</small>,&nbsp;&nbsp;2 GB <small>RAM</small></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Num of pods</td>
+                                        <td>75</td>
+                                    </tr>
+                                </table>
+                                <h4 class="sub-heading-2 mt-4">Total Client Resources Allocated:</h4>
+                                <table class="ShapeDataTable">
+                                    <tr>
+                                        <td>Num vCPU</td>
+                                        <td>525</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td>150 GB</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="section" id="section3">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Ingestion Statistics
+                            </h3>
+                            <p class="blog-para mt-4">The following graphs
+                                demonstrate our successful ingestion of a large 1 Petabyte
+                                volume of data. Over a continuous period of 24+ hours, we
+                                maintained a consistent ingestion rate of 44 TB per hour,
+                                showcasing the scalability and reliability of SigScalr in
+                                handling such high data volumes.
+                            </p><br>
+                            <h4 class="sub-heading mt-2 section" id="section3-1">Ingestion Byte Rate</h4>
+                            <img id="ingestion-bytes" src="../assets/ingestion-bytes.png" alt="">
+                            <p class="blog-para mt-4">Each logline ingested
+                                during our testing was unique, resulting in a total cardinality of one trillion.
+                                The graph below illustrates SigScalr's remarkable performance, as it successfully
+                                ingested 44 billion
+                                events per hour, accumulating
+                                a total of over one trillion events within a 24-hour period.
+                                This accomplishment further underscores the scalability and efficiency of SigScalr in
+                                handling massive data workloads.</p>
+                            <br>
+                            <h4 class="sub-heading mt-2 section" id="section3-2">Ingestion Event Rate:</h4>
+                            <img id="ingestion-events" src="../assets/ingestion-events.png" alt="">
+                            <br><br>
+                            <h4 class="sub-heading mt-2 section" id="section3-3">Ingestion CPU Usage:</h4>
+                            <p class="blog-para mt-4">Even though we had
+                                allocated 1000 vCPU for the ingest pods,
+                                we ended up using on average just 805 vCPUs while processing
+                                a petabyte of data.</p>
+                            <img id="ingestion-cpu" src="../assets/ingestion-cpu.png" alt="">
+                            <br><br><br>
+                            <h4 class="sub-heading mt-2 section" id="section3-4">Ingestion RAM Usage:</h4>
+                            <p class="blog-para mt-4">Even though we had allocated 2 TB of RAM for the
+                                ingest pods, we ended up using only 916 GB.</p>
+                            <img id="ingestion-memory" src="../assets/ingestion-memory.png" alt="">
+                            <br><br><br>
+                            <h4 class="sub-heading mt-2 section" id="section3-5">Storage Statistics:</h4>
+                            <p class="blog-para mt-4">SigScalr takes the incoming data, converts it into columnar
+                                segments and columnar micro indices. Compression is dynamic in nature for each segment
+                                based on the shape of the data. These segments are periodically
+                                uploaded to S3 for high durability, longer retention and query scaleout. At the end of
+                                the test our storage statistics were as follows.</p>
+                            <img id="compression-ratio" src="../assets/compression-ratio.png" alt="">
+                            <br><br>
+                            <h4 class="sub-heading mt-2 section" id="section3-6">Individual Index Counts:</h4>
+                            <p class="blog-para mt-4">As seen in the graph below, each index had over <span
+                                    class="font-weight-bold">67 TB</span> of data and <span class="font-weight-bold">66
+                                    Billion</span> unique events.</p>
+                            <img id="cluster-stats-indexes" src="../assets/cluster-stats-indexes.png" alt="">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div id="section4" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Querying</h3>
+                            <p class="my-2 blog-para mt-4">
+                                SigScalr's exceptional performance extended beyond data ingestion, as queries seamlessly
+                                operated during
+                                and after the ingestion of the entire petabyte dataset. Maintaining query response times
+                                below 3 seconds, SigScalr
+                                efficiently processed queries while combing through the massive volume of data.
+                            </p>
+                            <br>
+                            <span class="font-weight-bold">Query: </span> <code
+                                style="padding: 2px 4px 2px 4px;font-size: 16px; margin-left: 2px;"
+                                class="language-javascript">batch=batch-123</code> for a 3-hour lookback <br>
+                            <span class="font-weight-bold">Records Searched: </span> 131 Billion <br>
+                            <span class="font-weight-bold">Response Time: </span> 2 seconds <br>
+                            <br>
+                            <div class="query-bg-video">
+                                <video height="100%" width="100%" autoplay muted loop>
+                                    <source src="../assets/query_response_3hrs.mp4">
+                                </video>
+                            </div>
+                            <br>
+                            <span class="font-weight-bold">Query: </span> <code
+                                style="padding: 2px 4px 2px 4px;font-size: 16px;margin-left: 2px;"
+                                class="language-javascript">batch=batch-123</code> for a 30 days lookback <br>
+                            <span class="font-weight-bold">Records Searched: </span> 1.7 Trillion<br>
+                            <span class="font-weight-bold">Response Time: </span> 3 seconds <br>
+                            <br>
+                            <div class="query-bg-video">
+                                <video height="100%" width="100%" autoplay muted loop>
+                                    <source src="../assets/query_response_30d.mp4">
+                                </video>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="section5" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">AWS Cost</h3>
+                            <p class="my-2 blog-para mt-4">Enterprises
+                                dealing with large volumes of data must carefully consider the compute resources they
+                                consume. While many
+                                organizations opt for open source software initially due to its perceived cost
+                                advantage, the reality is that
+                                hidden expenses, such as compute and maintenance costs, start to accumulate over time.
+                                To shed light on this matter,
+                                we conducted a comparative analysis to demonstrate the true cost implications of
+                                installing SigScalr within your network
+                                compared to popular alternatives like Elasticsearch or Splunk. Below, we present a
+                                snapshot of our AWS bill for a single
+                                day, providing an insightful glimpse into the significant cost savings achievable with
+                                SigScalr.
+                            </p>
+                            <br>
+                            <img id="aws-cost" src="../assets/aws-cost.png" alt="">
+                            <br>
+                            <p class="mt-4">Our total cost for running this test was a mere <span
+                                    class="font-weight-bold">$1200</span> for the full 24-hour period. In comparison,
+                                any other
+                                solution in the industry would have costed a minimum of <span
+                                    class="font-weight-bold">$100,000.</span></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="section6" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Conclusion</h3>
+                            <p class="my-2 blog-para mt-4">The observability market offers numerous solutions, but their
+                                pricing and compute requirements often
+                                remain unclear, leading to large cloud expenses. To address this concern and meet the
+                                escalating demands of today's data landscape,
+                                we undertook an exercise to determine the cost of running SigScalr within the network
+                                while evaluating its scalability.
+                                Our <a href="https://github.com/sigscalr/sigscalr-client">open-source</a> test data
+                                generator allows you to compare SigScalr against any other vendor. Furthermore, we offer
+                                assistance in
+                                setting up SigScalr in your network for a personalized evaluation. Handling the
+                                substantial volume of one Petabyte with efficient response rates, SigScalr ensures
+                                significantly reduced
+                                operational costs.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interested in
+                                exploring more on how you can implement affordable observability solutions without
+                                breaking the bank with <a href="https://www.sigscalr.io/">SigScalr</a>? Contact us now!
+                                <li class="bottom_links">Email: <a href="mailto:info@sigscalr.io">info@sigscalr.io</a>
+                                </li>
+                                <li class="bottom_links"><a href="https://calendly.com/knawale/30min"
+                                        target="_blank">Book a demo</a></li>
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="max-width: 800px;" class="mx-auto">
+            <hr>
+            <div class="share-links d-flex align-items-center">
+                <div>
+                    <h6 class="main-text mr-5">Share</h6>
+                </div>
+                <div>
+                    <a class="twitter-share-button"
+                        href="https://twitter.com/intent/tweet?text=Petabyte%20of%20Observability%20Data&url=https://www.sigscalr.io/blog/petabyte-of-observability-data.html "
+                        target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div>
+                    <a
+                        href="mailto:?body=Check out this post from SigScalr: https://www.sigscalr.io/blog/petabyte-of-observability-data.html "><i
+                            class="fa fa-solid fa-envelope"></i></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.sigscalr.io/blog/petabyte-of-observability-data.html "
+                        target="_blank"><i class="fa  fa-brands fa-facebook-f"></i></a>
+                </div>
+                <div>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.sigscalr.io/blog/petabyte-of-observability-data.html&title=Petabyte%20of%20Observability%20Data"
+                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer id="footer" class="pb-5">
+        <div class="container">
+            <div class="row py-0 py-md-5">
+                <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+                    <div>
+                        <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                            class="footer-nav-heading">Documentation</a>
+                    </div>
+                    <div>
+                        <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Community</a>
+                        <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                        <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
+                    <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+                    <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                        <div class="flex-fill w-100 mt-4">
+                            <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
+                        </div>
+                        <div class="flex-grow w-auto">
+                            <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+                    <div class="d-flex">
+                        <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                        </a>
+                        <a class="" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+                <img src="../assets/ss-logo.svg" alt="" style="height: 50px;">
+                <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+                <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+                <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
+                            href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <!-- Include Prism.js language support for JSON -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.js"></script>
+    <script>
+        // Initialize Prism.js
+        Prism.highlightAll();
+    </script>
+
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="./blog.js"></script>
+</body>
+
+</html>

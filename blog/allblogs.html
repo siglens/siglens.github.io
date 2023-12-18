@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigLens | Blogs</title>
+    <link rel="icon" href="../favicon.svg">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+
+    <!-- Font-awesome Family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./blog.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+        <div class="container">
+            <a class="navbar-brand " href="../index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt=""></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
+                            target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="../assets/github.svg" width="26" height="26" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="mt-5 pt-5">
+        <section>
+            <div class="container">
+                <h2 class="main-header">Blogs</h2>
+            </div>
+        </section>
+        <div style="display: flex; flex-direction: column; gap: 2rem;" class="container my-5">
+            <div class="row">
+                <div class="card mx-auto">
+                    <a href="./sigscalr-vs-clickhouse.html">
+                        <img class="observability-card-img-top" src="/assets/sigscalr-vs-clickhouse/blog-cover.jpg"
+                            alt="blog image">
+                        <div class="card-body">
+
+                            <h5 class="card-title">One Billion Taxi Rides: SigScalr vs ClickHouse
+                            </h5>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card mx-auto">
+                    <a href="./why-logs-are-awesome.html">
+                        <img class="observability-card-img-top" src="/assets/why-logs-are-awesome/blog-cover.png"
+                            alt="blog image">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Here are 6 Reasons Why Logs are Awesome
+                            </h5>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card mx-auto">
+                    <a href="./petabyte-of-observability-data.html">
+                        <img class="observability-card-img-top" src="/assets/petabyte-blog-cover.jpg" alt="blog image">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Petabyte of Observability Data
+                            </h5>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="card mx-auto">
+                    <a href="./sigscalr-vs-elasticsearch.html">
+                        <img class="card-img-top" src="/assets/blog-2-main-img.png" alt="blog image">
+                        <div class="card-body">
+
+                            <h5 class="card-title">SigScalr vs Elasticsearch: Scaling Observability
+                            </h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="card mx-auto">
+                    <a href="./observability-challenges.html">
+                        <img class="card-img-top" src="/assets/observability-challenges-blog-img.svg" alt="blog image">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Observability Needs A Reboot</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer id="footer" class="pb-5">
+        <div class="container">
+            <div class="row py-0 py-md-5">
+                <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+                    <div>
+                        <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                            class="footer-nav-heading">Documentation</a>
+                    </div>
+                    <div>
+                        <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Community</a>
+                        <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                        <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
+                    <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+                    <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                        <div class="flex-fill w-100 mt-4">
+                            <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
+                        </div>
+                        <div class="flex-grow w-auto">
+                            <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+                    <div class="d-flex">
+                        <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                        </a>
+                        <a class="" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+                <img src="../assets/ss-logo.svg" alt="" style="height: 50px;">
+                <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+                <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+                <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
+                            href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

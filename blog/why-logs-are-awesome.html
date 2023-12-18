@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigScalr | Here are 6 Reasons Why Logs are Awesome</title>
+    <link rel="icon" href="../favicon.svg">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Font-awesome Family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Include Prism.js CSS -->
+    <link rel="stylesheet" href="./dark-theme-prismjs.css">
+
+    <link rel="canonical" href="https://www.sigscalr.io/blog/why-logs-are-awesome.html">
+    <!--OG Tags-->
+    <meta property="og:url" content="https://www.sigscalr.io/blog/why-logs-are-awesome.html" />
+    <meta property="og:title" content="Here are 6 Reasons Why Logs are Awesome" />
+    <meta property="og:description" content="SigScalr — a powerful solution designed to handle massive data volumes." />
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.sigscalr.io/assets/why-logs-are-awesome/blog-cover.png" />
+    <meta property="og:image:secure_url" content="https://www.sigscalr.io/assets/why-logs-are-awesome/blog-cover.png" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta name="image" property="og:image" content="https://www.sigscalr.io/assets/why-logs-are-awesome/blog-cover.png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+
+    <!--Twitter OG Tag-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sigscalr.io" />
+    <meta name="twitter:image" content="https://www.sigscalr.io/assets/why-logs-are-awesome/blog-cover.png">
+    </meta>
+    <meta name="twitter:image:alt" content="Here are 6 Reasons Why Logs are Awesome" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+        <div class="container">
+            <a class="navbar-brand " href="../index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt=""></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
+                            target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="../assets/github.svg" width="26" height="26" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5 pt-5 blog-post">
+        <div class="row mb-5 px-0 justify-content-center align-items-center d-flex flex-column">
+            <div class="col-md-10">
+                <div class="mx-auto d-flex flex-column align-items-start">
+                    <div class="row">
+                        <div class="col-md-7 col-12">
+                            <h1 class="main-heading section" id="section0">
+                                Here are 6 Reasons Why Logs are Awesome
+                            </h1>
+                        </div>
+                        <div class="ml-auto col-md-4 col-12 main-blog-img-2">
+                            <img class="my-3 observability-blog-img"
+                                src="../assets/why-logs-are-awesome/blog-cover.png" />
+                        </div>
+                    </div>
+                    <p class="my-2 para-bold pr-3 mt-4">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software systems have
+                        become integral to every organization.
+                        As these systems evolve and become more complex, monitoring their health and performance can
+                        become challenging. This challenge is amplified in distributed systems where multiple
+                        components,
+                        hosted on various machines, collaborate to perform a task. Here, logging emerges as the key tool
+                        that can be used to achieve insights into software systems.
+                        <br><b>Consider logs as the heartbeat of observability.</b>They provide a detailed record of
+                        system activity and can be used to troubleshoot problems, identify performance bottlenecks, and
+                        track security threats. However, managing logs can be challenging and is not always
+                        straightforward, especially in large systems with diverse log formats.
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this blog, we'll
+                        cover everything you need to know about what logs are, different log types and categories, and
+                        practical use cases for logging. We'll also discuss the intricacies related to logs, examining
+                        its challenges and scalability, while comparing them to other observability data.
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="d-flex">
+                <div>
+                    <div id="sidebar">
+                        <nav id="sidebar-nav">
+                            <ul class="nav flex-column">
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section0">
+                                        <h5>Overview</h5>
+                                    </a></li>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section1">A Beginner's
+                                        Guide to Logs</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section1-1">What are
+                                            Logs?</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section1-2">How do Log Types
+                                            and Categories work?</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section1-3">How can you
+                                            Understand Log Levels?</a></li>
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Top 6
+                                        Reasons to Use Logs</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-1">High-fidelity
+                                            data</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-2">Logging for
+                                            Metric</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-3">Ease of
+                                            Integration</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-4">Detailed system
+                                            insights</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-5">Debug production
+                                            systems</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-6">Searching and
+                                            Correlating Logs</a></li>
+
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section3">Comparing
+                                        Logs to Other Observability Data</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-1">Logs vs.
+                                            Metrics</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-2">Logs vs.
+                                            Traces</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-3">Logs vs.
+                                            Events</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-4">Comparison of
+                                            Logs v/s Other Observability Signals</a></li>
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link"
+                                        href="#section4">Conclusion</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div id="all-sections">
+                    <div id="section1" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h1 class="heading">A Beginner's Guide to Logs
+                            </h1>
+                            <div>
+                                <div class="my-2 blog-para mt-4">
+                                    <h2 class="sub-heading mt-4 section" id="section1-1">What are Logs?
+                                    </h2>
+                                    <p class="blog-para mt-4">Log files are automatically generated records detailing
+                                        events within a software system. They are one of the most imperative tools for
+                                        troubleshooting problems, monitoring system performance, and detecting security
+                                        threats.</p>
+                                    <p class="blog-para mt-4">
+                                        Log files can contain a wide variety of information, such as:
+                                    </p>
+                                    <ul>
+                                        <li>Error messages</li>
+                                        <li>Warnings</li>
+                                        <li>Debug statements</li>
+                                        <li>System metrics</li>
+                                        <li>User Activity</li>
+                                        <li>Security events</li>
+                                    </ul>
+                                    <p class="blog-para mt-4">
+                                        By analyzing log files, you can answer the following questions:
+                                    </p>
+                                    <ul>
+                                        <li>How is your system performing?</li>
+                                        <li>What errors are occurring and why?</li>
+                                        <li>How are users interacting with your system?</li>
+                                        <li>Is your system under attack?</li>
+                                    </ul>
+                                    <p class="blog-para mt-4">
+                                        Log files are essential for any organization to maintain a reliable and secure
+                                        software system.
+                                    </p>
+                                    <ul>
+                                        <li>A web developer can use log files to identify errors preventing users from
+                                            accessing their website.</li>
+                                        <li>A system administrator can use log files to monitor the performance of their
+                                            servers and identify any potential problems.</li>
+                                        <li>A security analyst can use log files to detect suspicious activity and
+                                            investigate potential security threats.</li>
+                                    </ul>
+                                    <p class="blog-para">
+                                        Log files can also be used to improve the performance and reliability of
+                                        software systems. For example, developers can use log files to identify
+                                        bottlenecks in their code and make changes to improve performance.
+                                    </p>
+                                    <h2 class="sub-heading mt-4 section" id="section1-2">How do Log Types and Categories
+                                        work?</h2>
+                                    <h3 class="sub-heading-2 mt-4">Log Types</h3>
+                                    <p class="blog-para mt-4">
+                                        Log files can be classified into different types based on content and purpose.
+                                        Some of the most common log types include:
+                                    </p>
+                                    <ul>
+                                        <li><b>Event logs:</b> Event logs keep track of specific system activities like
+                                            logins, file changes, and app issues. They're mainly used for fixing
+                                            problems and checking system actions.</li>
+                                        <li><b>Metric logs:</b> Metric logs measure system performance numbers, like how
+                                            much CPU or memory is used. They help in checking system health. However,
+                                            it's good to note that using logs to capture these metrics can be costly.
+                                        </li>
+                                        <li><b>Unstructured logs:</b> Unstructured logs are more free-flowing text logs
+                                            that don't have a set structure or format.</li>
+                                    </ul>
+                                    <h3 class="sub-heading-2 mt-4">Log Categories</h3>
+                                    <p class="blog-para mt-4">Log files can also be classified into different categories
+                                        based on their purpose. Some of the most common log categories include:</p>
+                                    <ul>
+                                        <li><b>System logs:</b> System logs record events related to the operating
+                                            system and hardware, such as startup and shutdown events, errors, and
+                                            warnings.</li>
+                                        <li><b>Application logs:</b> Application logs record events related to specific
+                                            applications, such as startup and shutdown events, errors, and warnings.
+                                        </li>
+                                        <li><b>Security logs:</b> Security logs record security-related events, such as
+                                            login attempts, failed authentication attempts, and intrusion detection
+                                            alerts.</li>
+                                        <li><b>Audit logs:</b> Audit logs record system changes and user activity
+                                            events.</li>
+                                    </ul>
+                                    <h2 class="sub-heading mt-4 section" id="section1-3">How can you Understand Log
+                                        Levels?</h2>
+                                    <p class="blog-para mt-4">Log levels indicate the severity of a log event. The most
+                                        common log levels are:</p>
+                                    <ul>
+                                        <li><b>Debug:</b> Debug logs contain detailed information about the system's
+                                            internal state. They are typically used for development and debugging
+                                            purposes.</li>
+                                        <li><b>Info:</b> Info logs contain informational messages about the system. They
+                                            are typically used for monitoring and troubleshooting purposes.</li>
+                                        <li><b>Warning:</b> Warning logs contain warnings about potential problems with
+                                            the system. They are typically used for monitoring and troubleshooting
+                                            purposes.</li>
+                                        <li><b>Error:</b> Error logs contain messages about errors in the system. They
+                                            are typically used for troubleshooting purposes.</li>
+                                        <li><b>Fatal:</b> Fatal logs contain messages about errors that have caused the
+                                            system to crash. They are typically used for troubleshooting purposes.</li>
+                                    </ul>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section2" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h1 class="heading">Top 6 Reasons to Use Logs
+                            </h1>
+                            <div>
+                                <div class="my-2 blog-para mt-4">
+                                    <p class="blog-para mt-4">
+                                        Log data is one of the most valuable assets for organizations of all sizes.
+                                        Through log data analysis, organizations can gain key insights into system
+                                        performance.
+                                    </p>
+                                    <ol>
+                                        <li style="font-weight: 500; font-size: 26px;">
+                                            <h2 class="sub-heading mt-4 section" id="section2-1">High-fidelity data
+                                            </h2>
+                                            <p class="blog-para mt-4">Logs are generated by the system rather than
+                                                manually entered by users. This makes log data an ideal source of truth
+                                                for troubleshooting and analysis.</p>
+                                        </li>
+                                        <li style="font-weight: 500; font-size: 26px;">
+                                            <h2 class="sub-heading mt-4 section" id="section2-2">Logging for Metric
+                                            </h2>
+                                            <p class="blog-para mt-4">While logs can be transformed into metrics
+                                                (numerical indicators of system health), doing so is often avoided due
+                                                to performance concerns. Yet, in the absence of a dedicated metric
+                                                system, logs become a convenient choice for many developers.</p>
+                                        </li>
+                                        <li style="font-weight: 500; font-size: 26px;">
+                                            <h2 class="sub-heading mt-4 section" id="section2-3">Ease of Integration
+                                            </h2>
+                                            <p class="blog-para mt-4">Logs can be easily added to any software system
+                                                and stored and managed in various ways.</p>
+                                        </li>
+                                        <li style="font-weight: 500; font-size: 26px;">
+                                            <h2 class="sub-heading mt-4 section" id="section2-4">Detailed system
+                                                insights
+                                            </h2>
+                                            <p class="blog-para mt-4">By studying log data, organizations can discover
+                                                detailed information about system behavior, errors, and user
+                                                interactions.</p>
+                                        </li>
+                                        <li style="font-weight: 500; font-size: 26px;">
+                                            <h2 class="sub-heading mt-4 section" id="section2-5">Debug production
+                                                systems
+                                            </h2>
+                                            <p class="blog-para mt-4">Logs can be used to debug production systems
+                                                without changing the code. This is important for existing systems that
+                                                have been running for years.</p>
+                                        </li>
+                                        <li style="font-weight: 500; font-size: 26px;">
+                                            <h2 class="sub-heading mt-4 section" id="section2-6">Searching and
+                                                Correlating Logs
+                                            </h2>
+                                            <p class="blog-para mt-4">With tools such as grep and sed, logs can be
+                                                swiftly searched and linked, simplifying the process of pinpointing the
+                                                root cause of an issue by tracing back to the originating code.
+                                                Conversely, metrics may present more challenges in terms of correlation
+                                                and tracing to their source code.</p>
+                                        </li>
+                                    </ol>
+                                    <p class="blog-para mt-4">Overall, logs are an essential tool for observability and
+                                        troubleshooting. Organizations can improve their systems' reliability,
+                                        performance, and security by understanding the importance of logs and
+                                        implementing a comprehensive log management strategy.</p>
+                                    <p class="blog-para mt-4"><b>Here are some specific examples of how logs can be
+                                            used:</b></p>
+                                    <ul>
+                                        <li><b>Troubleshooting:</b> Logs can be used to troubleshoot
+                                            problems that occur in systems. For example, if an application is crashing,
+                                            logs can be used to
+                                            identify the root cause of the problem.
+                                        </li>
+                                        <li><b>Security:</b> Logs can improve security by identifying suspicious
+                                            activity. For
+                                            example, logs can detect unauthorized access to systems or malicious
+                                            activity.</li>
+                                        <li><b>Compliance:</b> Logs can be used to comply with industry regulations and
+                                            standards. For example, organizations can use logs to demonstrate that they
+                                            meet security requirements or track user activity.</li>
+                                        <li><b>Performance optimization:</b> Logs can be used to optimize system
+                                            performance.
+                                            For example, logs can be used to identify performance bottlenecks and to
+                                            track the impact of changes to the system.</li>
+                                    </ul>
+                                    <p>For a deeper dive into observability and log challenges, start with the basics in
+                                        our guide to <a
+                                            href="https://www.sigscalr.io/blog/observability-challenges.html">Observability
+                                            Needs A Reboot</a>
+                                        .</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section3" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h1 class="heading">Comparing Logs to Other Observability Data
+                            </h1>
+                            <div>
+                                <div class="my-2 blog-para mt-4">
+                                    <h2 class="sub-heading mt-4 section" id="section3-1">Logs vs. Metrics
+                                    </h2>
+                                    <p class="blog-para mt-4">
+                                        <b>Metrics</b> are numerical representations of system state or performance.
+                                        They are typically collected at regular intervals and used to monitor the health
+                                        and performance of a system. Metrics can also be used to generate alerts and
+                                        identify trends.
+                                    </p>
+                                    <h3 class="sub-heading-2 mt-4">Key differences between logs and metrics</h3>
+                                    <ul>
+                                        <li><b>Logs are qualitative, while metrics are quantitative.</b> Logs contain
+                                            text-based descriptions of events, while metrics are numerical values.</li>
+                                        <li><b>Logs are fine-grained</b>, while metrics are aggregated at some intervals
+                                            at the
+                                            origination and lose accuracy.</li>
+                                        <li>Logs are typically used for <b>troubleshooting and debugging</b>, while
+                                            metrics are
+                                            typically used for <b>monitoring and performance analysis</b>.</li>
+                                        <li>Logs can contain a <b>wide variety of information</b>, while metrics are
+                                            typically
+                                            focused on a <b>specific aspect of the system</b>, such as CPU usage or
+                                            memory
+                                            utilization.</li>
+                                    </ul>
+                                    <h3 class="sub-heading-2 mt-4">Examples of logs</h3>
+                                    <ul>
+                                        <li>Error messages</li>
+                                        <li>User activity logs</li>
+                                        <li>System status logs</li>
+                                        <li>Application logs</li>
+                                        <li>Security logs</li>
+                                    </ul>
+                                    <h3 class="sub-heading-2 mt-4">Examples of metrics</h3>
+                                    <ul>
+                                        <li>CPU usage</li>
+                                        <li>Memory utilization</li>
+                                        <li>Disk I/O</li>
+                                        <li>Network traffic</li>
+                                        <li>Response times</li>
+                                    </ul>
+                                    <h2 class="sub-heading mt-4 section" id="section3-2">Logs vs. Traces
+                                    </h2>
+                                    <p class="blog-para mt-4">
+                                        While logs offer a diverse range of details, <b>traces</b> primarily concentrate
+                                        on a request's movement within a system. They are records of the flow of a
+                                        request through a distributed system. They track the request's path through
+                                        different components and services. Traces can be used to identify performance
+                                        bottlenecks and troubleshoot problems.
+                                    </p>
+                                    <h3 class="sub-heading-2 mt-4">Key differences between logs and events</h3>
+                                    <ul>
+                                        <li>Logs can contain a wide variety of information, while traces are typically
+                                            focused on the flow of a request through a system.
+                                        </li>
+                                        <li>Logs are typically stored for a longer period of time than traces.</li>
+                                        <li>Generally, 100% of the logs produced are stored, while trace employs a
+                                            principal of sampling. Usually, the sampling is no more than 1%.</li>
+                                    </ul>
+                                    <h3 class="sub-heading-2 mt-4">Examples of traces</h3>
+                                    <ul>
+                                        <li>A trace of a web request as it flows through a web server, application
+                                            server, and database.
+                                        </li>
+                                        <li>A trace of a message as it flows through a messaging queue and then to a
+                                            microservice.</li>
+                                    </ul>
+                                    <h2 class="sub-heading mt-4 section" id="section3-3">Logs vs. Events
+                                    </h2>
+                                    <p class="blog-para mt-4">
+                                        <b>Events</b> are discrete occurrences that happen in a system. They can be
+                                        generated by the system, applications, or users. Events have the potential to
+                                        initiate alerts, produce log entries, or set off other operations.
+                                    </p>
+                                    <h3 class="sub-heading-2 mt-4">Key differences between logs and events</h3>
+                                    <ul>
+                                        <li>Logs are typically records of events, while events are the occurrences
+                                            themselves.</li>
+                                        <li>Logs can contain a wide variety of information, while events typically focus
+                                            on a specific occurrence.</li>
+                                        <li>Logs are typically stored for a longer period of time than events.</li>
+                                        <li>Logs are typically <b>large</b> in number, while events are usually
+                                            <b>less</b>.
+                                        </li>
+                                    </ul>
+                                    <h3 class="sub-heading-2 mt-4">Examples of events</h3>
+                                    <ul>
+                                        <li>A user logging into a system.</li>
+                                        <li>An application sending a message to a queue.</li>
+                                        <li>A system generating an error message.</li>
+                                        <li>Completion of a designated task.</li>
+                                    </ul>
+                                    <h2 class="sub-heading mt-4 section" id="section3-4">Comparison of
+                                        Logs v/s Other Observability Signals
+                                    </h2>
+                                    <div class="table-container">
+                                        <table class="ShapeDataTable">
+                                            <tr>
+                                                <th>Features</th>
+                                                <th>Logs</th>
+                                                <th>Metrics</th>
+                                                <th>Traces</th>
+                                                <th>Events</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Types</th>
+                                                <td>Text-based records of events</td>
+                                                <td>Numerical representations of system state or performance</td>
+                                                <td>Records of the flow of a request through a distributed system</td>
+                                                <td>Discrete occurrences that happen in a system</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Examples</th>
+                                                <td>Error messages, user activity logs, system status logs, application
+                                                    logs, security logs</td>
+                                                <td>CPU usage, memory utilization, disk I/O, network traffic, response
+                                                    times
+                                                </td>
+                                                <td>Traces of web requests, messages, or jobs as they flow through a
+                                                    system
+                                                </td>
+                                                <td>User log-in, application sending a message to a queue, system
+                                                    generating
+                                                    an error message, job completing</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Retention period</th>
+                                                <td>Typically stored for a longer period of time</td>
+                                                <td>Typically stored for a shorter period of time</td>
+                                                <td>Typically stored for a shorter period of time</td>
+                                                <td>Typically stored for a longer period of time</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section4" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h1 class="heading">Conclusion
+                            </h1>
+                            <div>
+                                <div class="my-2 blog-para mt-4">
+                                    <p class="blog-para mt-4">
+                                        Logs provide a detailed record of system activity that can be used to
+                                        troubleshoot problems, identify performance bottlenecks, and track security
+                                        threats.
+                                    </p>
+                                    <p class="blog-para mt-4">
+                                        Organizations can improve their systems' reliability, performance, and security
+                                        by understanding the importance of logs and implementing a comprehensive log
+                                        management strategy from the very start In most software projects, logs are an
+                                        afterthought. However, by giving logs the attention they deserve from the start
+                                        and setting clear guidelines, you lay the foundation for greater success as your
+                                        project evolves.
+                                    </p>
+                                    <p class="blog-para mt-4">
+                                        <b>Here are some key takeaways from our blog post:</b>
+                                    </p>
+                                    <ul>
+                                        <li>Logs are essential for observability.</li>
+                                        <li>Logs can be used for various purposes, including troubleshooting, security,
+                                            compliance, and performance optimization.</li>
+                                        <li>There are different types and categories of logs.</li>
+                                        <li>Logs can be used with other observability data, such as metrics, traces, and
+                                            events.</li>
+                                        <li>There are challenges associated with managing logs, but there are also
+                                            strategies to mitigate these challenges.</li>
+                                        <li>Implement log strategy and discipline from the get-go.</li>
+                                    </ul>
+                                    <p class="blog-para mt-4">
+                                        Whether you're a seasoned sysadmin, a developer, or someone just beginning to
+                                        explore the world of logs and observability, I encourage you to test the power
+                                        of logs. They can be a valuable tool for improving your software systems'
+                                        reliability, performance, and security.
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="max-width: 800px;" class="mx-auto">
+                                <hr>
+                                <div class="share-links d-flex align-items-center">
+                                    <div>
+                                        <h6 class="main-text mr-5">Share</h6>
+                                    </div>
+                                    <div>
+                                        <a class="twitter-share-button"
+                                            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.sigscalr.io%2Fblog%2Fwhy-logs-are-awesome.html&text=Here%20are%206%20Reasons%20Why%20Logs%20are%20Awesome"
+                                            target="_blank">
+                                            <i class="fa-brands fa-x-twitter"></i></a>
+                                    </div>
+                                    <div>
+                                        <a
+                                            href="mailto:?body=Check out this post from SigScalr: https://www.sigscalr.io/blog/why-logs-are-awesome.html"><i
+                                                class="fa fa-solid fa-envelope"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.sigscalr.io/blog/why-logs-are-awesome.html"
+                                            target="_blank"><i class="fa  fa-brands fa-facebook-f"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.sigscalr.io/blog/why-logs-are-awesome.html&title=Here%20are%206%20Reasons%20Why%20Logs%20are%20Awesome"
+                                            target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="pb-5">
+        <div class="container">
+            <div class="row py-0 py-md-5">
+                <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+                    <div>
+                        <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                            class="footer-nav-heading">Documentation</a>
+                    </div>
+                    <div>
+                        <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Community</a>
+                        <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                        <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
+                    <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+                    <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                        <div class="flex-fill w-100 mt-4">
+                            <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
+                        </div>
+                        <div class="flex-grow w-auto">
+                            <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+                    <div class="d-flex">
+                        <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                        </a>
+                        <a class="" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+                <img src="../assets/ss-logo.svg" alt="" style="height: 50px;">
+                <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+                <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+                <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
+                            href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <!-- Include Prism.js language support for JSON -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.js"></script>
+    <script>
+        // Initialize Prism.js
+        Prism.highlightAll();
+    </script>
+
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="./blog.js"></script>
+</body>
+
+</html>

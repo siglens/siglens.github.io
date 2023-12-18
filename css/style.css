@@ -17,7 +17,6 @@
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color: var(--main-color);
     overflow-x: hidden;
 }
 
@@ -29,6 +28,9 @@ a {
     width: 0;/* This will hide the scrollbar */
 }
 
+#index-page{
+    background-color: var(--main-color);
+}
 /*NAVBAR*/
 
 .navbar {
@@ -308,7 +310,8 @@ a:focus {
 
 /*FOOTER SECTION */
 #footer {
-    margin-top: 100px;
+    margin-top: 90px;
+    padding-top: 10px;
     background: var(--main-color);
     color: var(--ebony-1);
     font-weight: 200;

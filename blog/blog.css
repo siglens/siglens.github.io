@@ -1,0 +1,511 @@
+:root {
+    --white-0: #fff;
+    --marigold: #F2A52B;
+
+    --grey: #d9d9d9;
+    --grey-1: #ebebeb;
+    --purple-1: #6347D9;
+    --purple-2: #2E205F;
+    --purple-3: #B4A6E6;
+
+    --black-1: #160F29;
+    --black-2: #222;
+    --ebony-1: #A29FA9;
+
+    /* Aliases */
+    --nav-color: var(--purple-2);
+    --header-color: var(--black-1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Blog Page */
+
+.card a {
+    text-decoration: none;
+}
+
+.main-header{
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+}
+
+.card {
+    filter: drop-shadow(2px 2px 9px rgba(22, 15, 41, 0.2));
+    border-radius: 20px;
+    max-width: 20rem;
+    transition: all 0.3s ease-out;
+    border: 1px solid var(--grey);
+    box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+
+}
+
+.card:hover {
+    transform: translateY(-3px) scale(1.005) translateZ(0);
+    box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
+}
+
+.card-img-top {
+    border-radius: 20px 20px 0 0;
+    height: 200px;
+    object-fit: contain;
+    background: rgba(180, 166, 230, 0.3);
+
+}
+
+.observability-card-img-top {
+    border-radius: 20px 20px 0 0;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    background: rgba(180, 166, 230, 0.3);
+}
+
+.card-title {
+    color: var(--purple-2);
+    font-weight: 500;
+    letter-spacing: .03rem;
+    font-size: 24px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/*Single Blog Post*/
+
+.main-heading {
+    color: var(--header-color);
+    letter-spacing: 0.03rem;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 150%;
+}
+
+.heading {
+    color: var(--purple-2);
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    position: relative;
+    display: inline-block;
+    /* margin-top: 20px; */
+}
+
+.heading::after {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: absolute;
+    background: linear-gradient(80.14deg, #6347D9 -5.85%, #B4A6E6 120.85%);
+    width: 105%;
+    bottom: -3px;
+    left: 0;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.sub-heading {
+    color: var(--header-color);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+}
+
+.sub-heading-2 {
+    color: var(--header-color);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+}
+
+.blog-para {
+    font-size: 16px;
+    line-height: 2em;
+    color: var(--black-2);
+    font-weight: 400;
+}
+
+.blog-post ul li {
+    line-height: 2em;
+
+}
+
+.blog-post .para-bold {
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: var(--black-1);
+    line-height: 175%;
+}
+
+.main-blog-img {
+    height: 400px;
+}
+
+
+.share-links div {
+    margin-right: 40px;
+}
+
+.share-links i {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-links a {
+    text-decoration: none;
+}
+
+.share-links i {
+    height: 42px;
+    width: 42px;
+    color: var(--purple-1);
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+}
+
+.share-links i:hover {
+    color: var(--white-0);
+    background: var(--purple-1);
+    transform: translateY(-3px) scale(1.005) translateZ(0);
+    box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
+}
+
+.code-block {
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #333539;
+    padding: 20px;
+    font-family: Consolas, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Lucida Console, monospace;
+    font-weight: 300;
+    color: #f5f7fa;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 2em;
+    color: var(--black-2);
+}
+
+table thead {
+    background: var(--purple-3);
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 0.02rem;
+}
+
+table tbody {
+    background-color: #f3f3f3;
+}
+
+table th {
+    vertical-align: top;
+    padding: 20px;
+    border: 1.5px solid var(--white-0);
+}
+
+table td {
+    vertical-align: top;
+    padding: 14px;
+    border: 1.5px solid var(--white-0);
+}
+
+table thead th:first-child {
+    border-radius: 6px 0 0 0;
+}
+
+table thead th:last-child {
+    border-radius: 0 6px 0 0;
+}
+
+table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+
+table tbody tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+}
+
+.sys-compare-table thead th:first-child {
+    min-width: 220px;
+}
+
+.comparision-table {
+    margin-top: 20px;
+}
+
+.comparision-table th {
+    background-color: var(--purple-3);
+    border-right: 1.5px solid var(--white-0);
+    letter-spacing: 0.02rem;
+}
+
+.comparision-table tr:first-child th {
+    border-radius: 6px 0 0 0;
+}
+
+.comparision-table tr:first-child td {
+    border-radius: 0 6px 0 0;
+}
+
+.comparision-table tr:last-child th {
+    border-radius: 0 0 0 6px;
+}
+
+.comparision-table th,
+.comparision-table td {
+    padding: 20px;
+}
+
+.comparision-table tr:first-child th,
+.comparision-table tr:first-child td {
+    border-bottom: 1.5px solid var(--white-0);
+}
+
+.wrap-div {
+    white-space: pre;
+}
+
+
+.ShapeDataTable {
+    width: "100%"
+}
+
+.table-container {
+    width: "100%";
+    overflow: auto;
+}
+
+.ShapeDataTable tbody {
+    background: rgba(99, 71, 217, 0.2) !important;
+}
+
+.ShapeDataTable tbody tr td {
+    border-right: 1.5px solid var(--white-0);
+    border-bottom: 1.5px solid var(--white-0);
+}
+
+.ShapeDataTable tbody th {
+    column-width: 350px;
+}
+
+.ShapeDataTable tbody tr:first-child td:first-child {
+    border-radius: 6px 0 0 0;
+}
+
+.ShapeDataTable tbody tr:first-child td:last-child {
+    border-radius: 0 6px 0 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#sidebar {
+    top: 90px;
+    bottom: 90px;
+    position: sticky;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    margin-left: -40px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#all-sections {
+    margin-left: 60px;
+}
+
+#sidebar h5 {
+    font-size: 18px;
+    letter-spacing: 0.04rem;
+}
+
+#sidebar li a {
+    font-size: 14px;
+    color: var(--black-2);
+    letter-spacing: 0.02rem;
+
+}
+
+#sidebar li a:hover {
+    color: var(--purple-1);
+    font-weight: 500;
+}
+
+#sidebar .section-nav-link.active {
+    font-weight: 500;
+    color: var(--purple-1);
+    text-decoration: underline;
+}
+
+#sidebar .sub-navbar {
+    margin-left: -10px;
+}
+
+#sidebar .main-link {
+    font-weight: 500;
+}
+
+#section1 img {
+    height: 500px;
+}
+
+#ingestion-bytes,
+#ingestion-events,
+#compression-ratio,
+#cluster-stats-indexes,
+#batch-3hours,
+#batch-30days,
+#aws-cost {
+    height: 500px;
+}
+
+#ingestion-cpu {
+    height: 350px;
+    width: 1000px;
+    overflow-x: scroll;
+}
+
+#ingestion-memory {
+    height: 350px;
+    width: 1000px;
+    overflow-x: scroll;
+
+}
+
+#section2-10 img {
+    height: 400px;
+}
+
+.main-blog-img-2 img {
+    height: 260px;
+    margin-left: -80px;
+}
+
+.observability-blog-img {
+    border-radius: 25px;
+    height: 500px;
+}
+
+.bottom_links {
+    margin-left: 42px;
+}
+
+/*Mobile Devices*/
+
+@media (max-width: 767.98px) {
+
+    .main-heading {
+        font-size: 32px;
+    }
+
+    .blog-post .para-bold {
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    .main-blog-img {
+        height: 250px;
+    }
+
+    .heading {
+        font-size: 26px;
+    }
+
+    .sub-heading {
+        font-size: 24px;
+    }
+
+    .blog-para {
+        line-height: 150%;
+    }
+
+    .blog-post ul li {
+        text-align: left;
+    }
+
+    .share-links div {
+        margin-right: 10px;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #all-sections {
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    #section1 img {
+        height: 250px;
+    }
+
+    .ShapeDataTable {
+        width: 320px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .table-div,
+    .comparision-table {
+        overflow-x: auto;
+    }
+
+    .sys-compare-table thead th:first-child {
+        min-width: 0px;
+    }
+
+    .main-blog-img-2 img {
+        height: 210px;
+        margin-left: 0px;
+    }
+
+    #section2-10 img {
+        height: 200px;
+    }
+
+    .card {
+        margin-top: 20px;
+    }
+
+    #ingestion-bytes,
+    #ingestion-events,
+    #compression-ratio,
+    #cluster-stats-indexes,
+    #batch-3hours,
+    #batch-30days,
+    #ingestion-cpu,
+    #ingestion-memory {
+        height: 250px;
+        width: 360px;
+    }
+
+    #aws-cost {
+        height: 300px;
+    }
+
+    .main-blog-img-2 .observability-blog-img {
+        border-radius: 25px;
+        height: 180px;
+    }
+}

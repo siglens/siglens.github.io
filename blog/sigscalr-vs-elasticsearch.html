@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigScalr | Scaling Observability</title>
+    <link rel="icon" href="/favicon.svg">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Font-awesome Family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Include Prism.js CSS -->
+    <link rel="stylesheet" href="./dark-theme-prismjs.css">
+
+    <link rel="canonical" href="https://www.sigscalr.io/blog/sigscalr-vs-elasticsearch.html">
+    <!--OG Tags-->
+    <meta property="og:url" content="https://www.sigscalr.io/blog/sigscalr-vs-elasticsearch.html" />
+    <meta property="og:title" content="SigScalr vs Elasticsearch: Scaling Observability" />
+    <meta property="og:description"
+        content="SigScalr is 4x-8x faster than Elasticsearch for ⅘ query types and has 1.5x faster ingestion than Elasticsearch while consuming 85% less hardware resources." />
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.sigscalr.io/assets/blog-2-main-img.png" />
+    <meta property="og:image:secure_url" content="https://www.sigscalr.io/assets/blog-2-main-img.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="image" property="og:image" content="https://www.sigscalr.io/assets/blog-2-main-img.png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+
+    <!--Twitter OG Tag-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sigscalr.io" />
+    <meta name="twitter:image" content="https://www.sigscalr.io/assets/blog-2-main-img.png">
+    </meta>
+    <meta name="twitter:image:alt" content="SigScalr vs Elasticsearch: Scaling Observability" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+        <div class="container">
+            <a class="navbar-brand " href="../index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt=""></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
+                            target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="../assets/github.svg" width="26" height="26" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5 pt-5 blog-post" id="section0">
+        <div class="row mb-5 px-0 justify-content-center align-items-center d-flex flex-column">
+            <div class="col-md-10">
+                <div class="mx-auto d-flex flex-column align-items-start">
+                    <div class="row">
+                        <div class="col-md-8 col-12">
+                            <h1 class="main-heading mt-0 mt-md-4">
+                                SigScalr vs Elasticsearch:
+                                <br> Scaling Observability
+
+                            </h1>
+                        </div>
+                        <div class="col-md-4 col-12 main-blog-img-2">
+                            <img class="my-3 main-blog-img" src="../assets/blog-2-main-img.png" />
+                        </div>
+                    </div>
+                    <p class="my-2 para-bold pr-3 mt-4">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elasticsearch has
+                        historically been a popular choice for log management due to its strengths in scalability,
+                        free text searches, and customizability. However, the <a
+                            href="./observability-challenges.html">recent explosion in observability
+                            requirements</a> makes Elasticsearch difficult to
+                        <span class="font-weight-bold">operate, maintain and scale</span>.
+
+                        On the other hand, <span class="font-weight-bold">
+                            SigScalr is an unified observability system that is purpose built to process
+                            large volumes of observability data with minimal resources
+                        </span>.
+
+                        While Elasticsearch aims to be a general purpose search engine for free text and analytical
+                        queries, SigScalr has a focused architecture to process large volumes of high cardinality data,
+                        effectively tackling some of observability's hardest problems.
+
+                        In this blog, we compare the performance of SigScalr and Elasticsearch at terabytes scale of
+                        observability data as well as the key differences between these two solutions.
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="d-flex">
+                <div>
+                    <div id="sidebar">
+                       
+                        <nav id="sidebar-nav">
+                            <ul class="nav flex-column">
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section0"> <h5>Overview</h5></a></li>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section1">Benchmark
+                                        Result</a></li>
+                                <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Benchmark
+                                        Setup</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-1">Data</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-2">Hardware
+                                            Used</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-3">Node Setup
+                                            Steps</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-4">ElasticSearch
+                                            Setup Steps</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-5">SigScalr Setup
+                                            Steps</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-6">Client Setup
+                                            Steps</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-7">Run load against
+                                            Elasticsearch</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-8">Run load against
+                                            SigScalr</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-9">Query
+                                            Results</a></li>
+                                    <li class="nav-item"><a class="section-nav-link" href="#section2-10">Ingestion
+                                            Results</a></li>
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link"
+                                        href="#section3">Observability Systems Comparison</a></li>
+                                <ul class="sub-navbar flex-column">
+                                    <li class="nav-item"><a class="section-nav-link" href="#section3-1">Elastic vs
+                                            SigScalr</a></li>
+                                </ul>
+                                <li class="nav-item main-link"><a class="section-nav-link"
+                                        href="#section4">Conclusion</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div id="all-sections">
+                    <div id="section1" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Benchmark Result
+                            </h3>
+                            <p class="mt-4 blog-para">SigScalr is <span class="font-weight-bold">4x-8x faster</span>
+                                than Elasticsearch
+                                for ⅘ query types and has 1.5x faster
+                                ingestion than Elasticsearch while consuming <span class="font-weight-bold">85%
+                                    less</span> hardware
+                                resources.
+                            </p>
+
+                            <img src="../assets/queryStats.png" alt="">
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="section2" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Benchmark Setup
+                            </h3>
+                            <div class="section" id="section2-1">
+                                <h4 class="sub-heading mt-4">Data:
+                                </h4>
+                                <div class="my-2 blog-para">
+                                    <span class="font-weight-bold">Data Volume:</span> 1 TB <br>
+                                    <span class="font-weight-bold">Event count:</span> 1 Billion <br>
+                                    <span class="font-weight-bold">Event Size:</span> 1000 bytes <br>
+                                    <table class="ShapeDataTable">
+                                        <tr>
+                                            <td>Number of Columns</td>
+                                            <td>34</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Num of columns with 1 Billion cardinality</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Num of columns with > 100 Million cardinality</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Num of columns with free text</td>
+                                            <td>4</td>
+                                        </tr>
+                                    </table>
+                                    <span class="font-weight-bold pt-4">Sample Event:</span>
+                                    <pre><code class="language-javascript">{
+    "_index": "ind-2",
+    "address": "7253 Prairie shire, Chandler, Arizona 69577",
+    "app_name": "Browncompany",
+    "app_version": "1.3.9",
+    "batch": "batch-683",
+    "city": "Chandler",
+    "country": "Honduras",
+    "first_name": "Jameson",
+    "gender": "female",
+    "group": "group1",
+    "hobby": "Reading",
+    "http_method": "PUT",
+    "http_status": 200,
+    "ident": "65218bcc-8632-46f6-8864-40c29aa0c3d4",
+    "image": "https://picsum.photos/210/234",
+    "job_company": "Booz Allen Hamilton",
+    "job_description": "Regional",
+    "job_level": "Markets",
+    "job_title": "Architect",
+    "last_name": "Schowalter",
+    "latency": 6798739,
+    "latitude": 7.501476,
+    "longitude": 62.881365,
+    "question": "Swag beard polaroid polaroid poutine chicharrones tumblr paleo?",
+    "ssn": "563566085",
+    "state": "Arizona",
+    "street": "7253 Prairie shire",
+    "timestamp": 1683640434592,
+    "url": "https://www.investorbleeding-edge.com/sexy/real-time/value-added/global",
+    "user_agent": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/5311 (KHTML, like Gecko) Chrome/39.0.868.0 Mobile Safari/5311",
+    "user_color": "PaleGoldenRod",
+    "user_email": "dasiadonnelly@kassulke.info",
+    "user_phone": "9124648960",
+    "weekday": "Monday",
+    "zip": "69577"
+}</code></pre>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-2">
+                                <h4 class="sub-heading">Hardware Used:
+                                </h4>
+                                <p class="my-2 blog-para">
+                                    <span class="font-weight-bold">Instance:</span> i4i.2x large <br>
+                                    <span class="font-weight-bold">vCPU:</span> 8 <br>
+                                    <span class="font-weight-bold">RAM:</span> 64 GB <br>
+                                    <span class="font-weight-bold">Storage:</span> 1.8 TB Nitro SSD <br>
+
+                                </p>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-3">
+                                <h4 class="sub-heading mt-2">Node Setup Steps:</h4>
+                                <pre><code class="language-javascript">sudo mkfs -t xfs /dev/nvme1n1
+sudo mkdir /data1
+sudo mount /dev/nvme1n1 /data1
+sudo chown ec2-user:ec2-user /data1/</code></pre>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-4">
+                                <h4 class="sub-heading mt-2">ElasticSearch Setup Steps:</h4>
+                                <pre><code class="language-javascript">sudo mkfs -t xfs /dev/nvme1n1
+cd /data1/es
+wget
+https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.9.3-linux-x86_64.tar.gz
+tar -xvf elasticsearch-oss-7.9.3-linux-x86_64.tar.gz</code></pre>
+
+
+                                <p class="mt-2 mb-0 blog-para">
+                                    Add following to config/elasticsearch.yml
+                                </p>
+                                <pre><code class="language-javascript">network.host: 0.0.0.0
+discovery.type: single-node</code></pre>
+
+                                <p class="mt-2 mb-0 blog-para">
+                                    Increase the jvm RAM of elasticsearch process by adding following to
+                                    config/jvm.options:
+                                </p>
+                                <pre><code class="language-javascript">-Xms30g
+-Xmx30g</code></pre>
+                                <p class="mt-2 mb-0 blog-para">
+                                    Elasticsearch uses mmapfs for storing indices. As the default os limits were too
+                                    low, we increased them by running:</p>
+                                <pre><code class="language-javascript">sudo sysctl -w vm.max_map_count=262144</code></pre>
+                                <p class="mt-2 blog-para mb-0">
+                                    Start Elasticsearch:
+                                </p>
+                                <pre><code class="language-javascript">nohup ./bin/elasticsearch > esstart.log 2>&1 &</code></pre>
+
+                                <p class="mt-2 blog-para mb-0">
+                                    Add template:
+                                </p>
+                                <pre><code class="language-javascript">curl --location --request PUT 'http://&lt;ES_IP&gt;:9200/_template/temp1' \ --header 
+'Content-Type: application/json' \ --data-raw '{ "index_patterns": "ind*", "settings": 
+{ "number_of_shards": 6, "number_of_replicas": 0 }, "mappings": { "_source": 
+{ "enabled": true }, "properties": { "timestamp": { "type": "date", "format": 
+"epoch_millis" } } } }'</code></pre>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-5">
+                                <h4 class="sub-heading mt-2">SigScalr Setup Steps:
+                                </h4>
+                                <pre><code class="language-javascript">mkdir /data1/sigscalr
+cd /data/sigscalr
+sudo nohup ./sigscalr > hyperion.out 2>&1 &</code></pre>
+                                <br>
+                            </div>
+                            <div class="section" id="section2-6">
+                                <h4 class="sub-heading mt-2">Client Setup Steps:
+                                </h4>
+                                <pre><code class="language-javascript">mkdir /data1/client 
+cd /data/client
+git clone git@github.com:sigscalr/sigscalr-client.git</code></pre>
+                                <br>
+                            </div>
+
+                            <div class="section" id="section2-7">
+                                <h4 class="sub-heading mt-2">Run load against Elasticsearch:
+                                </h4>
+                                <div class="sub-heading-2">Ingest</div>
+                                <pre><code class="language-javascript">nohup go run main.go ingest esbulk -b 1000 -t 1_000_000_000 -d 
+http://&lt;ES_IP&gt;:9200 -p 10 > estest.log 2>&1 &</code></pre>
+
+                                <div class="sub-heading-2">Query</div>
+                                <pre><code class="language-javascript">go run main.go query -d http://&lt;ES_IP&gt;:9200 -v -n 1</code></pre>
+                                <br>
+                            </div>
+
+                            <div class="section" id="section2-8">
+                                <h4 class="sub-heading mt-2">Run load against SigScalr:
+                                </h4>
+                                <div class="sub-heading-2">Ingest</div>
+                                <pre><code class="language-javascript">nohup go run main.go ingest esbulk -b 1000 -t 1_000_000_000 -d
+http://&lt;SigScalr_IP&gt;:8081/elastic -p 10 > sstest.log 2>&1 &</code></pre>
+
+                                <div class="sub-heading-2">Query</div>
+                                <pre><code class="language-javascript">go run main.go query -d http://&lt;SigScalr_IP&gt;:80/elastic -v -n 1</code></pre>
+                                <br>
+                            </div>
+
+                            <div class="section" id="section2-9">
+                                <h4 class="sub-heading">Query Results:
+                                </h4>
+                                <p class="my-4 blog-para">
+                                <div class="table-div">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Query Type</th>
+                                                <th>SigScalr (ms)</th>
+                                                <th>ElasticSearch (ms)</th>
+                                                <th>Comparison</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Q1 (match multiple)</td>
+                                                <td>104</td>
+                                                <td>803</td>
+                                                <td>7x</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Q2 (range)</td>
+                                                <td>87</td>
+                                                <td>720</td>
+                                                <td>8x</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Q3 (needle-in-haystack)</td>
+                                                <td>185</td>
+                                                <td>116</td>
+                                                <td>0.6x</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Q4 (KeyValue)</td>
+                                                <td>44</td>
+                                                <td>182</td>
+                                                <td>4x</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Q5 (Free Text)</td>
+                                                <td>120</td>
+                                                <td>875</td>
+                                                <td>7x</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </p>
+                                <br>
+                            </div>
+
+                            <div class="section" id="section2-10">
+                                <h4 class="sub-heading">Ingestion Results:
+                                </h4>
+                                <img src="../assets/ingestionStats.png" alt="">
+                                <p class="my-4 blog-para">
+                                <div class="table-div">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Metric Name</th>
+                                                <th>SigScalr</th>
+                                                <th>ElasticSearch</th>
+                                                <th>Comparison</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Ingestion Rate</td>
+                                                <td>28,331 events/sec</td>
+                                                <td>18,023 events/sec</td>
+                                                <td>1.5x Faster</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CPU</td>
+                                                <td>160%</td>
+                                                <td>770%</td>
+                                                <td>80% less CPU</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RAM</td>
+                                                <td>4GB</td>
+                                                <td>32 GB</td>
+                                                <td>90% less RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Disk Utilization</td>
+                                                <td>192 GB</td>
+                                                <td>1200 GB</td>
+                                                <td>84% less disk space</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </p>
+                                <br>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="section3" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Observability Systems Comparison:
+                            </h3>
+                            <p class="blog-para mt-4">Observability data is uniquely identified by fast, unstructured,
+                                multifaceted
+                                datasets that require ultra low latency for free text, analytical, and time-series
+                                queries. With high
+                                volumes of irregular data, traditional systems deal with this through an index
+                                everything, index
+                                something, or index nothing approach. When applied to observability data, these
+                                solutions have various
+                                degrees of success and failures.
+                            </p>
+                            <p class="blog-para">
+                            <div class="table-div">
+                                <table class="sys-compare-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Architecture Approach</th>
+                                            <th>Pros</th>
+                                            <th>Cons</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Index Nothing</td>
+                                            <td>
+                                                Fast ingestion <br>
+                                                Minimal storage requirements <br>
+                                            </td>
+                                            <td>
+                                                Slower queries requires full table scans
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Index Something</td>
+                                            <td>Faster queries for indexed fields</td>
+                                            <td>
+                                                Slow query performance for unindexed fields <br>
+                                                Determining which fields to index is not easy<br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Index Everything</td>
+                                            <td>Fast queries</td>
+                                            <td>
+                                                Slower ingestion <br>
+                                                Larger storage usage <br>
+                                                Indices suffer on high cardinality data <br>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </p>
+                            <p class="mt-4">SigScalr turns this on its head with a dynamic approach to indexing. Using
+                                an append-only
+                                columnar
+                                storage, SigScalr determines the optimal encoding format for a given column based on the
+                                data type and
+                                cardinality in real time. </p>
+                            <p>These encoding formats are custom built and highly optimized for in memory processing,
+                                vectorized
+                                execution, and storage space.
+                            </p>
+                            <p>SigScalr also dynamically generates mico-indices that take up less than 1% of storage
+                                space yet is able
+                                to drastically reduce the amount of file reads.
+                            </p>
+
+                            <div id="section3-1">
+                                <h4 class="sub-heading mt-4">Elastic vs SigScalr:
+                                </h4>
+                                <h3 class="sub-heading-2 mt-4">Storage Systems:
+                                </h3>
+                                <div class="comparision-table">
+                                    <table>
+                                        <tr>
+                                            <th>ElasticSearch</th>
+                                            <td>
+                                                Indexes all incoming fields by default but also is possible to configure
+                                                which fields to not index.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>SigScalr</th>
+                                            <td>
+                                                Uses a columar storage format that generates segments and microindices.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <h3 class="sub-heading-2 mt-4">CPU/RAM Resources:
+                                </h3>
+                                <div class="comparision-table">
+                                    <table>
+                                        <tr>
+                                            <th>ElasticSearch</th>
+                                            <td>
+                                                Uses inverted indices to answer queries. If these indices do not fit in
+                                                memory, with high cardinality datasets, query performance suffers.
+                                                Creating too many shards creates a lot of memory overhead. Requires
+                                                proper planning, testing, and iterating to optimize performance.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>SigScalr</th>
+                                            <td>
+                                                Zero copy ingestion and queries keeps CPU and Memory requirements low at
+                                                all times.
+                                                Query engine uses the amount of configured memory to preload the micro
+                                                indices in memory.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <h3 class="sub-heading-2 mt-4">Query Performance:
+                                </h3>
+                                <div class="comparision-table">
+                                    <table>
+                                        <tr>
+                                            <th>ElasticSearch</th>
+                                            <td>
+                                                If indices can fit in memory, query performance is extremely fast and
+                                                highly reliable.
+                                                If not, which will often happen for high cardinality data, then query
+                                                performance suffers.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>SigScalr</th>
+                                            <td>
+                                                The small nature of generated micro indices allow significant search
+                                                space reduction even
+                                                when
+                                                resources are low.
+                                                Vectorized execution and optimized file formats makes all queries for
+                                                all data types and
+                                                cardinalities blazing fast.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <h3 class="sub-heading-2 mt-4">Setup and Maintenance:
+                                </h3>
+                                <div class="comparision-table">
+                                    <table>
+                                        <tr>
+                                            <th>ElasticSearch</th>
+                                            <td>
+                                                Highly tunable to get high performance. A lot of knobs to turn makes it
+                                                hard to always get the “optimal” settings, yet makes it possible to
+                                                iterate on performance.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>SigScalr</th>
+                                            <td>
+                                                Needs minimal configuration to dynamically optimize encodings, indices,
+                                                and memory management.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p class="blog-para mt-4">
+                                    As Elasticsearch is a general purpose document search engine, it has other features
+                                    SigScalr does not. For example, updating & deleting documents, different types of
+                                    search and scoring functions, etc. SigScalr is purpose-built for the observability
+                                    data types of logs, metrics, and traces.
+                                </p>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section4" class="section">
+                        <div style="max-width: 800px;" class="mx-auto">
+                            <h3 class="heading">Conclusion</h3>
+                            <p class="my-2 blog-para">Observability data has unique characteristics and generic purpose
+                                search engines do
+                                not work for today's cloud workload or are too expensive. SigScalr is solving this
+                                problem by building a
+                                database from the ground up specifically for the observability data. As
+                                demonstrated in
+                                this benchmark blog, SigScalr performs magnitudes better than Elasticsearch while
+                                consuming 1/10th of
+                                resources. Give <a href="../pricing.html" target="_blank">SigScalr a try</a>
+                                or <a href="https://calendly.com/knawale/30min" target="_blank">book a demo</a>
+                                to find out how you can implement observability at a price that does not break the bank.
+                            </p>
+                            <br>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 800px;" class="mx-auto">
+            <hr>
+            <div class="share-links d-flex align-items-center">
+                <div>
+                    <h6 class="main-text mr-5">Share</h6>
+                </div>
+                <div>
+
+                    <a class="twitter-share-button"
+                        href="https://twitter.com/intent/tweet?text=SigScalr%20vs%20Elasticsearch:%20Scaling%20Observability&url=https://www.sigscalr.io/blog/sigscalr-vs-elasticsearch.html"
+                        target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div>
+                    <a
+                        href="mailto:?body=Check out this post from SigScalr: https://www.sigscalr.io/blog/sigscalr-vs-elasticsearch.html "><i
+                            class="fa  fa-solid fa-envelope"></i></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.sigscalr.io/blog/sigscalr-vs-elasticsearch.html"
+                        target="_blank"><i class="fa  fa-brands fa-facebook-f"></i></a>
+                </div>
+                <div>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.sigscalr.io/blog/sigscalr-vs-elasticsearch.html&title=SigScalr%20vs%20Elasticsearch:%20Scaling%20Observability"
+                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer id="footer" class="pb-5">
+        <div class="container">
+            <div class="row py-0 py-md-5">
+                <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+                    <div>
+                        <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                            class="footer-nav-heading">Documentation</a>
+                    </div>
+                    <div>
+                        <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Community</a>
+                        <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                        <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
+                    <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+                    <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                        <div class="flex-fill w-100 mt-4">
+                            <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
+                        </div>
+                        <div class="flex-grow w-auto">
+                            <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+                    <div class="d-flex">
+                        <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                        </a>
+                        <a class="" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+                <img src="../assets/ss-logo.svg" alt="" style="height: 50px;">
+                <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+                <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+                <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
+                            href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Include Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <!-- Include Prism.js language support for JSON -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.js"></script>
+    <script>
+        // Initialize Prism.js
+        Prism.highlightAll();
+    </script>
+
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="./blog.js"></script>
+</body>
+
+</html>
