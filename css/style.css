@@ -246,7 +246,7 @@ a:focus {
     font-weight: 400;
     margin-bottom: 20px;
     font-family: 'IBM Plex Sans', monospace;
-    letter-spacing: 1px;
+    letter-spacing: 1.6px;
 }
 
 .para-light{
@@ -426,7 +426,6 @@ a:focus {
 }
 
 .nav-tabs {
-    text-align: center;
     display: block;
     border-bottom: 0;
     display: flex;
