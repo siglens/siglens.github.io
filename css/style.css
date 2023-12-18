@@ -453,19 +453,27 @@ line-height: 26px;}
 
 /* SigLens Differentiator  */
 
-#siglens-differentiator {
-    margin-top: 100px;
+.carousel-item div {
+    width: 80%;
+    margin: auto;
 }
 
-#siglens-differentiator .vertical-tab{
-    width: 100%;
+.carousel-item h3 {
+    color: var(--purple-0);
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    line-height: 48px;
+    font-family: 'IBM Plex Mono', sans-serif;
+    margin-bottom: 20px;
 }
 
-#siglens-differentiator .tab-content{
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1.2px;
-    line-height: 27px;
+.carousel-item p{
+   color: #d3d3d3;
+   font-size: 17px;
+   font-family: 'Lato', sans-serif;
+   font-weight: 300;
+   letter-spacing: 1.2px;
+   line-height: 27px;
 }
 
 
