@@ -229,11 +229,15 @@ a:focus {
 }
 
 .vertical-tab .tab-content {
-    color: #ACAABF;
+    color: #d3d3d3;
     font-size: 16px;
     border-left: 1px solid var(--ebony-1);
     display: table-cell;
     padding-left: 30px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 300;
+    line-height: 28px;
 }
 
 .vertical-tab .tab-content h3 {
@@ -584,7 +588,7 @@ line-height: 26px;}
     }
     
     .carousel-item p{
-       font-size: 14px;
+       font-size: 16px;
        letter-spacing: 1px;
        line-height: 26px;
     }
@@ -627,7 +631,7 @@ line-height: 26px;}
     }
 
     .vertical-tab .tab-content {
-        font-size: 14px;
+        font-size: 16px;
         display: block;
         padding: 0;
         border: none;
