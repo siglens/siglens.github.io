@@ -4,6 +4,8 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
+    $("body").footer();
+    $("body").header();
 });
 
 function newsletterFormHandler(evt) {
