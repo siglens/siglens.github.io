@@ -1,0 +1,48 @@
+.question-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 70px 250px;
+}
+.ques-box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.ques-box:hover{
+    background-color: #efefef;;
+}
+.company-text,
+.update-text,
+.ques-intro{
+    color: rgb(99 97 97);
+}
+.ques-intro{
+    margin-top: 10px;
+}
+.ques-keywords-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+}
+.question-text{
+    color: rgba(99, 71, 217, 1);
+}
+.keyword-box{
+    background-color: rgb(226 225 227);;
+    margin-right: 15px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.bottom-element{
+    margin-top: 15px;
+    font-size: 15px;
+}
+.question-item{
+    font-size: 20px;
+    font-weight: 600;
+}
