@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  
   $(".section-nav-link").on("click", function(e) {
     e.preventDefault();
     $(".section-nav-link").removeClass("active");
