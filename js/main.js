@@ -4,8 +4,19 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
-    $("body").footer();
-    $("body").header();
+    let filename = window.location.pathname;
+    if (filename.includes("blog")) {
+      $("body").header({
+        activeBlog: "active",
+      });
+      $("body").footer({
+        activeBlog: "active",
+      });
+    } else {
+      $("body").header();
+      $("body").footer();
+    }
+
 });
 
 function newsletterFormHandler(evt) {

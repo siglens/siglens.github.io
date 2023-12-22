@@ -1,6 +1,12 @@
 (function ($) {
-  $.fn.footer = function () {
+  $.fn.footer = function (options) {
+    var defaults = {
+      activeBlog: "",
+    };
+    let setting = $.extend(defaults, options || {});
     // Iterate over each selected element
+    let prefixOne = setting.activeBlog == "active" ? "." : "";
+    let prefixTwoPoint = setting.activeBlog == "active" ? ".." : "";
     return this.each(function () {
       const $footer = $(this);
       const footerHtml = `
@@ -19,8 +25,8 @@
                         <a href="#" class="footer-nav-heading">Community</a>
                         <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
                         <a class="mt-3 pl-2" href="/slack.html">Slack</a>
-                        <a class="mt-3 pl-2" href="/guides.html">Guides</a>
-                        <a class="mt-3 pl-2" href="/questions.html">Questions</a>
+                        <a class="mt-3 pl-2" href="${prefixTwoPoint}/guides.html">Guides</a>
+                        <a class="mt-3 pl-2" href="${prefixTwoPoint}/questions.html">Questions</a>
                     </div>
                 </div>
                 <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
@@ -47,7 +53,7 @@
             </div>
 
             <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
-                <img src="./assets/ss-logo.svg" alt="" style="height: 50px;">
+                <img src="${prefixOne}./assets/ss-logo.svg" alt="" style="height: 50px;">
                 <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
                 <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
                 <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
