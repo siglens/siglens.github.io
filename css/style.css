@@ -139,6 +139,11 @@ a {
     margin-top: 150px;
     background: var(--main-color);
 }
+.video-container video {
+    width: 100%; 
+    height: auto;
+    border-radius: 20px;
+}
 
 .main-gradient {
     top: 65%;
