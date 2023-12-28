@@ -381,14 +381,22 @@ a:focus {
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 30px 40px;
     border-radius: 10px;
-    width: 90%;
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.06);
     line-height:32px;
     margin: auto;
     margin-top: 40px;
     text-align: left;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.fa-clone{
+    right: 20px;
+    cursor: pointer;
+    color: #9772db;
 }
 
 .nav-tabs {
@@ -560,8 +568,13 @@ line-height: 26px;}
 
     .code{
         width: 90%;
-        padding: 10px;
+        padding: 30px 10px 10px 10px;
         font-size: 14px;
+    }
+
+    .fa-clone{
+        top: 10px;
+        right: 10px;
     }
 
     .git-card,.community-card{

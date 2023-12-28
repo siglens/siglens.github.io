@@ -4,6 +4,21 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
+ 
+    // Copy to clipboard functionality
+  $('#copyBtn').click(function() {
+    var codeText = $('.code').text().trim();
+    navigator.clipboard.writeText(codeText)
+
+    $('#copyBtn').tooltip({
+        title: 'Copied!',
+        trigger: 'manual'
+    }).tooltip('show');
+    setTimeout(function() {
+        $('#copyBtn').tooltip('hide');
+    }, 1000);
+    });
+
 });
 
 function newsletterFormHandler(evt) {
