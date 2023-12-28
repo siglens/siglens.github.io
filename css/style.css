@@ -191,7 +191,7 @@ a:focus {
 }
 
 .vertical-tab .tab-content {
-    color: #d3d3d3;
+    color: #d1d1d1;
     font-size: 16px;
     display: table-cell;
     padding-left: 30px;
@@ -205,11 +205,11 @@ a:focus {
 }
 
 .vertical-tab .tab-content h3 {
-    color: var(--purple-0);
-    font-size: 26px;
+    color: #9772db;
+    font-size: 28px;
     font-weight: 400;
     margin-bottom: 20px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Sans', monospace;
     letter-spacing: 1.6px;
 }
 
@@ -381,12 +381,14 @@ a:focus {
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 30px 40px;
     border-radius: 10px;
-    width: 50%;
+    width: 90%;
     background-color: rgba(255, 255, 255, 0.1);
     line-height:32px;
     margin: auto;
     margin-top: 40px;
     text-align: left;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .nav-tabs {
@@ -434,7 +436,7 @@ line-height: 26px;}
 }
 
 .carousel-item h3 {
-    color: var(--purple-0);
+    color: #9772db;
     font-size: 32px;
     letter-spacing: 1.5px;
     line-height: 48px;
@@ -558,7 +560,8 @@ line-height: 26px;}
 
     .code{
         width: 90%;
-        padding: 20px;
+        padding: 10px;
+        font-size: 14px;
     }
 
     .git-card,.community-card{

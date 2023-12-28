@@ -19,23 +19,26 @@
   <link rel="stylesheet" href="css/style.css">
   <!--Meta Tags-->
   <meta name="description"
-    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
+    content="SigLens is an open source alternative to Splunk/DataDog (h2 format)
+    100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://www.sigscalr.io/">
+  <meta property="og:url" content="https://www.siglens.com/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SigScalr - Unified Observability">
+  <meta property="og:title" content="SigLens">
   <meta property="og:description"
-    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
-  <meta property="og:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
+    content="SigLens is an open source alternative to Splunk/DataDog (h2 format)
+    100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+  <meta property="og:image" content="https://www.siglens.com/assets/sig-share-img.png">
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="sigscalr.io">
-  <meta property="twitter:url" content="https://www.sigscalr.io/">
-  <meta name="twitter:title" content="SigScalr - Unified Observability">
+  <meta property="twitter:domain" content="siglens.com">
+  <meta property="twitter:url" content="https://www.siglens.com/">
+  <meta name="twitter:title" content="SigLens">
   <meta name="twitter:description"
-    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
-  <meta name="twitter:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
+    content="SigLens is an open source alternative to Splunk/DataDog (h2 format)
+    100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+  <meta name="twitter:image" content="https://www.siglens.com/assets/sig-share-img.png">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
@@ -150,13 +153,13 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
                   <h3>Full Text Search</h3>
                   <p>
                     Search on any field and any sub-text of your log line. Support for wildcard and regex support.
                   </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
                 </div>
               </div>
               <div class="row">
@@ -173,13 +176,13 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
                   <h3>Fast Ingestion</h3>
                   <p>
                     Innovative MicroIndexing lets your index at lightening fast speeds.
                   </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
                 </div>
               </div>
               <div class="row">
@@ -195,14 +198,14 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
                   <h3>Ingestion Formats</h3>
                   <p>
                     Wide variety of ingestion protocols supported: Open Telemetry, Elasticsearch, Splunk HEC, Loki,
                     Vector, FluentD/FluentBit, Logstash, S3/SQS/SNS, Promtail.
                   </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
                 </div>
               </div>
               <div class="row">
@@ -218,13 +221,13 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
                   <h3>Simple Architecture</h3>
                   <p>
                     Single binary solution that reduces operational burden and increases reliability
                   </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
                 </div>
               </div>
               <div class="row">
@@ -373,15 +376,15 @@
       <div class="main-heading text-center text-white font-weight-light mb-4">Getting Started</div>
       <div class="m-auto text-center">
         <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#binary" role="tab" data-toggle="tab" class="nav-link active">Binary</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a href="#docker" role="tab" data-toggle="tab" class="nav-link">Docker</a>
+            <a href="#docker" role="tab" data-toggle="tab" class="nav-link active">Docker</a>
           </li>
         </ul>
         <div class="tab-content mt-4">
-          <div id="binary" role="tabpanel" class="tab-pane active">
+          <!-- <div id="binary" role="tabpanel" class="tab-pane active">
             <p class="para-light">
               SigLens can be installed on Linux or macOS.
               <br> Click 👉
@@ -394,16 +397,10 @@
               <br>
               ./install_with_binary.sh
             </div>
-          </div>
-          <div id="docker" role="tabpanel" class="tab-pane">
-            <p class="para-light">
-              Click 👉 <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_docker.sh"
-                download=""><strong>here</strong></a> 👈 to download the install script.
-            </p>
+          </div> -->
+          <div id="docker" role="tabpanel" class="tab-pane active">
             <div class="code">
-              chmod +x install_with_docker.sh
-              <br>
-              ./install_with_docker.sh
+              curl -L https://github.com/siglens/siglens/releases/latest/download/install_with_docker.sh | sh
             </div>
           </div>
         </div>
