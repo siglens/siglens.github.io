@@ -4,27 +4,6 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
-    let data = [
-      {
-        title: "How to WhiteList Sigscalr IPs",
-        introduce:
-          "The official documentation provides list of all used Better Stack IPs as well as the User Agent. They are split into regions for easier navigation.",
-        keywords: ["Sigscalr IP", "Logging", "Python"],
-        updateDate: "October 10, 2010",
-        redirectPage: "guides.html",
-      },
-      {
-        title: "dfjgvkndf dfvnfxgl dlfgbflb dglnvdfjv",
-        introduce:
-          "You can use basic confi IPs as well as the User Agent. They are split into regions for easier navigation.",
-        keywords: ["Sigscalr IP", "Logging", "Python"],
-        updateDate: "July 10, 2020",
-        redirectPage: "guides.html",
-      },
-    ];
-    $("#question-list").guide({
-      data: data,
-    });
 });
 
 function newsletterFormHandler(evt) {
