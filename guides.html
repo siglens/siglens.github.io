@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--  Main CSS File -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="component/guide-list/guide-list.css">
     <!--Meta Tags-->
     <meta name="description"
         content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
@@ -81,7 +82,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#getting-started" id="try-now-btn">Try Now</a>
+                        <a href="./index.html#getting-started" id="try-now-btn">Try Now</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -93,9 +94,12 @@
         </div>
     </nav>
   <!-- Landing Section -->
-  <section class="container text-white my-md-5 my-0 h-50 ">
+  <section class="container text-white my-md-5 my-0 h-50 position-relative">
+    <img src="./assets/main-gradient.svg" alt="" class="light-gradient position-absolute">
+
     <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-3 pt-5">Guides</div>
   </section>
+<div id="guide-link-list"></div>
 
     <footer id="footer" class="pb-5">
         <div class="container">
@@ -158,6 +162,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./component/guide-list/guide-list.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
   <link rel="icon" href="/favicon.svg">
 
   <!-- Font-awesome Family -->
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,29 +19,32 @@
   <link rel="stylesheet" href="css/style.css">
   <!--Meta Tags-->
   <meta name="description"
-    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
+    content="SigLens is an open source alternative to Splunk/DataDog
+    100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://www.sigscalr.io/">
+  <meta property="og:url" content="https://www.siglens.com/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SigScalr - Unified Observability">
+  <meta property="og:title" content="SigLens">
   <meta property="og:description"
-    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
-  <meta property="og:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
+    content="SigLens is an open source alternative to Splunk/DataDog
+    100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+  <meta property="og:image" content="https://www.siglens.com/assets/sig-share-img.png">
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="sigscalr.io">
-  <meta property="twitter:url" content="https://www.sigscalr.io/">
-  <meta name="twitter:title" content="SigScalr - Unified Observability">
+  <meta property="twitter:domain" content="siglens.com">
+  <meta property="twitter:url" content="https://www.siglens.com/">
+  <meta name="twitter:title" content="SigLens">
   <meta name="twitter:description"
-    content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
-  <meta name="twitter:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
+    content="SigLens is an open source alternative to Splunk/DataDog
+    100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+  <meta name="twitter:image" content="https://www.siglens.com/assets/sig-share-img.png">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-RGR7MCHV8F');
@@ -51,7 +54,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
     <div class="container">
-      <a class="navbar-brand " href="index.html"> 
+      <a class="navbar-brand " href="index.html">
         <div class="d-flex">
           <div class="pr-1"><img src="./assets/ss-logo.svg" alt=""></div>
           <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
@@ -98,11 +101,16 @@
       <div class="main-heading text-center">
         Industry's Fastest Log Management
       </div>
-      <div class="sub-heading text-center"><strong>100x</strong> Lower Compute and Storage than Splunk, Elastic, Loki</div>
+      <div class="sub-heading text-center"><strong>100x</strong> Lower Compute and Storage than Splunk, Elastic, Loki
+      </div>
     </div>
     <img src="./assets/main-gradient.svg" alt="" class="main-gradient position-absolute">
 
-    <div class="video-container mx-auto"></div>
+    <div class="video-container mx-auto">
+      <video controls autoplay muted loop>
+        <source src="./assets/test_1million.mp4" type="video/mp4">
+      </video>
+    </div>
   </section>
 
   <section class="my-md-5 py-md-5 py-0 my-0">
@@ -111,7 +119,8 @@
       <div class="row d-flex justify-content-center align-items-center px-5">
         <div class="col-md-8 col-12">
           <div class="text-center text-md-left git-text text-white font-weight-light">
-            Open Source single binary with no third party dependencies. Drop-in replacement with many query languages supported.
+            Open Source single binary with no third party dependencies. Drop-in replacement with many query languages
+            supported.
           </div>
         </div>
         <div class="col-md-4 col-12 d-flex justify-content-center align-items-center flex-column mt-md-0 mt-4">
@@ -131,92 +140,106 @@
       <div class="row">
         <div class="col-md-12">
           <div class="vertical-tab" role="tabpanel">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" >
-                <a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="active">Efficient Scale</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Full Text Search</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Query Time Field
-                  Extraction</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section4" aria-controls="messages" role="tab" data-toggle="tab">Fast Ingestion</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section5" aria-controls="messages" role="tab" data-toggle="tab">Query Compatibility</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section6" aria-controls="messages" role="tab" data-toggle="tab">Ingestion Formats</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section7" aria-controls="messages" role="tab" data-toggle="tab">Fast Install</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section8" aria-controls="messages" role="tab" data-toggle="tab">Simple Architecture</a>
-              </li>
-              <li role="presentation">
-                <a href="#Section9" aria-controls="messages" role="tab" data-toggle="tab">Single Pane of Glass</a>
-              </li>
-            </ul>
             <!-- Tab panes -->
             <div class="tab-content tabs">
-              <div role="tabpanel" class="tab-pane active" id="Section1">
-                <h3>Efficient Scale</h3>
-                <p>Scales linearly with your needs. From a work load of 8 TB/day on 8 vCPU to 1 PB/day on 800 vCPU.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h3>Efficient Scale</h3>
+                  <p>Scales linearly with your needs. From a workload of 8 TB/day on 8 vCPU to 1 PB/day on 800 vCPU.</p>
+                </div>
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section2">
-                <h3>Full Text Search</h3>
-                <p>
-                  Search on any field and any sub-text of your log line. Support for wildcard and regex support.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
+                  <h3>Full Text Search</h3>
+                  <p>
+                    Search on any field and any sub-text of your log line. Support for wildcard and regex support.
+                  </p>
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section3">
-                <h3>Query Time Field Extraction</h3>
-                <p>
-                  Create new fields from an existing log line sub-text and use it in later stages of your pipeline query.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h3>Query Time Field Extraction</h3>
+                  <p>
+                    Create new fields from an existing log line sub-text and use it in later stages of your pipeline
+                    query.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section4">
-                <h3>Fast Ingestion</h3>
-                <p>
-                  Innovative MicroIndexing lets your index at lightening fast speeds.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
+                  <h3>Fast Ingestion</h3>
+                  <p>
+                    Innovative MicroIndexing lets your index at lightening fast speeds.
+                  </p>
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section5">
-                <h3>Query Compatibility</h3>
-                <p>
-                  Many query languages supported including Splunk QL, Elastic DSL, SQL, Loki LogQL.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h3>Query Compatibility</h3>
+                  <p>
+                    Many query languages supported including Splunk QL, Elastic DSL, SQL, Loki LogQL.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section6">
-                <h3>Ingestion Formats</h3>
-                <p>
-                  Wide variety of ingestion protocols supported: Open Telemetry, Elasticsearch, Splunk HEC, Loki,
-                  Vector, FluentD/FluentBit, Logstash, S3/SQS/SNS, Promtail.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
+                  <h3>Ingestion Formats</h3>
+                  <p>
+                    Wide variety of ingestion protocols supported: Open Telemetry, Elasticsearch, Splunk HEC, Loki,
+                    Vector, FluentD/FluentBit, Logstash, S3/SQS/SNS, Promtail.
+                  </p>
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section7">
-                <h3>Fast Install</h3>
-                <p>
-                  Quick 1-min install with multiple methods of installation: Binary, Docker, Helm.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h3>Fast Install</h3>
+                  <p>
+                    Quick 1-min install with multiple methods of installation: Binary, Docker, Helm.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section8">
-                <h3>Simple Architecture</h3>
-                <p>
-                  Single binary solution that reduces operational burden and increases reliability
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
+                <div class="col-md-6">
+                  <h3>Simple Architecture</h3>
+                  <p>
+                    Single binary solution that reduces operational burden and increases reliability
+                  </p>
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="Section9">
-                <h3>Single Pane of Glass</h3>
-                <p>
-                  Single UI, Single Database for logs, metrics and traces.
-                </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h3>Single Pane of Glass</h3>
+                  <p>
+                    Single UI, Single Database for logs, metrics and traces.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <!-- Space for image -->
+                </div>
               </div>
             </div>
           </div>
@@ -348,42 +371,37 @@
   </section>
 
   <!-- Getting Started -->
-  <section id="getting-started" class="py-5"> 
+  <section id="getting-started" class="py-5">
     <div class="container getting-started-container">
       <div class="main-heading text-center text-white font-weight-light mb-4">Getting Started</div>
       <div class="m-auto text-center">
         <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#binary" role="tab" data-toggle="tab" class="nav-link active">Binary</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a href="#docker" role="tab" data-toggle="tab" class="nav-link">Docker</a>
+            <a href="#docker" role="tab" data-toggle="tab" class="nav-link active">Docker</a>
           </li>
         </ul>
         <div class="tab-content mt-4">
-          <div id="binary" role="tabpanel" class="tab-pane active">
+          <!-- <div id="binary" role="tabpanel" class="tab-pane active">
             <p class="para-light">
-              SigLens can be installed on Linux or macOS. 
-              <br> Click 👉 
+              SigLens can be installed on Linux or macOS.
+              <br> Click 👉
               <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_binary.sh" download="">
                 <strong>here</strong>
-              </a> 👈 to download the install script.</p>
+              </a> 👈 to download the install script.
+            </p>
             <div class="code">
               chmod +x install_with_binary.sh
               <br>
               ./install_with_binary.sh
             </div>
-          </div>
-          <div id="docker" role="tabpanel" class="tab-pane">
-            <p class="para-light">
-              Click 👉 <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_docker.sh"
-                download=""><strong>here</strong></a> 👈 to download the install script.
-            </p>
-        <div class="code">
-          chmod +x install_with_docker.sh
-          <br>
-          ./install_with_docker.sh
-        </div>
+          </div> -->
+          <div id="docker" role="tabpanel" class="tab-pane active">
+            <div class="code position-relative">curl -L https://siglens.com/install.sh | sh
+              <i class="fa-regular fa-clone position-absolute copy-btn" id="copyBtn" data-toggle="tooltip" ></i>
+            </div>
           </div>
         </div>
       </div>
@@ -395,7 +413,9 @@
     <div class="container position-relative">
       <img src="./assets/gradient-3.svg" alt="" class="light-gradient">
       <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-md-6 col-10 bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center" onclick="redirectToPage('https://github.com/siglens/siglens')">
+        <div
+          class="col-md-6 col-10 bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center"
+          onclick="redirectToPage('https://github.com/siglens/siglens')">
           <div>
             <i class="fa-solid fa-star"></i>
           </div>
@@ -471,19 +491,20 @@
         <img src="./assets/ss-logo.svg" alt="" style="height: 50px;">
         <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
         <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
-        <div>Copyright © 2024 - <strong class="text-white pointer-event"><a href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+        <div>Copyright © 2024 - <strong class="text-white pointer-event"><a href="https://www.sigscalr.io/">SigScalr
+              Inc.</a></strong></div>
       </div>
     </div>
   </footer>
 
   <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 
