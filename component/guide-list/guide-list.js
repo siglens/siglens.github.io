@@ -7,17 +7,23 @@
     };
     let setting = $.extend(defaults, options || {});
     this.append(`
-        <div class="container-guide">
-          <div class="title-column">
-            <div class="navigate-title">Navigation</div>
-            <div class="title-list" id="title-list"></div>
-          </div>
-          <div class="right-block">
-            <div class="item-intro">
-                <span class="title-name" id = "title-name"></span>
-                <span class="basic-intro" id = "basic-intro"></span>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <div class="title-column">
+                <div class="navigate-title">Navigation</div>
+                <div class="title-list" id="title-list"></div>
+              </div>
             </div>
-            <div class="detailed-list" id = "detailed-list">
+            <div class="col-md-8 col-12 mt-5 mt-md-0">
+              <div>
+                <div class="item-intro">
+                    <span class="title-name" id = "title-name"></span>
+                    <span class="basic-intro" id = "basic-intro"></span>
+                </div>
+                <div class="detailed-list" id = "detailed-list">
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -52,7 +58,7 @@
               console.log("cone in");
               $(`#detailed-link-list-${index}`).append(`
             <div class="link-info remove-line" id="link-info-${index}-${innerIndex}">
-                <div>
+                <div class="d-flex">
                   <img class="description-img" src="./assets/description.svg">
                   <span class="link-title">${innerValue.itemHead}</span>
                 </div>

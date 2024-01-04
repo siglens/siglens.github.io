@@ -4,7 +4,7 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
-    let titleList = ["ElasticSearch", "Logs"];
+    let titleList = ["ElasticSearch", "Logging"];
     let data = [
       {
         title: "ElasticSearch",
@@ -23,7 +23,7 @@ $(document).ready(() => {
         ],
       },
       {
-        title: "2222",
+        title: "Logging",
         // basicIntro: "Basic intro",
         detailedList: [
           {
