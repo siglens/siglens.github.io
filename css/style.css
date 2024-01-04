@@ -606,3 +606,29 @@ line-height: 26px;}
         border: none;
     }
 }
+.cmd-box {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.cmd-title {
+    width: 60%;
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    color: white;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', monospace;
+    letter-spacing: 0.03em;
+    font-size: 16;
+}
+
+.ingest-Cmd {
+    margin-top: 10px;
+}
+
+.cmd-title::before {
+    content: "\00a0";
+}

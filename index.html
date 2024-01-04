@@ -399,10 +399,17 @@
             </div>
           </div> -->
           <div id="docker" role="tabpanel" class="tab-pane active">
-            <div class="code position-relative">curl -L https://siglens.com/install.sh | sh
+            <div class="code position-relative"><span id="intall-text">curl -L https://siglens.com/install.sh | sh</span>
               <i class="fa-regular fa-clone position-absolute copy-btn" id="copyBtn" data-toggle="tooltip" ></i>
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <span class="cmd-title">To send test data, run below cmd</span>
+        <div class="code position-relative ingest-Cmd" id="generate-data">
+          <span class="cmd-box" id="cmd-box">curl -L https://siglens.com/send10kevents.sh | sh</span>
+          <i class="fa-regular fa-clone position-absolute copy-btn" id="copyCmdBtn" data-toggle="tooltip"></i>
         </div>
       </div>
     </div>
