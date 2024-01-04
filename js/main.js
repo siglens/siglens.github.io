@@ -51,7 +51,7 @@ $(document).ready(() => {
 
 });
 function copyInstallCmd() {
-  let text = $("#intall-text").text();
+  let text = $("#install-text").text();
   copyToClipboard(text);
 }
 function copyGenerateTextCmd() {
