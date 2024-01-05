@@ -136,11 +136,9 @@ html {
 /*Mobile Devices*/
 
 @media (max-width: 767.98px) {
-    .bc{
-        width: fit-content;
-    }
     .bgi{
-        background-size: 100%;
+        background-size: cover;
+        margin: 0px;
     }
     .main-heading {
         font-size: 32px;
