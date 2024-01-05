@@ -1,5 +1,5 @@
 (function ($) {
-  $.fn.guide = function (options) {
+  $.fn.question = function (options) {
     // Iterate over each selected element
     var defaults = {
       data: [],

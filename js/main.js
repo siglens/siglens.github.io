@@ -4,49 +4,6 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
-    let titleList = ["ElasticSearch", "Logs"];
-    let data = [
-      {
-        title: "ElasticSearch",
-        // basicIntro:"Basic intro",
-        detailedList: [
-          {
-            title: "",
-            linkList: [
-              {
-                itemHead: "Elasticsearch Index and Replica Management",
-                itemTime: "6 min",
-                redirectPage: "questions.html",
-              }
-            ],
-          }
-        ],
-      },
-      {
-        title: "2222",
-        // basicIntro: "Basic intro",
-        detailedList: [
-          {
-            title: "",
-            linkList: [
-              {
-                itemHead: "Logging Frameworks in Python",
-                itemTime: "6 min",
-              },
-              {
-                itemHead: "Logging Frameworks in Go",
-                itemTime: "4 min",
-              },
-            ],
-          }
-        ],
-      },
-    ];
-    $("#guide-link-list").guide({
-      titleList: titleList,
-      data: data,
-    });
-
 });
 
 function newsletterFormHandler(evt) {
