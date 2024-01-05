@@ -4,7 +4,56 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
+    $("#copyBtn").on("click", copyInstallCmd);
+    $("#copyCmdBtn").on("click", copyGenerateTextCmd);
+
 });
+function copyInstallCmd() {
+  let text = $("#install-text").text();
+  copyToClipboard(text);
+  var checkMark = document.getElementById("check-mark");
+  checkMark.classList.remove("show");
+  checkMark.classList.add("show");
+  checkMark.addEventListener(
+    "transitionend",
+    function () {
+      checkMark.classList.remove("show");
+    },
+    { once: true }
+  );
+  var disappearingImage = document.getElementById("copyBtn");
+  disappearingImage.classList.add("disappear");
+  setTimeout(function () {
+    disappearingImage.classList.remove("disappear");
+  }, 1000);
+}
+function copyGenerateTextCmd() {
+  let text = $("#cmd-box").text();
+  copyToClipboard(text);
+  var checkMark = document.getElementById("check-mark-data");
+  checkMark.classList.remove("show");
+  checkMark.classList.add("show");
+  checkMark.addEventListener(
+    "transitionend",
+    function () {
+      checkMark.classList.remove("show");
+    },
+    { once: true }
+  );
+  var disappearingImage = document.getElementById("copyCmdBtn");
+  disappearingImage.classList.add("disappear");
+  setTimeout(function () {
+    disappearingImage.classList.remove("disappear");
+  }, 1000);
+}
+function copyToClipboard(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
 
 function newsletterFormHandler(evt) {
     evt.preventDefault();
