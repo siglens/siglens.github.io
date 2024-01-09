@@ -6,7 +6,7 @@
     };
     let setting = $.extend(defaults, options || {});
     this.append(
-      `<div class="question-container" id="question-container"></div>`
+      `<div class="container" id="question-container"></div>`
     );
     setting.data.forEach((value, index) => {
       $(`#question-container`).append(`
