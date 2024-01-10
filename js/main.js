@@ -120,7 +120,6 @@ function renderGuidesList(){
   let guidesData = [
     {
       title: "ElasticSearch",
-      // basicIntro:"Basic intro",
       detailedList: [
         {
           title: "",
@@ -136,7 +135,6 @@ function renderGuidesList(){
     },
     {
       title: "2222",
-      // basicIntro: "Basic intro",
       detailedList: [
         {
           title: "",
