@@ -149,12 +149,6 @@ function renderGuidesList(){
               itemTime: "4 min",
               redirectPage: "../guides/logging-frameworks-go.html",
             },
-            {
-              itemHead: "Logging Frameworks in Java",
-              itemTime: "6 min",
-              redirectPage: "../guides/logging-frameworks-java.html",
-
-            },
           ],
         }
       ],
