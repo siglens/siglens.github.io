@@ -27,11 +27,11 @@
     <!-- Include Prism.js CSS -->
     <link rel="stylesheet" href="./dark-theme-prismjs.css">
 
-    <link rel="canonical" href="https://www.siglens.com/blog/siglens-1024x-faster-than-elasticsearch.html">
+    <link rel="canonical" href="https://www.siglens.com/blog/siglens-1025x-faster-than-elasticsearch.html">
     <!--OG Tags-->
-    <meta property="og:url" content="https://www.siglens.com/blog/siglens-1024x-faster-than-elasticsearch.html" />
-    <meta property="og:title" content="SigLens 1024x faster than Elasticsearch" />
-    <meta property="og:description" content="SigLens - 1024x faster than Elasticsearch. Reduce your observability costs by 90%" />
+    <meta property="og:url" content="https://www.siglens.com/blog/siglens-1025x-faster-than-elasticsearch.html" />
+    <meta property="og:title" content="SigLens 1025x faster than Elasticsearch" />
+    <meta property="og:description" content="SigLens - 1025x faster than Elasticsearch. Reduce your observability costs by 90%" />
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-elasticsearch.png" />
     <meta property="og:image:secure_url"
@@ -47,7 +47,7 @@
     <meta name="twitter:site" content="@siglens.com" />
     <meta name="twitter:image" content="https://www.siglens.com/assets/siglens-vs-elasticsearch.png">
     </meta>
-    <meta name="twitter:image:alt" content="SigLens 1024x faster than Elasticsearch" />
+    <meta name="twitter:image:alt" content="SigLens 1025x faster than Elasticsearch" />
     <style>
         .sub-heading {
             margin-top: 24px !important;
@@ -55,6 +55,55 @@
         }
         .yellow{
             color: #DDDE54 !important;
+        }
+
+        #try-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #11beb0, #49d880);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+        #github-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #161828, #333B64);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+        #try-siglens-btn:hover,  #github-siglens-btn:hover{
+            cursor: pointer;
+            transform: translateY(-3px) scale(1.005) translateZ(0);
+            box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
+            transition: all 0.3s ease-out;
+        }
+        #github-siglens-btn .fa-github{
+                font-size: 20px !important;
+        }
+
+        #section8 .blog-para {
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        #section8 .heading {
+            font-size: 10px;
+        }
+
+        @media (max-width: 767.98px) {
+            #github-siglens-btn,#try-siglens-btn {
+                padding: 6px 14px;
+                font-size: 16px;
+            }
+            #github-siglens-btn .fa-github{
+                font-size: 16px !important;
+            }
         }
     </style>
 </head>
@@ -214,7 +263,7 @@
                                         The queries used were as follows:
                                     </p>
                                     <ul>
-                                        <li>Q1: Find the total number of rides.
+                                        <li>Q1: Find the total number of rides. <span class="foot-note">(Note 1)</span>
                                         </li>
                                         <li>Q2: Find the average ride cost grouped by the number of passengers.
                                         </li>
@@ -224,10 +273,6 @@
                                             location, and trip distance.
                                         </li>
                                     </ul>
-                                    <p class="mt-2 courier-font note"><b>Note:</b>Query 1 is a little different than Query 1 for SigLens.
-                                        This is because Elasticsearch was unable to perform an aggregation on the `airport_fee` column because it was ingested as a text field. So instead, this Query 1 aggregates on the `improvement_surcharge` field.
-                                        This should be comparable because the `airport_fee` column only has one bucket, while the `improvement_surcharge` column has only 2, and one of those only accounts for 360 rows of the more than 1 billion rows in the dataset.
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -355,7 +400,7 @@ python siglens/tools/nyc-taxi-benchmark/parquet_to_tsv.py . .</code></pre>
                                 from the input_dir and convert them to tsv files and put them in output_dir.
                             </div>
                             <div class="my-3">
-                                Elasticsearch will use the TSV files, but for SigLens we'll use JSON. Let’s convert the
+                                Elasticsearch and SigLens both will use JSON. Let’s convert the
                                 tsv
                                 files to json now. Put the below content in some bash file and run it or run the
                                 below
@@ -419,16 +464,28 @@ discovery.type: single-node</code></pre>
                             </h2>
                             <div class="blog-para mt-2">
                                 We will use 6 shards so that we get better write and read performance. We will also disable replication to increase performance. Additionally let’s setup the timestamp field.
-                                <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:<your-elastic-password>" --location --request PUT 'https://<server-ip>:9200/_template/temp1' \ --header 'Content-Type: application json' \ --data-raw '{
-"index_patterns": "trips",
-"settings": { "number_of_shards": 6, "number_of_replicas": 0 },
-"mappings": {
-"_source": { "enabled": true },
-"properties": {
-"timestamp": { "type": "date", "format": "epoch_millis" }
-}
-}
-}'</code></pre>
+                                <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:" \
+    --location \
+    --request PUT 'https://<your_elasticsearch_host>:9200/_template/temp1' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "index_patterns": "trips",
+        "settings": {
+            "number_of_shards": 6,
+            "number_of_replicas": 0
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "timestamp": {
+                    "type": "date",
+                    "format": "epoch_millis"
+                }
+            }
+        }
+    }'</code></pre>
                             </div>
                         </div>
                         <div>
@@ -459,67 +516,74 @@ cd siglens/tools/nyc-taxi-benchmark</code></pre>
                             </ul>
                             Now download and ingest the data:
                             <pre class="language-javascript"><code class="language-javascript">mkdir dataset
+
 for year in {2011..2017}; do
-for month in {01..12}; do{
-basefile="yellow_tripdata_$year-$month"
-aws s3 cp s3://siglens-benchmark-datasets/nyc-taxi-benchmark-data/json/$basefile.json.gz dataset/
-gunzip dataset/$basefile.json.gz
-python3 ingester.py dataset/$basefile.json
-} &
-done
-wait
+    for month in {01..12}; do
+        {
+            basefile="yellow_tripdata_$year-$month"
+            aws s3 cp s3://siglens-benchmark-datasets/nyc-taxi-benchmark-data/json/$basefile.json.gz dataset/
+            gunzip dataset/$basefile.json.gz
+            python3 ingester.py dataset/$basefile.json
+        } &
+    done
+    wait
 done</code></pre>
                         <div>
                             <h2 class="sub-heading mt-2 section" id="section4-8">Run the Queries in Elasticsearch
                             </h2>To get benchmark results, we had to clear the Elasticsearch cache after every query. Otherwise, if we ran a query multiple times then the first time would take a while but every subsequent invocation would return much faster than the original search because it was returning the cached response. To clear the cache, run:
                             <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:<your-elastic-password>" -X POST "https://<server-ip>:9200/trips/_cache/clear"</code></pre>
                               The following should indicate 265 unique values.
-                              <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" -H 'Content-Type: application/json' -d '{
-"size": 0,
-"aggs": {
-"distinct_PULocationID": {
-"cardinality": {
-"field": "PULocationID"
-}
-}
-}
-}' | python3 -m json.tool
-                              </code></pre>Now let’s run the actual queries.
-                              <p>The responses will have a took field, indicating how long the query took in milliseconds.</p>
-                              <pre class="language-javascript"><code class="language-javascript"># Query 1
-SELECT airport_fee, count(*) FROM trips GROUP BY airport_fee
-curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" -H 'Content-Type: application/json' -d '{
-"size": 0,
-"aggs": {
-"improvement_surcharge_groups": {
-    "terms": {
-    "field": "improvement_surcharge",
-    "size": 10
-    },
-"aggs": {
-"count": {
-"value_count": {
-"field": "improvement_surcharge"
+                              <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" 
+    -H 'Content-Type: application/json'
+    -d '{
+        "size": 0,
+        "aggs": {
+            "distinct_PULocationID": {
+                "cardinality": {
+                    "field": "PULocationID"
                 }
             }
         }
-    }
-}
-}' | python3 -m json.tool | less
-                                
+    }' | python3 -m json.tool
+                              </code></pre>Now let’s run the actual queries.
+                              <p>The responses will have a took field, indicating how long the query took in milliseconds.</p>
+                              <pre class="language-javascript"><code class="language-javascript"># Query 1
+curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" 
+    -H 'Content-Type: application/json' 
+    -d '{
+        "size": 0,
+        "aggs": {
+            "improvement_surcharge_groups": {
+                "terms": {
+                    "field": "improvement_surcharge",
+                    "size": 10
+                },
+                "aggs": {
+                    "count": {
+                        "value_count": {
+                            "field": "improvement_surcharge"
+                        }
+                    }
+                }
+            }
+        }
+    }' | python3 -m json.tool | less
+                               
 # Query 2
-curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" -H 'Content-Type: application/json' -d '{
-    "size": 0,
-    "aggs": {
-    "passenger_count_groups": {
-            "terms": {
-            "field": "passenger_count",
-            "size": 36
+curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" 
+    -H 'Content-Type: application/json' 
+    -d '{
+        "size": 0,
+        "aggs": {
+            "passenger_count_groups": {
+                "terms": {
+                    "field": "passenger_count",
+                    "size": 36
             },
-   "aggs": {
-    "average_total_amount": {
-            "avg": {
-            "field": "total_amount"
+            "aggs": {
+                "average_total_amount": {
+                    "avg": {
+                        "field": "total_amount"
                     }
                 }
             }
@@ -528,62 +592,67 @@ curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_se
 }' | python3 -m json.tool | less
                                 
 # Query 3
-curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" -H 'Content-Type: application/json' -d '{
-"size": 0,
-"aggs": {
-    "passenger_count_groups": {
-        "terms": {
-            "field": "passenger_count",
-            "size": 36
+curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" 
+    -H 'Content-Type: application/json' 
+    -d '{
+        "size": 0,
+        "aggs": {
+            "passenger_count_groups": {
+                "terms": {
+                    "field": "passenger_count",
+                    "size": 36
                 },
-    "aggs": {
-        "PULocationID_groups": {
-            "terms": {
-                "field": "PULocationID",
-                "size": 265
+                "aggs": {
+                    "PULocationID_groups": {
+                        "terms": {
+                            "field": "PULocationID",
+                            "size": 265
+                        }
                     }
                 }
             }
         }
-    }
-}' | python3 -m json.tool | less
+    }' | python3 -m json.tool | less
                                 
 # Query 4
 # For this query we don't want more than 10,000 buckets, so we'll reduce the "size" parameters.
-curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" -H 'Content-Type: application/json' -d '{
-    "size": 0,
-    "aggs": {
-        "passenger_count_groups": {
-            "terms": {
-                "field": "passenger_count",
-                "size": 10
+curl -k -u "elastic:<your-elastic-password>" "https://<server-ip>:9200/trips/_search" 
+    -H 'Content-Type: application/json' 
+    -d '{
+        "size": 0,
+        "aggs": {
+            "passenger_count_groups": {
+                "terms": {
+                    "field": "passenger_count",
+                    "size": 10
                 },
             "aggs": {
                 "PULocationID_groups": {
                     "terms": {
                         "field": "PULocationID",
                         "size": 10
-                            },
-                        "aggs": {
-                            "trip_distance_groups": {
+                    },
+                    "aggs": {
+                        "trip_distance_groups": {
                             "terms": {
-                            "field": "trip_distance",
-                            "size": 100
-                                },
+                                "field": "trip_distance",
+                                "size": 100
+                            },
                             "aggs": {
-                            "count": {
-                            "value_count": {
-                            "field": "trip_distance"
+                                "count": {
+                                    "value_count": {
+                                        "field":
+                                        "trip_distance"
+                                        }
                                     }
                                 }
                             }
-                       }
+                        }
                     }
                 }
             }
         }
-    }
-}' | python3 -m json.tool | less</code></pre>
+    }' | python3 -m json.tool | less</code></pre>
                         </div>
                         <div>
                             <h2 class="sub-heading mt-2 section" id="section4-9">Elasticsearch Query Results
@@ -889,21 +958,12 @@ curl -X POST -d '{
                             <h1 class="heading">Try SigLens in less than 1 minute
                             </h1>
                             <div class="blog-para mt-3">
-                                SigLens gets installed in less than a minute with docker or helm chart. 
-                                <p>
-                                    Give it a try and experience the difference. 
-                                    <button style="display: flex; align-items: center; justify-content: center; background-color: green; color: white; padding:8px; border-radius: 6px;">
-                                        <a style="color: white; text-decoration: none;" href="https://www.siglens.com/#getting-started?utm_source=web&utm_medium=social&utm_campaign=sigvses" target="_blank">
-                                            Try SigLens
-                                        </a>
-                                    </button>
-                                </p>
-                                <p>
-                                    <a href="https://github.com/siglens/siglens?utm_source=web&utm_medium=social&utm_campaign=sigvses">
-                                        GitHub Repo
-                                    </a>
-                                </p>
-                                    
+                                SigLens gets installed in less than a minute with docker or helm chart. Give it a try
+                                and experience the difference.
+                            </div>
+                            <div class="d-flex flex-column flex-md-row align-items-center">
+                                <div id="try-siglens-btn" onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">Try SigLens</div>
+                                <div id="github-siglens-btn" class="ml-md-5" onclick="redirectToPage('https://github.com/siglens/siglens')"><i class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub Repo</div>
                             </div>
                         </div>
                     </div>
@@ -923,6 +983,10 @@ curl -X POST -d '{
                                 something is incorrect please submit an issue or a pull request at <a
                                     href="https://github.com/siglens/siglens?utm_source=web&utm_medium=social&utm_campaign=sigvses">https://github.com/siglens/siglens</a>.
                             </div>
+                            <p class="mt-2 courier-font note blog-para"><b>Note 1: </b>Query 1 is a little different than Query 1 for SigLens.
+                                This is because Elasticsearch was unable to perform an aggregation on the `airport_fee` column because it was ingested as a text field. So instead, this Query 1 aggregates on the `improvement_surcharge` field.
+                                This should be comparable because the `airport_fee` column only has one bucket, while the `improvement_surcharge` column has only 2, and one of those only accounts for 360 rows of the more than 1 billion rows in the dataset.
+                            </p>
                         </div>
                     </div>
                 </div>
