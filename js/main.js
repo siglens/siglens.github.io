@@ -112,6 +112,7 @@ function newsletterFormHandler(evt) {
 }
 
 function redirectToPage(url) {
+  window.location.href = url;
 }
 
 function renderGuidesList(){

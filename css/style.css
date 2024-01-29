@@ -285,6 +285,7 @@ a:focus {
     color: var(--ebony-1);
     font-weight: 200;
     position: relative;
+    font-size: 16px;
 }
 
 #footer form input {
@@ -590,6 +591,9 @@ line-height: 26px;}
     #footer{
         margin-top: 60px;
         padding-top: 40px;
+    }
+    #footer .footer-links a {
+    margin-right: 26px;
     }
 
     .vertical-tab{

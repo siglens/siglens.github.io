@@ -53,8 +53,58 @@
             margin-top: 24px !important;
             margin-bottom: 12px !important;
         }
-        .yellow{
+
+        .yellow {
             color: #DDDE54 !important;
+        }
+
+        #try-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #11beb0, #49d880);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+        #github-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #161828, #333B64);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+        #try-siglens-btn:hover,  #github-siglens-btn:hover{
+            cursor: pointer;
+            transform: translateY(-3px) scale(1.005) translateZ(0);
+            box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
+            transition: all 0.3s ease-out;
+        }
+        #github-siglens-btn .fa-github{
+                font-size: 20px !important;
+        }
+
+        #section8 .blog-para {
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        #section8 .heading {
+            font-size: 10px;
+        }
+
+        @media (max-width: 767.98px) {
+            #github-siglens-btn,#try-siglens-btn {
+                padding: 6px 14px;
+                font-size: 16px;
+            }
+            #github-siglens-btn .fa-github{
+                font-size: 16px !important;
+            }
         }
     </style>
 </head>
@@ -129,60 +179,63 @@
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section1">Overview of the
                                     test, dataset
                                 </a></li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section2">ClickHouse</a>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Introductions of
+                                    the databases</a>
                             </li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section3">SigLens</a>
-                            </li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Test
+                            <ul class="sub-navbar flex-column">
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-1">ClickHouse</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-2">SigLens</a></li>
+                            </ul>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section3">Test
                                     Setup</a></li>
                             <ul class="sub-navbar flex-column">
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-1">Common steps for
+                                <li class="nav-item"><a class="section-nav-link" href="#section3-1">Common steps for
                                         both</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-2">Cleanup and
+                                <li class="nav-item"><a class="section-nav-link" href="#section3-2">Cleanup and
                                         Prepare Dataset
                                     </a></li>
                             </ul>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section5">Benchmark
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Benchmark
                                     ClickHouse</a></li>
                             <ul class="sub-navbar flex-column">
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-1">Install
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-1">Install
                                         ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-2">Configure the
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-2">Configure the
                                         ClickHouse data folder</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-3">Run
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-3">Run
                                         ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-4">Make the
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-4">Make the
                                         ClickHouse Table</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-5">Ingest Data into
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-5">Ingest Data into
                                         ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-6">Run Queries
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-6">Run Queries
                                         against ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section5-7">ClickHouse Query
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-7">ClickHouse Query
                                         Results</a></li>
                             </ul>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section6">Benchmark
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section5">Benchmark
                                     SigLens</a></li>
                             <ul class="sub-navbar flex-column">
-                                <li class="nav-item"><a class="section-nav-link" href="#section6-1">Install Go and
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-1">Install Go and
                                         SigLens</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section6-2">Prepare Agile
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-2">Prepare Agile
                                         Aggregations</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section6-3">Ingest data into
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-3">Ingest data into
                                         SigLens</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section6-4">Run Queries
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-4">Run Queries
                                         against SigLens</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section6-5">SigLens Query
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-5">SigLens Query
                                         Results:</a></li>
                             </ul>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section7">Result
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section6">Result
                                     Comparison
                                 </a>
                             </li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section8  ">
-                                    Efficient, Faster Log Management
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section7">
+                                Try SigLens
                                 </a>
                             </li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section9">Benchmark
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section8">Benchmark
                                     Questions?</a></li>
                         </ul>
                     </nav>
@@ -237,28 +290,35 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h2 class="heading mt-2 section" id="section2"> ClickHouse:
-                        </h2>
-                        <div class="mt-2">ClickHouse is a column oriented database. It offers compressions over each
-                            column yielding significant savings on storage. Its SQL based query engine is quite fast and
-                            answers queries in milliseconds. Increasingly many observability companies are using it as a
-                            backend database for storing logs, metrics and traces.
+                    <div id="section2" class="section mt-4">
+                        <h1 class="heading">Introductions of the databases
+                        </h1>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-1"> ClickHouse:
+                            </h2>
+                            <div class="mt-2">ClickHouse is a column oriented database. It offers compressions over each
+                                column yielding significant savings on storage. Its SQL based query engine is quite fast
+                                and
+                                answers queries in milliseconds. Increasingly many observability companies are using it
+                                as a
+                                backend database for storing logs, metrics and traces.
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-2"> SigLens:
+                            </h2>
+                            <p class="mt-2 mb-2">SigLens is a column oriented database built from scratch for
+                                observability
+                                data. It
+                                offers dynamic compressions over each column requiring zero configuration.
+                            </p>
+                            <p>SigLens uses
+                                columnar micro indices that are 1/100th size of an actual database index.
+                                This reduces the number of machines needed. SigLens uses AgileAggregationTree algorithm
+                                that makes aggregations queries run at sub-second speeds. </p>
                         </div>
                     </div>
-                    <div>
-                        <h2 class="heading mt-2 section" id="section3"> SigLens:
-                        </h2>
-                        <p class="mt-2">SigLens is a column oriented database built from scratch for observability
-                            data. It
-                            offers dynamic compressions over each column requiring zero configuration.
-                        </p>
-                        <p>SigLens uses
-                            columnar micro indices that are 1/100th size of an actual database index.
-                            This reduces the number of machines needed. SigLens uses AgileAggregationTree algorithm
-                            that makes aggregations queries run at sub-second speeds. </p>
-                    </div>
-                    <div id="section4" class="section mt-4">
+                    <div id="section3" class="section mt-4">
                         <div>
                             <h1 class="heading">Test Setup
                             </h1>
@@ -276,7 +336,7 @@
                             </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-1"> Common steps for both:
+                            <h2 class="sub-heading mt-2 section" id="section3-1"> Common steps for both:
                             </h2>
                             <p class="blog-para mt-2">Setup the server, mount the storage, configure aws s3 cli by
                                 following these steps:
@@ -331,7 +391,7 @@ tmpfs            3.1G  4.0K  3.1G   1% /run/user/1000
 aws configure</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-2"> Cleanup and Prepare Dataset:
+                            <h2 class="sub-heading mt-2 section" id="section3-2"> Cleanup and Prepare Dataset:
                             </h2>
                             <p class="mt-2 courier-font note"><b>Note:</b> You can skip this step and use our s3
                                 bucket. It
@@ -382,13 +442,13 @@ wait</code></pre>
                             </div>
                         </div>
                     </div>
-                    <div id="section5" class="section">
+                    <div id="section4" class="section">
                         <div>
                             <h1 class="heading">Benchmark ClickHouse
                             </h1>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-1">Install ClickHouse
+                            <h2 class="sub-heading mt-2 section" id="section4-1">Install ClickHouse
                             </h2>
                             <div>We will use the precompiled apt packages for ClickHouse and install them.
                             </div>
@@ -413,7 +473,7 @@ sudo apt-get install -y clickhouse-server clickhouse-client</code></pre>
                                 password.</div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-2">Configure the ClickHouse data
+                            <h2 class="sub-heading mt-2 section" id="section4-2">Configure the ClickHouse data
                                 folder
                             </h2>
                             <div class="blog-para">
@@ -428,13 +488,13 @@ sudo apt-get install -y clickhouse-server clickhouse-client</code></pre>
                             </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-3">Run ClickHouse
+                            <h2 class="sub-heading mt-2 section" id="section4-3">Run ClickHouse
                             </h2>
                             <pre
                                 class="language-javascript"><code class="language-javascript">sudo service clickhouse-server start</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-4">Make the ClickHouse Table
+                            <h2 class="sub-heading mt-2 section" id="section4-4">Make the ClickHouse Table
                             </h2>
                             We will use the ClickHouse client to create a table.
                             <pre
@@ -464,7 +524,7 @@ ORDER BY (tpep_pickup_datetime)
 SETTINGS index_granularity=8192</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-5">Ingest Data into ClickHouse
+                            <h2 class="sub-heading mt-2 section" id="section4-5">Ingest Data into ClickHouse
                             </h2>
                             Let’s start ingesting data into ClickHouse. We will use the compressed tsv files we created
                             earlier and let ClickHouse download it from the S3 bucket.
@@ -503,7 +563,7 @@ FROM s3(
 
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-6">Run Queries against ClickHouse
+                            <h2 class="sub-heading mt-2 section" id="section4-6">Run Queries against ClickHouse
                             </h2>
                             Now let’s run the exact same SQL queries that we ran earlier.
                             <pre class="language-javascript"><code class="language-javascript"># Query 1
@@ -518,7 +578,7 @@ FROM trips
 GROUP BY passenger_count, PULocationID, trip_distance</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section5-7">ClickHouse Query Results
+                            <h2 class="sub-heading mt-2 section" id="section4-7">ClickHouse Query Results
                             </h2>
                             We ran each query for 5 times, and took the lowest number from those runs.
                             <div class="my-4 table-div">
@@ -572,7 +632,7 @@ GROUP BY passenger_count, PULocationID, trip_distance</code></pre>
                             </div>
                         </div>
                     </div>
-                    <div id="section6" class="section">
+                    <div id="section5" class="section">
                         <div>
                             <h1 class="heading">Benchmark SigLens
                             </h1>
@@ -589,7 +649,7 @@ GROUP BY passenger_count, PULocationID, trip_distance</code></pre>
                             </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section6-1">Install Go and SigLens
+                            <h2 class="sub-heading mt-2 section" id="section5-1">Install Go and SigLens
                             </h2>
                             <div>
                                 SigLens is built in golang. In this step we will install the go dependencies, install
@@ -613,7 +673,7 @@ INFO[2023-12-06 18:10:38] ----- Siglens Query server starting on 0.0.0.0:5122 --
 INFO[2023-12-06 18:10:38] ----- Siglens UI starting on 0.0.0.0:5122 -----</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section6-2">Prepare Agile Aggregations
+                            <h2 class="sub-heading mt-2 section" id="section5-2">Prepare Agile Aggregations
                             </h2>
                             In a continuous running ingest, you don’t need to do this step. However, since this is a
                             static dataset ingestion, we need to set up the aggregations columns. SigLens creates
@@ -635,7 +695,7 @@ echo ""</code></pre>
                                 class="language-javascript"><code class="language-javascript">{"message":"All OK","status":200}</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section6-3">Ingest data into SigLens
+                            <h2 class="sub-heading mt-2 section" id="section5-3">Ingest data into SigLens
                             </h2>
                             <div class="blog-para mb-3">
                                 Now let's ingest some data into SigLens. In Terminal 2 run
@@ -658,7 +718,7 @@ mkdir dataset</code></pre>
 done</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section6-4">Run Queries against SigLens
+                            <h2 class="sub-heading mt-2 section" id="section5-4">Run Queries against SigLens
                             </h2>
                             <div class="blog-para mb-3">
                                 Run the following in Terminal 3. If Terminal 3 is on your local machine, make sure
@@ -703,7 +763,7 @@ curl -X POST -d '{
 }' http://localhost:5122/api/search | python3 -m json.tool</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section6-5">SigLens Query Results:
+                            <h2 class="sub-heading mt-2 section" id="section5-5">SigLens Query Results:
                             </h2>
                             <div>We ran each query for 5 times, and took the lowest number from those runs.
                             </div>
@@ -759,7 +819,7 @@ curl -X POST -d '{
                         </div>
                     </div>
 
-                    <div id="section7" class="section">
+                    <div id="section6" class="section">
                         <div>
                             <h1 class="heading">Result Comparison
                             </h1>
@@ -816,25 +876,25 @@ curl -X POST -d '{
                             </div>
                         </div>
                     </div>
-                    <div id="section8" class="section mt-4">
+                    <div id="section7" class="section mt-4">
                         <div>
-                            <h1 class="heading">Efficient, Faster Log Management
+                            <h1 class="heading">Try SigLens in less than 1 minute
                             </h1>
                             <div class="blog-para mt-3">
-                                Rapidly escalating log volumes are placing an undue strain on critical hardware
-                                resources, leading to soaring hosting costs. The imperative for cost reduction is top of
-                                mind for everyone. SigLens presents an effective solution, slashing infrastructure costs
-                                by over 90% without compromising on query response times. Experience the difference with
-                                SigLens: <a
-                                    href="https://github.com/siglens/siglens">https://github.com/siglens/siglens</a>
+                                SigLens gets installed in less than a minute with docker or helm chart. Give it a try
+                                and experience the difference.
+                            </div>
+                            <div class="d-flex flex-column flex-md-row align-items-center">
+                                <div id="try-siglens-btn" onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">Try SigLens</div>
+                                <div id="github-siglens-btn" class="ml-md-5" onclick="redirectToPage('https://github.com/siglens/siglens')"><i class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub Repo</div>
                             </div>
                         </div>
                     </div>
-                    <div id="section9" class="section mt-4">
+                    <div id="section8" class="section mt-4">
                         <div>
                             <h1 class="heading">Benchmark Questions?
                             </h1>
-                            <div class="blog-para mt-3">
+                            <div class="blog-para mt-2">
                                 Both of these databases
                                 were
                                 given the exact same treatment, there was no unfair advantage given to SigLens. You
