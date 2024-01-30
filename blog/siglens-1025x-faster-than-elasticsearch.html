@@ -263,7 +263,7 @@
                                         The queries used were as follows:
                                     </p>
                                     <ul>
-                                        <li>Q1: Find the total number of rides. <span class="foot-note">(Note 1)</span>
+                                        <li>Q1: Find the total number of rides.<span class="foot-note"></span>
                                         </li>
                                         <li>Q2: Find the average ride cost grouped by the number of passengers.
                                         </li>
@@ -281,14 +281,15 @@
                         <h2 class="heading mt-2 section" id="section2"> Introductions of the databases
                         </h2>
                         <div>
-                        <h3 class="heading mt-2 section" id="section2-1">Elasticsearch:</h3>
+                        <h2 class="sub-heading mt-2 section" id="section2-1"> Elasticsearch:
+                        </h2>
                         <div class="mt-2">Elasticsearch is a distributed, open-source search and analytics engine. It offers a schema-free JSON document store for diverse data types. It supports complex queries and aggregations. Widely used for log and event data analysis by observability companies. It offers powerful full-text search capabilities and integrates with various data sources. 
                         </div>
                     </div>
                     </div>
                     <div>
-                        <h3 class="heading mt-2 section" id="section2-2"> SigLens:
-                        </h3>
+                        <h2 class="sub-heading mt-2 section" id="section2-2"> SigLens:
+                        </h2>
                         <p class="mt-2">SigLens is a column oriented database built from scratch for observability
                             data. It
                             offers dynamic compressions over each column requiring zero configuration.
@@ -428,7 +429,8 @@ wait</code></pre>
                             </h1>
                         </div>
                         <div class="blog-para">
-                            You'll want two terminals in your Elasticsearch server; the first will run Elasticsearch and the second will ingest data. Start with Terminal 1.</div>
+                            You'll want two terminals in your Elasticsearch server; the first will run Elasticsearch and the second will ingest data. Start with Terminal 1.
+                        </div>
                         <div>
                             <h2 class="sub-heading mt-2 section" id="section4-1">Download Elasticsearch
                             </h2>
@@ -528,6 +530,7 @@ for year in {2011..2017}; do
     done
     wait
 done</code></pre>
+                        </div>
                         <div>
                             <h2 class="sub-heading mt-2 section" id="section4-8">Run the Queries in Elasticsearch
                             </h2>To get benchmark results, we had to clear the Elasticsearch cache after every query. Otherwise, if we ran a query multiple times then the first time would take a while but every subsequent invocation would return much faster than the original search because it was returning the cached response. To clear the cache, run:
@@ -983,7 +986,7 @@ curl -X POST -d '{
                                 something is incorrect please submit an issue or a pull request at <a
                                     href="https://github.com/siglens/siglens?utm_source=web&utm_medium=social&utm_campaign=sigvses">https://github.com/siglens/siglens</a>.
                             </div>
-                            <p class="mt-2 courier-font note blog-para"><b>Note 1: </b>Query 1 is a little different than Query 1 for SigLens.
+                            <p class="mt-2 courier-font note blog-para"><b>*  </b>Query 1 is a little different than Query 1 for SigLens.
                                 This is because Elasticsearch was unable to perform an aggregation on the `airport_fee` column because it was ingested as a text field. So instead, this Query 1 aggregates on the `improvement_surcharge` field.
                                 This should be comparable because the `airport_fee` column only has one bucket, while the `improvement_surcharge` column has only 2, and one of those only accounts for 360 rows of the more than 1 billion rows in the dataset.
                             </p>
