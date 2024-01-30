@@ -76,7 +76,6 @@ body {
 .foot-note::after{
     content:'*';
     color: rgb(124, 58, 237);
-    background-color: rgba(237, 233, 254, 0.5);
 }
 
 /*Single Blog Post*/
