@@ -732,7 +732,7 @@ done</code></pre>
                             </div>
                             <pre class="language-javascript"><code class="language-javascript">curl -X POST -d '{
     "searchText": "SELECT airport_fee, count(*) FROM trips GROUP BY airport_fee",
-    "index": "trips",
+    "indexName": "trips",
     "startEpoch": "now-24h",
     "endEpoch": "now",
     "queryLanguage": "SQL"
@@ -740,7 +740,7 @@ done</code></pre>
 
 curl -X POST -d '{
     "searchText": "SELECT passenger_count, avg(total_amount) FROM trips GROUP BY passenger_count",
-    "index": "trips",
+    "indexName": "trips",
     "startEpoch": "now-24h",
     "endEpoch": "now",
     "queryLanguage": "SQL"
@@ -748,7 +748,7 @@ curl -X POST -d '{
 
 curl -X POST -d '{
     "searchText": "SELECT passenger_count, PULocationID, count(*) FROM trips GROUP BY passenger_count, PULocationID",
-    "index": "trips",
+    "indexName": "trips",
     "startEpoch": "now-24h",
     "endEpoch": "now",
     "queryLanguage": "SQL"
@@ -756,7 +756,7 @@ curl -X POST -d '{
 
 curl -X POST -d '{
     "searchText": "SELECT passenger_count, PULocationID, trip_distance, count(*) FROM trips GROUP BY passenger_count, PULocationID, trip_distance",
-    "index": "trips",
+    "indexName": "trips",
     "startEpoch": "now-24h",
     "endEpoch": "now",
     "queryLanguage": "SQL"
