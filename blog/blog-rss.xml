@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>SigLens Blog</title>
+  <link>https://www.siglens.com/blog/allblogs.html</link>
+  <description>A collection of insightful articles on SigLens technologies, Observability and Logs.</description>
+  <language>en-us</language>
+  <lastBuildDate>Tue, 06 Feb 2024 12:00:00 GMT</lastBuildDate> <!-- Update this date to the last content update -->
+
+  <image>
+    <url>https://www.siglens.com/assets/ss-logo.svg</url> 
+    <title>SigLens Blog</title>
+    <link>https://www.siglens.com/blog/allblogs.html</link>
+  </image>
+
+  <item>
+    <title>Here are 6 Reasons Why Logs are Awesome</title>
+    <link>https://www.siglens.com/blog/why-logs-are-awesome.html</link>
+    <description>Explore the critical role of logging in monitoring the health and performance of increasingly complex software systems. This blog delves into the essentials of logs as the cornerstone of observability, addressing their management challenges and scalability in distributed environments. Discover various log types, practical logging use cases, and how they compare to other observability data to troubleshoot problems, identify performance bottlenecks, and ensure security.</description>
+    <pubDate>Mon, 23 Oct 2023 14:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/why-logs-are-awesome.html</guid>
+  </item>
+
+  <item>
+    <title>Observability Needs A Reboot</title>
+    <link>https://www.siglens.com/blog/observability-challenges.html</link>
+    <description>Observability solutions have not kept up with growing needs of digitization and cloud growth. They do not address the needs of the new demands of customers, and are too expensive for many. There exists a significant disparity between the needs of observability solution users and the services offered by vendors. Having used these solutions for over a decade, I have observed these issues firsthand and will be discussing them in this blog.</description>
+    <pubDate>Tue, 07 Nov 2023 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/observability-challenges.html</guid>
+  </item>
+
+  <item>
+    <title>Petabyte of Observability Data</title>
+    <link>https://www.siglens.com/blog/petabyte-of-observability-data.html</link>
+    <description>Discover SigScalr, our revolutionary technology that redefines data volume management by seamlessly ingesting 1 PB of data daily with sub-second query performance, all at an incredibly low cost. Learn how SigScalr stands out from traditional platforms with its unparalleled scalability and efficiency, offering a cost-effective solution to your observability data challenges. Dive into the details of our testing process and the impressive results achieved. Interested in transforming your data handling capabilities? Contact us for more details or to book a demo.</description>
+    <pubDate>Mon, 04 Dec 2023 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/petabyte-of-observability-data.html</guid>
+  </item>
+
+  <item>
+    <title>SigLens 54x faster than Clickhouse</title>
+    <link>https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html</link>
+    <description>SigLens beats ClickHouse by a staggering 54x in the NYC Taxi Dataset performance test. This test resulted in processing 1 billion records and SigLens performed magnitudes faster than ClickHouse.
+In this blog we outline the detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset along with tuning systems settings. Let’s dive in.</description>
+    <pubDate>Wed, 24 Jan 2024 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html</guid>
+  </item>
+
+  <item>
+    <title>SigLens 1025x faster than ElasticSearch</title>
+    <link>https://www.siglens.com/blog/siglens-1025x-faster-than-elasticsearch.html</link>
+    <description>SigLens beats Elasticsearch by an astounding 1025x in the NYC Taxi Dataset performance test. This test resulted in processing 1 billion records and SigLens performed magnitudes faster than Elasticsearch.
+In this blog, we outlined the detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset along with tuning systems settings. Let’s explore it.</description>
+    <pubDate>Tue, 30 Jan 2024 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/siglens-1025x-faster-than-elasticsearch.html</guid>
+  </item>
+
+</channel>
+</rss>
