@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>SigLens Blog</title>
   <link>https://www.siglens.com/blog/allblogs.html</link>
@@ -7,8 +7,10 @@
   <language>en-us</language>
   <lastBuildDate>Tue, 06 Feb 2024 12:00:00 GMT</lastBuildDate> <!-- Update this date to the last content update -->
 
+  <atom:link href="https://www.siglens.com/blog/rss.xml" rel="self" type="application/rss+xml" />
+
   <image>
-    <url>https://www.siglens.com/assets/ss-logo.svg</url> 
+    <url>https://www.socallinuxexpo.org/sites/default/files/logos/siglens.png</url> 
     <title>SigLens Blog</title>
     <link>https://www.siglens.com/blog/allblogs.html</link>
   </image>
