@@ -31,14 +31,13 @@
     <!--OG Tags-->
     <meta property="og:url" content="https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html" />
     <meta property="og:title" content="SigLens 54x faster than ClickHouse" />
-    <meta property="og:description" content="SigLens - 54x faster than ClickHouse. Reduce your observability costs by 90%" />
+    <meta property="og:description"
+        content="SigLens - 54x faster than ClickHouse. Reduce your observability costs by 90%" />
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
-    <meta property="og:image:secure_url"
-        content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
+    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
     <meta property="og:image:type" content="image/jpg" />
-    <meta name="image" property="og:image"
-        content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    <meta name="image" property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
 
@@ -68,6 +67,7 @@
             font-weight: 500;
             box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
         }
+
         #github-siglens-btn {
             margin-top: 20px;
             background: linear-gradient(270deg, #161828, #333B64);
@@ -78,14 +78,17 @@
             font-weight: 500;
             box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
         }
-        #try-siglens-btn:hover,  #github-siglens-btn:hover{
+
+        #try-siglens-btn:hover,
+        #github-siglens-btn:hover {
             cursor: pointer;
             transform: translateY(-3px) scale(1.005) translateZ(0);
             box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
             transition: all 0.3s ease-out;
         }
-        #github-siglens-btn .fa-github{
-                font-size: 20px !important;
+
+        #github-siglens-btn .fa-github {
+            font-size: 20px !important;
         }
 
         #section8 .blog-para {
@@ -98,11 +101,14 @@
         }
 
         @media (max-width: 767.98px) {
-            #github-siglens-btn,#try-siglens-btn {
+
+            #github-siglens-btn,
+            #try-siglens-btn {
                 padding: 6px 14px;
                 font-size: 16px;
             }
-            #github-siglens-btn .fa-github{
+
+            #github-siglens-btn .fa-github {
                 font-size: 16px !important;
             }
         }
@@ -232,7 +238,7 @@
                                 </a>
                             </li>
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section7">
-                                Try SigLens
+                                    Try SigLens
                                 </a>
                             </li>
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section8">Benchmark
@@ -885,8 +891,13 @@ curl -X POST -d '{
                                 and experience the difference.
                             </div>
                             <div class="d-flex flex-column flex-md-row align-items-center">
-                                <div id="try-siglens-btn" onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">Try SigLens</div>
-                                <div id="github-siglens-btn" class="ml-md-5" onclick="redirectToPage('https://github.com/siglens/siglens')"><i class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub Repo</div>
+                                <div id="try-siglens-btn"
+                                    onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">
+                                    Try SigLens</div>
+                                <div id="github-siglens-btn" class="ml-md-5"
+                                    onclick="redirectToPage('https://github.com/siglens/siglens')"><i
+                                        class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub
+                                    Repo</div>
                             </div>
                         </div>
                     </div>
@@ -956,8 +967,14 @@ curl -X POST -d '{
                         <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
                             <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
                         </a>
-                        <a class="" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                        <a class="mr-4" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
                             <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                        <a class="" href="https://www.siglens.com/blog/blog-rss.xml" target="_blank"
+                            title="Subscribe to RSS feed">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-rss"></i>
+                            </div>
                         </a>
                     </div>
                 </div>
