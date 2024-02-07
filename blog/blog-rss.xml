@@ -70,5 +70,16 @@ In this blog, we outlined the detailed steps of this benchmark. You will learn i
     <media:content url="https://www.siglens.com/assets/siglens-vs-elasticsearch.png" type="image/png" />
   </item>
 
+  <item>
+    <title>SigLens Vs Clickhouse</title>
+    <link>https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html</link>
+    <description><![CDATA[<img src="https://www.siglens.com/assets/siglens-vs-clickhouse.png" alt="Featured Image for SligLens Vs ClickHouse" /> <p>SigLens beats ClickHouse by a staggering 54x in the NYC Taxi Dataset performance test. This test resulted in processing 1 billion records and SigLens performed magnitudes faster than ClickHouse.
+In this blog we outline the detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset along with tuning systems settings. Let’s dive in.</p>]]></description>
+    <pubDate>Wed, 24 Jan 2024 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/siglens-vs-clickhouse.html</guid>
+    <enclosure url="https://www.siglens.com/assets/siglens-vs-clickhouse.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/siglens-vs-clickhouse.png" type="image/png" />
+  </item>
+
 </channel>
 </rss>
