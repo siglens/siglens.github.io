@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
 <channel>
   <title>SigLens Blog</title>
   <link>https://www.siglens.com/blog/allblogs.html</link>
@@ -8,6 +8,9 @@
   <lastBuildDate>Tue, 06 Feb 2024 12:00:00 GMT</lastBuildDate> <!-- Update this date to the last content update -->
 
   <atom:link href="https://www.siglens.com/blog/blog-rss.xml" rel="self" type="application/rss+xml" />
+
+  <webfeeds:cover image="https://www.socallinuxexpo.org/sites/default/files/logos/siglens.png" />
+  <webfeeds:icon>https://www.siglens.com/assets/ss-logo.svg</webfeeds:icon>
 
   <image>
     <url>https://www.socallinuxexpo.org/sites/default/files/logos/siglens.png</url> 
@@ -22,15 +25,17 @@
     <pubDate>Mon, 23 Oct 2023 14:00:00 GMT</pubDate>
     <guid>https://www.siglens.com/blog/why-logs-are-awesome.html</guid>
     <enclosure url="https://www.siglens.com/assets/why-logs-are-awesome/blog-cover.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/why-logs-are-awesome/blog-cover.png" type="image/png" />
   </item>
 
   <item>
     <title>Observability Needs A Reboot</title>
     <link>https://www.siglens.com/blog/observability-challenges.html</link>
-    <description><![CDATA[<img src="https://www.siglens.com/assets/observability-challenges-blog-img.svg" alt="Featured Image for Observalibility Challenges" /> <p>Observability solutions have not kept up with growing needs of digitization and cloud growth. They do not address the needs of the new demands of customers, and are too expensive for many. There exists a significant disparity between the needs of observability solution users and the services offered by vendors. Having used these solutions for over a decade, I have observed these issues firsthand and will be discussing them in this blog.</p>]]></description>
+    <description><![CDATA[<img src="https://www.siglens.com/assets/observability-challenges-blog-img.png" alt="Featured Image for Observalibility Challenges" /> <p>Observability solutions have not kept up with growing needs of digitization and cloud growth. They do not address the needs of the new demands of customers, and are too expensive for many. There exists a significant disparity between the needs of observability solution users and the services offered by vendors. Having used these solutions for over a decade, I have observed these issues firsthand and will be discussing them in this blog.</p>]]></description>
     <pubDate>Tue, 07 Nov 2023 11:00:00 GMT</pubDate>
     <guid>https://www.siglens.com/blog/observability-challenges.html</guid>
-    <enclosure url="https://www.siglens.com/assets/observability-challenges-blog-img.svg" type="image/svg" />
+    <enclosure url="https://www.siglens.com/assets/observability-challenges-blog-img.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/observability-challenges-blog-img.png" type="image/png" />
   </item>
 
   <item>
@@ -40,6 +45,7 @@
     <pubDate>Mon, 04 Dec 2023 11:00:00 GMT</pubDate>
     <guid>https://www.siglens.com/blog/petabyte-of-observability-data.html</guid>
     <enclosure url="https://www.siglens.com/assets/petabyte-blog-cover.jpg" type="image/jpeg" />
+    <media:content url="https://www.siglens.com/assets/petabyte-blog-cover.jpg" type="image/jpeg" />
   </item>
 
   <item>
@@ -50,6 +56,7 @@ In this blog we outline the detailed steps of this benchmark. You will learn ing
     <pubDate>Wed, 24 Jan 2024 11:00:00 GMT</pubDate>
     <guid>https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html</guid>
     <enclosure url="https://www.siglens.com/assets/siglens-vs-clickhouse.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/siglens-vs-clickhouse.png" type="image/png" />
   </item>
 
   <item>
@@ -60,6 +67,7 @@ In this blog, we outlined the detailed steps of this benchmark. You will learn i
     <pubDate>Tue, 30 Jan 2024 11:00:00 GMT</pubDate>
     <guid>https://www.siglens.com/blog/siglens-1025x-faster-than-elasticsearch.html</guid>
     <enclosure url="https://www.siglens.com/assets/siglens-vs-elasticsearch.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/siglens-vs-elasticsearch.png" type="image/png" />
   </item>
 
 </channel>
