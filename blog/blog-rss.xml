@@ -70,5 +70,16 @@ In this blog, we outlined the detailed steps of this benchmark. You will learn i
     <media:content url="https://www.siglens.com/assets/siglens-vs-elasticsearch.png" type="image/png" />
   </item>
 
+  <item>
+    <title>SigLens 92,928x faster than Loki</title>
+    <link>https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html</link>
+    <description><![CDATA[<img src="https://www.siglens.com/assets/siglens-vs-loki.png" alt="Featured Image for SigLens Vs Loki" /> <p>SigLens beats Grafana Loki by a sensational 92928x in the NYC Taxi Dataset performance test. This test resulted in processing 1 billion records and SigLens performed magnitudes faster than Grafana Loki.
+In this blog, we outlined the detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset along with tuning systems settings. Let’s explore it.</p>]]></description>
+    <pubDate>Mon, 12 Feb 2024 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html</guid>
+    <enclosure url="https://www.siglens.com/assets/siglens-vs-loki.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/siglens-vs-loki.png" type="image/png" />
+  </item>
+
 </channel>
 </rss>
