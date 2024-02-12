@@ -49,6 +49,7 @@
      padding: 1.5em 1.5em;
      margin: 1em 0;
      overflow: auto;
+     max-width: 703px;
  }
  
  :not(pre) > code[class*='language-'] {

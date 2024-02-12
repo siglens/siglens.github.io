@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigLens | SigLens 92,928x faster than Grafana Loki</title>
+    <link rel="icon" href="../favicon.svg">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Font-awesome Family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Include Prism.js CSS -->
+    <link rel="stylesheet" href="./dark-theme-prismjs.css">
+
+    <link rel="canonical" href="https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html">
+    <!--OG Tags-->
+    <meta property="og:url" content="https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html" />
+    <meta property="og:title" content="SigLens 92,928x faster than Grafana Loki" />
+    <meta property="og:description"
+        content="SigLens - 92,928x faster than Grafana Loki. Reduce your observability costs by 90%" />
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
+    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta name="image" property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+
+    <!--Twitter OG Tag-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@siglens.com" />
+    <meta name="twitter:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    </meta>
+    <meta name="twitter:image:alt" content="SigLens 92,928x faster than Grafana Loki" />
+    <style>
+        .sub-heading {
+            margin-top: 24px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .yellow {
+            color: #DDDE54 !important;
+        }
+
+        #try-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #11beb0, #49d880);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+
+        #github-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #161828, #333B64);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+
+        #try-siglens-btn:hover,
+        #github-siglens-btn:hover {
+            cursor: pointer;
+            transform: translateY(-3px) scale(1.005) translateZ(0);
+            box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
+            transition: all 0.3s ease-out;
+        }
+
+        #github-siglens-btn .fa-github {
+            font-size: 20px !important;
+        }
+
+        #section8 .blog-para {
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        #section8 .heading {
+            font-size: 10px;
+        }
+
+        @media (max-width: 767.98px) {
+
+            #github-siglens-btn,
+            #try-siglens-btn {
+                padding: 6px 14px;
+                font-size: 16px;
+            }
+
+            #github-siglens-btn .fa-github {
+                font-size: 16px !important;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+        <div class="container">
+            <a class="navbar-brand " href="../index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt=""></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
+                            target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                            <a class="dropdown-item" href="../guides.html">Guides</a>
+                            <a class="dropdown-item" href="../questions.html">Questions</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="../assets/github.svg" width="26" height="26" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-md-5 pt-5 my-2 blog-post">
+
+
+        <div class="container-md">
+            <img class="mt-3 ss-vs-ch" src="../assets/siglens-vs-clickhouse.png" />
+            <div class="d-flex">
+                <div id="sidebar">
+                    <nav id="sidebar-nav">
+                        <ul class="nav flex-column">
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section0">
+                                    <h5>Article Navigator</h5>
+                                </a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section1">Overview of the
+                                    test, dataset
+                                </a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Introductions of
+                                    the databases</a>
+                            </li>
+                            <ul class="sub-navbar flex-column">
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-1">Grafana Loki</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-2">SigLens</a></li>
+                            </ul>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section3">Test
+                                    Setup</a></li>
+                            <ul class="sub-navbar flex-column">
+                                <li class="nav-item"><a class="section-nav-link" href="#section3-1">Common steps for
+                                        both</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section3-2">Cleanup and
+                                        Prepare Dataset
+                                    </a></li>
+                            </ul>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Benchmark
+                                    Grafana Loki</a></li>
+                            <ul class="sub-navbar flex-column">
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-1">Install Loki and Promtail</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-2">Update the default configurations</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-3">Run
+                                        Loki and Promtail</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-4">Ingest the Data</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-5">Run the Queries in Loki</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-6">Grafana Loki Query
+                                        Results</a></li>
+                            </ul>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section5">Benchmark
+                                    SigLens</a></li>
+                            <ul class="sub-navbar flex-column">
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-1">Install Go and
+                                        SigLens</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-2">Prepare Agile
+                                        Aggregations</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-3">Ingest data into
+                                        SigLens</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-4">Run Queries
+                                        against SigLens</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section5-5">SigLens Query
+                                        Results:</a></li>
+                            </ul>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section6">Result
+                                    Comparison
+                                </a>
+                            </li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section7">
+                                    Try SigLens
+                                </a>
+                            </li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section8">Benchmark
+                                    Questions?</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="all-sections" class="container-md">
+                    <div id="section0" class="d-flex flex-column align-items-center">
+                        <div class="para-bold mb-2 mt-4">
+                            SigLens beats Grafana Loki by a sensational <strong style="font-size: 20px;">92,928x</strong>in the NYC Taxi Dataset performance test. This test resulted in processing 1 billion records and SigLens performed magnitudes faster than Loki.
+                        </div>
+                        <div class="para-bold mb-3">
+                            In this blog, we outlined the detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset along with tuning systems settings. Let’s explore it.
+                        </div>
+                    </div>
+                    <div id="section1" class="section">
+                        <div>
+                            <h1 class="heading">Overview of the test, dataset
+                            </h1>
+                            <div>
+                                <div class="blog-para">
+                                    <p class="mt-2">The objective of this benchmark is to assess performance of these
+                                        two databases under conditions mirroring real world scenarios. Our approach
+                                        involves
+                                        running both databases on identical hardware configurations, ingesting identical
+                                        dataset and running the same set of queries. For this reason we opted for the
+                                        NYC
+                                        Taxi Dataset.
+                                    </p>
+                                    <p>
+                                        The NYC Taxi Dataset is a massive dataset of over 1 Billion trips made by NYC
+                                        Taxis and Uber, all originating in New York City since 2009.
+                                    </p>
+                                    <p class="mt-2 mb-2">
+                                        The queries used were as follows:
+                                    </p>
+                                    <ul>
+                                        <li>Q1: Find the total number of rides.
+                                        </li>
+                                        <li>Q2: Find the average ride cost grouped by the number of passengers.
+                                        </li>
+                                        <li>Q3: Find the number of rides grouped by the number of passengers and the
+                                            pick-up location.</li>
+                                        <li>Q4: Find the number of rides grouped by the number of passengers, pick-up
+                                            location, and trip distance.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section2" class="section mt-4">
+                        <h1 class="heading">Introductions of the databases
+                        </h1>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-1"> Grafana Loki:
+                            </h2>
+                            <div class="mt-2">Loki is a Prometheus inspired multi-tenant, highly available, horizontally scalable log aggregation system. In contrast to Prometheus, Loki collects logs using push rather than pull methods and places more emphasis on logs than metrics.<p>Loki simply indexes metadata about your logs, such as a set of labels for each log stream, not the actual contents of the logs. Loki-based logging stack consists of 3 components viz. Agent ( for example, Promtail), Loki (main server) and Grafana.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-2"> SigLens:
+                            </h2>
+                            <p class="mt-2 mb-2">SigLens is a column oriented database built from scratch for
+                                observability
+                                data. It
+                                offers dynamic compressions over each column requiring zero configuration.
+                            </p>
+                            <p>SigLens uses
+                                columnar micro indices that are 1/100th size of an actual database index.
+                                This reduces the number of machines needed. SigLens uses AgileAggregationTree algorithm
+                                that makes aggregations queries run at sub-second speeds. </p>
+                        </div>
+                    </div>
+                    <div id="section3" class="section mt-4">
+                        <div>
+                            <h1 class="heading">Test Setup
+                            </h1>
+                            <div>
+                                <div class="blog-para mt-2">
+                                    We used an AWS <span class="courier-font">im4gn.2xlarge</span> instance for both
+                                    SigLens and ClickHouse, it had the following hardware configuration:
+                                    <ul>
+                                        <li>8 vCPUs</li>
+                                        <li>32 GB of RAM</li>
+                                        <li>3.5 TB of storage</li>
+                                        <li>10 Gigabit networking</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section3-1"> Common steps for both:
+                            </h2>
+                            <p class="blog-para mt-2">Setup the server, mount the storage, configure aws s3 cli by
+                                following these steps:
+                            </p>
+
+                            <p><b>Step 1:</b> Let’s find out if the NVM storage device is present on this server. To
+                                find that, ssh into your server and run <span class="courier-font">lsblk</span>.
+                                You
+                                should see something like the following, with the <span
+                                    class="courier-font">nvme1n1</span> item having 3.4 TB of storage.</p>
+                            <div class="position-relative">
+                                <pre><code class="language-javascript">NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0          7:0    0  21.3M  1 loop /snap/amazon-ssm-agent/7529
+loop1          7:1    0  49.1M  1 loop /snap/core18/2794
+loop2          7:2    0  59.3M  1 loop /snap/core20/2019
+loop3          7:3    0 109.6M  1 loop /snap/lxd/24326
+loop4          7:4    0  35.5M  1 loop /snap/snapd/20102
+nvme0n1      259:0    0     8G  0 disk
+├─nvme0n1p1  259:2    0   7.9G  0 part /
+└─nvme0n1p15 259:3    0    99M  0 part /boot/efi
+nvme1n1      259:1    0   3.4T  0 disk</code></pre>
+                            </div>
+                            <p class="mt-4"><b>Step 2:</b> Let’s mount the storage device and create directories.</p>
+                            <pre class="language-javascript"><code class="language-javascript">sudo mkfs.xfs /dev/nvme1n1
+sudo mkdir /mnt/nvme1n1
+sudo mount /dev/nvme1n1 /mnt/nvme1n1</code></pre>
+                            <p class="mt-4"><b>Step 3:</b> Verify Storage
+                            </p>
+                            <p> You can check that it's mounted by running <span class="courier-font">df -h</span>
+                                and
+                                you should see something like this:</p>
+                            <pre data-line="1-3"><code class="language-javascript">Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        7.6G  1.5G  6.2G  20% /
+tmpfs             16G     0   16G   0% /dev/shm
+tmpfs            6.2G  948K  6.2G   1% /run
+tmpfs            5.0M     0  5.0M   0% /run/lock
+/dev/nvme0n1p15   98M  6.3M   92M   7% /boot/efi
+tmpfs            3.1G  4.0K  3.1G   1% /run/user/1000
+/dev/nvme1n1     3.5T   25G  3.4T   1% /mnt/nvme1n1</code></pre>
+                            <p class="mt-4"><b>Step 4:</b> Update Permissions
+                            </p>
+                            <pre
+                                class="language-javascript"><code class="language-javascript">sudo chmod 777 /mnt/nvme1n1</code></pre>
+                            <p class="mt-4"><b>Step 5:</b> Configure AWS CLI
+                                <br>
+                            <p class="courier-font note"><b>Note:</b> This AWS config step is only needed if you are
+                                using a
+                                private
+                                S3 bucket, if you use our public S3 bucket you can skip this step.</p>
+                            </p>
+                            <pre class="language-javascript"><code class="language-javascript">sudo apt-get install awscli -y
+aws configure</code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section3-2"> Cleanup and Prepare Dataset:
+                            </h2>
+                            <p class="mt-2 courier-font note"><b>Note:</b> You can skip this step and use our s3
+                                bucket. It
+                                has
+                                the dataset in the correct format. If you want to prepare the dataset yourself then
+                                follow these steps else jump directly to the benchmark step to use our s3 bucket.
+                            </p>
+                            <pre class="language-javascript"><code class="language-javascript">mkdir -p /mnt/nvme1n1/data
+cd /mnt/nvme1n1/data</code></pre>
+                            <div class="my-3">
+                                Download the dataset from <a
+                                    href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page</a>
+                                into above dir. We used the 2011-2017 yellow taxi trip parquet files
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section4" class="section">
+                        <div>
+                            <h1 class="heading">Benchmark Grafana Loki
+                            </h1>
+                        </div>
+                        <div>
+                            <div><p>You'll want three terminals. Terminal 1 will run Loki, Terminal 2 will run Promtail, and Terminal 3 will run ingestion and queries.</p></div>
+                            <h2 class="sub-heading mt-2 section" id="section4-1">Install Loki and Promtail
+                            </h2>
+                            <pre class="language-javascript"><code class="language-javascript">sudo apt install unzip -y
+
+mkdir /mnt/nvme1n1/loki
+cd /mnt/nvme1n1/loki
+                                
+curl -O -L "https://github.com/grafana/loki/releases/download/v2.9.4/loki-linux-arm64.zip"
+unzip loki-linux-arm64.zip
+chmod a+x loki-linux-arm64
+                                
+curl -O -L "https://github.com/grafana/loki/releases/download/v2.9.4/promtail-linux-arm64.zip"
+unzip promtail-linux-arm64.zip
+chmod a+x promtail-linux-arm64
+                                
+ wget https://raw.githubusercontent.com/grafana/loki/v2.9.4/cmd/loki/loki-local-config.yaml
+wget https://raw.githubusercontent.com/grafana/loki/v2.9.4/clients/cmd/promtail/promtail-local-config.yaml
+</code></pre>
+                                <h2 class="sub-heading mt-2 section" id="section4-2">Update the default configurations
+                                </h2>
+                            <div class="blog-para mt-4">In <span class="courier-font">loki-local-config.yaml</span>, update these configurations with these new values:</div>
+                            <pre class="language-javascript"><code class="language-javascript">path_prefix: /mnt/nvme1n1/loki/internal/path
+chunks_directory: /mnt/nvme1n1/loki/internal/chunks
+rules_directory: /mnt/nvme1n1/loki/internal/rules                                
+                                </code></pre>
+                                <div>Increase the timeout limit by adding these into the <span class="courier-font">server</span> section:</div>
+                                <pre class="language-javascript"><code class="language-javascript">http_server_read_timeout: 12h
+http_server_write_timeout: 12h
+                                    </code></pre>
+                                    <div>Add this to your config to avoid ingestion throttling and increase the number of buckets that queries are allowed to return.</div>
+                                    <pre class="language-javascript"><code class="language-javascript">limits_config:
+    per_stream_rate_limit: 4G
+    per_stream_rate_limit_burst: 4G
+    ingestion_rate_mb: 4096
+    ingestion_burst_size_mb: 4096
+    max_query_series: 1000000
+    query_timeout: 12h               
+                                        </code></pre>
+                                        <div>In <span class="courier-font">promtail-local-config.yaml</span> change <span class="courier-font">__path__</span> to:</div>
+                                        <pre class="language-javascript"><code class="language-javascript">__path__: /mnt/nvme1n1/data/*.json
+                                            </code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section4-3">Run Loki and Promtail
+                            </h2>
+                            <div class="blog-para">In Terminal 1, start Loki with:
+                                <pre class="language-javascript"><code class="language-javascript">./loki-linux-arm64 -config.file=loki-local-config.yaml</code>
+                                </pre>
+                            </div>
+                            <div class="blog-para mt-2">
+                                In Terminal 2, start Promtail with:
+                                    <pre class="language-javascript"><code class="language-javascript">./promtail-linux-arm64 -config.file=promtail-local-config.yaml</code>
+                                    </pre>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section4-4">Ingest the Data
+                            </h2>
+                            <div>In Terminal 3, run:</div>
+                            <pre
+                                class="language-javascript"><code class="language-javascript">mkdir /mnt/nvme1n1/data
+cd /mnt/nvme1n1/data
+                                    
+for year in {2011..2017}; do
+    for month in {01..12}; do
+        basefile="yellow_tripdata_$year-$month"
+                                    
+        aws s3 cp s3://siglens-benchmark-datasets/nyc-taxi-benchmark-data/json/$basefile.json.gz .
+        gunzip $basefile.json.gz
+    done
+done
+                                    </code></pre>
+                                    Since Promtail is already running and configured to ingest all JSON files in this data/ directory, it will start ingesting the logs. You can check the progress of the ingestion with this bash:
+                            <pre
+                                class="language-javascript"><code class="language-javascript">total=$(curl -s http://localhost:9080/metrics | grep -v '^#' | awk '/promtail_file_bytes_total/ {sum += $2} END {print sum}'); \
+ingested=$(curl -s http://localhost:9080/metrics | grep -v '^#' | awk '/promtail_read_bytes_total/ {sum += $2} END {print sum}'); \
+percent=$(echo "$ingested $total" | awk '{printf "%.2f\n", ($1 / $2) * 100}'); \
+echo "percent ingested: $percent%"
+                                    </code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section4-5">Run the Queries in Loki
+                            </h2>
+                            <div>After ingestion is complete, run the queries.</div>
+                            <pre class="language-javascript"><code class="language-javascript"># Query 1
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=sum(count_over_time({job=\"varlogs\"} | json [24h])) by (airport_fee)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                
+# Query 2
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=avg_over_time({job=\"varlogs\"} | json | unwrap total_amount [24h]) by (passenger_count)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                
+# Query 3
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=sum(count_over_time({job=\"varlogs\"} | json [24h])) by (passenger_count, PULocationID)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                
+# Query 4
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=sum(count_over_time({job=\"varlogs\"} | json [24h])) by (passenger_count, PULocationID, trip_distance)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                </code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section4-6">Grafana Loki Query Results
+                            </h2>
+                            We ran each query for 5 times, and took the lowest number of all those runs.
+                            <div class="my-4 table-div">
+                                <table class="ShapeDataTable query-result-table">
+                                    <tr>
+                                        <td></td>
+                                        <td class="yellow">Try 1</td>
+                                        <td class="yellow">Try 2</td>
+                                        <td class="yellow">Try 3</td>
+                                        <td class="yellow">Try 4</td>
+                                        <td class="yellow">Try 5</td>
+                                        <td class="yellow"><b>Lowest</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q1</b></td>
+                                        <td>2,95,679 ms</td>
+                                        <td>2,92,636 ms</td>
+                                        <td>2,83,091 ms</td>
+                                        <td>2,81,638 ms</td>
+                                        <td>2,79,073 ms</td>
+                                        <td><b>2,79,073 ms</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q2</b></td>
+                                        <td>39,98,457 ms</td>
+                                        <td>39,76,538 ms</td>
+                                        <td>40,07,424 ms</td>
+                                        <td>40,02,602 ms</td>
+                                        <td>39,94,540 ms</td>
+                                        <td><b>39,76,53 ms</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q3</b></td>
+                                        <td>4,05,964 ms</td>
+                                        <td>4,13,498 ms</td>
+                                        <td>4,21,700 ms</td>
+                                        <td>4,16,008 ms</td>
+                                        <td>4,11,589 ms</td>
+                                        <td><b>4,05,964 ms</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q4</b></td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td><b>N/A</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div><p class="mt-2 courier-font note"><b>Note: </b>For query 4, we had increased Loki’s timeout limit to 12 hours, but after 4.5 hours the query returned and didn’t have any response (not even an empty json response), so it seems that Loki canceled the query for some reason.</p></div>
+                        </div>
+                    </div>
+                    <div id="section5" class="section">
+                        <div>
+                            <h1 class="heading">Benchmark SigLens
+                            </h1>
+                            <div>
+                                <div class="blog-para mt-3">
+                                    You'll want three terminals. Terminal 1 will run SigLens, Terminal 2 will do
+                                    some
+                                    setup and view the logs, and Terminal 3 will send the queries. Terminal 3 can
+                                    run on
+                                    your local machine if you set up the server to accept HTTP traffic, but
+                                    Terminals 1
+                                    and 2 should be on the server. Start with Terminal 1.
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section5-1">Install Go and SigLens
+                            </h2>
+                            <div>
+                                SigLens is built in golang. In this step we will install the go dependencies, install
+                                SigLens and start it.
+                            </div>
+                            <pre class="language-javascript"><code class="language-javascript">sudo apt update
+sudo apt install golang -y
+git clone https://github.com/siglens/siglens.git
+cd siglens
+
+## Start SigLens
+sudo go run cmd/siglens/main.go --config server.yaml</code></pre>
+                            <div>
+                                Wait until SigLens is running. You'll see these lines in the terminal once it's up:
+                            </div>
+                            <pre class="language-javascript"><code class="language-javascript">INFO[2023-12-06 18:10:38] Extracting config from configFile: server.yaml
+INFO[2023-12-06 18:10:38] Defaulting to 2160hrs (90 days) of retention...
+INFO[2023-12-06 18:10:38] ----- Siglens server type SingleNode starting up -----
+INFO[2023-12-06 18:10:38] ----- Siglens Ingestion server starting on 0.0.0.0:8081 -----
+INFO[2023-12-06 18:10:38] ----- Siglens Query server starting on 0.0.0.0:5122 -----
+INFO[2023-12-06 18:10:38] ----- Siglens UI starting on 0.0.0.0:5122 -----</code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section5-2">Prepare Agile Aggregations
+                            </h2>
+                            In a continuous running ingest, you don’t need to do this step. However, since this is a
+                            static dataset ingestion, we need to set up the aggregations columns. SigLens creates
+                            aggregation trees during ingestion using these columns. These trees are used during query
+                            processing
+                            <div class="blog-para mb-3 mt-3">
+                                Switch to Terminal 2 and run the following:
+                            </div>
+                            <pre class="language-javascript"><code class="language-javascript">curl -X POST -d '{
+    "tableName": "trips",
+    "groupByColumns": ["airport_fee", "passenger_count", "PULocationID", "trip_distance"],
+    "measureColumns": ["total_amount"]
+}' http://localhost:5122/api/pqs/aggs
+echo ""</code></pre>
+                            <div class="blog-para my-3">
+                                You should get this response:
+                            </div>
+                            <pre
+                                class="language-javascript"><code class="language-javascript">{"message":"All OK","status":200}</code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section5-3">Ingest data into SigLens
+                            </h2>
+                            <div class="blog-para mb-3">
+                                Now let's ingest some data into SigLens. In Terminal 2 run
+                            </div>
+                            <pre class="language-javascript"><code class="language-javascript">cd /mnt/nvme1n1/siglens/tools/sigclient 
+mkdir dataset</code></pre>
+                            <div class="blog-para my-3">
+                                Run the following script to download, decompress, and ingest the data into SigLens.
+                            </div>
+                            <pre class="language-javascript"><code class="language-javascript">for year in {2011..2017}; do
+    for month in {01..12}; do
+        {
+            basefile="yellow_tripdata_$year-$month"
+            aws s3 cp s3://siglens-benchmark-datasets/nyc-taxi-benchmark-data/json/$basefile.json.gz dataset/
+            gunzip dataset/$basefile.json.gz
+            python3 ../nyc-taxi-benchmark/ingester.py dataset/$basefile.json
+        } &
+    done
+    wait
+done</code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section5-4">Run Queries against SigLens
+                            </h2>
+                            <div class="blog-para mb-3">
+                                Run the following in Terminal 3. If Terminal 3 is on your local machine, make sure
+                                to
+                                replace <span class="courier-font">localhost</span> with the IP of the server. You
+                                can
+                                remove the <span class="courier-font">| python3 -m json.tool</span> if you want, it
+                                just
+                                formats the JSON response. Check the log file <span
+                                    class="courier-font">siglens.log</span> for the query times.
+                            </div>
+                            <pre class="language-javascript"><code class="language-javascript">curl -X POST -d '{
+    "searchText": "SELECT airport_fee, count(*) FROM trips GROUP BY airport_fee",
+    "indexName": "trips",
+    "startEpoch": "now-24h",
+    "endEpoch": "now",
+    "queryLanguage": "SQL"
+}' http://localhost:5122/api/search | python3 -m json.tool
+
+curl -X POST -d '{
+    "searchText": "SELECT passenger_count, avg(total_amount) FROM trips GROUP BY passenger_count",
+    "indexName": "trips",
+    "startEpoch": "now-24h",
+    "endEpoch": "now",
+    "queryLanguage": "SQL"
+}' http://localhost:5122/api/search | python3 -m json.tool
+
+curl -X POST -d '{
+    "searchText": "SELECT passenger_count, PULocationID, count(*) FROM trips GROUP BY passenger_count, PULocationID",
+    "indexName": "trips",
+    "startEpoch": "now-24h",
+    "endEpoch": "now",
+    "queryLanguage": "SQL"
+}' http://localhost:5122/api/search | python3 -m json.tool
+
+curl -X POST -d '{
+    "searchText": "SELECT passenger_count, PULocationID, trip_distance, count(*) FROM trips GROUP BY passenger_count, PULocationID, trip_distance",
+    "indexName": "trips",
+    "startEpoch": "now-24h",
+    "endEpoch": "now",
+    "queryLanguage": "SQL"
+}' http://localhost:5122/api/search | python3 -m json.tool</code></pre>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section5-5">SigLens Query Results:
+                            </h2>
+                            <div>We ran each query for 5 times, and took the lowest number from those runs.
+                            </div>
+                            <div class="my-4 table-div">
+                                <table class="ShapeDataTable query-result-table">
+                                    <tr>
+                                        <td></td>
+                                        <td class="yellow">Try 1</td>
+                                        <td class="yellow">Try 2</td>
+                                        <td class="yellow">Try 3</td>
+                                        <td class="yellow">Try 4</td>
+                                        <td class="yellow">Try 5</td>
+                                        <td class="yellow"><b>Lowest</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q1</b></td>
+                                        <td>60 ms</td>
+                                        <td>72 ms</td>
+                                        <td>63 ms</td>
+                                        <td>41 ms</td>
+                                        <td>42 ms</td>
+                                        <td><b>41 ms</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q2</b></td>
+                                        <td>43 ms</td>
+                                        <td>43 ms</td>
+                                        <td>44 ms</td>
+                                        <td>43 ms</td>
+                                        <td>43 ms</td>
+                                        <td><b>43 ms</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q3</b></td>
+                                        <td>116 ms</td>
+                                        <td>304 ms</td>
+                                        <td>442 ms</td>
+                                        <td>509 ms</td>
+                                        <td>471 ms</td>
+                                        <td><b>116 ms</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yellow"><b>Q4</b></td>
+                                        <td>9,815 ms</td>
+                                        <td>9,229 ms</td>
+                                        <td>10,316 ms</td>
+                                        <td>9,093 ms</td>
+                                        <td>9,092 ms</td>
+                                        <td><b>9,092 ms</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="section6" class="section">
+                        <div>
+                            <h1 class="heading">Result Comparison
+                            </h1>
+                            <div class="blog-para mt-3">
+                                As you have seen, we used the exact same hardware, exact same dataset, exact same
+                                queries. We took the lowest of the 5 runs for each query type for both of these
+                                databases and compiled that result in this table:
+                            </div>
+                            <div class="my-4 table-div">
+                                <table class="ShapeDataTable benchmark-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Query Type</th>
+                                            <th>Grafana Loki</th>
+                                            <th>SigLens</th>
+                                            <th>Comparison</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>Q1</td>
+                                        <td>2,86,423 ms</td>
+                                        <td>55 ms</td>
+                                        <td>SigLens <b>5208 x</b> faster than ClickHouse</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Q2</td>
+                                        <td>39,95,912 ms</td>
+                                        <td>43 ms</td>
+                                        <td>SigLens <b>92,928x</b> faster than ClickHouse</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Q3</td>
+                                        <td>4,13,752 ms</td>
+                                        <td>368 ms</td>
+                                        <td>SigLens <b>1124x</b> faster than ClickHouse</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Q4</td>
+                                        <td>N/A</td>
+                                        <td>9,509 ms</td>
+                                        <td><b>N/A</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="blog-para">
+                                SigLens proves to be <b>1124x-92,928x</b> faster on all query types. These speed advantages of SigLens are due to its dynamic columnar compressions, dynamic columnar micro indexing, AgileAggsTree. These innovative techniques help run your filter and aggregation queries on complex datasets at lightning fast speeds.
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section7" class="section mt-4">
+                        <div>
+                            <h1 class="heading">Try SigLens in less than 1 minute
+                            </h1>
+                            <div class="blog-para mt-3">
+                                SigLens gets installed in less than a minute with docker or helm chart. Give it a try
+                                and experience the difference.
+                            </div>
+                            <div class="d-flex flex-column flex-md-row align-items-center">
+                                <div id="try-siglens-btn"
+                                    onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">
+                                    Try SigLens</div>
+                                <div id="github-siglens-btn" class="ml-md-5"
+                                    onclick="redirectToPage('https://github.com/siglens/siglens')"><i
+                                        class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub
+                                    Repo</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section8" class="section mt-4">
+                        <div>
+                            <h1 class="heading">Benchmark Questions?
+                            </h1>
+                            <div class="blog-para mt-2">
+                                Both of these databases
+                                were
+                                given the exact same treatment, there was no unfair advantage given to SigLens. You
+                                can
+                                also look at the ClickHouse numbers on this blog by <a
+                                    href="https://tech.marksblogg.com/billion-nyc-taxi-clickhouse.html"
+                                    rel="nofollow">Mark
+                                    Litwintschik</a> who has run this exact same test on various ClickHouse clusters
+                                and also other databases. Our blog’s numbers for ClickHouse and Mark’s numbers are very
+                                close.
+                            </div>
+                            <div class="blog-para mt-2">
+                                You can verify these
+                                test
+                                results yourself by following the detailed steps we have outlined above. If you feel
+                                something is incorrect please submit an issue or a pull request at <a
+                                    href="https://github.com/siglens/siglens">https://github.com/siglens/siglens</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="pb-5">
+        <div class="container">
+            <div class="row py-0 py-md-5">
+                <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+                    <div>
+                        <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                            class="footer-nav-heading">Documentation</a>
+                    </div>
+                    <div>
+                        <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Community</a>
+                        <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                        <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                        <a class="mt-3 pl-2" href="../guides.html">Guides</a>
+                        <a class="mt-3 pl-2" href="../questions.html">Questions</a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
+                    <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+                    <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                        <div class="flex-fill w-100 mt-4">
+                            <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
+                        </div>
+                        <div class="flex-grow w-auto">
+                            <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+                    <div class="d-flex">
+                        <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                        </a>
+                        <a class="mr-4" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                        <a class="" href="https://www.siglens.com/blog/blog-rss.xml" target="_blank"
+                            title="Subscribe to RSS feed">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-rss"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+                <img src="../assets/ss-logo.svg" alt="" style="height: 50px;">
+                <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+                <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+                <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
+                            href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <!-- Include Prism.js language support for JSON -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.js"></script>
+    <script>
+        // Initialize Prism.js
+        Prism.highlightAll();
+    </script>
+
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="./blog.js"></script>
+</body>
+
+</html>
