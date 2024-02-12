@@ -267,7 +267,7 @@
                 micro indices are 1/100th the size of an actual index and therefore the index sizes are small and
                 ingestion speed is fast. It does not suffer the disadvantage that loki has. Micro indices achieve
                 almost the similar query performance that an actual index has although at 1/100th the cost. SigLens
-                also invented AgileAggsTree which helps run aggregation queries at lightening fast speed. Aggregations
+                also invented AgileAggsTree which helps run aggregation queries at lightning fast speed. Aggregations
                 queries with Loki are super slow.
               </p>
             </div>
@@ -291,7 +291,7 @@
                 compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during
                 query times and lower storage/compute requirements. The search/filter kind of queries perform 4x-8x
                 faster than Elastic due to the microindexing tech. SigLens also invented the AgileAggsTree which helps
-                run aggregation queries at lightening fast speed. Overall SigLens uses several magnitudes lower compute
+                run aggregation queries at lightning fast speed. Overall SigLens uses several magnitudes lower compute
                 and storage compared to ES and has several magnitudes faster ingest and query times.
               </p>
             </div>
@@ -316,8 +316,8 @@
                 are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds
                 fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the
                 incoming volume. This helps during query times and lower storage/compute requirements. The search/filter
-                kind of queries perform several magintudes faster than Influx due to the microindexing tech. SigLens
-                also invented the AgileAggsTree which helps run aggregation queries at lightening fast speed. Overall
+                kind of queries perform several magnitudes faster than Influx due to the microindexing tech. SigLens
+                also invented the AgileAggsTree which helps run aggregation queries at lightning fast speed. Overall
                 SigLens uses several magnitudes lower compute compared to Influx/Parquet/Arrow and has several
                 magnitudes faster ingest and query times.
               </p>
@@ -335,7 +335,7 @@
                 quite often so it is an operational overhead that you have to bear with. SigLens on the other hand
                 uses dynamic columnar compression and dynamic micro indices, wherein you don't need to predefine
                 anything. SigLens reduces your operational overhead while still achieving similar or superior query
-                performances.
+                performance.
                 <br> <br>
                 Due to its dynamic columnar compression algorithms it also achieves better compression ratios than
                 ClickHouse. ClickHouse achieves faster ingestion speeds provided you send row updates in bulk. For
