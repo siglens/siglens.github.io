@@ -599,12 +599,12 @@ line-height: 26px;}
     }
 
     .carousel-item h3 {
-        font-size: 26px;
+        font-size: 24px;
         letter-spacing: 1px;
         line-height: 34px;
     }
 
-    .carousel-table th,td {
+    .carousel-table th,.carousel-table td {
         padding: 8px 4px;
         text-align: left;
     }
@@ -616,9 +616,12 @@ line-height: 26px;}
     .carousel-table th{
         font-size: 14px;
     }
-
-    .carousel-table{
-        overflow: auto;
+    .influx-table th, .elastic-table td:not(:first-child),.elastic-table th:not(:first-child){
+        word-break: break-word;
+        /* white-space: pre-wrap; */
+    }
+    .elastic-carousel div{
+        width: 98% !important;
     }
 
     .code{

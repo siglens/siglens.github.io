@@ -286,30 +286,20 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item elastic-carousel">
             <div>
               <h3>SigLens v/s Elasticsearch</h3>
               <div class="carousel-table">
-                <table>
+                <table class="elastic-table">
                   <tr>
                     <th>Feature</th>
                     <th>Elasticsearch</th>
                     <th>SigLens</th>
                   </tr>
                   <tr>
-                    <td>Indexing Mechanism</td>
-                    <td>Inverted index for fast searches</td>
+                    <td>Indexing</td>
+                    <td>Inverted index, but grows to 110% of incoming volume</td>
                     <td>MicroIndexing technology creates 1/100th size of an actual index</td>
-                  </tr>
-                  <tr>
-                    <td>Structured vs Unstructured Data</td>
-                    <td>Works well with structured, repeatable data</td>
-                    <td>Designed for unstructured and random data</td>
-                  </tr>
-                  <tr>
-                    <td>Index Size Growth</td>
-                    <td>Index size grows, reaching 110% or more of incoming volume</td>
-                    <td>Micro indices 1/100th the size, leading to smaller index sizes</td>
                   </tr>
                   <tr>
                     <td>Scalability</td>
@@ -319,27 +309,14 @@
                   <tr>
                     <td>Query Performance</td>
                     <td>Slow query times, especially on log lines sub-texts, very slow aggregation queries</td>
-                    <td>4x-8x faster search/filter/aggregation queries</td>
+                    <td>1025x faster search/filter/aggregation queries</td>
                   </tr>
                   <tr>
-                    <td>Cluster Status</td>
-                    <td>Prone to being yellow/red due to infra/security updates</td>
+                    <td>Stability</td>
+                    <td>Prone to being yellow/red due to regular unforced restarts</td>
                     <td>Lower probability of issues due to simple single binary architecture</td>
                   </tr>
-                  <tr>
-                    <td>Storage Efficiency</td>
-                    <td>Actual disk usage can exceed incoming volume</td>
-                    <td>Dynamic columnar compressions yields 90% compression ratios</td>
-                  </tr>
-                  <tr>
-                    <td>Overall Performance</td>
-                    <td>Multiple machines needed, slower query and ingestion times</td>
-                    <td>Several magnitudes lower compute/storage, faster ingest/query</td>
-                  </tr>
-
-
                 </table>
-
               </div>
             </div>
           </div>
@@ -347,7 +324,7 @@
             <div>
               <h3>SigLens vs InfluxDB/parquet/Arrow</h3>
               <div class="carousel-table">
-                <table>
+                <table class="influx-table">
                   <tr>
                     <th>Feature</th>
                     <th>InfluxDB/Parquet/Arrow-based Architectures</th>
@@ -361,16 +338,6 @@
                       hardware requirements</td>
                   </tr>
                   <tr>
-                    <td>Compression Ratios</td>
-                    <td>Better compression ratios</td>
-                    <td>Dynamic columnar compressions yield 90% compression ratios for any shape of data</td>
-                  </tr>
-                  <tr>
-                    <td>Ingestion Speed</td>
-                    <td>Faster ingestion</td>
-                    <td>Faster ingestion speeds due to MicroIndexing technology</td>
-                  </tr>
-                  <tr>
                     <td>Storage Requirements</td>
                     <td>Lower storage requirements</td>
                     <td>Dynamic columnar compressions yield 90% compression ratios for any shape of data</td>
@@ -382,13 +349,8 @@
                   </tr>
                   <tr>
                     <td>Impact of Old and New Data</td>
-                    <td>Repeated loop of drop/pull for old and new data affecting query response times</td>
+                    <td>Repeated loop of drop/pull for old and new data affecting query response times plus repeated round trips to S3</td>
                     <td>No impact on query times due to a balanced approach</td>
-                  </tr>
-                  <tr>
-                    <td>Round Trips to S3</td>
-                    <td>Repeated round trips to S3 increasing AWS bill</td>
-                    <td>No repeated round trips to S3, reducing AWS costs</td>
                   </tr>
                   <tr>
                     <td>Resource Allocation</td>
@@ -410,24 +372,14 @@
                     <th>SigLens</th>
                   </tr>
                   <tr>
-                    <td>Compression Ratios</td>
-                    <td>Achieves great compression ratios</td>
-                    <td>Achieves great compression ratios</td>
-                  </tr>
-                  <tr>
                     <td>Dynamic Columnar Compression</td>
                     <td>Requires predefined Engines on columns (e.g., MergeTree)</td>
                     <td>Utilizes dynamic columnar compression algorithms with zero configuration</td>
                   </tr>
                   <tr>
-                    <td>Indexing Tech</td>
-                    <td>Requires predefined Materialized views</td>
-                    <td>Employs zero configuration dynamic MicroIndices</td>
-                  </tr>
-                  <tr>
                     <td>Aggregation queries</td>
-                    <td>No direct equivalent for fast aggregation queries</td>
-                    <td>Utilizes AgileAggsTree for fast aggregation queries</td>
+                    <td>Requires Materialized views to be predefined, increases compute costs.</td>
+                    <td>Utilizes AgileAggsTree for fast aggregation queries with zero configuration</td>
                   </tr>
                   <tr>
                     <td>Operational Overhead</td>
@@ -448,11 +400,6 @@
                     <td>Field Extraction</td>
                     <td>Does not support read-time field extraction</td>
                     <td>Supports read-time field extraction</td>
-                  </tr>
-                  <tr>
-                    <td>Format Flexibility</td>
-                    <td>Requires predefined Engines and Materialized views</td>
-                    <td>Ingests data in any format without predefining</td>
                   </tr>
                   <tr>
                     <td>Read-Time Field Creation</td>
