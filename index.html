@@ -322,6 +322,45 @@
           </div>
           <div class="carousel-item">
             <div>
+              <h3>SigLens v/s ClickHouse</h3>
+              <div class="carousel-table">
+                <table>
+                  <tr>
+                    <th>Feature</th>
+                    <th>ClickHouse</th>
+                    <th>SigLens</th>
+                  </tr>
+                  <tr>
+                    <td>Compression</td>
+                    <td>Requires predefined Engines on columns (e.g., MergeTree)</td>
+                    <td>Utilizes dynamic columnar compression algorithms with zero configuration</td>
+                  </tr>
+                  <tr>
+                    <td>Aggregation queries</td>
+                    <td>Requires Materialized views to be predefined, increases compute costs.</td>
+                    <td>Utilizes AgileAggsTree for fast aggregation queries with zero configuration</td>
+                  </tr>
+                  <tr>
+                    <td>Operational Overhead</td>
+                    <td>Operational overhead with predefined Engines and Materialized views</td>
+                    <td>Reduces operational overhead with dynamic approaches</td>
+                  </tr>
+                  <tr>
+                    <td>Ingestion Speed</td>
+                    <td>Achieves faster ingestion with bulk updates (not ideal for constant log data)</td>
+                    <td>Efficient ingestion speeds</td>
+                  </tr>
+                  <tr>
+                    <td>Field Extraction</td>
+                    <td>Does not support read-time field extraction</td>
+                    <td>Supports read-time field extraction</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
               <h3>SigLens vs InfluxDB/parquet/Arrow</h3>
               <div class="carousel-table">
                 <table class="influx-table">
@@ -338,11 +377,6 @@
                       hardware requirements</td>
                   </tr>
                   <tr>
-                    <td>Storage Requirements</td>
-                    <td>Lower storage requirements</td>
-                    <td>Dynamic columnar compressions yield 90% compression ratios for any shape of data</td>
-                  </tr>
-                  <tr>
                     <td>Query Response Time</td>
                     <td>Suffers on query response times, especially if querying non-memory-mapped parquet files</td>
                     <td>Search/filter queries perform several magnitudes faster</td>
@@ -356,60 +390,6 @@
                     <td>Resource Allocation</td>
                     <td>Nodes need to be allocated to handle queries, increasing infra cost</td>
                     <td>Lower compute requirements, resulting in several magnitudes less compute usage</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div>
-              <h3>SigLens v/s ClickHouse</h3>
-              <div class="carousel-table">
-                <table>
-                  <tr>
-                    <th>Feature</th>
-                    <th>ClickHouse</th>
-                    <th>SigLens</th>
-                  </tr>
-                  <tr>
-                    <td>Dynamic Columnar Compression</td>
-                    <td>Requires predefined Engines on columns (e.g., MergeTree)</td>
-                    <td>Utilizes dynamic columnar compression algorithms with zero configuration</td>
-                  </tr>
-                  <tr>
-                    <td>Aggregation queries</td>
-                    <td>Requires Materialized views to be predefined, increases compute costs.</td>
-                    <td>Utilizes AgileAggsTree for fast aggregation queries with zero configuration</td>
-                  </tr>
-                  <tr>
-                    <td>Operational Overhead</td>
-                    <td>Operational overhead with predefined Engines and Materialized views</td>
-                    <td>Reduces operational overhead with dynamic approaches</td>
-                  </tr>
-                  <tr>
-                    <td>Query Performance</td>
-                    <td>Efficient for analytical workloads; may face challenges with constant log data influx</td>
-                    <td>Superior query performance for log data, rich query language support</td>
-                  </tr>
-                  <tr>
-                    <td>Ingestion Speed</td>
-                    <td>Achieves faster ingestion with bulk updates (not ideal for constant log data)</td>
-                    <td>Efficient ingestion speeds</td>
-                  </tr>
-                  <tr>
-                    <td>Field Extraction</td>
-                    <td>Does not support read-time field extraction</td>
-                    <td>Supports read-time field extraction</td>
-                  </tr>
-                  <tr>
-                    <td>Read-Time Field Creation</td>
-                    <td>Does not support dynamic field creation during query time</td>
-                    <td>Supports creating dynamic fields during query time</td>
-                  </tr>
-                  <tr>
-                    <td>Query Language Support</td>
-                    <td>SQL</td>
-                    <td>SQL, Splunk QL, Elastic DSL, Loki LogQL</td>
                   </tr>
                 </table>
               </div>

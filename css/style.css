@@ -442,8 +442,14 @@ line-height: 26px;}
 /* SigLens Differentiator  */
 
 .carousel-item div {
-    width: 90%;
+    width: 97%;
     margin: auto;
+}
+.carousel-control-next{
+    right: -50px;
+}
+.carousel-control-prev{
+    left: -50px;
 }
 
 .carousel-item h3 {
