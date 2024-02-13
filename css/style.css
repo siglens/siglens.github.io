@@ -442,7 +442,7 @@ line-height: 26px;}
 /* SigLens Differentiator  */
 
 .carousel-item div {
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
@@ -453,15 +453,8 @@ line-height: 26px;}
     line-height: 48px;
     font-family: 'IBM Plex Mono', sans-serif;
     margin-bottom: 20px;
-}
-
-.carousel-item p{
-   color: #d3d3d3;
-   font-size: 17px;
-   font-family: 'Lato', sans-serif;
-   font-weight: 300;
-   letter-spacing: 1.2px;
-   line-height: 27px;
+    text-align: center;
+    font-weight: 600;
 }
 
 .main-header{
@@ -470,6 +463,54 @@ line-height: 26px;}
     font-weight: 400;
     font-family: 'IBM Plex Sans', sans-serif;
     text-align: center;
+}
+
+.carousel-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(198, 177, 221, 0.5);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.carousel-table td {
+    color: #d3d3d3;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    line-height: 27px;
+}
+
+.carousel-table th,.carousel-table td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+.carousel-table th {
+    background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
+    color: white;
+    letter-spacing: 1.2px;
+    font-size: 18px;
+    font-family: 'IBM Plex Mono', sans-serif;
+}
+
+.carousel-table table tr:first-child th:first-child {
+    border-radius: 20px 0 0 0;
+}
+
+.carousel-table table tr:first-child th:last-child {
+    border-radius: 0 20px 0 0;
+}
+
+.carousel-table table tr:not(:last-child) {
+    border-bottom: 1px solid rgba(198, 177, 221, 0.18);
+}
+
+.carousel-table table td:not(:last-child),
+.carousel-table table th:not(:last-child) {
+    border-right: 1px solid rgba(198, 177, 221, 0.18);
 }
 
 /* Mobile View  */
@@ -562,11 +603,22 @@ line-height: 26px;}
         letter-spacing: 1px;
         line-height: 34px;
     }
-    
-    .carousel-item p{
-       font-size: 16px;
-       letter-spacing: 1px;
-       line-height: 26px;
+
+    .carousel-table th,td {
+        padding: 8px 4px;
+        text-align: left;
+    }
+
+    .carousel-table td{
+        font-size: 14px;
+    }
+
+    .carousel-table th{
+        font-size: 14px;
+    }
+
+    .carousel-table{
+        overflow: auto;
     }
 
     .code{
