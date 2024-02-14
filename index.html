@@ -133,7 +133,7 @@
   <!-- Why SigLens  -->
   <section id="why-siglens">
     <div class="container my-5">
-      <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-3">Why SigLens</div>
+      <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-3">Why SigLens?</div>
       <div class="row">
         <div class="col-md-12">
           <div class="vertical-tab" role="tabpanel">
@@ -249,121 +249,162 @@
     <div class="container py-md-5 py-3 position-relative">
       <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient">
       <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-4">SigLens Differentiator</div>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="35000">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div>
               <h3>SigLens v/s Loki</h3>
-              <p>
-                Loki indexes only the metadata fields (labels) and not the actual log lines, enabling fast ingestion
-                and smaller index sizes. However, this has an adverse effect on query times. If you are querying on
-                the logline—most queries fall into this category—the query response times are in minutes.
-                Additionally, it uses S3 for storing the loglines, incurring a lot of round trips to the S3 bucket.
-                This further increases query response times and results in a higher AWS bill due to the repeated
-                head/get requests to S3.
-                <br> <br>
-                SigLens indexes all fields including the logline using an innovative approach of microindexing. The
-                micro indices are 1/100th the size of an actual index and therefore the index sizes are small and
-                ingestion speed is fast. It does not suffer the disadvantage that loki has. Micro indices achieve
-                almost the similar query performance that an actual index has although at 1/100th the cost. SigLens
-                also invented AgileAggsTree which helps run aggregation queries at lightning fast speed. Aggregations
-                queries with Loki are super slow.
-              </p>
+              <div class="carousel-table">
+                <table>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Loki</th>
+                    <th>SigLens</th>
+                  </tr>
+                  <tr>
+                    <td>Logline Indexing</td>
+                    <td>Indexes only metadata fields, not log lines</td>
+                    <td>Indexes all fields including loglines</td>
+                  </tr>
+                  <tr>
+                    <td>Query Response Time</td>
+                    <td>Takes several minutes</td>
+                    <td>Sub-second query response times</td>
+                  </tr>
+                  <tr>
+                    <td>Storage</td>
+                    <td>S3 for remote storage, incurs very high S3 round trip costs for queries</td>
+                    <td>Micro-index is local, most recent data on local (highly compressed), older data in S3, pulling
+                      from S3 is minimal due to micro indexing</td>
+                  </tr>
+                  <tr>
+                    <td>Aggregation</td>
+                    <td>Very slow aggregation queries</td>
+                    <td>Lightning-fast aggregation queries due to AgileAgssTree innovation</td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item elastic-carousel">
             <div>
               <h3>SigLens v/s Elasticsearch</h3>
-              <p>
-                Elasticsearch uses an inverted index that helps it in doing fast searches. The inverted index works well
-                when there is more structured repeatable data. However, with the log lines, the data is almost always
-                very unstructured. Due to this the index size grows. It is not uncommon to see the actual disk usage of
-                ES to be 110% or more of the incoming volume due to its index. And as the index size grows , it does not
-                fit on one machine requiring a cluster of machines. Elasticsearch also suffers from slow query times if
-                you search on the log lines sub-texts. Aggregation queries also super slow with ES. Due to a need of
-                multiple machines, it is quite common for elastic indices to be yellow/red routinely due to
-                infra/security updates. This causes slower query and slower ingestion times.
-
-                <br> <br>
-                SigLens invented microindexing technology. The micro indices are 1/100th the size of an actual index and
-                therefore the index sizes are small and ingestion speeds fast. SigLens uses dynamic columnar
-                compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during
-                query times and lower storage/compute requirements. The search/filter kind of queries perform 4x-8x
-                faster than Elastic due to the microindexing tech. SigLens also invented the AgileAggsTree which helps
-                run aggregation queries at lightning fast speed. Overall SigLens uses several magnitudes lower compute
-                and storage compared to ES and has several magnitudes faster ingest and query times.
-              </p>
+              <div class="carousel-table">
+                <table class="elastic-table">
+                  <tr>
+                    <th>Feature</th>
+                    <th>Elasticsearch</th>
+                    <th>SigLens</th>
+                  </tr>
+                  <tr>
+                    <td>Indexing</td>
+                    <td>Inverted index, but grows to 110% of incoming volume</td>
+                    <td>MicroIndexing technology creates 1/100th size of an actual index</td>
+                  </tr>
+                  <tr>
+                    <td>Scalability</td>
+                    <td>Requires a cluster of machines for larger indices</td>
+                    <td>100x lower storage and compute resources</td>
+                  </tr>
+                  <tr>
+                    <td>Query Performance</td>
+                    <td>Slow query times, especially on log lines sub-texts, very slow aggregation queries</td>
+                    <td>1025x faster search/filter/aggregation queries</td>
+                  </tr>
+                  <tr>
+                    <td>Stability</td>
+                    <td>Prone to being yellow/red due to regular unforced restarts</td>
+                    <td>Lower probability of issues due to simple single binary architecture</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-
-          </div>
-          <div class="carousel-item">
-            <div>
-              <h3>SigLens v/s InfluxDB/parquet/Arrow</h3>
-              <p> There are many products coming up in recent years like the InfluxDB IOx. This architecture involves
-                converting incoming data into parquet files, storing them in S3, mapping the files in memory using
-                Apache Arrow, and using the memory-mapped files to serve queries. This architecture has advantages of
-                better compression ratios, faster ingestion, lower storage requirements. But it suffers on query
-                response times. If your query touches on parquet files that are non memory mapped, then Apache Arrow
-                drops the in-memory files, downloads/pulls the required parquet files and then serves the query. This
-                has significant impact on query response times. If you have a set of queries that constantly query old
-                and new data, then there is repeated loop of drop/pull causing queries to further slow down. Not to
-                mention the repeated round trips to S3 thereby increasing your AWS bill. You are then forced to allocate
-                a set of nodes to handle the queries, thereby increasing your infra cost and higher S3 transport costs.
-                <br> <br>
-                SigLens does not suffer from these issues. Due to its innovative approach it achieves a balance of
-                faster ingestion, faster queries and lower hardware requirements The micro indices that SigLens invented
-                are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds
-                fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the
-                incoming volume. This helps during query times and lower storage/compute requirements. The search/filter
-                kind of queries perform several magnitudes faster than Influx due to the microindexing tech. SigLens
-                also invented the AgileAggsTree which helps run aggregation queries at lightning fast speed. Overall
-                SigLens uses several magnitudes lower compute compared to Influx/Parquet/Arrow and has several
-                magnitudes faster ingest and query times.
-              </p>
-            </div>
-
           </div>
           <div class="carousel-item">
             <div>
               <h3>SigLens v/s ClickHouse</h3>
-              <p>
-                SigLens and ClickHouse have quite a few things in common. Both are columnar databases. Both achieve
-                great compression ratios. The places where SigLens differs are dynamic columnar compression
-                algorithms, Microindexing tech and AgileAggsTree. In ClickHouse you have to predefine the Engines on
-                columns (MergeTree, etc..) and the Materialized views. For log related workload, the data changes
-                quite often so it is an operational overhead that you have to bear with. SigLens on the other hand
-                uses dynamic columnar compression and dynamic micro indices, wherein you don't need to predefine
-                anything. SigLens reduces your operational overhead while still achieving similar or superior query
-                performance.
-                <br> <br>
-                Due to its dynamic columnar compression algorithms it also achieves better compression ratios than
-                ClickHouse. ClickHouse achieves faster ingestion speeds provided you send row updates in bulk. For
-                analytical workloads its fine however for logging related workloads the log data is constantly coming
-                in. If you wait for rows to accumulate in order to do bulk updates, then your queries can't search for
-                the latest data. For observability and live debugging use cases this is a problem. SigLens does not
-                suffer from this issue.
-                <br><br>
-                ClickHouse does not support read-time field extraction, a very popular feature that developers use
-                during production issues. Splunk is the only product that supports this. But now SigLens is the only
-                other product that has this feature. During ingestion you can ingest whatever format and whatever you
-                want and during query SigLens/Splunk will let you create dynamic fields based on the log line and use
-                it in further pipelining of the queries. SigLens/Splunk support the pipe-based query language, a very
-                popular feature amongst developers, ClickHouse does not support this.
-              </p>
+              <div class="carousel-table">
+                <table>
+                  <tr>
+                    <th>Feature</th>
+                    <th>ClickHouse</th>
+                    <th>SigLens</th>
+                  </tr>
+                  <tr>
+                    <td>Compression</td>
+                    <td>Requires predefined Engines on columns (e.g., MergeTree)</td>
+                    <td>Utilizes dynamic columnar compression algorithms with zero configuration</td>
+                  </tr>
+                  <tr>
+                    <td>Aggregation queries</td>
+                    <td>Requires Materialized views to be predefined, increases compute costs.</td>
+                    <td>Utilizes AgileAggsTree for fast aggregation queries with zero configuration</td>
+                  </tr>
+                  <tr>
+                    <td>Operational Overhead</td>
+                    <td>Operational overhead with predefined Engines and Materialized views</td>
+                    <td>Reduces operational overhead with dynamic approaches</td>
+                  </tr>
+                  <tr>
+                    <td>Ingestion Speed</td>
+                    <td>Achieves faster ingestion with bulk updates (not ideal for constant log data)</td>
+                    <td>Efficient ingestion speeds</td>
+                  </tr>
+                  <tr>
+                    <td>Field Extraction</td>
+                    <td>Does not support read-time field extraction</td>
+                    <td>Supports read-time field extraction</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-
           </div>
+          <div class="carousel-item">
+            <div>
+              <h3>SigLens vs InfluxDB/parquet/Arrow</h3>
+              <div class="carousel-table">
+                <table class="influx-table">
+                  <tr>
+                    <th>Feature</th>
+                    <th>InfluxDB/Parquet/Arrow-based Architectures</th>
+                    <th>SigLens</th>
+                  </tr>
+                  <tr>
+                    <td>Architecture</td>
+                    <td>Converts incoming data to parquet files, stored in S3, uses Apache Arrow for memory-mapped
+                      files, and serves queries using these files</td>
+                    <td>Innovative approach achieving a balance of faster ingestion, faster queries, and lower
+                      hardware requirements</td>
+                  </tr>
+                  <tr>
+                    <td>Query Response Time</td>
+                    <td>Suffers on query response times, especially if querying non-memory-mapped parquet files</td>
+                    <td>Search/filter queries perform several magnitudes faster</td>
+                  </tr>
+                  <tr>
+                    <td>Impact of Old and New Data</td>
+                    <td>Repeated loop of drop/pull for old and new data affecting query response times plus repeated round trips to S3</td>
+                    <td>No impact on query times due to a balanced approach</td>
+                  </tr>
+                  <tr>
+                    <td>Resource Allocation</td>
+                    <td>Nodes need to be allocated to handle queries, increasing infra cost</td>
+                    <td>Lower compute requirements, resulting in several magnitudes less compute usage</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev pr-5" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next pl-5" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <a class="carousel-control-prev pr-5" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next pl-5" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
-    </div>
   </section>
 
   <!-- Getting Started -->
