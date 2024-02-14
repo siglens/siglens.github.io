@@ -742,6 +742,7 @@ line-height: 26px;}
     }
     .vertical-tab .tab-content h3 {
         margin-bottom: 16px;
+        font-size: 26px;
     }
 
     .vertical-tab .tab-content {
