@@ -191,12 +191,12 @@ a:focus {
 }
 
 .vertical-tab .tab-content {
-    color: #d1d1d1;
-    font-size: 16px;
+    color: #ffffff;
+    font-size: 18px;
     display: table-cell;
     padding-left: 30px;
     font-family: 'Lato', sans-serif;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.4px;
     font-weight: 300;
     line-height: 28px;
 }
@@ -206,7 +206,7 @@ a:focus {
 
 .vertical-tab .tab-content h3 {
     color: #9772db;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 400;
     margin-bottom: 20px;
     font-family: 'IBM Plex Sans', monospace;
@@ -478,6 +478,7 @@ line-height: 26px;}
     box-shadow: 0 0 10px rgba(198, 177, 221, 0.5);
     border-radius: 20px;
     margin-bottom: 20px;
+    min-height: 480px;
 }
 
 .carousel-table td {
@@ -490,7 +491,7 @@ line-height: 26px;}
 }
 
 .carousel-table th,.carousel-table td {
-    padding: 16px 20px;
+    padding: 10px 16px;
     text-align: left;
 }
 
@@ -498,7 +499,7 @@ line-height: 26px;}
     background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
     color: white;
     letter-spacing: 1.2px;
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'IBM Plex Mono', sans-serif;
 }
 
@@ -517,6 +518,72 @@ line-height: 26px;}
 .carousel-table table td:not(:last-child),
 .carousel-table table th:not(:last-child) {
     border-right: 1px solid rgba(198, 177, 221, 0.18);
+}
+
+.cmd-box {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.cmd-title {
+    width: 60%;
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    color: white;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', monospace;
+    letter-spacing: 0.03em;
+    font-size: 16;
+}
+
+.ingest-Cmd {
+    margin-top: 10px;
+}
+
+.cmd-title::before {
+    content: "\00a0";
+}
+.check-mark {
+    width: 26px;
+    height: 26px;
+    stroke: #9176d5;
+    fill: none;
+    opacity: 0;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    transition: opacity 0.8s ease-in-out, stroke-dashoffset 0s ease-in-out;
+    position: absolute;
+    right: 15px;
+    stroke-width: 2px;
+}
+
+.check-mark.show {
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+.check-mark-data {
+    width: 26px;
+    height: 26px;
+    stroke: #9176d5;
+    fill: none;
+    opacity: 0;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    transition: opacity 0.8s ease-in-out, stroke-dashoffset 0s ease-in-out;
+    position: absolute;
+    right: 10px;
+    stroke-width: 2px;
+}
+
+.check-mark-data.show {
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+.disappear {
+    display: none;
 }
 
 /* Mobile View  */
@@ -630,6 +697,13 @@ line-height: 26px;}
         width: 98% !important;
     }
 
+    .carousel-control-next{
+        right: -3px;
+    }
+    .carousel-control-prev{
+        left: -3px;
+    }
+
     .code{
         width: 90%;
         padding: 30px 10px 10px 10px;
@@ -639,6 +713,10 @@ line-height: 26px;}
     .fa-clone{
         top: 10px;
         right: 10px;
+    }
+    .check-mark{
+        top: 6px;
+        right: 6px;
     }
 
     .git-card,.community-card{
@@ -672,67 +750,4 @@ line-height: 26px;}
         padding: 0;
         border: none;
     }
-}
-.cmd-box {
-    white-space: pre-wrap;
-    word-break: break-all;
-}
-
-.cmd-title {
-    width: 60%;
-    display: flex;
-    margin: auto;
-    margin-top: 40px;
-    color: white;
-    justify-content: center;
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-family: 'IBM Plex Sans', monospace;
-    letter-spacing: 0.03em;
-    font-size: 16;
-}
-
-.ingest-Cmd {
-    margin-top: 10px;
-}
-
-.cmd-title::before {
-    content: "\00a0";
-}
-.check-mark {
-    width: 30px;
-    height: 30px;
-    stroke: #9176d5;
-    fill: none;
-    opacity: 0;
-    stroke-dasharray: 50;
-    stroke-dashoffset: 50;
-    transition: opacity 0.8s ease-in-out, stroke-dashoffset 0s ease-in-out;
-    position: absolute;
-    right: 15px;
-}
-
-.check-mark.show {
-    opacity: 1;
-    stroke-dashoffset: 0;
-}
-.check-mark-data {
-    width: 30px;
-    height: 30px;
-    stroke: #9176d5;
-    fill: none;
-    opacity: 0;
-    stroke-dasharray: 50;
-    stroke-dashoffset: 50;
-    transition: opacity 0.8s ease-in-out, stroke-dashoffset 0s ease-in-out;
-    position: absolute;
-    right: 10px;
-}
-
-.check-mark-data.show {
-    opacity: 1;
-    stroke-dashoffset: 0;
-}
-.disappear {
-    display: none;
 }
