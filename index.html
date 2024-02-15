@@ -109,6 +109,51 @@
       </video>
     </div>
   </section>
+  <!-- Getting Started -->
+  <section id="getting-started" class="py-5">
+    <div class="container getting-started-container">
+      <div class="main-heading text-center text-white font-weight-light mb-4">Try Now</div>
+      <div class="m-auto text-center">
+        <ul class="nav nav-tabs" role="tablist">
+          <!-- <li class="nav-item">
+            <a href="#binary" role="tab" data-toggle="tab" class="nav-link active">Binary</a>
+          </li> -->
+          <li class="nav-item">
+            <a href="#docker" role="tab" data-toggle="tab" class="nav-link active">Docker</a>
+          </li>
+        </ul>
+        <div class="tab-content mt-4">
+          <!-- <div id="binary" role="tabpanel" class="tab-pane active">
+            <p class="para-light">
+              SigLens can be installed on Linux or macOS.
+              <br> Click 👉
+              <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_binary.sh" download="">
+                <strong>here</strong>
+              </a> 👈 to download the install script.
+            </p>
+            <div class="code">
+              chmod +x install_with_binary.sh
+              <br>
+              ./install_with_binary.sh
+            </div>
+          </div> -->
+          <div id="docker" role="tabpanel" class="tab-pane active">
+            <div class="code position-relative"><span id="install-text">curl -L https://siglens.com/install.sh |
+                sh</span>
+              <i class="fa-regular fa-clone position-absolute copy-btn" id="copyBtn" data-toggle="tooltip"></i>
+              <svg class="check-mark" id="check-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polyline points="4 12 9 17 20 6" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="text-center">
+    <a href="http://playground.sigscalr.io:5122/" target="_blank" class="playground-btn mx-auto">Checkout our Playground</a>
+  </section>
 
   <section class="my-md-5 py-md-5 py-0 my-0">
     <div class="container my-5 py-5 position-relative py-md-5">
@@ -407,47 +452,7 @@
       </div>
   </section>
 
-  <!-- Getting Started -->
-  <section id="getting-started" class="py-5">
-    <div class="container getting-started-container">
-      <div class="main-heading text-center text-white font-weight-light mb-4">Getting Started</div>
-      <div class="m-auto text-center">
-        <ul class="nav nav-tabs" role="tablist">
-          <!-- <li class="nav-item">
-            <a href="#binary" role="tab" data-toggle="tab" class="nav-link active">Binary</a>
-          </li> -->
-          <li class="nav-item">
-            <a href="#docker" role="tab" data-toggle="tab" class="nav-link active">Docker</a>
-          </li>
-        </ul>
-        <div class="tab-content mt-4">
-          <!-- <div id="binary" role="tabpanel" class="tab-pane active">
-            <p class="para-light">
-              SigLens can be installed on Linux or macOS.
-              <br> Click 👉
-              <a href="https://github.com/siglens/siglens/releases/latest/download/install_with_binary.sh" download="">
-                <strong>here</strong>
-              </a> 👈 to download the install script.
-            </p>
-            <div class="code">
-              chmod +x install_with_binary.sh
-              <br>
-              ./install_with_binary.sh
-            </div>
-          </div> -->
-          <div id="docker" role="tabpanel" class="tab-pane active">
-            <div class="code position-relative"><span id="install-text">curl -L https://siglens.com/install.sh |
-                sh</span>
-              <i class="fa-regular fa-clone position-absolute copy-btn" id="copyBtn" data-toggle="tooltip"></i>
-              <svg class="check-mark" id="check-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <polyline points="4 12 9 17 20 6" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Contribute and Community Section  -->
   <section class="pt-md-0">
