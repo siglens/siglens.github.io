@@ -12,6 +12,7 @@
     --purple-1: #6347D9;
     --purple-2: #2E205F;
     --purple-3: #B4A6E6;
+    --purple-4: #826CE1;
     --ebony-1: #A29FA9;
 }
 
@@ -95,18 +96,68 @@ a {
 }
 
 #try-now-btn {
-    background: var(--main-color);
-    text-decoration: none;
-    color: var(--white-0);
-    border: 1px solid var(--white-0);
-    padding: 10px 20px;
-    border-radius: 10px;
+  background: var(--marigold);
+  text-decoration: none;
+  border: 1px solid var(--marigold);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--white-0);
 }
 
-#try-now-btn:hover {
-    color: var(--purple-0);
-    border: 1px solid var(--purple-0);
+.hero-btn-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+  padding: 0px;
 }
+
+#install-siglens-btn {
+  background-color: var(--purple-1);
+  color: var(--white-0);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#install-siglens-btn:hover {
+  background-color: var(--purple-4);
+}
+
+#playground-btn {
+  /* background: var(--main-color); */
+  text-decoration: none;
+  color: var(--white-0);
+  border: 1px solid var(--purple-0);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#playground-btn:hover {
+  color: var(--marigold);
+  border: 1px solid var(--marigold);
+}
+
 
 /*LANDING PAGE */
 .landing-container {
@@ -137,7 +188,7 @@ a {
     width: 1024px;
     border: 1px solid #7A3CEA;
     border-radius: 20px;
-    margin-top: 150px;
+    margin-top: 60px;
     background: var(--main-color);
 }
 .video-container video {
