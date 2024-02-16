@@ -12,6 +12,7 @@
   --purple-1: #6347d9;
   --purple-2: #2e205f;
   --purple-3: #b4a6e6;
+  --purple-4: #826ce1;
   --ebony-1: #a29fa9;
 }
 
@@ -94,37 +95,18 @@ a {
 }
 
 #try-now-btn {
-  background: var(--main-color);
+  background: var(--marigold);
   text-decoration: none;
   /* color: var(--white-0); */
   border: 1px solid var(--marigold);
   padding: 10px 20px;
   border-radius: 10px;
-  color: var(--marigold);
-}
-
-#try-now-btn:hover {
-  color: var(--purple-0);
-  border: 1px solid var(--purple-0);
-}
-
-#install-siglens-btn {
-  background-color: var(--purple-0);
   color: var(--white-0);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-#install-siglens-btn:hover {
-  color: var(--purple-2);
-}
-
-.hero-btn {
-}
+/* #try-now-btn:hover {
+  color: var(--purple-0);
+  border: 1px solid var(--purple-0); */
 
 .hero-btn-container {
   list-style: none;
@@ -132,46 +114,53 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  margin-top: 100px;
+  gap: 10px;
+  margin-top: 30px;
   width: 100%;
+  padding: 0px;
+}
+
+#install-siglens-btn {
+  background-color: var(--purple-1);
+  color: var(--white-0);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#install-siglens-btn:hover {
+  background-color: var(--purple-4);
 }
 
 #playground-btn {
-  background: var(--main-color);
+  /* background: var(--main-color); */
   text-decoration: none;
   color: var(--white-0);
-  border: 1px solid var(--white-0);
+  border: 1px solid var(--purple-0);
   padding: 10px 20px;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #playground-btn:hover {
-  color: var(--purple-0);
-  border: 1px solid var(--purple-0);
-}
-
-#win-prizes-btn {
-  background-color: var(--purple-0);
-  color: var(--white-0);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 0px 19.559999465942383px 0px #7a3cea;
-
-  /* box-shadow: 0px 0px 19.56px 0px #7a3cea, 0px 0px 39.12px 0px #7a3cea,
-    0px 0px 136.92px 0px #7a3cea, 0px 0px 273.84px 0px #7a3cea,
-    0px 0px 469.44px 0px #7a3cea, 0px 0px 821.52px 0px #7a3cea; */
-}
-
-#win-prizes-btn:hover {
-  color: var(--purple-2);
+  color: var(--marigold);
+  border: 1px solid var(--marigold);
+  /* background-color: var(--marigold); */
 }
 
 #win-exciting-prizes-btn {
@@ -184,9 +173,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
-  box-shadow: 0px 0px 19.56px 0px #7a3cea, 0px 0px 39.12px 0px #7a3cea,
-    0px 0px 136.92px 0px #7a3cea, 0px 0px 273.84px 0px #7a3cea,
-    0px 0px 469.44px 0px #7a3cea, 0px 0px 821.52px 0px #7a3cea;
+  box-shadow: 0px 0px 19.56px 0px #7a3cea, 0px 0px 39.12px 0px #7a3cea;
 }
 /*LANDING PAGE */
 .landing-container {
@@ -217,7 +204,7 @@ a {
   width: 1024px;
   border: 1px solid #7a3cea;
   border-radius: 20px;
-  margin-top: 150px;
+  margin-top: 40px;
   background: var(--main-color);
 }
 .video-container video {
