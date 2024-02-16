@@ -40,6 +40,7 @@ a {
     width: 100vw;
     font-size: 16px;
     background-color: var(--main-color);
+    font-weight: 400 !important;
 }
 
 .navbar .nav-item.active .nav-link,
@@ -205,7 +206,7 @@ a:focus {
 }
 
 .vertical-tab .tab-content h3 {
-    color: #9772db;
+    color: #9B54F8;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 20px;
@@ -453,7 +454,7 @@ line-height: 26px;}
 }
 
 .carousel-item h3 {
-    color: #9772db;
+    color: #9B54F8;
     font-size: 32px;
     letter-spacing: 1.5px;
     line-height: 48px;
@@ -586,6 +587,24 @@ line-height: 26px;}
     display: none;
 }
 
+.airtable-form{
+    width: 60%;
+    margin: auto;
+}
+
+#swag-btn{
+    font-size: 18px;
+    height: 54px;
+    border-radius: 30px;
+    width: 240px;
+    box-shadow: 0 0 14px rgba(198, 177, 221, 0.3);
+    font-weight: 600;
+}
+
+#swag-btn:hover{
+    transform: translateY(-3px) scale(1.005) translateZ(0);
+    transition: transform 0.3s ease;
+}
 /* Mobile View  */
 
 @media (max-width: 767.98px) {
@@ -750,5 +769,9 @@ line-height: 26px;}
         display: block;
         padding: 0;
         border: none;
+    }
+
+    .airtable-form{
+        width: 100%;
     }
 }
