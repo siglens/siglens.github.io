@@ -117,7 +117,7 @@ a {
 }
 
 #install-siglens-btn {
-  background-color: var(--purple-1);
+  background-color: var(--purple-0);
   color: var(--white-0);
   text-decoration: none;
   padding: 10px 20px;
@@ -644,11 +644,10 @@ line-height: 26px;}
 }
 
 #swag-btn{
-    font-size: 18px;
-    height: 54px;
-    border-radius: 30px;
+    font-size: 16px;
+    height: 48px;
+    border-radius: 10px;
     width: 240px;
-    box-shadow: 0 0 14px rgba(198, 177, 221, 0.3);
     font-weight: 600;
 }
 
@@ -734,6 +733,64 @@ line-height: 26px;}
     border-color: rgb(155, 84, 247);
     transform: translateY(-3px) scale(1.005) translateZ(0);
     box-shadow: 0 0 14px rgba(198, 177, 221, 0.5);
+}
+
+.cloud-form{
+    width: 80%;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    box-shadow: rgba(255,255,255, 0.25) 0px 4px 8px -2px, rgba(255,255,255, 0.08) 0px 0px 0px 1px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    border: 1px solid  rgb(155, 84, 247);
+    margin: auto;
+}
+
+.cloud-form label{
+    padding: 10px 0 0 0;
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: -10px;
+}
+
+.cloud-form input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--white-0);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    outline: none;
+    background: transparent;
+}
+
+.cloud-form #submit-btn{
+    background-color: var(--purple-0);
+    padding: 8px;
+    color: var(--white-0);
+    border-radius: 10px;
+    width: 180px;
+    margin-bottom: 0px;
+    border: none;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.cloud-form input:focus{
+    border-bottom: 2px solid var(--purple-0);
+}
+
+.thank-tick{
+    height: 100px;
+    width: 100px;
+    border: 2px solid var(--purple-4);
+    border-radius: 50%;
+    background-color: var(--purple-2);
+}
+
+.thank-tick i{
+    font-size: 70px;
 }
 /* Mobile View  */
 
@@ -921,5 +978,28 @@ line-height: 26px;}
 
     .airtable-form{
         width: 100%;
+    }
+
+    .cloud-form{
+        width: 100%;
+        padding: 30px 30px;
+    }
+
+    .thank-tick{
+        height: 70px;
+        width: 70px;
+    }
+    
+    .thank-tick i{
+        font-size: 40px;
+    }
+
+    #install-siglens-btn, #playground-btn,.cloud-form #submit-btn{
+        width: 160px;
+    }
+
+    #swag-btn{
+        width: 180px;
+        font-size: 16px;
     }
 }
