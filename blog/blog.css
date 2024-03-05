@@ -390,23 +390,24 @@ b{
 
 #ingestion-bytes,
 #ingestion-events,
-#compression-ratio,
 #cluster-stats-indexes,
 #batch-3hours,
 #batch-30days,
 #aws-cost {
-    height: 500px;
+    height: 400px;
+}
+
+#compression-ratio{
+    width: 100%;
 }
 
 #ingestion-cpu {
-    height: 350px;
-    width: 1000px;
+    width: 100%;
     overflow-x: scroll;
 }
 
 #ingestion-memory {
-    height: 350px;
-    width: 1000px;
+    width: 100%;
     overflow-x: scroll;
 
 }
