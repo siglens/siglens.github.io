@@ -49,8 +49,11 @@
 
 <body id="dark-theme">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top d-flex flex-column p-0">
+    <div id="flashy-news">
+      <marquee id="marquee">SigScalr emerges from stealth, announces pre-seed funding of $1.76 Million, and launch of SigLens, an open source observability solution; <a href="https://siliconangle.com/2024/02/20/exclusiveobservability-startup-sigscalr-plans-revolutionize-log-search/" target="_blank">SiliconANGLE News</a> </marquee>
+    </div>
+    <div class="container py-2 px-4 px-md-0">
       <a class="navbar-brand " href="index.html">
         <div class="d-flex">
           <div class="pr-1"><img src="./assets/ss-logo.svg" alt="siglens-logo"></div>
@@ -68,6 +71,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/press-news.html">Press & News</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -133,8 +139,8 @@
 
   <!-- Why SigLens  -->
   <section id="why-siglens">
-    <div class="container my-5">
-      <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-3">Why SigLens?</div>
+    <div class="container pt-5">
+      <div class="main-heading text-center text-white font-weight-light mb-md-0 mb-3 pt-2 pt-md-5">Why SigLens?</div>
       <div class="row">
         <div class="col-md-12">
           <div class="vertical-tab" role="tabpanel">
@@ -246,7 +252,7 @@
     </div>
   </section>
 
-  <section class="my-md-5 pt-md-5">
+  <section class="my-md-5">
     <div class="container py-md-5 py-3 position-relative">
       <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient">
       <div class="main-heading text-center text-white font-weight-light mb-md-3 mb-4">SigLens Differentiator</div>
@@ -409,7 +415,7 @@
   </section>
 
   <!-- Getting Started -->
-  <section id="getting-started" class="py-5">
+  <section id="getting-started" class="py-3">
     <div class="container getting-started-container">
       <div class="main-heading text-center text-white font-weight-light mb-4">Install SigLens</div>
       <div class="m-auto text-center">
@@ -450,21 +456,44 @@
     </div>
   </section>
 
-  <section>
-    <div class="container" style="margin-bottom: 150px;">
-      <div class="main-heading text-center text-white font-weight-light mb-4">🎊 Win Cool Swag 🎊</div>
+  <section class="pb-md-5 pb-1">
+    <div class="container mb-5">
+      <div class="main-heading text-center text-white font-weight-light mb-md-4 mb-2">🎊 Win Cool Swag 🎊</div>
       <div class="d-flex justify-content-center ">
         <button class="btn mt-4" id="swag-btn">
-          <a href="./feedback-form.html" >Participate Now</a>
+          <a href="./feedback-form.html" target="_blank">Participate Now</a>
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Contribute and Community Section  -->
-  <section class="pt-md-0">
+  <section class="my-4 pb-5">
     <div class="container position-relative">
-      <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient" style="width: 80%;    transform: translate(-50%, -40%);">
+        <div class="main-heading text-center text-white font-weight-light mb-4">Join our waiting list for <span style="color:#F2A52B">SaaS</span></div>
+        <div class="pt-md-4 pt-2">
+          <div>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+        onload="if(submitted) {window.location='/form-submit.html'}"></iframe>
+           <form class="cloud-form" action="https://hooks.airtable.com/workflows/v1/genericWebhook/appexoI5dGAdMIyTL/wflCcs4pZvUBovYfP/wtrfwRhgj5tDZmGv6" method="POST" target="hidden_iframe" 
+           onsubmit="submitted=true;">
+              <label for="fname">Name:</label>
+              <input type="text" id="fname" name="fname" required>
+              <label for="cname">Company:</label>
+              <input type="text" id="cname" name="cname" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <input type="submit" value="Submit" id="submit-btn">
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contribute and Community Section  -->
+  <section class="pt-md-5 pt-0">
+    <div class="container position-relative">
+      <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient" style="width: 80%; transform: translate(-50%, -40%);">
       <div class="row d-flex justify-content-center align-items-center">
         <div
           class="col-md-6 col-10 bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center"
@@ -509,6 +538,9 @@
           <div>
             <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
           </div>
+          <div>
+            <a href="/press-news.html" class="footer-nav-heading">Press & News</a>
+          </div>
           <div class="d-flex flex-column">
             <a href="#" class="footer-nav-heading">Community</a>
             <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
@@ -518,7 +550,7 @@
           </div>
         </div>
         <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
-          <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
+          <h5 class="text-start font-weight-bold text-white">Subscribe to our newsletter</h5>
           <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
             <div class="flex-fill w-100 mt-4">
               <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
@@ -530,7 +562,7 @@
         </div>
         <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
           <div class="d-flex">
-            <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+            <a class="mr-4" href="https://twitter.com/SigLensHQ" target="_blank">
               <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
             </a>
             <a class="mr-4" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
@@ -564,6 +596,21 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script>
+    var submitted=false;
+    function setScrollAmount() {
+        var marquee = document.getElementById("marquee");
+        var isMobile = window.innerWidth <= 767;
+        if (isMobile) {
+            marquee.scrollAmount = 5; // Set slower speed for mobile
+        } else {
+            marquee.scrollAmount = 10; // Set faster speed for desktop
+        }
+    }
+    setScrollAmount();
+    window.addEventListener("resize", setScrollAmount);
+  </script>
+
 </body>
 
 </html>
