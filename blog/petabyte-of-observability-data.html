@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SigLens | Petabyte of Observability Data</title>
+    <title>SigLens | Handling Petabyte of Data with Fast Queries</title>
     <link rel="icon" href="../favicon.svg">
 
     <!-- Font Family -->
@@ -31,22 +31,22 @@
     <link rel="canonical" href="https://www.siglens.com/blog/petabyte-of-observability-data.html">
     <!--OG Tags-->
     <meta property="og:url" content="https://www.siglens.com/blog/petabyte-of-observability-data.html" />
-    <meta property="og:title" content="Petabyte of Observability Data" />
+    <meta property="og:title" content="Handling Petabyte of Data with Fast Queries" />
     <meta property="og:description" content="SigLens — a powerful solution designed to handle massive data volumes." />
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.siglens.com/assets/petabyte-of-observability-data.png" />
-    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/petabyte-of-observability-data.png" />
+    <meta property="og:image" content="https://www.siglens.com/assets/handling-petabyte-data.png" />
+    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/handling-petabyte-data.png" />
     <meta property="og:image:type" content="image/jpg" />
-    <meta name="image" property="og:image" content="https://www.siglens.com/assets/petabyte-of-observability-data.png">
+    <meta name="image" property="og:image" content="https://www.siglens.com/assets/handling-petabyte-data.png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
 
     <!--Twitter OG Tag-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@siglens.com" />
-    <meta name="twitter:image" content="https://www.siglens.com/assets/petabyte-of-observability-data.png">
+    <meta name="twitter:image" content="https://www.siglens.com/assets/handling-petabyte-data.png">
     </meta>
-    <meta name="twitter:image:alt" content="Petabyte of Observability Data" />
+    <meta name="twitter:image:alt" content="Handling Petabyte of Data with Fast Queries" />
     <style>
         .sub-heading {
             margin-top: 24px !important;
@@ -174,7 +174,7 @@
     </nav>
     <div class="container my-md-5 pt-5 my-2 blog-post">
         <div class="container-md">
-            <img class="mt-3 ss-vs-ch" src="../assets/petabyte-of-observability-data.png" alt="Petabyte of Observability Data"/>
+            <img class="mt-3 ss-vs-ch" src="../assets/handling-petabyte-data.png" alt="Handling Petabyte of Data with Fast Queries"/>
             <div class="d-flex">
                 <div id="sidebar">
                     <nav id="sidebar-nav">
@@ -217,8 +217,8 @@
                             </li>
                             <li class="nav-item main-link"><a class="section-nav-link"
                                     href="#section6">Conclusion</a></li>
-                                    <li class="nav-item main-link"><a class="section-nav-link"
-                                        href="#section7">Try SigLens in less than 1 minute</a></li>
+                                    <!-- <li class="nav-item main-link"><a class="section-nav-link"
+                                        href="#section7">Try SigLens in less than 1 minute</a></li> -->
 
                         </ul>
                     </nav>
@@ -226,7 +226,7 @@
                 <div id="all-sections" class="container-md">
                     <div id="section0" class="d-flex flex-column ">
                         <div class="para-bold mb-2 mt-4">
-                            We are thrilled to announce that SigLens, our advanced technology, tackles data overload by seamlessly handling 1 PB of data daily with sub-one second query performance, using only <span class="courier-font">805 vCPUs</span>. 
+                            We are thrilled to announce that SigLens, our advanced observability solution, tackles data overload by seamlessly handling 1 PB of data daily with sub-one second query performance, using only <span class="courier-font">805 vCPUs</span>. 
                             <p></p>This lightning-fast response ensures instant critical insights, all at a cost-effective <span class="courier-font">$1200/day</span> on AWS, a fraction compared to alternatives like Splunk or Elastic.</p>
                         </div>
                     </div>
@@ -240,7 +240,8 @@
                                 dynamic dataset with high cardinality.
                                 Here are some key details about this dataset:
                             </p>
-                            <table class="ShapeDataTable">
+                            <div class="my-4 table-div">
+                            <table class="ShapeDataTable query-result-table">
                                 <tr>
                                     <td>Num. of log lines</td>
                                     <td>1 Trillion</td>
@@ -274,6 +275,7 @@
                                     <td>5</td>
                                 </tr>
                             </table>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -296,7 +298,8 @@
                                         <h2 class="sub-heading mt-2 section"> Pod Details:
                                         </h2>
                                         <p>Here, we have the details of Pod:</p>
-                                    <table class="ShapeDataTable">
+                                        <div class="my-4 table-div">
+                                            <table class="ShapeDataTable query-result-table">
                                         <tr>
                                             <td>POD Type:</td>
                                             <td>10 <small>vCPU</small>,&nbsp;&nbsp;20 GB
@@ -308,10 +311,11 @@
                                             <td>100</td>
                                         </tr>
                                     </table>
+                                </div>
                                     <h2 class="sub-heading mt-2 section"> Total Ingest Resources Allocated:
                                     </h2>
-                                    <table class="ShapeDataTable">
-                                        <tr>
+                                    <div class="my-4 table-div">
+                                        <table class="ShapeDataTable query-result-table">                                        <tr>
                                             <td>Num vCPU</td>
                                             <td>1000</td>
                                         </tr>
@@ -328,6 +332,7 @@
                                             <td>200 TB</td>
                                         </tr>
                                     </table>
+                                    </div>
                                 </div>
                                 <br>
                             </div>
@@ -338,8 +343,8 @@
                                 <h2 class="sub-heading mt-2 section"> Pod Details:
                                 </h2>
 
-                                <table class="ShapeDataTable">
-                                    <tr>
+                                <div class="my-4 table-div">
+                                    <table class="ShapeDataTable query-result-table">                                    <tr>
                                         <td>POD Type:</td>
                                         <td>10 <small>vCPU</small>,&nbsp;&nbsp;25 GB <small>RAM</small>,&nbsp;&nbsp;50
                                             GB <small>EBS</small></td>
@@ -349,10 +354,11 @@
                                         <td>1</td>
                                     </tr>
                                 </table>
+                                </div>
                                 <h4 class="sub-heading-2 mt-4">Total Query Resources Allocated:</h4>
                                 
-                                <table class="ShapeDataTable">
-                                    <tr>
+                                <div class="my-4 table-div">
+                                    <table class="ShapeDataTable query-result-table">                                    <tr>
                                         <td>Num vCPU</td>
                                         <td>10</td>
                                     </tr>
@@ -365,14 +371,15 @@
                                         <td>50 GB</td>
                                     </tr>
                                 </table>
+                                </div>
                                 <br>
                             </div>
                             <div class="section" id="section2-3">
                                 <h4 class="sub-heading mt-2">Client Resources:</h4>
                                 <p class="mt-2">Next, we have to look for Client Resources. SigLens had a bunch of pods, each with <span class="courier-font">7 vCPUs</span>, all set to carry out commands and talk to users.</p>
                                 <h4 class="sub-heading-2 mt-4">Pod Details:</h4>
-                                <table class="ShapeDataTable">
-                                    <tr>
+                                <div class="my-4 table-div">
+                                    <table class="ShapeDataTable query-result-table">                                    <tr>
                                         <td>POD Type:</td>
                                         <td>7 <small>vCPU</small>,&nbsp;&nbsp;2 GB <small>RAM</small></td>
                                     </tr>
@@ -381,9 +388,10 @@
                                         <td>75</td>
                                     </tr>
                                 </table>
+                                </div>
                                 <h4 class="sub-heading-2 mt-4">Total Client Resources Allocated:</h4>
-                                <table class="ShapeDataTable">
-                                    <tr>
+                                <div class="my-4 table-div">
+                                    <table class="ShapeDataTable query-result-table">                                    <tr>
                                         <td>Num vCPU</td>
                                         <td>525</td>
                                     </tr>
@@ -392,6 +400,7 @@
                                         <td>150 GB</td>
                                     </tr>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,7 +443,7 @@
                                 the test our storage statistics were as follows.</p>
                             <img id="compression-ratio" src="../assets/compression-ratio.png" alt="Storage Statistics">
                             <br>
-                            <p>SigLens takes the incoming data, converts it into columnar segments and columnar micro indices. Compression is dynamic in nature for each segment based on the shape of the data. These segments are periodically uploaded to S3 for high durability, longer retention and query response.</p>
+                            <p>SigLens takes the incoming data, converts it into columnar segments and columnar micro indices. Compression is dynamic in nature for each segment based on the shape of the data.</p>
                             <h4 class="sub-heading mt-2 section" id="section3-6">Individual Index Counts:</h4>
                             <p class="blog-para mt-4">Let's take a look at the graph below, which demonstrates individual index count, where each index had over <span class="courier-font">67 TB</span> of data and <span class="courier-font">66 Billion</span> of unique events.
                             <img id="cluster-stats-indexes" src="../assets/cluster-stats-indexes.png" alt="Individual Index Counts">
@@ -445,7 +454,7 @@
                         <div>
                             <h3 class="heading">Querying</h3>
                             <p class="my-2 blog-para mt-4">
-                                We can witness exceptional performance of SigLens not only in data ingestion but also in querying operations. It maintained smooth operation of queries during and after the ingestion of the entire petabyte dataset. Maintaining query response times below 3 seconds, SigLens efficiently processed queries while combing through the massive volume of data.
+                                We can witness exceptional performance of SigLens not only in data ingestion but also in querying operations. It maintained smooth operation of queries during and after the ingestion of the entire petabyte dataset. Maintaining query response times around 3 seconds, SigLens efficiently processed queries while combing through the massive volume of data.
                             </p>
                             <br>
                             <span class="font-weight-bold">Query: </span> <code
@@ -517,7 +526,7 @@
                                 operational costs.
                             </p>
                             <div id="section7" class="section mt-4">
-                                <div>
+                                <!-- <div>
                                     <h1 class="heading">Try SigLens in less than 1 minute
                                     </h1>
                                     <div class="blog-para mt-3">
@@ -533,7 +542,7 @@
                                                 class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub
                                             Repo</div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- <br> -->
                         </div>

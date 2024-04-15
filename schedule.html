@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--  Main CSS File -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="component/schedule/schedule.css">
+    <!-- <link rel="stylesheet" href="component/schedule/schedule.css"> -->
     <!--Meta Tags-->
     <meta name="description" content="SigLens is an open source alternative to Splunk/DataDog
         100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
@@ -49,14 +49,14 @@
 </script>
 
 <body id="dark-theme">
-    <main class="root-container">
+    <main class="schedule-root-container">
         <a class="navbar-brand position-absolute" style="left: 15px; top:15px;" href="./index.html">
             <div class="d-flex">
                 <div class="pr-1"><img src="./assets/ss-logo.svg" alt="siglens-logo"></div>
                 <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
             </div>
         </a>
-        <form class="sc-form">
+        <!-- <form class="sc-form">
             <h1 class="sc-heading">Book a Demo</h1>
                 <input class="sc-input" type="text" id="sc-first-name" placeholder="First Name"/>
                 <input class="sc-input" type="text" id="sc-last-name" placeholder="Last Name"/>
@@ -76,7 +76,7 @@
                     </svg>
                 </label>
 
-                    <!-- SVG Sprites-->
+                   
                     <svg class="sprites">
                       <symbol id="select-arrow-down" viewbox="0 0 10 6">
                         <polyline points="1 1 5 5 9 1"></polyline>
@@ -84,7 +84,40 @@
                     </svg>
                 <input class="sc-input" type="text" id="sc-hear-about" placeholder="Where did you hear about Siglens?"/>
                 <button class="sc-submit-btn" type="submit">Submit</button>
-        </form>
+        </form> -->
+            <h1 class="main-heading text-center text-white font-weight-light mb-4" >Book a Demo</h1>
+        <form class="cloud-form m-0" action="https://hooks.airtable.com/workflows/v1/genericWebhook/appexoI5dGAdMIyTL/wflCcs4pZvUBovYfP/wtrfwRhgj5tDZmGv6" method="POST" target="hidden_iframe" 
+           onsubmit="submitted=true;">
+              <label for="fname">Name:</label>
+              <input type="text" id="fname" name="fname" required>
+              <label for="cname">Company:</label>
+              <input type="text" id="cname" name="cname" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <label for="slct">
+                Which of the following best describes your position in your company?
+              </label>
+              <select class="select" id="slct" name="sc-role" required="required">
+                <option value="" disabled ></option>
+                <option value="founder/co-founder">Founder/Co-founder</option>
+                <option value="executive-leadership">Executive Leadership</option>
+                <option value="team-lead/supervisor">Team Lead/Supervisor</option>
+                <option value="techincal">Technical</option>
+                <option value="other">Other</option>
+                <svg>
+                    <use xlink:href="#select-arrow-down"></use>
+                </svg>
+              </select>
+              <svg class="sprites">
+                <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                  <polyline points="1 1 5 5 9 1"></polyline>
+                </symbol>
+              </svg>
+              <label for="hear-about">Where did you hear about Siglens?</label>
+              <input type="text" id="hear-about" name="hear-about">
+              <input type="submit" value="Book a Demo" id="submit-btn" onclick="handleSchedule">
+
+          </form>
     </main>
 
     <!-- jQuery and JS bundle w/ Popper.js -->

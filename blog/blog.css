@@ -80,7 +80,7 @@ body {
 
 .cta-bar{
     position: fixed;
-    background-color: var(--purple-1);
+    background-color: var(--purple-2);
     color: var(--white-0);
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ body {
 }
 .cta-btn{
     background-color: var(--white-0);
-    color: var(--purple-1);
+    color: var(--purple-2);
     border:none;
     width: 100px;
     height: 26px;
@@ -108,7 +108,11 @@ body {
 
 .cta-btn:hover{
     background-color: var(--grey-1);
-    color: var(--purple-2)
+    color: var(--purple-1);
+}
+
+.cta-btn:focus{
+    outline: none;
 }
 
 /*Single Blog Post*/
