@@ -58,36 +58,40 @@
         </a>
         
             <h1 class="main-heading text-center text-white font-weight-light mb-4" >Book a Demo</h1>
-        <form class="cloud-form m-0" action="https://hooks.airtable.com/workflows/v1/genericWebhook/appexoI5dGAdMIyTL/wflCcs4pZvUBovYfP/wtrfwRhgj5tDZmGv6" method="POST" target="hidden_iframe" 
-           onsubmit="submitted=true;">
-              <label for="fname">Name:</label>
-              <input type="text" id="fname" name="fname" required>
-              <label for="cname">Company:</label>
-              <input type="text" id="cname" name="cname" required>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+            onload="if(submitted) {window.location='/form-submit.html'}"></iframe>
+        <form class="cloud-form m-0" action="https://hooks.airtable.com/workflows/v1/genericWebhook/appxiB3PlLSbbKp3K/wfl6xzDwkFfQeCqRW/wtr8s35VNJ5om79Sa" method="POST" target="hidden_iframe" 
+           onsubmit="submitted=true; window.open('https://calendly.com/knawale/30min', '_blank');">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              <label for="company">Company:</label>
+              <input type="text" id="company" name="company" required>
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required>
               <label for="slct">
                 Which of the following best describes your position in your company?
               </label>
-              <select class="select" id="slct" name="sc-role" required="required">
-                <option value="" disabled ></option>
+              <div class="select-wrapper">
+              <select class="select" id="slct" name="position" required="required">
+                <option value="" disabled selected></option>
                 <option value="founder/co-founder">Founder/Co-founder</option>
                 <option value="executive-leadership">Executive Leadership</option>
                 <option value="team-lead/supervisor">Team Lead/Supervisor</option>
                 <option value="techincal">Technical</option>
                 <option value="other">Other</option>
-                <svg>
-                    <use xlink:href="#select-arrow-down"></use>
-                </svg>
               </select>
+              <svg class="select-icon">
+                <use xlink:href="#select-arrow-down"></use>
+              </svg>
+            </div>
               <svg class="sprites">
                 <symbol id="select-arrow-down" viewbox="0 0 10 6">
                   <polyline points="1 1 5 5 9 1"></polyline>
                 </symbol>
               </svg>
-              <label for="hear-about">Where did you hear about Siglens?</label>
-              <input type="text" id="hear-about" name="hear-about">
-              <input type="submit" value="Book a Demo" id="submit-btn" onclick="handleSchedule">
+              <label for="hear-about-siglens">Where did you hear about Siglens?</label>
+              <input type="text" id="hear-about-siglens" name="hear-about-siglens">
+              <input type="submit" value="Book a Demo" id="submit-btn" >
 
           </form>
     </main>
