@@ -751,6 +751,7 @@ line-height: 26px;}
     font-size: 14px;
     color: var(--grey);
     margin-bottom: -10px;
+    position: relative;
 }
 
 .cloud-form input{
@@ -777,8 +778,95 @@ line-height: 26px;}
     font-size: 16px;
 }
 
-.cloud-form input:focus{
+.cloud-form input:focus, select:focus{
     border-bottom: 2px solid var(--purple-0);
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.select {
+    position: relative;
+    width:100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--white-0);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+
+  .select-icon {
+    position: absolute;
+    right: 12px;
+    top: calc(50% - 17px);
+    width: 16px;
+    height: 10px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+.select:focus {
+    border-bottom: 2px solid var(--purple-0);
+}
+
+.select:hover + .select-icon {
+    stroke: var(--purple-1);
+}
+
+  .select:required:invalid {
+    color: var(--ebony-1);
+  }
+  .select option {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 8px;
+
+  }
+  .select option[value=""][disabled] {
+    display: none;
+  }
+  .select:focus {
+    outline: none;
+    border-color: var(--purple-1);
+    box-shadow: none;
+  }
+  .select:hover + svg {
+    stroke: var(--purple-1);
+  }
+
+  .select option:hover {
+    background-color: var(--purple-1);
+    color: var(--white-0);
+}
+
+  .sprites {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+.schedule-root-container{
+    width: 100%;
+    display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+padding: 100px 30px;
 }
 
 .thank-tick{

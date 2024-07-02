@@ -1,0 +1,127 @@
+:root {
+    --white-0: #fff;
+    --marigold: #F2A52B;
+    
+    --grey: #d9d9d9;
+    --grey-1: #ebebeb;
+    --purple-1: #6347D9;
+    --purple-2: #2E205F;
+    --purple-3: #B4A6E6;
+    
+    --black-1: #160F29;
+    --black-2: #222;
+    --ebony-1: #A29FA9;
+    
+    /* Aliases */
+    --nav-color: var(--purple-2);
+    --header-color: var(--black-1);
+}
+
+.root-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+justify-content: center;
+}
+
+.sc-heading{
+    color: var(--white-0);
+}
+
+.sc-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+    gap:12px;
+    width: 50%;
+}
+
+.sc-input{
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--purple-1);
+    background-color: transparent;
+    width: 100%;
+    color: var(--white-0);
+}
+
+input::placeholder{
+    font-size: 16px !important;
+    color: var(--ebony-1);
+}
+
+input:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.select {
+    position: relative;
+  }
+
+  .select select{
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 7px 40px 7px 0px;
+    font-size: 16px;
+    border: none;
+    border-bottom:  1px solid var(--purple-1);
+    width:100%;
+    color: var(--white-0);
+  }
+
+
+.select svg {
+    position: absolute;
+    right: 12px;
+    top: calc(50% - 3px);
+    width: 10px;
+    height: 6px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+
+  .select select:required:invalid {
+    color: var(--ebony-1);
+  }
+  .select select option {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 8px;
+
+  }
+  .select select option[value=""][disabled] {
+    display: none;
+  }
+  .select select:focus {
+    outline: none;
+    border-color: var(--purple-1);
+    box-shadow: none;
+  }
+  .select select:hover + svg {
+    stroke: var(--purple-1);
+  }
+
+  .sprites {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+
+.sc-submit-btn{
+    margin-top: 18px;
+    padding: 6px 6px;
+    color: var(--white-0);
+    border-radius: 8px;
+    background-color: var(--purple-1);
+}

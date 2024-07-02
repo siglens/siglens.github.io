@@ -2,8 +2,110 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SigLens | Schedule</title>
-    <meta http-equiv="refresh" content="0; url='https://calendly.com/knawale/30min'" />
+    <link rel="icon" href="/favicon.svg">
+
+    <!-- Font-awesome Family -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="component/schedule/schedule.css"> -->
+    <!--Meta Tags-->
+    <meta name="description" content="SigLens is an open source alternative to Splunk/DataDog
+        100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.siglens.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SigLens">
+    <meta property="og:description" content="SigLens is an open source alternative to Splunk/DataDog
+        100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+    <meta property="og:image" content="https://www.siglens.com/assets/sig-share-img.png">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="siglens.com">
+    <meta property="twitter:url" content="https://www.siglens.com/">
+    <meta name="twitter:title" content="SigLens">
+    <meta name="twitter:description" content="SigLens is an open source alternative to Splunk/DataDog
+        100x more efficient than Splunk and helps your reduce your observability bill by 90%.">
+    <meta name="twitter:image" content="https://www.siglens.com/assets/sig-share-img.png">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body id="dark-theme">
+    <main class="schedule-root-container">
+        <a class="navbar-brand position-absolute" style="left: 15px; top:15px;" href="./index.html">
+            <div class="d-flex">
+                <div class="pr-1"><img src="./assets/ss-logo.svg" alt="siglens-logo"></div>
+                <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+            </div>
+        </a>
+        
+            <h1 class="main-heading text-center text-white font-weight-light mb-4" >Book a Demo</h1>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+            onload="if(submitted) {window.location='/form-submit.html'}"></iframe>
+        <form class="cloud-form m-0" action="https://hooks.airtable.com/workflows/v1/genericWebhook/appxiB3PlLSbbKp3K/wfl6xzDwkFfQeCqRW/wtr8s35VNJ5om79Sa" method="POST" target="hidden_iframe" 
+           onsubmit="submitted=true; window.open('https://calendly.com/knawale/30min', '_blank');">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              <label for="company">Company:</label>
+              <input type="text" id="company" name="company" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <label for="slct">
+                Which of the following best describes your position in your company?
+              </label>
+              <div class="select-wrapper">
+              <select class="select" id="slct" name="position" required="required">
+                <option value="" disabled selected></option>
+                <option value="founder/co-founder">Founder/Co-founder</option>
+                <option value="executive-leadership">Executive Leadership</option>
+                <option value="team-lead/supervisor">Team Lead/Supervisor</option>
+                <option value="techincal">Technical</option>
+                <option value="other">Other</option>
+              </select>
+              <svg class="select-icon">
+                <use xlink:href="#select-arrow-down"></use>
+              </svg>
+            </div>
+              <svg class="sprites">
+                <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                  <polyline points="1 1 5 5 9 1"></polyline>
+                </symbol>
+              </svg>
+              <label for="hear-about-siglens">Where did you hear about Siglens?</label>
+              <input type="text" id="hear-about-siglens" name="hear-about-siglens">
+              <input type="submit" value="Book a Demo" id="submit-btn" >
+
+          </form>
+    </main>
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./component/guide-list/guide-list.js"></script>
+</body>
 
 </html>
