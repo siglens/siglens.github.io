@@ -76,8 +76,8 @@
             <a class="nav-link" href="/press-news.html">Press & News</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"> Community </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
               <a class="dropdown-item" href="/slack.html">Slack</a>
@@ -90,7 +90,7 @@
           </li>
           <li>
             <a href="/slack.html" target="_blank">
-                <img src="assets/slack.svg" width="22" height="22" alt="">
+              <img src="assets/slack.svg" width="22" height="22" alt="">
             </a>
           </li>
           <li>
@@ -115,17 +115,10 @@
 
     <ul class="hero-btn-container">
       <li class="hero-btn">
-        <a href="#getting-started" id="install-siglens-btn"
-          >Install SigLens</a
-        >
+        <a href="#getting-started" id="install-siglens-btn">Install SigLens</a>
       </li>
       <li class="hero-btn">
-        <a
-          href="http://playground.siglens.com:5122/"
-          target="_blank"
-          id="playground-btn"
-          >Playground</a
-        >
+        <a href="http://playground.siglens.com:5122/" target="_blank" id="playground-btn">Playground</a>
       </li>
     </ul>
 
@@ -390,7 +383,8 @@
                   </tr>
                   <tr>
                     <td>Impact of Old and New Data</td>
-                    <td>Repeated loop of drop/pull for old and new data affecting query response times plus repeated round trips to S3</td>
+                    <td>Repeated loop of drop/pull for old and new data affecting query response times plus repeated
+                      round trips to S3</td>
                     <td>No impact on query times due to a balanced approach</td>
                   </tr>
                   <tr>
@@ -456,44 +450,24 @@
     </div>
   </section>
 
-  <section class="pb-md-5 pb-1">
-    <div class="container mb-5">
-      <div class="main-heading text-center text-white font-weight-light mb-md-4 mb-2">🎊 Win Cool Swag 🎊</div>
-      <div class="d-flex justify-content-center ">
-        <button class="btn mt-4" id="swag-btn">
-          <a href="./feedback-form.html" target="_blank">Participate Now</a>
+  <section class="my-4 pb-5">
+    <div class="container position-relative">
+      <div class="main-heading text-center text-white font-weight-light mb-4">Join our waiting list for <span
+          style="color:#F2A52B">SaaS</span></div>
+      <div class="pt-md-4 pt-2 d-flex justify-content-center">
+        <button class="btn purple-btn">
+          <a href="https://forms.gle/vEUeYrMG9makHZPo8" target="_blank">Join Waiting List</a>
         </button>
       </div>
     </div>
-  </section>
-
-  <section class="my-4 pb-5">
-    <div class="container position-relative">
-        <div class="main-heading text-center text-white font-weight-light mb-4">Join our waiting list for <span style="color:#F2A52B">SaaS</span></div>
-        <div class="pt-md-4 pt-2">
-          <div>
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
-        onload="if(submitted) {window.location='/form-submit.html'}"></iframe>
-           <form class="cloud-form" action="https://hooks.airtable.com/workflows/v1/genericWebhook/appexoI5dGAdMIyTL/wflCcs4pZvUBovYfP/wtrfwRhgj5tDZmGv6" method="POST" target="hidden_iframe" 
-           onsubmit="submitted=true;">
-              <label for="fname">Name:</label>
-              <input type="text" id="fname" name="fname" required>
-              <label for="cname">Company:</label>
-              <input type="text" id="cname" name="cname" required>
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-              <input type="submit" value="Submit" id="submit-btn">
-          </form>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Contribute and Community Section  -->
   <section class="pt-md-5 pt-0">
     <div class="container position-relative">
-      <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient" style="width: 80%; transform: translate(-50%, -40%);">
+      <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient"
+        style="width: 80%; transform: translate(-50%, -40%);">
       <div class="row d-flex justify-content-center align-items-center">
         <div
           class="col-md-6 col-10 bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center"
@@ -548,15 +522,12 @@
             <a class="mt-3 pl-2" href="/questions.html">Questions</a>
           </div>
         </div>
-        <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
+        <div class="col-md-5 text-md-start order-0 order-md-1 mx-4 mx-md-0">
           <h5 class="text-start font-weight-bold text-white">Subscribe to our newsletter</h5>
           <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
-            <div class="flex-fill w-100 mt-4">
-              <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
-            </div>
-            <div class="flex-grow w-auto">
-              <button class="btn btn-primary ml-2" id="ns-form-btn">Submit</button>
-            </div>
+            <button class="btn btn-primary mt-2" id="ns-form-btn">
+              <a href="https://forms.gle/D4UmjNiJuzTe1Jnd7" target="_blank">Subscribe</a>
+            </button>
           </form>
         </div>
         <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
@@ -596,15 +567,14 @@
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
   <script>
-    var submitted=false;
     function setScrollAmount() {
-        var marquee = document.getElementById("marquee");
-        var isMobile = window.innerWidth <= 767;
-        if (isMobile) {
-            marquee.scrollAmount = 5; // Set slower speed for mobile
-        } else {
-            marquee.scrollAmount = 10; // Set faster speed for desktop
-        }
+      var marquee = document.getElementById("marquee");
+      var isMobile = window.innerWidth <= 767;
+      if (isMobile) {
+        marquee.scrollAmount = 5; // Set slower speed for mobile
+      } else {
+        marquee.scrollAmount = 10; // Set faster speed for desktop
+      }
     }
     setScrollAmount();
     window.addEventListener("resize", setScrollAmount);
