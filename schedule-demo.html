@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Demo | SigLens</title>
+    <link rel="icon" href="/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .demo-section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .demo-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -25%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at center, rgba(122, 60, 234, 0.1) 0%, rgba(2, 0, 13, 0) 70%);
+            z-index: -1;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .demo-content {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+        .demo-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .demo-text h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: #fff;
+            font-weight: 300;
+        }
+        .demo-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+        .demo-text ul {
+            list-style: none;
+            padding: 0;
+        }
+        .demo-text ul li {
+            color: #ccc;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .demo-text ul li::before {
+            content: '•';
+            color: var(--purple-0);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        .calendly-inline-widget {
+            flex: 1;
+            height: 700px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(122, 60, 234, 0.2);
+            box-shadow: 0 4px 24px rgba(122, 60, 234, 0.1);
+        }
+        @media (max-width: 768px) {
+            .demo-content {
+                flex-direction: column;
+            }
+            .demo-text {
+                padding-right: 0;
+            }
+            .demo-text h1 {
+                font-size: 2.5rem;
+            }
+            .calendly-inline-widget {
+                min-height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body id="dark-theme">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top d-flex flex-column p-0">
+        <div class="container py-2 px-4 px-md-0">
+            <a class="navbar-brand" href="index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="./assets/ss-logo.svg" alt="siglens-logo"></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <section class="demo-section">
+        <div class="demo-container">
+            <div class="demo-content">
+                <div class="demo-text">
+                    <h1>Let's Talk</h1>
+                    <p>We'd love to understand your monitoring use case and discuss how SigLens, our open source observability solution, can help you achieve:</p>
+                    <ul style="color: #ccc; font-size: 1.2rem; line-height: 1.6;">
+                        <li>100x lower compute and storage than traditional solutions</li>
+                        <li>Efficient scaling from 8 TB/day to 1 PB/day</li>
+                        <li>Lightning-fast search and aggregation queries</li>
+                        <li>Simplified operations with a single binary architecture</li>
+                    </ul>
+                </div>
+                <div class="calendly-inline-widget">
+                    <!-- Calendly inline widget begin -->
+                    <iframe
+                        src="https://calendly.com/knawale/30min"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        scrolling="no"
+                    ></iframe>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
+
+

@@ -104,6 +104,20 @@ a {
   color: var(--white-0);
 }
 
+#book-demo-btn {
+  background: var(--purple-0);
+  color: var(--white-0);
+  text-decoration: none;
+  border: 1px solid var(--purple-0);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#book-demo-btn:hover {
+  background: var(--purple-4);
+  border-color: var(--purple-4);
+}
+
 .hero-btn-container {
   list-style: none;
   display: flex;
@@ -192,7 +206,7 @@ a {
     background: var(--main-color);
 }
 .video-container video {
-    width: 100%; 
+    width: 100%;
     height: auto;
     border-radius: 20px;
 }
@@ -482,8 +496,8 @@ a:focus {
     position: relative;
     background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
     font-weight: 400;
-   
-} 
+
+}
 
 .tab-content .para-bold{font-size: 16px !important;
 line-height: 26px;}
