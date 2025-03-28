@@ -61,7 +61,7 @@
                         <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
                             target="_blank">Documentation</a>
                     </li>
-                    <li class="nav-item "> 
+                    <li class="nav-item ">
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -76,6 +76,9 @@
                     </li>
                     <li>
                         <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -163,18 +166,18 @@
                         <div style="max-width: 100%;" class="mx-auto">
                             <br>
                             <h2>Meta Description</h2>
-                            <p class="my-2 para-bold pr-3">Dive into the benefits of Python logging libraries with our in-depth guide 
-                                that highlights the best logging frameworks. Discover why these libraries are essential for streamlined and organized 
+                            <p class="my-2 para-bold pr-3">Dive into the benefits of Python logging libraries with our in-depth guide
+                                that highlights the best logging frameworks. Discover why these libraries are essential for streamlined and organized
                                 logging in Python, boosting debugging capabilities, and improving overall application observability.
                             </p>
                         <br>
                             <img class="my-3 python-img1" src="/assets/python.png  " />
-                        <br>                    
+                        <br>
                             <p class="my-2 para-bold pr-3">Logging is a crucial component of software development. It equips developers with the tools to understand an application's activity,
-                                 pinpoint issues, and monitor its performance. Logging facilitates real-time monitoring as well as post-mortem debugging and performance improvement 
+                                 pinpoint issues, and monitor its performance. Logging facilitates real-time monitoring as well as post-mortem debugging and performance improvement
                                 through consistent capture of events, warnings, errors, and exceptions. Without comprehensive logging, understanding the workings of complex software systems becomes challenging,
                                  compromising their reliability, security, and maintainability throughout an application's lifespan. Python, a flexible language,
-                                offers a variety of logging libraries to meet varied demands. In this article, we will examine the world of logging in Python, spanning from its built-in module to well-known third-party libraries.                            
+                                offers a variety of logging libraries to meet varied demands. In this article, we will examine the world of logging in Python, spanning from its built-in module to well-known third-party libraries.
                             </p>
                             <p class="my-2 para-bold pr-3">
                                 Logging libraries in Python simplify the process of gathering, organizing, and interpreting log data, which is essential for maintaining the performance, security,
@@ -261,18 +264,18 @@
                             <br>
                             <ol>
                                 <li>
-                                    <b>Structured logs:</b> Logging libraries provide logs in an organized and systematic format, 
-                                    streamlining the log data processing and interpretation. This structured approach enhances log processing 
+                                    <b>Structured logs:</b> Logging libraries provide logs in an organized and systematic format,
+                                    streamlining the log data processing and interpretation. This structured approach enhances log processing
                                     efficiency and improves readability.
                                 </li>
                                 <br>
                                 <li>
                                     <b>Python's print() method:</b> While a basic tool, the print() method has many limitations. It yields unstructured logs,
-                                     is not configurable, and produces cluttered console output. Without features such as severity levels, timestamps, 
+                                     is not configurable, and produces cluttered console output. Without features such as severity levels, timestamps,
                                      and log rotation, it is unfit for use in sophisticated systems. Since it does not provide structured data or contextual information,
                                       debugging and analysis become difficult, and manual code modifications are required for configuration tweaks. In addition,
-                                       there are security issues associated with using print() on sensitive data. To work around these limitations, specialized logging 
-                                       libraries are recommended for better log handling in Python programs, enhancing maintainability and troubleshooting capabilities. 
+                                       there are security issues associated with using print() on sensitive data. To work around these limitations, specialized logging
+                                       libraries are recommended for better log handling in Python programs, enhancing maintainability and troubleshooting capabilities.
                                 </li>
                                 <br>
                                 <li>
@@ -287,7 +290,7 @@
                                 <br>
                                 <li>
                                     <b>Customization:</b> Logging libraries give you precise control over the format of log messages and the locations where they are output.
-                                     Features like custom log message formats, log file rotation, and log rotation policies are just a few of the options you have for adjusting 
+                                     Features like custom log message formats, log file rotation, and log rotation policies are just a few of the options you have for adjusting
                                      the log output to your specific needs.
                                 </li>
                                 <br>
@@ -315,7 +318,7 @@
                                 </li>
                                 <br>
                                 <li>
-                                    <b>Testing and Debugging:</b>Logging libraries are essential for testing and debugging software programs. Debugging is made easier by enabling or 
+                                    <b>Testing and Debugging:</b>Logging libraries are essential for testing and debugging software programs. Debugging is made easier by enabling or
                                     disabling logging at various degrees of detail during development and production.
                                 </li>
                             </ol>
@@ -326,7 +329,7 @@
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Loguru</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">While Python comes with an integrated logging module, there are third-party libraries like Loguru that make logging easier to use, more adaptable, 
+                            <p class="my-2 para-bold pr-3">While Python comes with an integrated logging module, there are third-party libraries like Loguru that make logging easier to use, more adaptable,
                                 and more powerful. We'll delve into the Loguru logging framework in this article, discussing its distinctive features, its benefits, and guidance on its application.
                             </p>
                             <div>
@@ -336,19 +339,19 @@
                                     <br>
                                     <ul>
                                         <li>
-                                            <b>Simplicity:</b>Loguru was created with simplicity and intuitiveness in mind. Logging is simple due to its user-friendly API, 
+                                            <b>Simplicity:</b>Loguru was created with simplicity and intuitiveness in mind. Logging is simple due to its user-friendly API,
                                             which lowers the learning curve for both newcomers and seasoned developers.
                                         </li>
                                         <li>
-                                            <b>Structured Logging:</b>Structured Logging is automatically supported by Loguru. It makes it simpler to evaluate and incorporate log data into other 
+                                            <b>Structured Logging:</b>Structured Logging is automatically supported by Loguru. It makes it simpler to evaluate and incorporate log data into other
                                             tools and systems by allowing you to log data in a variety of organized formats, such as JSON.
                                         </li>
                                         <li>
-                                            <b>Automatic Log Rotation:</b>One frequent difficulty is controlling log file sizes. With automatic log rotation, Loguru makes this easier by 
+                                            <b>Automatic Log Rotation:</b>One frequent difficulty is controlling log file sizes. With automatic log rotation, Loguru makes this easier by
                                             preventing excessive log file growth and disk space usage.
                                         </li>
                                         <li>
-                                            <b>Flexible Formatting:</b>Loguru provides a wide range of customization choices for timestamps, log levels, and log message formatting. 
+                                            <b>Flexible Formatting:</b>Loguru provides a wide range of customization choices for timestamps, log levels, and log message formatting.
                                             The output can readily be modified to suit your unique requirements.
                                         </li>
                                         <li>
@@ -359,9 +362,9 @@
                                             <b>Handling Exceptions:</b>Loguru can catch and log exceptions automatically, making it simpler to identify problems and track the origin of failures in your application.
                                         </li>
                                         <li>
-                                            <b>Asynchronous Logging:</b>Loguru offers asynchronous logging for performance-critical applications. This approach diminishes the influence of logging on the application's 
+                                            <b>Asynchronous Logging:</b>Loguru offers asynchronous logging for performance-critical applications. This approach diminishes the influence of logging on the application's
                                             operational efficiency by reallocating logging tasks to alternate threads. .
-                                            Incorporating Loguru into your Python projects can better your logging capabilities, streamlining debugging and monitoring endeavors.                                            
+                                            Incorporating Loguru into your Python projects can better your logging capabilities, streamlining debugging and monitoring endeavors.
                                         </li>
                                     </ul>
                                 </div>
@@ -398,11 +401,11 @@ logger.critical("Critical message.")</code></pre>
                                     <pre class="language-python"><code class="language-python">from loguru import logger
 # Configure the logger with a custom format
 logger.add("app.log", format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}", level="INFO")
-                                        
+
 # Log messages
-logger.info("An example log message.")</code></pre> 
+logger.info("An example log message.")</code></pre>
 <br>
-                                    <h3>Structured Logging: </h3> 
+                                    <h3>Structured Logging: </h3>
                                     <p class="my-2 para-bold pr-3">
                                         Loguru supports structured logging, allowing you to log data in structured formats such as JSON.
                                          This is useful for log analysis and integration with other tools. Here's how you can use structured logging:
@@ -410,14 +413,14 @@ logger.info("An example log message.")</code></pre>
                                     <pre class="language-python"><code class="language-python">from loguru import logger
 # Configure the logger for structured logging
 logger.add("app.log", format="{level} | {message} | {extra}", level="INFO", serialize=True)
-                                        
+
 # Log structured data
 user_data = {"username": "john_doe", "email": "john@example.com"}
-logger.info("User data", extra=user_data)</code></pre> 
+logger.info("User data", extra=user_data)</code></pre>
 <br>
                                     <p class="my-2 para-bold pr-3">Loguru offers a powerful yet user-friendly framework to streamline the logging process.
                                         Whether you're building a small script or a complex application, Loguru simplifies logging,
-                                        making it approachable and efficient. Incorportate it into your next Python project, 
+                                        making it approachable and efficient. Incorportate it into your next Python project,
                                         and experience the ease and flexibility it brings to your logging endeavors.
                                     </p>
                                     <br>
@@ -428,8 +431,8 @@ logger.info("User data", extra=user_data)</code></pre>
                     <div id="section4" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>LogBook</h1>
-                            <p class="my-2 para-bold pr-3">LogBook stands out as an adaptable logging library for Python as it offers 
-                                a wide range of capabilities to make logging into your applications effective and efficient. 
+                            <p class="my-2 para-bold pr-3">LogBook stands out as an adaptable logging library for Python as it offers
+                                a wide range of capabilities to make logging into your applications effective and efficient.
                                 It is a great option for various tasks because it excels at both synchronous and asynchronous logging.
                             </p>
                             <div>
@@ -443,16 +446,16 @@ logger.info("User data", extra=user_data)</code></pre>
                                         <li><b>Multiple Log Handlers:</b>Any custom destination can be readily logged to, including the console, files,
                                              network sockets, and others.
                                         </li>
-                                        <li><b>Custom Log Formatters: </b>LogBook gives you precise control over formatting for log messages. 
+                                        <li><b>Custom Log Formatters: </b>LogBook gives you precise control over formatting for log messages.
                                             The output of log messages can be altered to contain timestamps, log levels, and any other data you require.
                                         </li>
-                                        <li><b>Log Rotation:</b> LogBook's built-in log rotation makes managing log files much easier. You can set up unique criteria 
+                                        <li><b>Log Rotation:</b> LogBook's built-in log rotation makes managing log files much easier. You can set up unique criteria
                                             for log rotation rules based on file size, intervals, or personal preferences.
                                         </li>
-                                        <li><b>Logbook Handlers:</b> For common use cases, LogBook has several built-in handlers. FileHandler, StreamHandler, 
+                                        <li><b>Logbook Handlers:</b> For common use cases, LogBook has several built-in handlers. FileHandler, StreamHandler,
                                             SyslogHandler, and others are great examples.
                                         </li>
-                                        <li><b>Filtering and Severity Levels:</b> By using log levels to filter log messages, you can concentrate on particular problems 
+                                        <li><b>Filtering and Severity Levels:</b> By using log levels to filter log messages, you can concentrate on particular problems
                                             or ignore less important information.
                                         </li>
                                     </ul>
@@ -476,10 +479,10 @@ logger.info("User data", extra=user_data)</code></pre>
 
 # Create a logger
 logger = logbook.Logger('MyLogger')
-                                        
+
 # Add a log handler (e.g., file)
 logbook.FileHandler('app.log').push_application()
-                                        
+
 # Log messages with different log levels
 logger.debug('Debug message')
 logger.info('Informational message')
@@ -494,10 +497,10 @@ logger.critical('Critical message')</code></pre>
 logger = logbook.Logger('MyLogger')
 handler = logbook.FileHandler('app.log')
 handler.push_application()
-                                        
+
 # Customize the log format
 handler.formatter = logbook.StringFormatter('{record.time:%Y-%m-%d %H:%M:%S.%f} | {record.level_name} | {record.message}')
-                                        
+
 # Log a message
 logger.info('Custom format message')</code></pre>
 <br>
@@ -516,8 +519,8 @@ logger.info('Custom format message')</code></pre>
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Structlog</h1>
                             <p class="my-2 para-bold pr-3">A Python library with a focus on structured logging is called Structlog. Structlog embraces structured data,
-                                 frequently in the form of dictionaries or JSON, in contrast to conventional logging which generally relies on plain text log messages. 
-                                 By providing helpful context and facilitating more efficient log message processing, this method makes it simpler to examine and integrate 
+                                 frequently in the form of dictionaries or JSON, in contrast to conventional logging which generally relies on plain text log messages.
+                                 By providing helpful context and facilitating more efficient log message processing, this method makes it simpler to examine and integrate
                                 logs into monitoring and analytic tools.
                             </p>
                             <div>
@@ -551,7 +554,7 @@ logger.info('Custom format message')</code></pre>
 
 # Create a Structlog logger
 logger = structlog.get_logger()
-                                        
+
 # Log structured data
 user_data = {"user_id": 123, "username": "john_doe"}
 logger.info("User login", event="login", user_data=user_data)</code></pre>
@@ -572,7 +575,7 @@ key_order=["event", "user_id", "username"]
         ),
     ]
 )
-                                        
+
 # Log structured data
 user_data = {"user_id": 123, "username": "john_doe"}
 logger.info("User login", event="login", user_data=user_data)</code></pre>
@@ -619,7 +622,7 @@ logger.info("User login", event="login", user_data=user_data)</code></pre>
 
 # Create a Picologging logger
 log = logger.getLogger(__name__)
-                                        
+
 # Log messages with different log levels
 log.debug('Debug message')
 log.info('Informational message')
@@ -633,7 +636,7 @@ log.critical('Critical message')</code></pre>
 # Create a Picologging logger with custom format
 log = logger.getLogger(__name__)
 log.setFormat("{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
-                                        
+
 # Log a message with the custom format
 log.info('Custom format message')</code></pre>
 <br>
@@ -650,7 +653,7 @@ log.info('Custom format message')</code></pre>
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Eliot </h1>
                             <p class="my-2 para-bold pr-3">Eliot is a Python library for structured logging that seeks to streamline the logging process and improve the observability of programs.
-                                Instead of the traditional free-form text messages, Eliot uses key-value pairs with log events for a more structured approach. This method provides essential context 
+                                Instead of the traditional free-form text messages, Eliot uses key-value pairs with log events for a more structured approach. This method provides essential context
                                 for analyzing logs and troubleshooting.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
@@ -681,7 +684,7 @@ log.info('Custom format message')</code></pre>
 
 # Configure Eliot to log to a file
 to_file(open("app.log", "w"))
-                                        
+
 # Log structured data
 with start_action(action_type="user-login", username="john_doe", user_id=123):
 # Your application code here pass </code></pre>
@@ -697,7 +700,7 @@ with start_action(action_type="user-login", username="john_doe", user_id=123):
 # Log structured data with custom formatting
 with start_action(action_type="user-login", username="john_doe", user_id=123):
 log_message(message_type="info", message="User logged in", additional_data={"event": "login"})
-                                        
+
 # Log a custom message format
 with Message.log(message_type="info", message="Custom format message"):
     pass</code></pre>
@@ -714,7 +717,7 @@ with Message.log(message_type="info", message="Custom format message"):
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Conclusion </h1>
                             <p class="my-2 para-bold pr-3">The sheer diversity and capabilities of Python logging frameworks are frequently daunting. However, among the various choices,
-                                 one dependable alternative is the integrated "logging" module. Its popularity and adaptability have made it a preferred choice for developers working on 
+                                 one dependable alternative is the integrated "logging" module. Its popularity and adaptability have made it a preferred choice for developers working on
                                  a variety of projects and in a variety of sectors.
                             </p>
                             <br>
@@ -731,10 +734,10 @@ with Message.log(message_type="info", message="Custom format message"):
                         </div>
                     </div>
                 </div>
-            </div> 
-            </div>       
+            </div>
+            </div>
         </div>
-    </div>  
+    </div>
 
     <footer id="footer" class="pb-5">
         <div class="container">

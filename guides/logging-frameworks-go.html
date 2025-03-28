@@ -61,7 +61,7 @@
                         <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
                             target="_blank">Documentation</a>
                     </li>
-                    <li class="nav-item "> 
+                    <li class="nav-item ">
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -76,6 +76,9 @@
                     </li>
                     <li>
                         <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -186,7 +189,7 @@
                                 <li class="nav-item main-link"><a class="section-nav-link" href="#section10">Benchmark results of different logging libraries of go</a>
                                 </li>
                                 <li class="nav-item main-link"><a class="section-nav-link" href="#section11">Conclusion</a>
-                                </li>   
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -197,14 +200,14 @@
                             <br>
                             <h3>Meta Description</h3>
                             <p class="my-2 para-bold pr-3">Explore top Go logging frameworks like Zerolog, Zap, Logrus, and more.
-                                This comprehensive guide compares performance, features, and syntax for structured logging. 
-                                Learn installation, basic usage, and benchmark insights to select the best-fit logging framework 
+                                This comprehensive guide compares performance, features, and syntax for structured logging.
+                                Learn installation, basic usage, and benchmark insights to select the best-fit logging framework
                                 for your project's efficiency and functionality needs.
                             </p>
-                            <br>                    
+                            <br>
                             <p class="my-2 para-bold pr-3">Logging is a crucial component of software development as it offers priceless information about the behavior,
                                 efficiency, and problems of an application. The popular programming language Go includes a built-in logging package,
-                                however it lacks crucial components needed for production-level logging.                           
+                                however it lacks crucial components needed for production-level logging.
                             </p>
                             <br>
                             <p class="my-2 para-bold pr-3">
@@ -238,7 +241,7 @@ log.Record(slog.Fields{
                     </div>
                     <div id="section1" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
-                            <br>  
+                            <br>
                             <h1>Comparison of Logging Libraries of Go</h1>
                             <br>
                             <div class="mb-2 table-div">
@@ -320,7 +323,7 @@ log.Record(slog.Fields{
                                 </table>
                             </div>
                             <br>
-                            <p><b>Note: Remember that individual project requirements and preferences should determine which logging library you select. 
+                            <p><b>Note: Remember that individual project requirements and preferences should determine which logging library you select.
                                 Depending on your application's specific circumstances, there may be more than one "best" library.
                             </b></p>
                             <br>
@@ -383,17 +386,17 @@ import (
   "os"
   "github.com/rs/zerolog"
 )
-                                        
+
 func main() {
   // Create a logger instance with the console as the output.
   logger := zerolog.New(os.Stdout)
-                                        
+
   // Set the log level to Debug for verbose logging.
   logger = logger.Level(zerolog.DebugLevel)
-                                        
+
   // Log a message with a field.
   logger.Debug().Str("key", "value").Msg("Debug message")
-                                        
+
   // Log an error with a stack trace.
   logger.Error().Err(someError).Stack().Msg("An error occurred")
 }</code></pre>
@@ -416,7 +419,7 @@ With().Timestamp().Logger()</code></pre>
 logger.Info().Msg("Application started")</code></pre>
 <br>
                                     <p class="my-2 para-bold pr-3">Zerolog stands out for Go developers, offering top-tier logging with minimal performance impact.
-                                         Its support for multiple log formats, low overhead, and simplicity in adding context make it ideal for diverse project sizes, 
+                                         Its support for multiple log formats, low overhead, and simplicity in adding context make it ideal for diverse project sizes,
                                          maintaining application performance while efficiently capturing and analyzing log data—from microservices to large-scale applications.
                                     </p>
                                 </div>
@@ -437,12 +440,12 @@ logger.Info().Msg("Application started")</code></pre>
                                     <ul>
                                         <li><b>High Performance Logging</b></li>
                                         <li><b>Structured Logging</b></li>
-                                        <li><b>Logger Configuration:</b>Zap offers a range of configuration options for loggers, including the ability to define log output destinations, 
+                                        <li><b>Logger Configuration:</b>Zap offers a range of configuration options for loggers, including the ability to define log output destinations,
                                             select output formats, and set log levels.
                                         </li>
                                         <li><b>Field Attachment: </b>Zap enables you to attach key-value pairs, or fields, to log entries. This feature is very useful for adding context to your log records.
                                         </li>
-                                        <li><b>SugaredLogger: </b>SugaredLogger provides a more user-friendly and readable API for humans. 
+                                        <li><b>SugaredLogger: </b>SugaredLogger provides a more user-friendly and readable API for humans.
                                         </li>
                                         <li><b>Initialization of the Global Logger: </b>Zap requires that the global logger be manually initialized in order to ensure that the settings are accurate
                                              and consistent across your application. This is to guarantee that your application's logging runs reliably and securely.
@@ -467,14 +470,14 @@ logger.Info().Msg("Application started")</code></pre>
 import (
     "go.uber.org/zap"
 )
-                                        
+
 func main() {
     // Create a logger instance.
     logger, _ := zap.NewProduction()
-                                        
+
     // Log a message.
     logger.Info("Informational message")
-                                        
+
     // Log an error.
     logger.Error("An error occurred", zap.Error(someError))
 }</code></pre>
@@ -490,12 +493,12 @@ func main() {
 import (
     "go.uber.org/zap"
 )
-                                        
+
 func main() {
     // Create a SugaredLogger.
     logger, _ := zap.NewProduction()
     sugar := logger.Sugar()
-                                        
+
     // Log a message using the SugaredLogger.
     sugar.Infow("Informational message", "key", "value")
 }</code></pre>
@@ -511,19 +514,19 @@ func main() {
 import (
     "go.uber.org/zap"
 )
-                                        
+
 func main() {
     // Initialize the global logger.
     logger, _ := zap.NewProduction()
     zap.ReplaceGlobals(logger)
-                                        
+
     // Log a message using the global logger.
     zap.L().Info("Global logger message")
 }</code></pre>
                                     <p class="my-2 para-bold pr-3">In the Go environment, Zap is a premium logging library with excellent speed and sophisticated customisation capabilities.
-                                         It is a fantastic choice for developers who require efficient logging in their applications, whether they are 
+                                         It is a fantastic choice for developers who require efficient logging in their applications, whether they are
                                          large-scale systems or microservices.
-                                    </p>                           
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -548,26 +551,26 @@ logger.Error(slog.Error(someError), "An error occurred")</code></pre>
                                         <li><b>Logging Process</b><br>The logging process is divided into three sections by Slog:<br>
                                             <b>Frontend Logger:</b> The Logger serves as your interface for creating log entries. It is employed to add structured data to log entries and select a log level.<br>
                                             <b>Record Type:</b> Records are created by the Logger. They store the log data and are designed to be easily manipulated.<br>
-                                            <b>Handler Backend:</b> Handlers are responsible for processing log records. By allowing you to choose various backend handlers to handle log entries in various ways—for example, 
+                                            <b>Handler Backend:</b> Handlers are responsible for processing log records. By allowing you to choose various backend handlers to handle log entries in various ways—for example,
                                             sending logs to external services or files—Slog offers versatility.</li>
-                                        <li><b>Custom Log Formats and Third-Party Backends: </b>This suggests that you may set up Slog to output logs in a manner that suits your needs and connect it to services 
+                                        <li><b>Custom Log Formats and Third-Party Backends: </b>This suggests that you may set up Slog to output logs in a manner that suits your needs and connect it to services
                                             like Elasticsearch, Logstash, and others. For example:
                                         </li>
                                         <pre class="language-go"><code class="language-go">import (
     "github.com/go-kratos/slog"
     "github.com/go-kratos/slog/file"
 )
-                                        
+
 func main() {
     // Create a file handler to write logs to a file.
     handler, err := file.New(file.WithPath("app.log"))
     if err != nil {
     panic(err)
 }
-                                        
+
     // Create a logger with the file handler.
     logger := slog.New(slog.WithOutput(handler))
-                                        
+
     // Log a message with structured data.
     logger.Info(slog.String("key", "value"), "Informational message")
 }</code></pre>
@@ -592,27 +595,27 @@ import (
     "fmt"
     "github.com/go-kratos/slog"
 )
-                                        
+
 func main() {
     // Create a new logger.
     logger := slog.New()
-                                        
+
     // Log an informational message.
     logger.Info("This is an informational message.")
-                                        
+
     // Log a warning message with additional context.
     logger.Warn(slog.String("key", "value"), "This is a warning message with additional context.")
-                                        
+
     // Log an error message and associate an error.
     err := fmt.Errorf("An error occurred")
     logger.Error(slog.Error(err), "This is an error message.")
-                                        
+
     // Log a debug message (for completeness; debug logs may not always be shown).
     logger.Debug("This is a debug message. You might not see it by default.")
-                                        
+
     // Log a custom log level (Slog supports various log levels).
     logger.Log(slog.Level(slog.LevelInfo+1), "This is a custom log level.")
-                                        
+
     fmt.Println("Logging completed.")
 }</code></pre>
 <br>
@@ -627,20 +630,20 @@ func main() {
 import (
     "github.com/go-kratos/slog"
 )
-                                        
+
 func main() {
     // Create a logger instance.
     logger := slog.New()
-                                        
+
     // Log a message with structured data.
     logger.Info(slog.String("key", "value"), "Informational message")
-                                            
+
     // Log an error with an associated error object.
     logger.Error(slog.Error(someError), "An error occurred")
 }</code></pre>
                                     <p class="my-2 para-bold pr-3">Benefits from Slog's structured logging approach, support for custom log formats,
                                          and integration with third-party backends can be extended to small utilities and large-scale systems.
-                                          Whether you're logging errors, alerts, or helpful remarks, Slog enables you to efficiently handle and 
+                                          Whether you're logging errors, alerts, or helpful remarks, Slog enables you to efficiently handle and
                                           examine log data in your Go applications.
                                     </p>
                                 </div>
@@ -652,7 +655,7 @@ func main() {
                             <br>
                             <h1>Logrus</h1>
                             <p class="my-2 para-bold pr-3">In the Go environment, Logrus is an established and extensively utilized logging library.
-                                 Its status as one of the early pioneers of structured logging in the Go community makes it a suitable choice for developers 
+                                 Its status as one of the early pioneers of structured logging in the Go community makes it a suitable choice for developers
                                  that require a flexible and organized approach to logging. In order to demonstrate how to utilize Logrus, we will go over its
                                   key features, installation instructions, and code samples in this blog.
                             </p>
@@ -685,22 +688,22 @@ func main() {
 import (
     "github.com/sirupsen/logrus"
 )
-                                        
+
 func main() {
     // Create a new logger instance.
     logger := logrus.New()
-                                        
+
     // Set the log level to control verbosity.
     logger.SetLevel(logrus.DebugLevel)
-                                        
+
     // Log an informational message.
     logger.Info("This is an informational message.")
-                                        
+
     // Log a warning message with additional context.
     logger.WithFields(logrus.Fields{
         "key": "value",
     }).Warn("This is a warning message with additional context.")
-                                        
+
     // Log an error message.
     logger.Error("An error occurred.")
 }</code></pre>
@@ -771,7 +774,7 @@ func main() {
                                         <li><b>Pre-Configured Logger and Simple API: </b>With Log15's pre-configured logger, you can start using it right away and save a ton of setup time.
                                              Its clear and easy-to-use API makes it simple to create log entries with minimal coding.</li>
                                         <li><b>Various Log Formatting and Handling Options: </b>Depending on your needs, log output can be set up in a number of formats,
-                                             including plain text, JSON, and other prepared formats. Its support for numerous handlers allows you to deliver logs to a range of destinations, 
+                                             including plain text, JSON, and other prepared formats. Its support for numerous handlers allows you to deliver logs to a range of destinations,
                                              such as log files, external services, and custom endpoints.
                                         </li>
                                     </ul>
@@ -798,17 +801,17 @@ func main() {
 import (
     "gopkg.in/inconshreveable/log15.v2"
 )
-                                        
+
 func main() {
     // Create a new logger instance.
     logger := log15.New()
-                                        
+
     // Log an informational message.
     logger.Info("This is an informational message.")
-                                        
+
     // Log a warning message.
     logger.Warn("This is a warning message.")
-                                        
+
     // Log an error message.
     logger.Error("An error occurred.")
 }</code></pre>
@@ -824,11 +827,11 @@ func main() {
 import (
     "gopkg.in/inconshreveable/log15.v2"
 )
-                                        
+
 func main() {
     // Create a new logger instance.
     logger := log15.New()
-                                        
+
     // Log a message with structured data.
 	logger.Info("User logged in", "user", "john_doe", "action", "login")
 
@@ -838,7 +841,7 @@ func main() {
                                     <p class="my-2 para-bold pr-3">Log15 provides the capabilities and flexibility required for developers working on large-scale applications,
                                          web services, microservices, command-line tools, and other applications to efficiently gather, handle, and store log data.</p>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <div id="section7" class="section">
@@ -869,7 +872,7 @@ func main() {
                                     <h2 class="mt-4 section" id="section7-2">Installation
                                     </h2>
                                     <p class="my-2 para-bold pr-3">Open your terminal or command prompt.<br>
-                                        Run the following command to install Logf:                                        
+                                        Run the following command to install Logf:
                                     </p>
                                     <pre class="language-go"><code class="language-go">go get github.com/go-logfmt/logfmt</code></pre>
                                 <br>
@@ -921,12 +924,12 @@ func main() {
     // Log another event with custom data.
     logger.Log("event", "file_upload", "user", "jane_smith", "file_name", "document.pdf")
 }</code></pre>
-                                    <p class="my-2 para-bold pr-3">For Go structured logging, Logf is a practical and reasonably priced solution. 
+                                    <p class="my-2 para-bold pr-3">For Go structured logging, Logf is a practical and reasonably priced solution.
                                         It is excellent in providing logs in the Logfmt format, with an emphasis on striking a balance between
-                                         readability and structured data. 
+                                         readability and structured data.
                                     </p>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <div id="section8" class="section">
@@ -936,7 +939,7 @@ func main() {
                             <p class="my-2 para-bold pr-3">Apex/log is a feature-rich and adaptable Go logging library that provides numerous customization options for structured logging.
                                  It can be used for a wide range of applications because it supports multiple log formats and transport options. Furthermore, Apex/log has tracing functionality,
                                   which is very helpful for monitoring how your applications are being executed. We will go over how to install Apex/log, go over some of its main features,
-                                   and show you how to use it with code examples in this blog. 
+                                   and show you how to use it with code examples in this blog.
                             </p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
@@ -958,7 +961,7 @@ func main() {
                                     <p class="my-2 para-bold pr-3">To use Apex/log in your Go project, follow these installation steps:
                                     </p>
                                     <p class="my-2 para-bold pr-3">Open your terminal or command prompt.<br>
-                                        Run the following command to install Apex/log:                                                                               
+                                        Run the following command to install Apex/log:
                                     </p>
                                     <pre class="language-go"><code class="language-go">go get github.com/apex/log</code></pre>
                                 <br>
@@ -1009,12 +1012,12 @@ func main() {
 		"key2": 42,
 	}).Info("Structured log message with fields")
 }</code></pre>
-                                    <p class="my-2 para-bold pr-3">Developers may quickly create loggers, specify log levels, output formats, 
-                                        and add structured data to logs with Apex/log. It facilitates improved understanding, analysis, 
-                                        and application troubleshooting. 
+                                    <p class="my-2 para-bold pr-3">Developers may quickly create loggers, specify log levels, output formats,
+                                        and add structured data to logs with Apex/log. It facilitates improved understanding, analysis,
+                                        and application troubleshooting.
                                     </p>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <div id="section9" class="section">
@@ -1034,7 +1037,7 @@ func main() {
                                         <li><b>Abstraction Layer:</b>Logr serves as an abstraction, allowing developers to write log messages without concern
                                              for the underlying logging mechanism. It is simple to switch between several logging implementations because to this separation.
                                         </li>
-                                        <li><b>Dependency on LogSink Interface:</b>Logr's logging capabilities are dependent on types that have LogSink interface implementations. 
+                                        <li><b>Dependency on LogSink Interface:</b>Logr's logging capabilities are dependent on types that have LogSink interface implementations.
                                             This interface encourages adaptability and customization by defining the necessary techniques for handling log entries.
                                         </li>
                                     </ul>
@@ -1089,13 +1092,13 @@ func main() {
 		WithValues("key2", 42).
 		Info("Structured log message with fields")
 }</code></pre>
-                                    <p class="my-2 para-bold pr-3">Logr, a robust Go logging abstraction, simplifies log management by utilizing the LogSink 
-                                        interface, allowing seamless swapping of logging backends. Its independence from implementations streamlines code, enhancing 
-                                        readability and maintainability. Within the Go ecosystem, Logr strikes a balance between simplicity and extensibility, 
-                                        empowering developers to focus on application logic while ensuring flexible and efficient logging. 
+                                    <p class="my-2 para-bold pr-3">Logr, a robust Go logging abstraction, simplifies log management by utilizing the LogSink
+                                        interface, allowing seamless swapping of logging backends. Its independence from implementations streamlines code, enhancing
+                                        readability and maintainability. Within the Go ecosystem, Logr strikes a balance between simplicity and extensibility,
+                                        empowering developers to focus on application logic while ensuring flexible and efficient logging.
                                     </p>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <div id="section10" class="section">
@@ -1103,11 +1106,11 @@ func main() {
                             <br>
                             <h1>Benchmark results of different logging libraries of go</h1>
                             <p class="my-2 para-bold pr-3">Benchmarking various Go logging libraries provided valuable insights into their performance differences.
-                                 Zap stood out with its zero-allocation approach, logging significantly faster than Logrus and Apex/log. While Logrus and Apex/log balanced 
+                                 Zap stood out with its zero-allocation approach, logging significantly faster than Logrus and Apex/log. While Logrus and Apex/log balanced
                                  features with moderate speed, the standard library's simplicity resulted in slower performance. Recent entries like log/slog introduced
                                   compatibility among logging frameworks, allowing seamless transitions without code changes. Zerolog emphasized speed and simplicity with
-                                   JSON-based structured logging, contrasting Zap's unmatched performance owing to its zero-allocation architecture. Slog's adaptability as 
-                                   a mediator between diverse logging technologies showcased its significance, simplifying integration within Go programs. Consider these 
+                                   JSON-based structured logging, contrasting Zap's unmatched performance owing to its zero-allocation architecture. Slog's adaptability as
+                                   a mediator between diverse logging technologies showcased its significance, simplifying integration within Go programs. Consider these
                                    benchmarks and project needs for an optimal logging framework choice.
                             </p>
                         </div>
@@ -1119,11 +1122,11 @@ func main() {
                             <p class="my-2 para-bold pr-3">In conclusion, Slog, Zerolog, and Zap have definitely made an impression even if the Go logging market is still
                                  growing and offering a wide range of solutions to suit various demands. Selecting the best Go logging library has a big impact on how
                                   well-maintained and effective an application is. Performance, features, and adaptability are important factors to take into account.
-                                   Customizing the selection to meet particular project needs guarantees the best logging, simplifies debugging, and promotes scalability. 
+                                   Customizing the selection to meet particular project needs guarantees the best logging, simplifies debugging, and promotes scalability.
                             </p>
                             <br>
                             <p class="my-2 para-bold pr-3">Today, there is a wide range of options available to developers, each providing a combination of features,
-                                 performance, and flexibility. The selection of a logging framework ultimately depends on how well certain project objectives mesh with 
+                                 performance, and flexibility. The selection of a logging framework ultimately depends on how well certain project objectives mesh with
                                  the advantages and skills of various logging solutions.</p>
                         </div>
                     </div>

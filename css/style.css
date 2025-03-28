@@ -63,15 +63,21 @@ a {
 .navbar-nav {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .navbar-nav li {
-    margin-right: 32px;
+    margin-right: 16px;
+}
+
+.navbar-nav li:last-child {
+    margin-right: 0;
 }
 
 .navbar .nav-item a {
     color: var(--white-0);
     letter-spacing: 0.03em;
+    white-space: nowrap;
 }
 
 .navbar .dropdown-menu {
@@ -95,27 +101,30 @@ a {
     display: none;
 }
 
+#try-now-btn, #book-demo-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 8px;
+    border-radius: 10px;
+    color: var(--white-0);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 4px;
+}
+
 #try-now-btn {
-  background: var(--marigold);
-  text-decoration: none;
-  border: 1px solid var(--marigold);
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: var(--white-0);
+    background: var(--marigold);
+    border: 1px solid var(--marigold);
 }
 
 #book-demo-btn {
-  background: var(--purple-0);
-  color: var(--white-0);
-  text-decoration: none;
-  border: 1px solid var(--purple-0);
-  padding: 10px 20px;
-  border-radius: 10px;
+    background: var(--purple-0);
+    border: 1px solid var(--purple-0);
 }
 
 #book-demo-btn:hover {
-  background: var(--purple-4);
-  border-color: var(--purple-4);
+    background: var(--purple-4);
+    border-color: var(--purple-4);
 }
 
 .hero-btn-container {
@@ -935,5 +944,21 @@ line-height: 26px;}
     .purple-btn{
         width: 180px;
         font-size: 16px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        gap: 16px;
+    }
+
+    .navbar-nav li {
+        margin-right: 0;
+    }
+
+    #try-now-btn, #book-demo-btn {
+        display: block;
+        text-align: center;
+        margin: 8px 0;
     }
 }

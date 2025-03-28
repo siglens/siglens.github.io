@@ -61,7 +61,7 @@
                     <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
                         target="_blank">Documentation</a>
                 </li>
-                <li class="nav-item "> 
+                <li class="nav-item ">
                     <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -76,6 +76,9 @@
                 </li>
                 <li>
                     <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                </li>
+                <li>
+                    <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
                 </li>
                 <li>
                     <a href="https://github.com/siglens/siglens" target="_blank">
@@ -205,9 +208,9 @@
                             </p>
                             <h1>Introduction</h1>
                             <p class="my-2 para-bold pr-3">Node.js logging frameworks give developers the necessary tools to track, observe,
-                                 and evaluate how their applications behave. As Node.js has become a popular framework for developing scalable 
+                                 and evaluate how their applications behave. As Node.js has become a popular framework for developing scalable
                                  and effective server-side applications, a variety of logging libraries have surfaced to meet various requirements in the ecosystem.
-                                  A few of the capabilities that these libraries provide are structured logging for intricate systems, support for many log levels, 
+                                  A few of the capabilities that these libraries provide are structured logging for intricate systems, support for many log levels,
                                   output formats that can be customized, and interaction with external services for centralized log management.
                             </p>
                             <p class="my-2 para-bold pr-3">This blog will examine ten unique libraries that enable developers to manage logs efficiently in Node.js,
@@ -229,10 +232,10 @@
                                         <li><b>Debugging and Troubleshooting: </b>Explaining how logging facilitates the identification and resolution of bugs
                                              and issues within Node.js applications.
                                         </li>
-                                        <li><b>Performance Monitoring:</b>Explaining how logging helps with bottleneck identification, code optimization, and 
+                                        <li><b>Performance Monitoring:</b>Explaining how logging helps with bottleneck identification, code optimization, and
                                             performance metrics monitoring.
                                         </li>
-                                        <li><b>Compliance and Auditing:</b>Talking about how logs, which record significant events and data alterations, 
+                                        <li><b>Compliance and Auditing:</b>Talking about how logs, which record significant events and data alterations,
                                             help meet compliance requirements.
                                         </li>
                                     </ul>
@@ -243,7 +246,7 @@
                                         <li><b>Log Volume and Scalability:</b>Talking about the difficulties in organizing and interpreting a lot of logs in distributed systems.
                                         </li>
                                         <li><b>Log Security and Privacy:</b> Examining worries about private data found in logs and methods to guarantee compliance with security
-                                             and privacy regulations. 
+                                             and privacy regulations.
                                         </li>
                                     </ul>
                                 </div>
@@ -271,7 +274,7 @@
 
                                         <th class="fstrow">Pino</th>
                                         <td>Multiple</td>
-                                        <td>High</td> 
+                                        <td>High</td>
                                         <td>High</td>
                                         <td>Structured logging</td>
                                         <td>Easy</td>
@@ -395,10 +398,10 @@
                                     <h2 class="mt-4 section" id="section3-3">Basic Logging </h2>
                                     <pre class="language-javascript"><code class="language-javascript">// Importing Pino
 const pino = require('pino');
-                                        
+
 // Creating a Pino logger instance
 const logger = pino();
-                                        
+
 // Logging messages
 logger.info('Logging with Pino: An informative message');
 logger.error('Logging with Pino: An error occurred');</code></pre>
@@ -444,7 +447,7 @@ const logger = pino({
                                     <h2 class="mt-4 section" id="section4-2">Basic Logging</h2>
                                     <pre class="language-javascript"><code class="language-javascript">// Importing Winston module
 const winston = require('winston');
-                                        
+
 // Creating a logger instance
 const logger = winston.createLogger({
   level: 'info',
@@ -454,11 +457,11 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: 'app.log' })
   ]
 });
-                                        
+
 // Logging messages with different levels
 logger.log('info', 'Informational message');
 logger.log('error', 'Error message');
-                                        
+
 // Adding metadata to log messages
 logger.log('warn', 'Warning message', { additionalInfo: 'Some additional data' });</code></pre>
 <br>
@@ -493,9 +496,9 @@ log4js.configure({
   appenders: { fileAppender: { type: 'file', filename: 'app.log' } },
   categories: { default: { appenders: ['fileAppender'], level: 'info' } }
 });
-                                        
+
 const logger = log4js.getLogger();
-                                        
+
 Logging Messages:
 logger.debug('Debug message');
 logger.info('Info message');
@@ -539,7 +542,7 @@ logger.error('Error message');</code></pre>
                                     <pre class="language-javascript"><code class="language-javascript">const log4js = require('log4js');
 
 log4js.configure({
-  appenders: { 
+  appenders: {
     fileAppender: { type: 'file', filename: 'logs/app.log' },
     consoleAppender: { type: 'console' }
   },
@@ -547,7 +550,7 @@ log4js.configure({
     default: { appenders: ['fileAppender', 'consoleAppender'], level: 'debug' }
   }
 });
-                                        
+
 const logger = log4js.getLogger();
 logger.debug('Debug message');
 logger.info('Info message');
@@ -576,10 +579,10 @@ logger.fatal('Fatal message');</code></pre>
                                         <li><b>Structured Logging</b></li>
                                         <li><b>Customisable Log Levels </b></li>
                                         <li><b>Child Loggers and Streams: </b>By configuring various components or modules inside an application,
-                                             Bunyan's child loggers assist in more effectively controlling log output. 
+                                             Bunyan's child loggers assist in more effectively controlling log output.
                                         </li>
                                         <li><b>Extensive Data Context:</b>Bunyan enables developers to add contextual data to log messages,
-                                             giving them access to more specific details about the request parameters, application status, 
+                                             giving them access to more specific details about the request parameters, application status,
                                              and other relevant information.
                                         </li>
                                     </ul>
@@ -592,7 +595,7 @@ logger.fatal('Fatal message');</code></pre>
 
 // Create a logger instance
 const logger = bunyan.createLogger({ name: 'myApp' });
-                                        
+
 // Log messages with different levels
 logger.info('Informational log message');
 logger.warn('Warning log message');
@@ -619,7 +622,7 @@ const logger = bunyan.createLogger({
     }
   ]
 });
-                                        
+
 // Log a debug message
 logger.debug('Debug log message');</code></pre>
                                     <p class="my-2 para-bold pr-3">Bunyan, in summary, is a potent logging framework in the Node.js
@@ -643,9 +646,9 @@ logger.debug('Debug log message');</code></pre>
                                         <li><b>Structured Logging</b></li>
                                         <li><b>Customisable Log Levels </b></li>
                                         <li><b>Minimalistic and Effective: </b>Roarr takes great satisfaction in its ability to be both economical and effective,
-                                             guaranteeing low overhead and little influence on application performance. 
+                                             guaranteeing low overhead and little influence on application performance.
                                         </li>
-                                        <li><b>Log Context Preservation:</b>It helps to improve traceability and comprehension of application flow by 
+                                        <li><b>Log Context Preservation:</b>It helps to improve traceability and comprehension of application flow by
                                             preserving log context throughout asynchronous processes.
                                         </li>
                                         <li><b>Middleware Support: </b>Roarr provides middleware support, which enables developers to incorporate extra features or
@@ -664,10 +667,10 @@ Roarr.init({
   stream: process.stdout, // Output stream for logs (can be a file stream, console, etc.)
   messageFormat: 'pretty', // Set message format (options: 'pretty', 'json')
 });
-                                        
+
 // Logging a message
 Roarr.info('This is an informational log message.');
-                                        
+
 // Logging with context
 const requestId = '12345';
 Roarr.debug({ requestId }, 'Processing request.');</code></pre>
@@ -689,10 +692,10 @@ Roarr.debug({ requestId }, 'Processing request.');</code></pre>
                                     <ul>
                                         <li><b>Customisation</b></li>
                                         <li><b>Multiple Outputs </b></li>
-                                        <li><b>Flexible Configuration: </b>Signale's straightforward and user-friendly APIs make it simple for developers to set it up quickly 
-                                            and modify it to meet the needs of various projects. 
+                                        <li><b>Flexible Configuration: </b>Signale's straightforward and user-friendly APIs make it simple for developers to set it up quickly
+                                            and modify it to meet the needs of various projects.
                                         </li>
-                                        <li><b>Modular Architecture:</b>Signale has a modular architecture that enables users to choose and utilise just the features they 
+                                        <li><b>Modular Architecture:</b>Signale has a modular architecture that enables users to choose and utilise just the features they
                                             require, making it a more effective and lightweight logging solution.
                                         </li>
                                     </ul>
@@ -720,9 +723,9 @@ const options = {
     // Define additional custom log types here
   },
 };
-                                        
+
 const logger = new Signale(options);
-                                        
+
 // Logging examples
 logger.success('Operation successful'); // Log success message
 logger.error('Operation failed'); // Log error message
@@ -736,7 +739,7 @@ logger.error('Operation failed'); // Log error message
                     <div id="section10" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Tracer</h1>
-                            <p class="my-2 para-bold pr-3">Developers looking for a quick and easy solution to log data in their Node.js 
+                            <p class="my-2 para-bold pr-3">Developers looking for a quick and easy solution to log data in their Node.js
                                 projects without having to deal with the hassles of more complex logging frameworks are the target audience for Tracer.
                             </p>
                             <div>
@@ -766,7 +769,7 @@ logger.error('Operation failed'); // Log error message
                                     <pre class="language-javascript"><code class="language-javascript">const tracer = require('tracer');
 
 const logger = tracer.colorConsole();
-                                        
+
 logger.trace('Trace message');
 logger.debug('Debug message');
 logger.info('Info message');
@@ -785,7 +788,7 @@ const logger = tracer.dailyfile({
   allLogsFileName: 'app',
   format: '{{timestamp}} <{{title}}> {{message}} (in {{file}}:{{line}})',
 });
-                                        
+
 logger.info('Customized log message');</code></pre>
 <p class="my-2 para-bold pr-3">Designed to be simple and easy to use, Tracer is a minimalist yet useful Node.js logging package.</p>
 <br>
@@ -824,14 +827,14 @@ logger.info('Customized log message');</code></pre>
                                     <p class="my-2 para-bold pr-3">Integrate Morgan as middleware in your Express application to enable basic logging:</p>
                                     <pre class="language-javascript"><code class="language-javascript">const express = require('express');
 const morgan = require('morgan');
-                                        
+
 const app = express();
-                                        
+
 // Use Morgan middleware with predefined format 'combined' for basic logging
 app.use(morgan('combined'));
-                                        
+
 // Your Express routes and logic go here
-                                        
+
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });</code></pre>
@@ -851,22 +854,22 @@ app.listen(3000, () => {
                                     <p class="my-2 para-bold pr-3">Define a custom logging format specifying the desired fields:</p>
                                     <pre class="language-javascript"><code class="language-javascript">const express = require('express');
 const morgan = require('morgan');
-                                        
+
 const app = express();
-                                        
+
 // Define a custom logging format for structured logging
 const customFormat = ':method :url :status :res[content-length] - :response-time ms';
-                                        
+
 // Use Morgan middleware with the custom logging format
 app.use(morgan(customFormat));
-                                        
+
 // Your Express routes and logic go here
-                                        
+
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });</code></pre>
 <p class="my-2 para-bold pr-3">In conclusion, Morgan emerges as a reliable and adaptable logging middleware for Node.js applications,
-     particularly those built using <b>Express.js</b>. Developers can effectively track and analyse incoming requests with its customisable 
+     particularly those built using <b>Express.js</b>. Developers can effectively track and analyse incoming requests with its customisable
      logging formats and ability to record important <b>HTTP request</b> information.</p>
 <p class="my-2 para-bold pr-3">Morgan makes it easier to log HTTP requests by providing a variety of logging settings and an easy-to-follow
      integration procedure. This allows for improved <b>debugging, monitoring, and analysis capabilities</b> in Node.js applications.</p>
@@ -878,7 +881,7 @@ app.listen(3000, () => {
                     <div id="section12" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Npmlog</h1>
-                            <p class="my-2 para-bold pr-3">The npm package manager uses npmlog, a logging tool that comes with Node.js, 
+                            <p class="my-2 para-bold pr-3">The npm package manager uses npmlog, a logging tool that comes with Node.js,
                                 to produce log messages during package installations, builds, and other npm-related tasks.
                             </p>
                             <div>
@@ -919,7 +922,7 @@ app.listen(3000, () => {
 Logging Example:
 // Set the log level
 npmlog.level = 'verbose';
-                                        
+
 // Log messages
 npmlog.info('Tag', 'This is an info message.');
 npmlog.warn('Tag', 'This is a warning message.');
@@ -932,7 +935,7 @@ npmlog.error('Tag', 'This is an error message.');</code></pre>
                                     <pre class="language-javascript"><code class="language-javascript">// Customize log prefix and styles
 npmlog.heading = 'CustomLogger';
 npmlog.headingStyle = { fg: 'white', bg: 'magenta' };
-                                        
+
 // Adding metadata to logs
 npmlog.addLevel('custom', 1000, { fg: 'cyan' }, 'CUSTOM');
 npmlog.custom('Tag', 'This is a custom message with metadata.');</code></pre>
@@ -946,10 +949,10 @@ npmlog.custom('Tag', 'This is a custom message with metadata.');</code></pre>
                             <h2>Conclusion: </h2>
                             <p class="my-2 para-bold pr-3">Each framework offers unique features to meet different development demands, from the performance-focused
                                 efficiency of Pino to the customisable adaptability of Winston and the structured logging capabilities of Bunyan.
-                                Winston offers a good compromise between features and performance, whereas Pino stands out for its excellent performance and 
+                                Winston offers a good compromise between features and performance, whereas Pino stands out for its excellent performance and
                                 organised logging capabilities. Flexibility and compatibility with Log4j are provided by Log4js and its Node.js counterpart, Log4js-node.
                                 Although Bunyan offers few integration options, it excels at organising logs. For smaller projects, Roarr and Tracer provide more basic features.
-                                Morgan specialises in HTTP request logging, whereas Signale adds visual appeal to logs. Finally, npmlog provides ease of use yet customization 
+                                Morgan specialises in HTTP request logging, whereas Signale adds visual appeal to logs. Finally, npmlog provides ease of use yet customization
                                 is limited.
                             </p>
                             <p class="my-2 para-bold pr-3">Selecting an appropriate logging framework is essential to guarantee effective debugging,
@@ -961,8 +964,8 @@ npmlog.custom('Tag', 'This is a custom message with metadata.');</code></pre>
                     </div>
                 </div>
             </div>
-        </div>        
-    </div>            
+        </div>
+    </div>
     </div>
     <footer id="footer" class="pb-5">
         <div class="container">
@@ -1037,5 +1040,5 @@ crossorigin="anonymous"></script>
 </html>
 
 
-                            
+
 
