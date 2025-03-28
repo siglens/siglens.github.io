@@ -61,7 +61,7 @@
                         <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
                             target="_blank">Documentation</a>
                     </li>
-                    <li class="nav-item "> 
+                    <li class="nav-item ">
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -76,6 +76,9 @@
                     </li>
                     <li>
                         <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -187,8 +190,8 @@
                                  Dive into comparisons, features, and future trends for effective Java application debugging and maintenance strategies.
                             </p>
                             <h3>Introduction</h3>
-                            <p class="my-2 para-bold pr-3">In software development, logging is essential since it provides direction throughout the 
-                                life of a program. In order to maintain software integrity, debug, and troubleshoot, it entails the methodical recording 
+                            <p class="my-2 para-bold pr-3">In software development, logging is essential since it provides direction throughout the
+                                life of a program. In order to maintain software integrity, debug, and troubleshoot, it entails the methodical recording
                                 of events and activities within a program. Java logging frameworks are essential tools in this process because they offer
                                  an organized method for capturing, tracking, and analyzing application behavior.
                             </p>
@@ -203,7 +206,7 @@
                             <h1>Why Logging Matters in Java</h1>
                             <br>
                             <p class="my-2 para-bold pr-3">In the field of Java development, logging is an essential component that fulfills a variety of
-                                 functions that have significant impacts on the program lifecycle. For developers, logging serves as a navigational aid 
+                                 functions that have significant impacts on the program lifecycle. For developers, logging serves as a navigational aid
                                  across the complex web of code. It is significant because of:
                             </p>
                             <ul>
@@ -211,7 +214,7 @@
                                      logs help developers quickly identify and fix defects.</li>
                                 <li><b>Troubleshooting: </b>When difficulties arise, logs serve as a priceless trail of breadcrumbs that make it easier
                                      to identify issues methodically.</li>
-                                <li><b>Maintenance: </b>They help with the ongoing improvement and upkeep of software by serving as a historical record 
+                                <li><b>Maintenance: </b>They help with the ongoing improvement and upkeep of software by serving as a historical record
                                     of an application's behavior.</li>
                             </ul>
                             <p class="my-2 para-bold pr-3">Comprehending log levels is similar to interpreting different levels of data within an application:</p>
@@ -381,7 +384,7 @@
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>JUL</h1>
                             <p class="my-2 para-bold pr-3">Java Util Logging (JUL) serves as the default logging framework in Java,
-                                 integrated into the core libraries of the Java Development Kit (JDK). It is a simple yet effective logging solution. 
+                                 integrated into the core libraries of the Java Development Kit (JDK). It is a simple yet effective logging solution.
                                  The logging process is managed by <b>loggers, handlers, and formatters</b> in JUL, which is built on a hierarchical logging
                                   architecture.</p>
                             <div>
@@ -412,13 +415,13 @@
 
 public class MyLogger {
     private static final Logger LOGGER = Logger.getLogger(MyLogger.class.getName());
-                                        
+
     public static void main(String[] args) {
         LOGGER.setLevel(Level.INFO); // Set logging level
         Handler handler = new ConsoleHandler(); // Define a handler (console in this case)
         handler.setLevel(Level.INFO); // Set handler's logging level
         LOGGER.addHandler(handler); // Add handler to the logger
-                                                
+
         LOGGER.severe("This is a severe message");
         LOGGER.warning("This is a warning message");
         LOGGER.info("This is an info message");
@@ -435,7 +438,7 @@ public class MyLogger {
 
 public class StructuredLoggingExample {
     private static final Logger LOGGER = Logger.getLogger(StructuredLoggingExample.class.getName());
-                                        
+
     public static void main(String[] args) {
         // Setting up a custom formatter for structured logging
         Formatter formatter = new Formatter() {
@@ -445,12 +448,12 @@ public class StructuredLoggingExample {
                 return String.format("[%s] %s - %s%n", record.getLevel(), record.getSourceClassName(), record.getMessage());
             }
         };
-                                        
+
         // Creating a custom console handler with the formatter
         ConsoleHandler handler = new ConsoleHandler();
         handler.setFormatter(formatter);
         LOGGER.addHandler(handler);
-                                        
+
         // Structured logging example
         LOGGER.log(Level.INFO, "Structured logging example: {\"key1\": \"value1\", \"key2\": \"value2\"}");
     }
@@ -464,7 +467,7 @@ public class StructuredLoggingExample {
                                     <pre class="language-java"><code class="language-java"># Logging properties file
 handlers= java.util.logging.ConsoleHandler
 .level= INFO
-                                        
+
 java.util.logging.ConsoleHandler.level= INFO
 java.util.logging.ConsoleHandler.formatter= java.util.logging.SimpleFormatter</code></pre>
 <br>
@@ -509,7 +512,7 @@ java.util.logging.ConsoleHandler.formatter= java.util.logging.SimpleFormatter</c
                                         <pre class="language-java"><code class="language-java"># Define root logger with appender and log level
 rootLogger.level = INFO
 rootLogger.appenderRef.stdout.ref = Console
-                                            
+
 # Define appender
 appender.stdout.type = Console
 appender.stdout.name = Console
@@ -523,10 +526,10 @@ appender.stdout.layout.pattern = %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m
                                     <h2 class="mt-4 section" id="section4-3">Logging in Java Classes</h2>
                                     <pre class="language-java"><code class="language-java">import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-                                        
+
 public class MyClass {
     private static final Logger logger = LogManager.getLogger(MyClass.class);
-                                        
+
     public void myMethod() {
         logger.debug("Debug message");
         logger.info("Info message");
@@ -546,7 +549,7 @@ public class MyClass {
                     <div id="section5" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Logback</h1>
-                            <p class="my-2 para-bold pr-3">In the Java ecosystem, Logback is a well-known and robust logging framework 
+                            <p class="my-2 para-bold pr-3">In the Java ecosystem, Logback is a well-known and robust logging framework
                                 that is highly user-friendly, flexible, and efficient. Created to replace Log4j, Logback adds several improvements
                                  and fixes many of the shortcomings of its predecessor to make logging easier for Java developers.</p>
                             <div>
@@ -570,7 +573,7 @@ public class MyClass {
                                     <pre class="language-java"><code class="language-java">&lt;configuration&gt;
     &lt;!-- Define loggers --&gt;
     &lt;logger name="com.example" level="DEBUG" /&gt;
-                                        
+
     &lt;!-- Define appenders --&gt;
     &lt;appender name="FILE" class="ch.qos.logback.core.FileAppender"&gt;
         &lt;file>logs/application.log&lt;/file&gt;
@@ -578,7 +581,7 @@ public class MyClass {
             &lt;pattern&gt;%date [%thread] %-5level %logger{35} - %msg%n&lt;/pattern&gt;
         &lt;/encoder&gt;
     &lt;/appender&gt;
-                                        
+
     &lt;!-- Link appenders to loggers --&gt;
     &lt;root level="INFO"&gt;
         &lt;appender-ref ref="FILE" /&gt;
@@ -592,10 +595,10 @@ public class MyClass {
                                     <h2 class="mt-4 section" id="section5-3">Logger Usage (Java code)</h2>
                                     <pre class="language-java"><code class="language-java">import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-                                        
+
 public class MyClass {
     private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
-                                            
+
     public void performAction() {
         logger.debug("Debug message");
         logger.info("Info message");
@@ -604,7 +607,7 @@ public class MyClass {
     }
 }</code></pre>
 <br>
-<p class="my-2 para-bold pr-3">Because of its effective architecture and simple setup syntax, it is a priceless resource 
+<p class="my-2 para-bold pr-3">Because of its effective architecture and simple setup syntax, it is a priceless resource
     for Java developers looking to add reliable and insightful logging to their applications.</p>
 <br>
                                 </div>
@@ -614,19 +617,19 @@ public class MyClass {
                     <div id="section6" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>SLF4j</h1>
-                            <p class="my-2 para-bold pr-3">SLF4J is a popular and adaptable logging facade that provides a common API 
-                                across different logging frameworks. It provides flexibility, abstraction, and ease of integration by 
+                            <p class="my-2 para-bold pr-3">SLF4J is a popular and adaptable logging facade that provides a common API
+                                across different logging frameworks. It provides flexibility, abstraction, and ease of integration by
                                 acting as a link between the actual logging implementation and the application code.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section6-1">Features of SLF4j</h2>
                                     <ul>
-                                        <li><b>Abstraction Layer: </b>SLF4J offers a standard interface for logging activities, making 
+                                        <li><b>Abstraction Layer: </b>SLF4J offers a standard interface for logging activities, making
                                             transitioning between various logging frameworks easy.</li>
-                                        <li><b>Unified Logging API: </b>Developers interact with a consistent set of logging methods irrespective 
+                                        <li><b>Unified Logging API: </b>Developers interact with a consistent set of logging methods irrespective
                                             of the underlying logging system, boosting code readability and maintainability.</li>
                                         <li><b>Logger Binding: </b>SLF4J allows binding to various logging frameworks such as Log4j, Logback, JUL, and others. </li>
-                                        <li><b>Parameterized Logging: </b>Supports parameterized logging, which makes it possible to log messages with variable 
+                                        <li><b>Parameterized Logging: </b>Supports parameterized logging, which makes it possible to log messages with variable
                                             placeholders effectively. </li>
                                     </ul>
                                 </div>
@@ -636,11 +639,11 @@ public class MyClass {
                                     <h2 class="mt-4 section" id="section6-2">Logger Instance</h2>
                                     <pre class="language-java"><code class="language-java">import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-                                        
+
 public class MyClass {
     // Get a logger instance for MyClass
     private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
-                                        
+
     public void myMethod() {
         // Log messages at different levels
         logger.trace("This is a TRACE message");
@@ -658,7 +661,7 @@ public class MyClass {
                                     <h2 class="mt-4 section" id="section6-3">Parameterized Logging</h2>
                                     <pre class="language-java"><code class="language-java">public class ParameterizedLoggingExample {
     private static final Logger logger = LoggerFactory.getLogger(ParameterizedLoggingExample.class);
-                                    
+
     public void logWithParameters() {
         String username = "JohnDoe";
         int age = 30;
@@ -667,7 +670,7 @@ public class MyClass {
 }</code></pre>
 <br>
 <p class="my-2 para-bold pr-3">SLF4J simplifies logging in Java by providing a consistent, abstracted interface for logging activities.
-     Its ability to bridge between various logging frameworks, unified API, and support for parameterized logging makes it a popular 
+     Its ability to bridge between various logging frameworks, unified API, and support for parameterized logging makes it a popular
      choice for many Java developers.</p>
 <br>
                                 </div>
@@ -677,17 +680,17 @@ public class MyClass {
                     <div id="section7" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Log4j2</h1>
-                            <p class="my-2 para-bold pr-3">Developed as the successor to Log4j, it overcomes the shortcomings of its 
+                            <p class="my-2 para-bold pr-3">Developed as the successor to Log4j, it overcomes the shortcomings of its
                                 predecessor while offering additional capabilities to meet the evolving needs of modern applications.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section7-1">Features of Log4j2</h2>
                                     <ul>
-                                        <li><b>Asynchronous Logging: </b>Log4j2 offers asynchronous loggers that considerably increase 
+                                        <li><b>Asynchronous Logging: </b>Log4j2 offers asynchronous loggers that considerably increase
                                             performance by isolating log events from their processing.</li>
-                                        <li><b>Automatic Reloading of Configurations: </b>This capability is particularly useful in 
+                                        <li><b>Automatic Reloading of Configurations: </b>This capability is particularly useful in
                                             circumstances where runtime updates to logging settings are essential.</li>
-                                        <li><b>Pluggable Architecture: </b>Log4j2 features a pluggable architecture that 
+                                        <li><b>Pluggable Architecture: </b>Log4j2 features a pluggable architecture that
                                             offers a wide range of plugins, such as personalised <b>log levels, filters, layouts, and appenders.</b></li>
                                         <li><b>Logger Contexts and Garbage-Free Logging</b></li>
                                     </ul>
@@ -718,10 +721,10 @@ public class MyClass {
                                     <h2 class="mt-4 section" id="section7-3">Logging Example (Java code)</h2>
                                     <pre class="language-java"><code class="language-java">import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-                                        
+
 public class MyClass {
     private static final Logger logger = LogManager.getLogger(MyClass.class);
-                                        
+
     public static void main(String[] args) {
         logger.trace("Trace message");
         logger.debug("Debug message");
@@ -742,21 +745,21 @@ public class MyClass {
                     <div id="section8" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Apache Commons Logging</h1>
-                            <p class="my-2 para-bold pr-3">Applications can stay independent of particular logging frameworks thanks 
-                                to ACL's bridge function, which makes it simple to integrate and adjust to various logging 
+                            <p class="my-2 para-bold pr-3">Applications can stay independent of particular logging frameworks thanks
+                                to ACL's bridge function, which makes it simple to integrate and adjust to various logging
                                 implementations.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section8-1">Features of Apache Commons Logging</h2>
                                     <ul>
                                         <li><b>Abstraction Layer</b></li>
-                                        <li><b>Cross-Compatibility: </b>Allows programmes to function flawlessly with various logging 
+                                        <li><b>Cross-Compatibility: </b>Allows programmes to function flawlessly with various logging
                                             implementations without requiring modifications to their code.</li>
-                                        <li><b>Runtime Discovery: </b>Offers flexibility in selecting logging implementations by enabling 
+                                        <li><b>Runtime Discovery: </b>Offers flexibility in selecting logging implementations by enabling
                                             the selection of a particular logging library at runtime.</li>
-                                        <li><b>Simple Configuration: </b>This option reduces setup complexity by providing simple configuration 
+                                        <li><b>Simple Configuration: </b>This option reduces setup complexity by providing simple configuration
                                             through properties files or programmatically.</li>
-                                        <li><b>Diagnostic Contexts: </b>Supports diagnostic contexts, which add contextual information to logs 
+                                        <li><b>Diagnostic Contexts: </b>Supports diagnostic contexts, which add contextual information to logs
                                             to improve traceability.</li>
                                     </ul>
                                 </div>
@@ -766,11 +769,11 @@ public class MyClass {
                                     <h2 class="mt-4 section" id="section8-2">Logging Initialization</h2>
                                     <pre class="language-java"><code class="language-java">import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-                                        
+
 public class MyClass {
     private static final Log log = LogFactory.getLog(MyClass.class);
     // Initialize the logger
-                                        
+
     public void someMethod() {
         log.debug("Debug message");
         log.info("Informational message");
@@ -779,7 +782,7 @@ public class MyClass {
         log.fatal("Fatal error message");
     }
 }
-                                        
+
 Configuration (Properties File):
 # commons-logging.properties
 org.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger</code></pre>
@@ -791,14 +794,14 @@ org.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger</code
                     <div id="section9" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Tinylog</h1>
-                            <p class="my-2 para-bold pr-3">Tinylog is designed for developers who prefer simple, lightweight solutions that 
+                            <p class="my-2 para-bold pr-3">Tinylog is designed for developers who prefer simple, lightweight solutions that
                                 don't sacrifice functionality. It emphasizes efficiency and user-friendliness.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section9-1">Features of Tinylog</h2>
                                     <ul>
                                         <li><b>Simplicity</b></li>
-                                        <li><b>Small Footprint: </b>Because of its lightweight design, which guarantees low overhead, 
+                                        <li><b>Small Footprint: </b>Because of its lightweight design, which guarantees low overhead,
                                             it is a great option for applications where performance is crucial.</li>
                                         <li><b>Ease of Use</b></li>
                                         <li><b>Configurability: </b>Tinylog provides configuration options to customise logging behaviour,
@@ -831,7 +834,7 @@ writer.filename = logs/myapp.log
 writer.format = {date} [{level}] {class}.{method}: {message}
 writer.level = info</code></pre>
 <br>
-<p class="my-2 para-bold pr-3">Though Tinylog is straightforward, it doesn't skimp on crucial features, providing developers with a 
+<p class="my-2 para-bold pr-3">Though Tinylog is straightforward, it doesn't skimp on crucial features, providing developers with a
     dependable solution to simplify their logging requirements.</p>
 <br>
                                 </div>
@@ -841,17 +844,17 @@ writer.level = info</code></pre>
                     <div id="section10" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Log4j-slf4j-impl</h1>
-                            <p class="my-2 para-bold pr-3">The Log4j-slf4j-impl framework is an essential link in the ever-changing Java logging ecosystem, 
-                                allowing a smooth transition from Log4j 2 to the Simple Logging Facade for Java (SLF4J). As a connector, 
+                            <p class="my-2 para-bold pr-3">The Log4j-slf4j-impl framework is an essential link in the ever-changing Java logging ecosystem,
+                                allowing a smooth transition from Log4j 2 to the Simple Logging Facade for Java (SLF4J). As a connector,
                                 the Log4j-slf4j-impl framework makes it possible for a seamless migration process and guarantees that logging features are
                                  maintained without requiring complex code changes.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section10-1">Features of Log4j-slf4j-impl</h2>
                                     <ul>
-                                        <li><b>Compatibility Layer: </b>It allows for future flexibility and adaptability by translating existing Log4j 2 
+                                        <li><b>Compatibility Layer: </b>It allows for future flexibility and adaptability by translating existing Log4j 2
                                             logging requests to the SLF4J API while preserving them.</li>
-                                        <li><b>Migration Support: </b>It makes for a smooth transition that minimises interruptions and ensures that logging 
+                                        <li><b>Migration Support: </b>It makes for a smooth transition that minimises interruptions and ensures that logging
                                             infrastructure evolves gradually.</li>
                                         <li><b>Integration Flexibility</b></li>
                                         <li><b>Simplified Dependency Management</b></li>
@@ -863,11 +866,11 @@ writer.level = info</code></pre>
                                     <h2 class="mt-4 section" id="section10-2">Basic Logging</h2>
                                     <pre class="language-java"><code class="language-java">import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-                                        
+
 public class ExampleClass {
     // Creating a logger instance using SLF4J
     private static final Logger logger = LoggerFactory.getLogger(ExampleClass.class);
-                                        
+
     public static void main(String[] args) {
         // Logging messages using SLF4J interface
         logger.debug("Debugging message");
@@ -887,7 +890,7 @@ public class ExampleClass {
                     <div id="section11" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Future Trends in Logging Frameworks in Java</h1>
-                            <p class="my-2 para-bold pr-3"><b>Cloud-Native Logging: </b>With the rapid adoption of cloud-native architectures, 
+                            <p class="my-2 para-bold pr-3"><b>Cloud-Native Logging: </b>With the rapid adoption of cloud-native architectures,
                                 logging frameworks are evolving to accommodate distributed, containerized environments. The focus is on scalable,
                                  centralized logging solutions that seamlessly integrate with cloud platforms, allowing efficient log aggregation
                                   and analysis across distributed systems.
@@ -903,17 +906,17 @@ public class ExampleClass {
                     <div id="section12" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Conclusion</h1>
-                            <p class="my-2 para-bold pr-3">Java applications still rely heavily on logging, which is an essential tool for developers 
-                                navigating the difficult world of software development. Its importance in debugging, troubleshooting, and application 
-                                maintenance cannot be emphasised enough. When it comes to troubleshooting, performance optimisation, and system 
-                                reliability, the information extracted from logs is important. With technology developing at the same rate as logging 
-                                techniques, developers must adopt a continual learning and adaptation culture. By keeping abreast of developing trends, 
-                                investigating novel logging approaches, and utilising cutting-edge logging frameworks, developers may construct 
+                            <p class="my-2 para-bold pr-3">Java applications still rely heavily on logging, which is an essential tool for developers
+                                navigating the difficult world of software development. Its importance in debugging, troubleshooting, and application
+                                maintenance cannot be emphasised enough. When it comes to troubleshooting, performance optimisation, and system
+                                reliability, the information extracted from logs is important. With technology developing at the same rate as logging
+                                techniques, developers must adopt a continual learning and adaptation culture. By keeping abreast of developing trends,
+                                investigating novel logging approaches, and utilising cutting-edge logging frameworks, developers may construct
                                 applications that are scalable, durable, and easily maintained.
                             </p>
                             <br>
-                            <p class="my-2 para-bold pr-3">In conclusion, Java logging frameworks are always changing to accommodate the needs of 
-                                contemporary applications. Robust and effective logging procedures for Java applications depend on recognising the 
+                            <p class="my-2 para-bold pr-3">In conclusion, Java logging frameworks are always changing to accommodate the needs of
+                                contemporary applications. Robust and effective logging procedures for Java applications depend on recognising the
                                 value of logging, understanding the changing context, and embracing continuous learning.</p>
                             <br>
                         </div>
@@ -921,10 +924,10 @@ public class ExampleClass {
 
 
                 </div>
-            </div> 
-            </div>       
+            </div>
+            </div>
         </div>
-    </div>  
+    </div>
 
     <footer id="footer" class="pb-5">
         <div class="container">
@@ -999,7 +1002,6 @@ crossorigin="anonymous"></script>
 </body>
 
 </html>
-     
-                    
 
-                            
+
+

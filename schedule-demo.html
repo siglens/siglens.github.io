@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Demo | SigLens</title>
+    <link rel="icon" href="/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="dark-theme">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top d-flex flex-column p-0">
+        <div class="container py-2 px-4 px-md-0">
+            <a class="navbar-brand" href="index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="./assets/ss-logo.svg" alt="siglens-logo"></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/" target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/press-news.html">Press & News</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Community</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                            <a class="dropdown-item" href="/guides.html">Guides</a>
+                            <a class="dropdown-item" href="/questions.html">Questions</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
+                    </li>
+                    <li>
+                        <a href="/slack.html" target="_blank">
+                            <img src="assets/slack.svg" width="22" height="22" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="assets/github.svg" width="24" height="24" alt="github-logo" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="demo-section">
+        <div class="demo-container">
+            <div class="demo-content">
+                <div class="demo-text">
+                    <h1>Let's Talk</h1>
+                    <p>We'd love to understand your monitoring use case and discuss how SigLens, our open source observability solution, can help you achieve:</p>
+                    <ul style="color: #ccc; font-size: 1.2rem; line-height: 1.6;">
+                        <li>100x lower compute and storage than traditional solutions</li>
+                        <li>Efficient scaling from 8 TB/day to 1 PB/day</li>
+                        <li>Lightning-fast search and aggregation queries</li>
+                        <li>Simplified operations with a single binary architecture</li>
+                    </ul>
+                </div>
+                <div class="calendly-inline-widget">
+                    <!-- Calendly inline widget begin -->
+                    <iframe
+                        src="https://calendly.com/knawale/30min"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        scrolling="no"
+                    ></iframe>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="pb-5">
+        <div class="container">
+          <div class="row py-0 py-md-5">
+            <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+              <div>
+                <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                  class="footer-nav-heading">Documentation</a>
+              </div>
+              <div>
+                <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+              </div>
+              <div>
+                <a href="/press-news.html" class="footer-nav-heading">Press & News</a>
+              </div>
+              <div class="d-flex flex-column">
+                <a href="#" class="footer-nav-heading">Community</a>
+                <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                <a class="mt-3 pl-2" href="/guides.html">Guides</a>
+                <a class="mt-3 pl-2" href="/questions.html">Questions</a>
+              </div>
+            </div>
+            <div class="col-md-5 text-md-start order-0 order-md-1 mx-4 mx-md-0">
+              <h5 class="text-start font-weight-bold text-white">Subscribe to our newsletter</h5>
+              <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                <button class="btn btn-primary mt-2" id="ns-form-btn">
+                  <a href="https://forms.gle/D4UmjNiJuzTe1Jnd7" target="_blank">Subscribe</a>
+                </button>
+              </form>
+            </div>
+            <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+              <div class="d-flex">
+                <a class="mr-4" href="https://twitter.com/SigLensHQ" target="_blank">
+                  <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                </a>
+                <a class="mr-4" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                  <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                </a>
+                <a class="" href="https://www.siglens.com/blog/blog-rss.xml" target="_blank" title="Subscribe to RSS feed">
+                  <div class="icon-container">
+                    <i class="fa-solid fa-rss"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+            <img src="./assets/ss-logo.svg" alt="siglens-logo" style="height: 50px;">
+            <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+            <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+            <div>Copyright © 2024 - <strong class="text-white pointer-event"><a href="https://www.sigscalr.io/">SigScalr
+                  Inc.</a></strong></div>
+          </div>
+        </div>
+      </footer>
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
+
+

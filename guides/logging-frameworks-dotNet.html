@@ -61,7 +61,7 @@
                         <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
                             target="_blank">Documentation</a>
                     </li>
-                    <li class="nav-item "> 
+                    <li class="nav-item ">
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -76,6 +76,9 @@
                     </li>
                     <li>
                         <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -180,21 +183,21 @@
                             <br>
                             <h2>Meta Description</h2>
                             <p class="my-2 para-bold pr-3">Explore the world of .NET logging frameworks! From Serilog's structured data to NLog's flexibility,
-                                 discover how these tools—Log4Net, Microsoft.Extensions.Logging, Loupe, and ELMAH—streamline debugging and monitoring in .NET 
+                                 discover how these tools—Log4Net, Microsoft.Extensions.Logging, Loupe, and ELMAH—streamline debugging and monitoring in .NET
                                  applications.
                             </p>
                             <h3>Introduction</h3>
                             <p class="my-2 para-bold pr-3">Logging frameworks are fundamental building blocks in the ever-changing world of .NET development,
-                                 allowing programmers to record, monitor, and analyse the activity of their applications. These frameworks, which provide 
+                                 allowing programmers to record, monitor, and analyse the activity of their applications. These frameworks, which provide
                                  a range of tools and methods for effective log management, are essential for monitoring the functionality, performance,
-                                  and any problems of .NET applications. The.NET ecosystem's logging frameworks offer a variety of ways to handle the 
+                                  and any problems of .NET applications. The.NET ecosystem's logging frameworks offer a variety of ways to handle the
                                   complexities of monitoring and examining application logs.
                             </p>
                             <p class="my-2 para-bold pr-3">This blog aims to examine the wide range of logging frameworks available in the.NET
-                                 ecosystem and provide insight into their salient characteristics, usefulness, and applicability in different.NET 
-                                 application contexts. The spectrum includes frameworks designed to meet a variety of demands, from Serilog's focus 
-                                 on structured logging to NLog's flexible configuration and Log4Net's maturity in legacy applications. Microsoft's 
-                                 solutions, such as Microsoft.Extensions.Logging simplifies integration between various logging frameworks by providing 
+                                 ecosystem and provide insight into their salient characteristics, usefulness, and applicability in different.NET
+                                 application contexts. The spectrum includes frameworks designed to meet a variety of demands, from Serilog's focus
+                                 on structured logging to NLog's flexible configuration and Log4Net's maturity in legacy applications. Microsoft's
+                                 solutions, such as Microsoft.Extensions.Logging simplifies integration between various logging frameworks by providing
                                  a single abstraction layer for logging providers.
                             </p>
                             <br>
@@ -217,7 +220,7 @@
                                                 </tr>
                                             </thead>
                                             <tr>
-        
+
                                                 <th class="fstrow">Trace</th>
                                                 <td class="txt-align">Provides detailed information on application execution, often used for debugging purposes.</td>
                                                 <td class="txt-align">Tracing method calls, detailed variable values during execution.</td>
@@ -271,19 +274,19 @@
                                     <p class="my-2 para-bold pr-3"><b>Example of Logging in .NET (using System.Diagnostics)</b></p>
                                     <pre class="language-javascript"><code class="language-javascript">using System;
 using System.Diagnostics;
-                                        
+
 class Program
 {
     static void Main()
     {
         // Create a TraceSource instance
         TraceSource traceSource = new TraceSource("MyTraceSource");
-                                        
+
         // Writing logs with different levels
         traceSource.TraceEvent(TraceEventType.Information, 0, "Information log message");
         traceSource.TraceEvent(TraceEventType.Warning, 0, "Warning log message");
         traceSource.TraceEvent(TraceEventType.Error, 0, "Error log message");
-                                        
+
         // Flush and close the TraceSource
         traceSource.Flush();
         traceSource.Close();
@@ -431,13 +434,13 @@ class Program
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Serilog</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">Developers can create structured event logs with Serilog, a popular tool for 
+                            <p class="my-2 para-bold pr-3">Developers can create structured event logs with Serilog, a popular tool for
                                 simplicity and flexibility that makes analysis and querying simpler.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section3-1">Features of Serilog</h2>
                                     <ul>
-                                        <li><b>Structured Logging:</b>Structured logging gives a clear picture of how an application is 
+                                        <li><b>Structured Logging:</b>Structured logging gives a clear picture of how an application is
                                             behaving by concentrating on logging structured data.</li>
                                         <li><b>Flexible Sinks:</b>Multiple output sinks, including files, databases, Elasticsearch, and more, are supported.</li>
                                         <li><b>Enrichment:</b>Permits adding more contextual information to log events.</li>
@@ -465,7 +468,7 @@ class Program
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
             .CreateLogger();
-                                        
+
         Log.Information("Hello, Serilog!"); // Basic log message
     }
 }</code></pre>
@@ -483,7 +486,7 @@ class Program
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
             .CreateLogger();
-                                        
+
         Log.Information("Processed {@Event}", new { Id = 1, Name = "Structured Event" });
     }
 }</code></pre>
@@ -491,13 +494,13 @@ class Program
                                 </div>
                             </div>
                         </div>
-                    </div>   
+                    </div>
                     <div id="section4" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>NLog</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">In the.NET ecosystem, NLog is a reliable and adaptable logging framework that makes 
-                                application monitoring, logging, and analysis easier. Because of its extensive feature set, it is the go-to option 
+                            <p class="my-2 para-bold pr-3">In the.NET ecosystem, NLog is a reliable and adaptable logging framework that makes
+                                application monitoring, logging, and analysis easier. Because of its extensive feature set, it is the go-to option
                                 for developers looking for logging solutions that are flexible and extensible.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
@@ -505,9 +508,9 @@ class Program
                                     <ul>
                                         <li><b>Modularity and Extensibility:</b>NLog's modular architecture facilitates easy integration with a
                                              wide range of targets, including <b>files, databases, email, </b>and more. </li>
-                                        <li><b>Rich Configuration options:</b>It offers a large number of configuration choices, including 
+                                        <li><b>Rich Configuration options:</b>It offers a large number of configuration choices, including
                                             <b>log levels, output formats, and destination targets, </b>that let developers customize the way logs behave.</li>
-                                        <li><b>Logging Rules and Filters: </b>With NLog's advanced logging rules and filtering methods, you can precisely 
+                                        <li><b>Logging Rules and Filters: </b>With NLog's advanced logging rules and filtering methods, you can precisely
                                             manage what information is logged and under what circumstances.</li>
                                         <li><b>High Performance and Scalability</b></li>
                                     </ul>
@@ -527,7 +530,7 @@ class Program
 class Program
 {
     private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-                                        
+
     static void Main(string[] args)
     {
         Logger.Info("Application started");
@@ -542,22 +545,22 @@ class Program
                                     <h2 class="mt-4 section" id="section4-4">Structured Logging</h2>
                                     <pre class="language-javascript"><code class="language-javascript">&lt;nlog&gt;
     &lt;targets&gt;
-        &lt;target name="file" xsi:type="File" 
+        &lt;target name="file" xsi:type="File"
 fileName="${basedir}/logs/${shortdate}.log"
-            layout="${longdate} | ${level:uppercase=true} | 
+            layout="${longdate} | ${level:uppercase=true} |
 ${message} | ${logger} | ${exception:format=ToString}" /&gt;
     &lt;/targets&gt;
     &lt;rules&gt;
         &lt;logger name="*" minlevel="Trace" writeTo="file" /&gt;
     &lt;/rules&gt;
 &lt;/nlog&gt;</code></pre>
-<p class="my-2 para-bold pr-3">NLog is a feature-rich logging framework that provides.NET applications with 
+<p class="my-2 para-bold pr-3">NLog is a feature-rich logging framework that provides.NET applications with
     unmatched performance, flexibility, and customisation possibilities. </p>
 <br>
                                 </div>
                             </div>
                         </div>
-                    </div>                  
+                    </div>
                     <div id="section5" class="section">
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Log4Net</h1>
@@ -569,7 +572,7 @@ ${message} | ${logger} | ${exception:format=ToString}" /&gt;
                                     <h2 class="mt-4 section" id="section5-1">Features of Log4Net</h2>
                                     <ul>
                                         <li><b>Configurability</b></li>
-                                        <li><b>Appenders: </b>It provides flexible options for log data storage by supporting a 
+                                        <li><b>Appenders: </b>It provides flexible options for log data storage by supporting a
                                             range of appenders, including file and database appenders.</li>
                                         <li><b>Logging Levels</b></li>
                                         <li><b>Loggers and Hierarchies: </b>It offers a hierarchical logger framework that gives users precise control over how their application logs.</li>
@@ -592,16 +595,16 @@ ${message} | ${logger} | ${exception:format=ToString}" /&gt;
                                     <h2 class="mt-4 section" id="section5-3">Basic Logging</h2>
                                     <pre class="language-javascript"><code class="language-javascript">using log4net;
 using log4net.Config;
-                                        
+
 public class MyClass
 {
     private static readonly ILog log = LogManager.GetLogger(typeof(MyClass));
-                                        
+
     static void Main(string[] args)
     {
         // Load log4net configuration from file
         XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
-                                        
+
         // Basic logging examples
         log.Debug("This is a debug message.");
         log.Info("This is an info message.");
@@ -628,16 +631,16 @@ log.Error($"Error occurred in method {methodName}: {exception.Message}", excepti
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Microsoft.Extensions.Logging</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">Microsoft offers a flexible logging mechanism called Microsoft.Extensions.Logging as a component 
-                                of the.NET framework. It provides a uniform and adaptable logging interface for applications written for.NET Core 
+                            <p class="my-2 para-bold pr-3">Microsoft offers a flexible logging mechanism called Microsoft.Extensions.Logging as a component
+                                of the.NET framework. It provides a uniform and adaptable logging interface for applications written for.NET Core
                                 and.NET 5+, facilitating easy connection with different logging sources.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section6-1">Features of Microsoft.Extensions.Logging</h2>
                                     <ul>
-                                        <li><b>Abstraction Layer:</b> The Abstraction Layer gives developers the freedom to compose log statements without being 
+                                        <li><b>Abstraction Layer:</b> The Abstraction Layer gives developers the freedom to compose log statements without being
                                             constrained by a particular logging system by providing an abstraction over logging.</li>
-                                        <li><b>Provider-Based approach:</b>Enables a consistent logging strategy across several frameworks by supporting integration 
+                                        <li><b>Provider-Based approach:</b>Enables a consistent logging strategy across several frameworks by supporting integration
                                             with various logging providers (Serilog, NLog, Log4Net, etc.) through provider extensions.</li>
                                         <li><b>Logging Levels</b></li>
                                         <li><b>Scopes and Contexts: </b>Enables scoped logging to better aid in log categorization and filtering by capturing
@@ -664,7 +667,7 @@ class Program
         {
             builder.AddConsole(); // Example: Console Logging Provider
         });
-                                        
+
         ILogger logger = loggerFactory.CreateLogger&lt;Program&gt;();
         logger.LogInformation("Hello, Logging!"); // Logging an Information-level message
     }
@@ -684,10 +687,10 @@ class Program
         {
             builder.AddConsole(); // Example: Console Logging Provider
         });
-                                        
+
         ILogger logger = loggerFactory.CreateLogger&lt;Program&gt;();
         logger.LogInformation("Hello, Logging!"); // Logging an Information-level message
-                                        
+
         // Additional code with logging and scope (optional)
         using (var scope = logger.BeginScope("Transaction Scope"))
         {
@@ -705,22 +708,22 @@ class Program
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Loupe</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">For.NET applications, Loupe is a potent application monitoring and logging solution. 
-                                It offers a single platform for the collection, analysis, and visualization of log data to developers and system 
+                            <p class="my-2 para-bold pr-3">For.NET applications, Loupe is a potent application monitoring and logging solution.
+                                It offers a single platform for the collection, analysis, and visualization of log data to developers and system
                                 administrators, facilitating proactive monitoring, troubleshooting, and optimization of.NET applications.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section7-1">Features of Loupe</h2>
                                     <ul>
-                                        <li><b>Centralized Log Management:</b>Loupe aggregates logs from distributed .NET applications into a 
+                                        <li><b>Centralized Log Management:</b>Loupe aggregates logs from distributed .NET applications into a
                                             centralized repository, simplifying log access and analysis.</li>
-                                        <li><b>Real-time monitoring: </b>Provides insights into the health and performance of applications in 
+                                        <li><b>Real-time monitoring: </b>Provides insights into the health and performance of applications in
                                             real-time, enabling prompt resolution of urgent problems.</li>
-                                        <li><b>Performance Tracking:</b>Application performance indicators are measured and tracked, which makes 
+                                        <li><b>Performance Tracking:</b>Application performance indicators are measured and tracked, which makes
                                             it possible to locate bottlenecks and optimize certain areas.</li>
-                                        <li><b>Application Insights:</b>Helps with proactive issue resolution by offering comprehensive insights 
+                                        <li><b>Application Insights:</b>Helps with proactive issue resolution by offering comprehensive insights
                                             into <b>application behavior, user interactions, faults, and exceptions.</b></li>
-                                        <li><b>Custom Dashboards: </b>Gives users the option to design unique dashboards that display log data and offer 
+                                        <li><b>Custom Dashboards: </b>Gives users the option to design unique dashboards that display log data and offer
                                             a customized perspective on the functionality of their applications.</li>
                                     </ul>
                                 </div>
@@ -743,12 +746,12 @@ class Program
 
 // Initialize Loupe
 Log.StartSession();
-                                        
+
 // Log messages with Loupe
 Log.Information("Information message");
 Log.Warning("Warning: Potential issue detected");
 Log.Error("Error occurred: {0}", exception.Message);
-                                        
+
 // Stop Loupe session
 Log.EndSession();</code></pre>
                                 </div>
@@ -760,10 +763,10 @@ Log.EndSession();</code></pre>
 
 // Initialize Loupe
 Log.StartSession();
-                                        
+
 // Log structured messages
 Log.Write(LogMessageSeverity.Information, "Component", "Operation", "Information message", null, new { CustomData = "Value" });
-                                        
+
 // Stop Loupe session
 Log.EndSession();</code></pre>
 <br>
@@ -775,21 +778,21 @@ Log.EndSession();</code></pre>
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>ELMAH (Error Logging Modules and Handlers)</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">Error Logging Modules and Handlers, or ELMAH for short, is a robust and expandable 
-                                logging system made especially for ASP.NET online applications. This open-source library offers a productive 
-                                way to report and handle failures and unhandled exceptions that doesn't need to be handled in ASP.NET 
+                            <p class="my-2 para-bold pr-3">Error Logging Modules and Handlers, or ELMAH for short, is a robust and expandable
+                                logging system made especially for ASP.NET online applications. This open-source library offers a productive
+                                way to report and handle failures and unhandled exceptions that doesn't need to be handled in ASP.NET
                                 applications.</p>
                             <div>
                                 <div class="my-2 blog-para mt-4">
                                     <h2 class="mt-4 section" id="section8-1">Features of ELMAH</h2>
                                     <ul>
                                         <li><b>Automatic Error Logging</b></li>
-                                        <li><b>Web-based UI: </b>It offers an easy-to-use web-based interface for viewing and analyzing 
+                                        <li><b>Web-based UI: </b>It offers an easy-to-use web-based interface for viewing and analyzing
                                             reported errors, making error management and inspection simple.</li>
                                         <li><b>Customization</b></li>
                                         <li><b>Detailed Error Information:</b>Records complete error information at the time of error occurrence,
                                              including stack traces, HTTP context, and server environment.</li>
-                                        <li><b>Integration with ASP.NET: </b>Supports ASP.NET WebForms, MVC, and Web API projects, and integrates 
+                                        <li><b>Integration with ASP.NET: </b>Supports ASP.NET WebForms, MVC, and Web API projects, and integrates
                                             seamlessly with ASP.NET applications.</li>
                                     </ul>
                                 </div>
@@ -828,24 +831,24 @@ catch (Exception ex)
                         <div style="max-width: 100%;" class="mx-auto">
                             <h1>Conclusion</h1>
                             <br>
-                            <p class="my-2 para-bold pr-3">In the realm of .NET development, logging frameworks are indispensable for 
-                                ensuring application reliability and performance. Each framework in this diverse ecosystem brings 
-                                unique strengths: Serilog for structured log data, NLog's customizability, Log4Net's traditional 
-                                approach, Microsoft.Extensions.Logging's unified interface, Loupe's real-time monitoring, and ELMAH's 
+                            <p class="my-2 para-bold pr-3">In the realm of .NET development, logging frameworks are indispensable for
+                                ensuring application reliability and performance. Each framework in this diverse ecosystem brings
+                                unique strengths: Serilog for structured log data, NLog's customizability, Log4Net's traditional
+                                approach, Microsoft.Extensions.Logging's unified interface, Loupe's real-time monitoring, and ELMAH's
                                 specialized ASP.NET error handling. Serilog's structured logging caters to comprehensive analysis, while
-                                 NLog's modularity and Log4Net's familiarity offer diverse options. Microsoft.Extensions.Logging integrates 
+                                 NLog's modularity and Log4Net's familiarity offer diverse options. Microsoft.Extensions.Logging integrates
                                  seamlessly with .NET Core, Loupe empowers real-time insights, and ELMAH simplifies error handling.</p>
                             <br>
                             <p class="my-2 para-bold pr-3">Developers can ensure reliable and effective logging methods in their.NET applications
-                                 by making well-informed decisions that are in line with project objectives by knowing the various capabilities and 
+                                 by making well-informed decisions that are in line with project objectives by knowing the various capabilities and
                                  specializations of these logging frameworks.</p>
                         </div>
                     </div>
                 </div>
-            </div> 
-            </div>       
+            </div>
+            </div>
         </div>
-    </div>  
+    </div>
 
     <footer id="footer" class="pb-5">
         <div class="container">

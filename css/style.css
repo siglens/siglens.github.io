@@ -63,15 +63,21 @@ a {
 .navbar-nav {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .navbar-nav li {
-    margin-right: 32px;
+    margin-right: 16px;
+}
+
+.navbar-nav li:last-child {
+    margin-right: 0;
 }
 
 .navbar .nav-item a {
     color: var(--white-0);
     letter-spacing: 0.03em;
+    white-space: nowrap;
 }
 
 .navbar .dropdown-menu {
@@ -95,13 +101,30 @@ a {
     display: none;
 }
 
+#try-now-btn, #book-demo-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 8px;
+    border-radius: 10px;
+    color: var(--white-0);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 4px;
+}
+
 #try-now-btn {
-  background: var(--marigold);
-  text-decoration: none;
-  border: 1px solid var(--marigold);
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: var(--white-0);
+    background: var(--marigold);
+    border: 1px solid var(--marigold);
+}
+
+#book-demo-btn {
+    background: var(--purple-0);
+    border: 1px solid var(--purple-0);
+}
+
+#book-demo-btn:hover {
+    background: var(--purple-4);
+    border-color: var(--purple-4);
 }
 
 .hero-btn-container {
@@ -192,7 +215,7 @@ a {
     background: var(--main-color);
 }
 .video-container video {
-    width: 100%; 
+    width: 100%;
     height: auto;
     border-radius: 20px;
 }
@@ -482,8 +505,8 @@ a:focus {
     position: relative;
     background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
     font-weight: 400;
-   
-} 
+
+}
 
 .tab-content .para-bold{font-size: 16px !important;
 line-height: 26px;}
@@ -731,7 +754,6 @@ line-height: 26px;}
 }
 
 /* Mobile View  */
-
 @media (max-width: 767.98px) {
     /* navbar */
     #navbarSupportedContent {
@@ -921,5 +943,139 @@ line-height: 26px;}
     .purple-btn{
         width: 180px;
         font-size: 16px;
+    }
+}
+
+.demo-section {
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(122, 60, 234, 0.1) 0%, rgba(2, 0, 13, 0) 70%);
+    z-index: -1;
+}
+
+.demo-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.demo-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.demo-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.demo-text h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    color: var(--white-0);
+    font-weight: 300;
+}
+
+.demo-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.demo-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.demo-text ul li {
+    color: #ccc;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.demo-text ul li::before {
+    content: '•';
+    color: var(--purple-0);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.calendly-inline-widget {
+    flex: 1;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(122, 60, 234, 0.2);
+    box-shadow: 0 4px 24px rgba(122, 60, 234, 0.1);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .demo-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .demo-text {
+        padding-right: 0;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    .demo-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .demo-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .demo-text ul li {
+        font-size: 1rem;
+    }
+
+    .calendly-inline-widget {
+        min-height: 600px;
+        min-height: 700px;
+        width: 100%;
+        height: auto;
+    }
+    .calendly-inline-widget iframe {
+        min-height: 700px !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .demo-section {
+        padding: 60px 15px;
+    }
+
+    .demo-container {
+        padding: 0 15px;
     }
 }
