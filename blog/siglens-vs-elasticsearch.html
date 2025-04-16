@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigLens | SigLens vs Elasticsearch</title>
+    <link rel="icon" href="../favicon.svg">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--  Main CSS File -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Font-awesome Family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Include Prism.js CSS -->
+    <link rel="stylesheet" href="./dark-theme-prismjs.css">
+
+    <link rel="canonical" href="https://www.siglens.com/blog/siglens-vs-elasticsearch.html">
+    <!--OG Tags-->
+    <meta property="og:url" content="https://www.siglens.com/blog/siglens-vs-elasticsearch.html" />
+    <meta property="og:title" content="SigLens vs Elasticsearch" />
+    <meta name="description" property="og:description"
+        content="SigLens- Considering Alternatives to Elasticsearch? Discover Why SigLens Is Built for Modern Observability" />
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
+    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta name="image" property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+
+    <!--Twitter OG Tag-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@siglens.com" />
+    <meta name="twitter:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    </meta>
+    <meta name="twitter:image:alt" content="SigLens vs Elasticsearch" />
+    <style>
+        .sub-heading {
+            margin-top: 24px !important;
+            margin-bottom: 12px !important;
+        }
+        #try-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #11beb0, #49d880);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+
+        #github-siglens-btn {
+            margin-top: 20px;
+            background: linear-gradient(270deg, #161828, #333B64);
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--white-0);
+            font-weight: 500;
+            box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
+        }
+
+        #try-siglens-btn:hover,
+        #github-siglens-btn:hover {
+            cursor: pointer;
+            transform: translateY(-3px) scale(1.005) translateZ(0);
+            box-shadow: 0px 4px 9px 2px rgba(46, 32, 95, 0.25);
+            transition: all 0.3s ease-out;
+        }
+
+        #github-siglens-btn .fa-github {
+            font-size: 20px !important;
+        }
+
+
+        @media (max-width: 767.98px) {
+
+            #github-siglens-btn,
+            #try-siglens-btn {
+                padding: 6px 14px;
+                font-size: 16px;
+            }
+
+            #github-siglens-btn .fa-github {
+                font-size: 16px !important;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
+        <div class="container">
+            <a class="navbar-brand " href="../index.html">
+                <div class="d-flex">
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt="siglens-logo"></div>
+                    <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
+                            target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Company </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="/investors.html">Investors</a>
+                          <a class="dropdown-item" href="/press-news.html">Press & News</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
+                            <a class="dropdown-item" href="/slack.html">Slack</a>
+                            <a class="dropdown-item" href="../guides.html">Guides</a>
+                            <a class="dropdown-item" href="../questions.html">Questions</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
+                    </li>
+                    <li>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/siglens/siglens" target="_blank">
+                            <img src="../assets/github.svg" width="26" height="26" alt="github-icon" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-md-5 pt-5 my-2 blog-post">
+
+
+        <div class="container-md">
+            <img class="mt-3 ss-vs-ch" src="../assets/siglens-vs-clickhouse.png" alt="SigLens vs Elasticsearch"/>
+            <div class="d-flex">
+                <div id="sidebar">
+                    <nav id="sidebar-nav">
+                        <ul class="nav flex-column">
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section0">
+                                    <h5>Article Navigator</h5>
+                                </a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section1">Elasticsearch: Powerful But Painful
+                                </a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Meet SigLens: Log Analytics Engineered for Real-Time Speed</a>
+                            </li>
+                            <ul class="sub-navbar flex-column">
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-1">Sub-Second Query Speed: No Indexing Required</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-2">Up to 80% Lower Infra Costs</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-3">Simpler Setup, Zero Tuning</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-4"> Dev-Friendly, B2D-Native</a></li>
+                            </ul>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section3">SigLens vs. Elasticsearch: The Real Breakdown</a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Why SigLens Is the Right Move
+                                </a>
+                            </li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section5">
+                                Ready to Make the Switch?
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="all-sections" class="container-md">
+                    <div id="section0" class="d-flex flex-column align-items-center">
+                        <div class="para-bold mb-2 mt-4">
+                            For over a decade,
+                            <strong style="font-size: 20px;">Elasticsearch</strong> has been the cornerstone of log analytics.
+                            It’s powerful, flexible, and widely adopted. But if you’ve run it in production,
+                            you know this power comes with a price, <strong style="font-size: 20px;">both in dollars and in engineering hours.
+                            </strong>
+                        </div>
+                        <div class="para-bold mb-3">
+                            Elasticsearch wasn’t built for observability. It was built for search.
+                            And as logs, traces, and metrics converge into real-time debugging pipelines,
+                            <strong style="font-size: 20px;">teams are discovering the cracks.</strong>
+                        </div>
+                        <div class="para-bold mb-4">
+                            That’s where <strong style="font-size: 20px;">SigLens</strong> steps in with speed, scale, and
+                            simplicity built specifically for the modern observability stack.
+                        </div>
+                    </div>
+                    <div id="section1" class="section">
+                        <div>
+                            <h1 class="heading">Elasticsearch: Powerful But Painful
+                            </h1>
+                            <div>
+                                <div class="blog-para">
+                                    <p class="mt-2">Let’s be clear, Elasticsearch is still a solid tool.
+                                        But for log analytics at today’s scale, it's starting to show its age.
+                                    </p>
+                                    <ul class="para-bold">
+                                        <li><strong style="font-size: 18px;">Heavy indexing overhead</strong> leads to massive infra costs.
+                                        </li>
+                                        <li><strong style="font-size: 18px;">Query latency spikes</strong> as data volume grows.
+                                        </li>
+                                        <li><strong style="font-size: 18px;">Complex tuning and maintenance</strong> drain valuable engineering time.
+                                        </li>
+                                        <li><strong style="font-size: 18px;">Storage bloat</strong> from duplicated indexes and replicas.
+                                        </li>
+                                        <li><strong style="font-size: 18px;">Painful scale-ups</strong> requiring clusters, sharding, and downtime risk.
+                                        </li>
+                                    </ul>
+                                    <p class="mt-2 mb-2">
+                                        For small projects or simple use cases, it works fine. But modern systems demand
+                                        <span class="font-weight-bold">sub-second visibility across millions of logs without hiring a full-time search engineer.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section2" class="section mt-4">
+                        <h1 class="heading">Meet SigLens: Log Analytics Engineered for Real-Time Speed
+                        </h1>
+                        <p class="mt-2">
+                            SigLens is built with one core principle:
+                            <span class="font-weight-bold">Logs should be fast, cheap, and easy—at any scale.</span>
+                            No more duct-taping dashboards or babysitting clusters.
+                        </p>
+                        <p class="mt-2 mb-2">
+                            Here’s what makes it different:
+                        </p>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-1"><span class="font-weight-bold">⚡️Sub-Second Query Speed: No Indexing Required</span>
+                            </h2>
+                            <div class="mt-2">Unlike Elasticsearch, which relies on indexing everything upfront,
+                                SigLens uses a <span class="font-weight-bold">stream-first architecture</span> that supports
+                                <span class="font-weight-bold">real-time queries on live or historical data without costly pre-processing.</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-2"><span class="font-weight-bold">💰 Up to 80% Lower Infra Costs</span>
+                            </h2>
+                            <p class="mt-2 mb-2">SigLens’s compression-first design drastically reduces storage and compute costs.
+                                No giant indexes. No hot/warm/cold tiers to manage.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-3"><span class="font-weight-bold">🧠 Simpler Setup, Zero Tuning</span>
+                            </h2>
+                            <p class="mt-2 mb-2">Say goodbye to fiddling with shards, replicas, or JVM settings.
+                                SigLens auto-scales with your data and works out-of-the-box.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="sub-heading mt-2 section" id="section2-4"><span class="font-weight-bold">🛠️ Dev-Friendly, B2D-Native</span>
+                            </h2>
+                            <p class="mt-2 mb-2">SigLens is API-first, CLI-supported, and integrates seamlessly with tools like Grafana, Prometheus,
+                                 and Fluentd. Built for engineers who value <span class="font-weight-bold">speed and clarity over complexity.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="section3" class="section mt-4">
+                        <div>
+                            <h1 class="heading">SigLens vs. Elasticsearch: The Real Breakdown
+                            </h1>
+                            <img id="ingestion-bytes" src="../assets/siglens-vs-elasticsearch-blog.png" alt="SigLens vs. Elasticsearch">
+                        </div>
+                    </div>
+
+                    <div id="section4" class="section">
+                        <div>
+                            <h1 class="heading">Why SigLens Is the Right Move
+                            </h1>
+                            <div class="blog-para mt-3">
+                                Elasticsearch will always have its place. But if your use case is real-time log analytics, with a need for speed, scale,
+                                and cost-efficiency, then SigLens is the purpose-built solution you’ve been looking for.
+                            </div>
+                            <ul>
+                                <li>💥 No more slow queries or dead dashboards
+                                </li>
+                                <li>💸 No more burning money on hot nodes and replica sets
+                                </li>
+                                <li>🧘 No more late-night tuning sessions
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="section5" class="section mt-4">
+                        <div>
+                            <h1 class="heading">Ready to Make the Switch?
+                            </h1>
+                            <div class="blog-para mt-3">
+                                Whether you're hitting scale issues or just tired of overpaying for observability, SigLens is built for teams like yours.
+                            </div>
+                            <div class="d-flex flex-column flex-md-row align-items-center">
+                                <div id="try-siglens-btn"
+                                    onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">
+                                    Try SigLens</div>
+                                <div id="github-siglens-btn" class="ml-md-5"
+                                    onclick="redirectToPage('https://github.com/siglens/siglens')"><i
+                                        class="fa-brands fa-github" style="color: #fff; margin-right: 10px;"></i>GitHub
+                                    Repo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="pb-5">
+        <div class="container">
+            <div class="row py-0 py-md-5">
+                <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
+                    <div>
+                        <a href="https://siglens.github.io/siglens-docs/" target="_blank"
+                            class="footer-nav-heading">Documentation</a>
+                    </div>
+                    <div>
+                        <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Company</a>
+                        <a class="mt-3 pl-2" href="/investors.html">Investors</a>
+                        <a class="mt-3 pl-2" href="/press-news.html">Press & News</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="footer-nav-heading">Community</a>
+                        <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
+                        <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+                        <a class="mt-3 pl-2" href="../guides.html">Guides</a>
+                        <a class="mt-3 pl-2" href="../questions.html">Questions</a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-start order-0 order-md-1 mx-4 mx-md-0">
+                    <h5 class="text-start font-weight-bold text-white">Subscribe to our newsletter</h5>
+                    <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
+                      <button class="btn btn-primary mt-2" id="ns-form-btn">
+                        <a href="https://forms.gle/D4UmjNiJuzTe1Jnd7" target="_blank">Subscribe</a>
+                      </button>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+                    <div class="d-flex">
+                        <a class="mr-4" href="https://twitter.com/SigLensHQ" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+                        </a>
+                        <a class="mr-4" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+                            <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+                        </a>
+                        <a class="" href="https://www.siglens.com/blog/blog-rss.xml" target="_blank"
+                            title="Subscribe to RSS feed">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-rss"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
+                <img src="../assets/ss-logo.svg" alt="siglens-logo" style="height: 50px;">
+                <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
+                <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
+                <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
+                            href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <!-- Include Prism.js language support for JSON -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.js"></script>
+    <script>
+        // Initialize Prism.js
+        Prism.highlightAll();
+    </script>
+
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="./blog.js"></script>
+</body>
+
+</html>
