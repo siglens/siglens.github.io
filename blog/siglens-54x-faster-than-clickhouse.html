@@ -142,7 +142,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
-                            target="_blank">Documentation</a>
+                            target="_blank">Docs</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
@@ -169,7 +169,7 @@
                         <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
                     </li>
                     <li>
-                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Get a Demo</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -446,7 +446,7 @@ python siglens/tools/nyc-taxi-benchmark/parquet_to_tsv.py . .</code></pre>
                             <pre class="language-javascript"><code class="language-javascript">for year in {2011..2017}; do
     for month in {01..12}; do
         basefile="yellow_tripdata_$year-$month"
-        go run siglens/tools/sigclient/cmd/utils/converter.go --input 
+        go run siglens/tools/sigclient/cmd/utils/converter.go --input
 "$basefile.tsv" --output "$basefile.json" &
     done
 done
@@ -473,7 +473,7 @@ wait</code></pre>
 sudo apt-get install -y apt-transport-https ca-certificates dirmngr
 GNUPGHOME=$(mktemp -d)
 sudo GNUPGHOME="$GNUPGHOME" gpg --no-default-keyring
---keyring /usr/share/keyrings/clickhouse-keyring.gpg --keyserver 
+--keyring /usr/share/keyrings/clickhouse-keyring.gpg --keyserver
 hkp://keyserver.ubuntu.com:80 --recv-keys 8919F6BD2B48D754
 sudo rm -r "$GNUPGHOME"
 sudo chmod +r /usr/share/keyrings/clickhouse-keyring.gpg
@@ -717,7 +717,7 @@ echo ""</code></pre>
                             <div class="blog-para mb-3">
                                 Now let's ingest some data into SigLens. In Terminal 2 run
                             </div>
-                            <pre class="language-javascript"><code class="language-javascript">cd /mnt/nvme1n1/siglens/tools/sigclient 
+                            <pre class="language-javascript"><code class="language-javascript">cd /mnt/nvme1n1/siglens/tools/sigclient
 mkdir dataset</code></pre>
                             <div class="blog-para my-3">
                                 Run the following script to download, decompress, and ingest the data into SigLens.
@@ -949,7 +949,7 @@ curl -X POST -d '{
                 <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
                     <div>
                         <a href="https://siglens.github.io/siglens-docs/" target="_blank"
-                            class="footer-nav-heading">Documentation</a>
+                            class="footer-nav-heading">Docs</a>
                     </div>
                     <div>
                         <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>

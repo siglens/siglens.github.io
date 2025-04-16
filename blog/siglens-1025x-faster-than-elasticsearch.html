@@ -144,7 +144,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="https://siglens.github.io/siglens-docs/"
-                            target="_blank">Documentation</a>
+                            target="_blank">Docs</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
@@ -171,7 +171,7 @@
                         <a href="../index.html#getting-started" id="try-now-btn">Try Now</a>
                     </li>
                     <li>
-                        <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
+                        <a href="/schedule-demo.html" id="book-demo-btn">Get a Demo</a>
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
@@ -447,7 +447,7 @@ python siglens/tools/nyc-taxi-benchmark/parquet_to_tsv.py . .</code></pre>
                             <pre class="language-javascript"><code class="language-javascript">for year in {2011..2017}; do
     for month in {01..12}; do
         basefile="yellow_tripdata_$year-$month"
-        go run siglens/tools/sigclient/cmd/utils/converter.go --input 
+        go run siglens/tools/sigclient/cmd/utils/converter.go --input
 "$basefile.tsv" --output "$basefile.json" &
     done
 done
@@ -593,7 +593,7 @@ done</code></pre>
                             <pre
                                 class="language-javascript"><code class="language-javascript">curl -k -u "elastic:&lt;your-elastic-password&gt;"-X POST "https://&lt;server-ip&gt;:9200/trips/_cache/clear"</code></pre>
                             The following should indicate 265 unique values.
-                            <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search" 
+                            <pre class="language-javascript"><code class="language-javascript">curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search"
     -H 'Content-Type: application/json'
     -d '{
         "size": 0,
@@ -609,8 +609,8 @@ done</code></pre>
                             <p>The responses will have a took field, indicating how long the query took in milliseconds.
                             </p>
                             <pre class="language-javascript"><code class="language-javascript"># Query 1
-curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search" 
-    -H 'Content-Type: application/json' 
+curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search"
+    -H 'Content-Type: application/json'
     -d '{
         "size": 0,
         "aggs": {
@@ -629,10 +629,10 @@ curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:92
             }
         }
     }' | python3 -m json.tool | less
-                               
+
 # Query 2
-curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search" 
-    -H 'Content-Type: application/json' 
+curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search"
+    -H 'Content-Type: application/json'
     -d '{
         "size": 0,
         "aggs": {
@@ -651,10 +651,10 @@ curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:92
         }
     }
 }' | python3 -m json.tool | less
-                                
+
 # Query 3
-curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search" 
-    -H 'Content-Type: application/json' 
+curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search"
+    -H 'Content-Type: application/json'
     -d '{
         "size": 0,
         "aggs": {
@@ -674,11 +674,11 @@ curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:92
             }
         }
     }' | python3 -m json.tool | less
-                                
+
 # Query 4
 # For this query we don't want more than 10,000 buckets, so we'll reduce the "size" parameters.
-curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search" 
-    -H 'Content-Type: application/json' 
+curl -k -u "elastic:&lt;your-elastic-password&gt;" "https://&lt;server-ip&gt;:9200/trips/_search"
+    -H 'Content-Type: application/json'
     -d '{
         "size": 0,
         "aggs": {
@@ -838,7 +838,7 @@ echo ""</code></pre>
                             <div class="blog-para mb-3">
                                 Now let's ingest some data into SigLens. In Terminal 2 run
                             </div>
-                            <pre class="language-javascript"><code class="language-javascript">cd /mnt/nvme1n1/siglens/tools/sigclient 
+                            <pre class="language-javascript"><code class="language-javascript">cd /mnt/nvme1n1/siglens/tools/sigclient
 mkdir dataset</code></pre>
                             <div class="blog-para my-3">
                                 Run the following script to download, decompress, and ingest the data into SigLens.
@@ -1071,7 +1071,7 @@ curl -X POST -d '{
                 <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
                     <div>
                         <a href="https://siglens.github.io/siglens-docs/" target="_blank"
-                            class="footer-nav-heading">Documentation</a>
+                            class="footer-nav-heading">Docs</a>
                     </div>
                     <div>
                         <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>

@@ -117,6 +117,10 @@ a {
     border: 1px solid var(--marigold);
 }
 
+#try-now-btn:hover {
+    background: #ffca28;
+}
+
 #book-demo-btn {
     background: var(--purple-0);
     border: 1px solid var(--purple-0);
@@ -139,23 +143,29 @@ a {
   padding: 0px;
 }
 
-#install-siglens-btn {
-  background-color: var(--purple-0);
-  color: var(--white-0);
+#get-demo-btn {
+  background-color: var(--marigold);
+  color: var(--main-color);
   text-decoration: none;
+  font-size: 32px;
+  font-weight: 500;
   padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 20px;
+  border-radius: 20px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 180px;
-  height: 40px;
+  width: 320px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#install-siglens-btn:hover {
+#get-demo-btn:hover{
+    transform: scale(1.05);
+}
+
+#book-demo-btn:hover {
   background-color: var(--purple-4);
 }
 
@@ -168,20 +178,57 @@ a {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.main-heading {
-    font-size: 56px;
-    margin-bottom: 30px;
-    font-weight: 300;
+ .main-heading {
+    font-size: 60px;
+    margin-bottom: 60px;
+    font-weight: 400;
 }
-
 .sub-heading {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
 }
 
 .sub-heading strong{
     color: var(--marigold);
 }
+
+  .feature-highlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    max-width: 320px;
+  }
+
+  .checkmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00d084;
+    color: #000;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .feature p {
+    margin: 0;
+  }
 
 .video-container {
     height: 576px;
@@ -412,7 +459,6 @@ a:focus {
     color: var(--white-0) !important;
 }
 
-
 /* Getting Started  */
 
 .getting-started-container{
@@ -474,7 +520,6 @@ a:focus {
     font-family: 'IBM Plex Sans', monospace;
 }
 
-
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
     border-radius: 30px;
@@ -491,7 +536,7 @@ line-height: 26px;}
     color: var(--purple-1) !important;
 }
 
-/* SigLens Differentiator  */
+/* why siglens  */
 
 .carousel-item div {
     width: 97%;
@@ -504,73 +549,119 @@ line-height: 26px;}
     left: -50px;
 }
 
-.carousel-item h3 {
-    color: #9B54F8;
-    font-size: 32px;
-    letter-spacing: 1.5px;
-    line-height: 48px;
-    font-family: 'IBM Plex Mono', sans-serif;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 600;
+.carousel-item h3{
+    color: var(--marigold);
 }
 
-.main-header{
-    font-size: 42px;
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-family: 'IBM Plex Sans', sans-serif;
-    text-align: center;
+.carousel-item p{
+    color: var(--white-0);
 }
 
-.carousel-table table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.feature-slide {
+    transition: all 0.3s ease;
+    width: 97%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid rgba(198, 177, 221, 0.4);
     box-shadow: 0 0 10px rgba(198, 177, 221, 0.5);
     border-radius: 20px;
-    margin-bottom: 20px;
     min-height: 480px;
-}
+    display: flex;
+    align-items: center;
+  }
 
-.carousel-table td {
-    color: #e2e2e2;
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1.2px;
-    line-height: 27px;
-}
+  .feature-slide:hover{
+    background: linear-gradient(135deg, #040306, #150045);
+    border: 1px solid rgba(123, 0, 255, 0.4);
+    box-shadow: 0 0 10px rgba(162, 97, 233, 0.5);
+  }
 
-.carousel-table th,.carousel-table td {
-    padding: 10px 16px;
-    text-align: left;
-}
+  .feature-slide-block {
+    flex: 1;
+    padding: 20px;
+  }
+  .carousel-item h3 {
+    color: var(--marigold);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .carousel-item p {
+    color: #e0e0e0;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  .feature-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 25px;
+  }
+  .feature-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
 
-.carousel-table th {
-    background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
-    color: white;
-    letter-spacing: 1.2px;
-    font-size: 17px;
-    font-family: 'IBM Plex Mono', sans-serif;
-}
+/* SigLens Differentiator  */
 
-.carousel-table table tr:first-child th:first-child {
-    border-radius: 20px 0 0 0;
-}
 
-.carousel-table table tr:first-child th:last-child {
-    border-radius: 0 20px 0 0;
-}
+.differentiator-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 
-.carousel-table table tr:not(:last-child) {
-    border-bottom: 1px solid rgba(198, 177, 221, 0.18);
-}
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: stretch;
+  }
 
-.carousel-table table td:not(:last-child),
-.carousel-table table th:not(:last-child) {
-    border-right: 1px solid rgba(198, 177, 221, 0.18);
-}
+  .comparison-card {
+    background: linear-gradient(135deg, #040306, #150045);
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(198, 177, 221, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+
+  .comparison-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--purple-0);
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .vs-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--marigold);
+  }
+
+  .card-benchmark-text {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--white-0);
+    flex-grow: 1;
+  }
+
+  .highlight {
+    font-weight: 500;
+  }
 
 .cmd-box {
     white-space: pre-wrap;
@@ -770,7 +861,6 @@ line-height: 26px;}
     }
 
     .nav-item.dropdown>.dropdown-menu.show a {
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -781,14 +871,13 @@ line-height: 26px;}
         display: none;
     }
 
+    .main-heading {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
     /* landing page */
     .landing-container{
         overflow-x: clip;
-    }
-
-    .main-heading {
-        font-size: 30px;
-        margin-bottom: 10px;
     }
 
     .sub-heading{
@@ -814,30 +903,93 @@ line-height: 26px;}
         line-height: 38px;
     }
 
-    .carousel-item h3 {
-        font-size: 24px;
-        letter-spacing: 1px;
-        line-height: 34px;
+    .feature-highlights {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding: 0 15px;
     }
 
-    .carousel-table th,.carousel-table td {
-        padding: 8px 4px;
-        text-align: left;
+    .feature {
+        max-width: 100%;
+        font-size: 16px;
+        gap: 10px;
     }
 
-    .carousel-table td{
+    .checkmark {
+        width: 24px;
+        height: 24px;
         font-size: 14px;
     }
 
-    .carousel-table th{
+    /* why siglens */
+    .carousel-item div {
+        width: 100%;
+        margin: 0;
+    }
+
+    .carousel-item h3{
+        font-size: 18px;
+    }
+
+    .carousel-item p{
         font-size: 14px;
     }
-    .influx-table th, .elastic-table td:not(:first-child),.elastic-table th:not(:first-child){
-        word-break: break-word;
-        /* white-space: pre-wrap; */
+
+    .feature-slide {
+        width: 100%;
+        min-height: 300px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
     }
-    .elastic-carousel div{
-        width: 98% !important;
+
+    .feature-slide-block {
+        padding: 15px;
+        flex: none;
+        width: 100%;
+    }
+
+    .feature-img {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .feature-img img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .carousel-control-next {
+        right: 10px;
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    /* SigLens Differentiator Section */
+    .differentiator-container {
+        padding: 20px 15px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .comparison-card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .vs-title {
+        font-size: 18px;
+    }
+
+    .card-benchmark-text {
+        font-size: 14px;
     }
 
     .carousel-control-next{
@@ -913,8 +1065,10 @@ line-height: 26px;}
         margin-bottom: 50px;
     }
 
-    #install-siglens-btn, .cloud-form #submit-btn{
+    #get-demo-btn, .cloud-form #submit-btn{
         width: 160px;
+        font-size: 16px;
+        height: 40px;
     }
 
     .purple-btn{
