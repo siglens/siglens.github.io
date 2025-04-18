@@ -1,17 +1,17 @@
 :root {
     --white-0: #fff;
     --marigold: #F2A52B;
-    
+
     --grey: #d9d9d9;
     --grey-1: #ebebeb;
     --purple-1: #6347D9;
     --purple-2: #2E205F;
     --purple-3: #B4A6E6;
-    
+
     --black-1: #160F29;
     --black-2: #222;
     --ebony-1: #A29FA9;
-    
+
     /* Aliases */
     --nav-color: var(--purple-2);
     --header-color: var(--black-1);
@@ -396,6 +396,13 @@ b{
 #batch-30days,
 #aws-cost {
     height: 500px;
+}
+
+#elasticsearchImg{
+    height: 500px;
+    min-width: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #ingestion-cpu {
