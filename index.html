@@ -67,7 +67,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="https://siglens.github.io/siglens-docs/" target="_blank">Documentation</a>
+            <a class="nav-link" href="https://siglens.github.io/siglens-docs/" target="_blank">Docs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
@@ -94,8 +94,8 @@
             <a href="#getting-started" id="try-now-btn">Try Now</a>
           </li>
           <li>
-            <a href="/schedule-demo.html" id="book-demo-btn">Book a Demo</a>
-          </li>
+            <a href="/schedule-demo.html" id="book-demo-btn">Get a Demo</a>
+        </li>
           <li>
             <a href="/slack.html" target="_blank">
               <img src="assets/slack.svg" width="22" height="22" alt="">
@@ -114,16 +114,30 @@
   <section class="landing-container container text-white my-md-5 my-0">
     <div class="d-flex justify-content-center align-items-center flex-column">
       <h1 class="main-heading text-center">
-        Industry's Fastest Log Management
+        Say Hello to Fastest Observability!
       </h1>
-      <div class="sub-heading text-center"><strong>100x</strong> Lower Compute and Storage than Splunk, Elastic, Loki
+      <div class="sub-heading text-center"><strong>100x</strong> More Efficient than Splunk, Elastic, & Loki - No Compromises
+      </div>
+      <div class="feature-highlights">
+        <div class="feature">
+          <span class="checkmark">✔</span>
+          <p>Reduce compute & storage costs by up to 90%</p>
+        </div>
+        <div class="feature">
+          <span class="checkmark">✔</span>
+          <p>Search 1 billion+ logs in under a second</p>
+        </div>
+        <div class="feature">
+          <span class="checkmark">✔</span>
+          <p>Scales effortlessly, handling 100TB+ log data</p>
+        </div>
       </div>
     </div>
     <img src="./assets/main-gradient.svg" alt="gradient" class="main-gradient position-absolute">
 
     <ul class="hero-btn-container">
       <li class="hero-btn">
-        <a href="#getting-started" id="install-siglens-btn">Install SigLens</a>
+        <a href="/schedule-demo.html" id="get-demo-btn">Get a Demo</a>
       </li>
     </ul>
 
@@ -134,273 +148,102 @@
     </div>
   </section>
 
+  <section id="differentiator-section" class="my-md-5">
+    <div class="differentiator-container">
+      <h1 class="main-heading text-center text-white mb-md-3 mb-4">Check out how SigLens beats the competition!</h1>
 
-  <!-- Why SigLens  -->
-  <section id="why-siglens">
-    <div class="container pt-5">
-      <div class="main-heading text-center text-white font-weight-light mb-md-0 mb-3 pt-2 pt-md-5">Why SigLens?</div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="vertical-tab" role="tabpanel">
-            <!-- Tab panes -->
-            <div class="tab-content tabs">
-              <div class="row">
-                <div class="col-md-6">
-                  <h3>Efficient Scale</h3>
-                  <p>Scales linearly with your needs. From a workload of 8 TB/day on 8 vCPU to 1 PB/day on 800 vCPU.</p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-                <div class="col-md-6">
-                  <h3>Full Text Search</h3>
-                  <p>
-                    Search on any field and any sub-text of your log line. Support for wildcard and regex.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <h3>Query Time Field Extraction</h3>
-                  <p>
-                    Create new fields from an existing log line sub-text and use it in later stages of your pipeline
-                    query.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-                <div class="col-md-6">
-                  <h3>Fast Ingestion</h3>
-                  <p>
-                    Innovative MicroIndexing lets you index at lightening fast speeds.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <h3>Query Compatibility</h3>
-                  <p>
-                    Many query languages supported including Splunk QL, Elastic DSL, SQL, Loki LogQL.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-                <div class="col-md-6">
-                  <h3>Ingestion Formats</h3>
-                  <p>
-                    Wide variety of ingestion protocols supported: Open Telemetry, Elasticsearch, Splunk HEC, Loki,
-                    Vector, FluentD/FluentBit, Logstash, S3/SQS/SNS, Promtail.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <h3>Fast Install</h3>
-                  <p>
-                    Quick 1-min install with multiple methods of installation: Docker, Helm.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-                <div class="col-md-6">
-                  <h3>Simple Architecture</h3>
-                  <p>
-                    Single binary solution that reduces operational burden and increases reliability.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <h3>Single Pane of Glass</h3>
-                  <p>
-                    One UI. One database for logs, metrics and traces.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Space for image -->
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <a href="./blog/siglens-to-elasticsearch.html" class="card-link"></a>
+          <h2 class="vs-title">SigLens vs Elasticsearch</h2>
+          <p class="card-benchmark-text">
+            Rethinking Elasticsearch? Choose SigLens<br>
+            <span class="highlight">1025x faster than Elastic Search!</span>
+          </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class="my-md-5">
+  <section id="why-siglens" class="my-md-5">
     <div class="container py-md-5 py-3 position-relative">
       <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient">
-      <div class="main-heading text-center text-white font-weight-light mb-md-3 mb-4">SigLens Differentiator</div>
+      <div class="main-heading text-center text-white mb-md-3 mb-4">Why SigLens?</div>
+
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="35000">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div>
-              <h3>SigLens v/s Loki</h3>
-              <div class="carousel-table">
-                <table>
-                  <tr>
-                    <th>Feature</th>
-                    <th>Loki</th>
-                    <th>SigLens</th>
-                  </tr>
-                  <tr>
-                    <td>Logline Indexing</td>
-                    <td>Indexes only metadata fields, not log lines</td>
-                    <td>Indexes all fields including loglines</td>
-                  </tr>
-                  <tr>
-                    <td>Query Response Time</td>
-                    <td>Takes several minutes</td>
-                    <td>Sub-second query response times</td>
-                  </tr>
-                  <tr>
-                    <td>Storage</td>
-                    <td>S3 for remote storage, incurs very high S3 round trip costs for queries</td>
-                    <td>Micro-index is local, most recent data on local (highly compressed), older data in S3, pulling
-                      from S3 is minimal due to micro indexing</td>
-                  </tr>
-                  <tr>
-                    <td>Aggregation</td>
-                    <td>Very slow aggregation queries</td>
-                    <td>Lightning-fast aggregation queries due to AgileAgssTree innovation</td>
-                  </tr>
-                </table>
+        <div class="carousel-inner feature-carousel">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item feature-carousel-item active">
+            <div class="feature-slide">
+              <div class="feature-slide-block">
+                <div class="feature-block">
+                  <h3 class="feature-heading">Fast Ingestion</h3>
+                  <p>Innovative MicroIndexing lets you index at lightening fast speeds.</p>
+                </div>
+                <div class="feature-block">
+                  <h3 class="feature-heading">Fast Install</h3>
+                  <p>Quick 1-min install with multiple methods of installation: Docker, Helm, Binary.</p>
+                </div>
+                <div class="feature-block">
+                  <h3 class="feature-heading">Efficient Scale</h3>
+                  <p>Scales linearly with your needs. From a workload of 8 TB/day on 8 vCPU to 1 PB/day on 800 vCPU.</p>
+                </div>
+              </div>
+              <div class="feature-img">
+                <img src="../assets/speed.png" alt="Efficient Speed">
               </div>
             </div>
           </div>
-          <div class="carousel-item elastic-carousel">
-            <div>
-              <h3>SigLens v/s Elasticsearch</h3>
-              <div class="carousel-table">
-                <table class="elastic-table">
-                  <tr>
-                    <th>Feature</th>
-                    <th>Elasticsearch</th>
-                    <th>SigLens</th>
-                  </tr>
-                  <tr>
-                    <td>Indexing</td>
-                    <td>Inverted index, but grows to 110% of incoming volume</td>
-                    <td>MicroIndexing technology creates 1/100th size of an actual index</td>
-                  </tr>
-                  <tr>
-                    <td>Scalability</td>
-                    <td>Requires a cluster of machines for larger indices</td>
-                    <td>100x lower storage and compute resources</td>
-                  </tr>
-                  <tr>
-                    <td>Query Performance</td>
-                    <td>Slow query times, especially on log lines sub-texts, very slow aggregation queries</td>
-                    <td>1025x faster search/filter/aggregation queries</td>
-                  </tr>
-                  <tr>
-                    <td>Stability</td>
-                    <td>Prone to being yellow/red due to regular unforced restarts</td>
-                    <td>Lower probability of issues due to simple single binary architecture</td>
-                  </tr>
-                </table>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item feature-carousel-item">
+            <div class="feature-slide">
+              <div class="feature-slide-block">
+                <div class="feature-block">
+                  <h3 class="feature-heading">Query Compatibility</h3>
+                  <p>Many query languages supported including Splunk QL, Loki LogQL.</p>
+                </div>
+                <div class="diff-block">
+                  <h3 class="feature-heading">Query Time Field Extraction</h3>
+                  <p>Create new fields from an existing log line sub-text and use it in later stages of your pipeline query.</p>
+                </div>
+                <div class="feature-block">
+                  <h3 class="feature-heading">Full Text Search</h3>
+                  <p>Search on any field and any sub-text of your log line. Support for wildcard and regex.</p>
+                </div>
+              </div>
+              <div class="feature-img">
+                <img src="../assets/search.png" alt="Query Search">
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div>
-              <h3>SigLens v/s ClickHouse</h3>
-              <div class="carousel-table">
-                <table>
-                  <tr>
-                    <th>Feature</th>
-                    <th>ClickHouse</th>
-                    <th>SigLens</th>
-                  </tr>
-                  <tr>
-                    <td>Compression</td>
-                    <td>Requires predefined Engines on columns (e.g., MergeTree)</td>
-                    <td>Utilizes dynamic columnar compression algorithms with zero configuration</td>
-                  </tr>
-                  <tr>
-                    <td>Aggregation queries</td>
-                    <td>Requires Materialized views to be predefined, increases compute costs.</td>
-                    <td>Utilizes AgileAggsTree for fast aggregation queries with zero configuration</td>
-                  </tr>
-                  <tr>
-                    <td>Operational Overhead</td>
-                    <td>Operational overhead with predefined Engines and Materialized views</td>
-                    <td>Reduces operational overhead with dynamic approaches</td>
-                  </tr>
-                  <tr>
-                    <td>Ingestion Speed</td>
-                    <td>Achieves faster ingestion with bulk updates (not ideal for constant log data)</td>
-                    <td>Efficient ingestion speeds</td>
-                  </tr>
-                  <tr>
-                    <td>Field Extraction</td>
-                    <td>Does not support read-time field extraction</td>
-                    <td>Supports read-time field extraction</td>
-                  </tr>
-                </table>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item feature-carousel-item">
+            <div class="feature-slide">
+              <div class="feature-slide-block">
+                <div class="feature-block">
+                  <h3 class="feature-heading">Simple Architecture</h3>
+                  <p>Single binary solution that reduces operational burden and increases reliability.</p>
+                </div>
+                <div class="feature-block">
+                  <h3 class="feature-heading">Single Pane of Glass</h3>
+                  <p>One UI. One database for logs, metrics and traces.</p>
+                </div>
+                <div class="feature-block">
+                  <h3 class="feature-heading">Ingestion Formats</h3>
+                  <p>Wide variety of ingestion protocols supported: Open Telemetry, Elasticsearch, Splunk HEC, Loki, Vector, FluentD/FluentBit, Logstash, S3/SQS/SNS, Promtail.</p>
+                </div>
+              </div>
+              <div class="feature-img">
+                <img  src="../assets/database.png" alt="Supported databases">
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div>
-              <h3>SigLens vs InfluxDB/Parquet/Arrow</h3>
-              <div class="carousel-table">
-                <table class="influx-table">
-                  <tr>
-                    <th>Feature</th>
-                    <th>InfluxDB/Parquet/Arrow-based Architectures</th>
-                    <th>SigLens</th>
-                  </tr>
-                  <tr>
-                    <td>Architecture</td>
-                    <td>Converts incoming data to parquet files, stored in S3, uses Apache Arrow for memory-mapped
-                      files, and serves queries using these files</td>
-                    <td>Innovative approach achieving a balance of faster ingestion, faster queries, and lower
-                      hardware requirements</td>
-                  </tr>
-                  <tr>
-                    <td>Query Response Time</td>
-                    <td>Suffers on query response times, especially if querying non-memory-mapped parquet files</td>
-                    <td>Search/filter queries perform several magnitudes faster</td>
-                  </tr>
-                  <tr>
-                    <td>Impact of Old and New Data</td>
-                    <td>Repeated loop of drop/pull for old and new data affecting query response times plus repeated
-                      round trips to S3</td>
-                    <td>No impact on query times due to a balanced approach</td>
-                  </tr>
-                  <tr>
-                    <td>Resource Allocation</td>
-                    <td>Nodes need to be allocated to handle queries, increasing infra cost</td>
-                    <td>Lower compute requirements, resulting in several magnitudes less compute usage</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
+
+          <!-- Controls -->
           <a class="carousel-control-prev pr-5" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -409,8 +252,18 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+
+          <!-- Navigator Dots -->
+
         </div>
+
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+          <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+        </ol>
       </div>
+    </div>
   </section>
 
   <!-- Getting Started -->
@@ -511,7 +364,7 @@
         <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
           <div>
             <a href="https://siglens.github.io/siglens-docs/" target="_blank"
-              class="footer-nav-heading">Documentation</a>
+              class="footer-nav-heading">Docs</a>
           </div>
           <div>
             <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
