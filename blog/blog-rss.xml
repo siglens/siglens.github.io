@@ -13,7 +13,7 @@
   <webfeeds:icon>https://www.siglens.com/assets/ss-logo.svg</webfeeds:icon>
 
   <image>
-    <url>https://www.socallinuxexpo.org/sites/default/files/logos/siglens.png</url> 
+    <url>https://www.socallinuxexpo.org/sites/default/files/logos/siglens.png</url>
     <title>SigLens Blog</title>
     <link>https://www.siglens.com/blog/allblogs.html</link>
   </image>
@@ -79,6 +79,16 @@ In this blog, we outlined the detailed steps of this benchmark. You will learn i
     <guid>https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html</guid>
     <enclosure url="https://www.siglens.com/assets/siglens-vs-loki.png" type="image/png" />
     <media:content url="https://www.siglens.com/assets/siglens-vs-loki.png" type="image/png" />
+  </item>
+
+  <item>
+    <title>SigLens vs ElasticSearch</title>
+    <link>https://www.siglens.com/blog/siglens-vs-elasticsearch.html</link>
+    <description><![CDATA[<img src="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png" alt="Featured Image for SigLens Vs ElasticSearch" /> <p>Elasticsearch has been the cornerstone of log analytics. It’s powerful, flexible, and widely adopted. But if you’ve run it in production, you know this power comes with a price, both in dollars and in engineering hours.</p>]]></description>
+    <pubDate>Mon, 12 Feb 2024 11:00:00 GMT</pubDate>
+    <guid>https://www.siglens.com/blog/siglens-vs-elasticsearch.html</guid>
+    <enclosure url="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png" type="image/png" />
+    <media:content url="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png" type="image/png" />
   </item>
 
 </channel>
