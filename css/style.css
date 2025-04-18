@@ -615,16 +615,17 @@ line-height: 26px;}
   }
 
   .comparison-grid {
-    display: grid;
+    /* display: grid; */
+    align-items: center;
+    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    justify-items: stretch;
+    /* justify-items: stretch; */
   }
 
   .comparison-card {
     background: linear-gradient(135deg, #040306, #150045);
-    width: 100%;
-    max-width: 100%;
+    width: 500px;
     border-radius: 10px;
     padding: 30px;
     text-align: center;
