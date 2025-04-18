@@ -144,17 +144,17 @@ a {
 }
 
 #get-demo-btn {
-  background-color: var(--marigold);
-  color: var(--main-color);
+  background-color: var(--purple-0);
+  color: var(--white-0);
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   padding: 10px 20px;
   border-radius: 10px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 220px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -163,10 +163,6 @@ a {
 
 #get-demo-btn:hover{
     transform: scale(1.05);
-}
-
-#book-demo-btn:hover {
-  background-color: var(--purple-4);
 }
 
 /*LANDING PAGE */
@@ -538,10 +534,6 @@ line-height: 26px;}
 
 /* why siglens  */
 
-#why-siglens .main-heading{
-    padding-bottom: 30px;
-}
-
 #why-siglens .container{
     min-width: 90%;
 }
@@ -563,6 +555,7 @@ line-height: 26px;}
 
 .carousel-item p{
     color: var(--white-0);
+    padding-bottom: 20px;
 }
 
 .feature-slide {
