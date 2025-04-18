@@ -147,15 +147,15 @@ a {
   background-color: var(--marigold);
   color: var(--main-color);
   text-decoration: none;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 320px;
-  height: 60px;
+  width: 200px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,8 +180,8 @@ a {
 
  .main-heading {
     font-size: 60px;
-    margin-bottom: 60px;
-    font-weight: 400;
+    margin-bottom: 30px;
+    font-weight: 300;
 }
 .sub-heading {
     font-size: 30px;
@@ -216,7 +216,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #00d084;
+    background-color: var(--purple-0);
     color: #000;
     width: 28px;
     height: 28px;
@@ -538,8 +538,16 @@ line-height: 26px;}
 
 /* why siglens  */
 
+#why-siglens .main-heading{
+    padding-bottom: 30px;
+}
+
+#why-siglens .container{
+    min-width: 90%;
+}
+
 .carousel-item div {
-    width: 97%;
+    width: 89%;
     margin: auto;
 }
 .carousel-control-next{
@@ -559,37 +567,35 @@ line-height: 26px;}
 
 .feature-slide {
     transition: all 0.3s ease;
-    width: 97%;
+    width: 100%;
     margin: auto;
     padding: 10px;
     border: 1px solid rgba(198, 177, 221, 0.4);
     box-shadow: 0 0 10px rgba(198, 177, 221, 0.5);
     border-radius: 20px;
-    min-height: 480px;
+    min-height: 520px;
     display: flex;
     align-items: center;
-  }
-
-  .feature-slide:hover{
-    background: linear-gradient(135deg, #040306, #150045);
-    border: 1px solid rgba(123, 0, 255, 0.4);
-    box-shadow: 0 0 10px rgba(162, 97, 233, 0.5);
   }
 
   .feature-slide-block {
     flex: 1;
     padding: 20px;
   }
+
   .carousel-item h3 {
     color: var(--marigold);
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
   }
+
   .carousel-item p {
     color: #e0e0e0;
     font-size: 1.1em;
     margin-bottom: 20px;
   }
+
   .feature-img {
     flex: 1;
     display: flex;
@@ -604,6 +610,10 @@ line-height: 26px;}
   }
 
 /* SigLens Differentiator  */
+
+#differentiator-section .main-heading{
+    padding-bottom: 30px;
+}
 
 .differentiator-container {
     max-width: 1200px;
@@ -1025,6 +1035,10 @@ line-height: 26px;}
     }
 
     /* why siglens */
+    #why-siglens .main-heading{
+        padding-bottom: 10px;
+    }
+
     .carousel-item div {
         width: 100%;
         margin: 0;
@@ -1071,6 +1085,11 @@ line-height: 26px;}
     }
 
     /* SigLens Differentiator Section */
+
+    #differentiator-section{
+        padding-bottom: 10px;
+    }
+
     .differentiator-container {
         padding: 20px 15px;
     }
