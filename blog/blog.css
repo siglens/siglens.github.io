@@ -398,12 +398,16 @@ b{
     height: 500px;
 }
 
-#elasticsearchImg{
+#elasticsearchImg,
+#clickhouseImg,
+#lokiImg,
+#newrelicImg{
     height: 600px;
     min-width: 800px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 
 #ingestion-cpu {
     height: 350px;
