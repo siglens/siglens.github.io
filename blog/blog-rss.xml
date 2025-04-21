@@ -93,30 +93,30 @@ In this blog, we outlined the detailed steps of this benchmark. You will learn i
 
   <item>
     <title>New Relic Burning Your Budget? Meet SigLens</title>
-    <link>https://www.siglens.com/blog/when-loki-hits-limits-try-siglens.html</link>
+    <link>https://www.siglens.com/blog/siglens-vs-newrelic.html</link>
     <description><![CDATA[<img src="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png" alt="Featured Image for SigLens Vs New Relic" /> <p>SigLens - Is New Relic Slowing You Down (and Draining Your Budget)? Meet Siglens..</p>]]></description>
     <pubDate>Mon, 21 Apr 2025 11:00:00 GMT</pubDate>
-    <guid>https://www.siglens.com/blog/when-loki-hits-limits-try-siglensh.html</guid>
+    <guid>https://www.siglens.com/blog/siglens-vs-newrelic.html</guid>
     <enclosure url="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png" type="image/png" />
     <media:content url="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png" type="image/png" />
   </item>
 
   <item>
     <title>Loki Limitations? Try SigLens</title>
-    <link>https://www.siglens.com/blog/when-loki-hits-limits-try-siglens.html</link>
+    <link>https://www.siglens.com/blog/siglens-vs-loki.html</link>
     <description><![CDATA[<img src="https://www.siglens.com/assets/siglens-vs-loki-cover-Img.png" alt="Featured Image for SigLens Vs Loki" /> <p>SigLens - When Loki Hits Its Limits: Why Teams Are Moving to SigLens for Observability That Scales.</p>]]></description>
     <pubDate>Mon, 21 Apr 2025 11:00:00 GMT</pubDate>
-    <guid>https://www.siglens.com/blog/when-loki-hits-limits-try-siglens.html</guid>
+    <guid>https://www.siglens.com/blog/siglens-vs-loki.html</guid>
     <enclosure url="https://www.siglens.com/assets/siglens-vs-loki-cover-Img.png" type="image/png" />
     <media:content url="https://www.siglens.com/assets/siglens-vs-loki-cover-Img.png" type="image/png" />
   </item>
 
   <item>
     <title>ClickHouse Falling Short? Here's SigLens</title>
-    <link>https://www.siglens.com/blog/siglens-replacing-clickhouse.html</link>
+    <link>https://www.siglens.com/blog/siglens-vs-clickhouse.html</link>
     <description><![CDATA[<img src="https://www.siglens.com/assets/siglens-vs-clickhouse-cover-Img.png" alt="Featured Image for SigLens Vs Clickhouse" /> <p>SigLens - Observability Without Compromise, Know Why SigLens Is Replacing ClickHouse.</p>]]></description>
     <pubDate>Mon, 21 Apr 2025 11:00:00 GMT</pubDate>
-    <guid>https://www.siglens.com/blog/siglens-replacing-clickhouse.html</guid>
+    <guid>https://www.siglens.com/blog/siglens-vs-clickhouse.html</guid>
     <enclosure url="https://www.siglens.com/assets/siglens-vs-clickhouse-cover-Img.png" type="image/png" />
     <media:content url="https://www.siglens.com/assets/siglens-vs-clickhouse-cover-Img.png" type="image/png" />
   </item>
