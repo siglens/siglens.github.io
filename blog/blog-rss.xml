@@ -82,7 +82,7 @@ In this blog, we outlined the detailed steps of this benchmark. You will learn i
   </item>
 
   <item>
-    <title>SigLens vs ElasticSearch</title>
+    <title>Rethinking Elasticsearch? Choose SigLens</title>
     <link>https://www.siglens.com/blog/siglens-vs-elasticsearch.html</link>
     <description><![CDATA[<img src="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png" alt="Featured Image for SigLens Vs ElasticSearch" /> <p>Elasticsearch has been the cornerstone of log analytics. It’s powerful, flexible, and widely adopted. But if you’ve run it in production, you know this power comes with a price, both in dollars and in engineering hours.</p>]]></description>
     <pubDate>Mon, 21 Apr 2025 11:00:00 GMT</pubDate>
