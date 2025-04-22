@@ -105,7 +105,7 @@ a {
     display: inline-block;
     text-decoration: none;
     padding: 8px 8px;
-    border-radius: 10px;
+    border-radius: 6px;
     color: var(--white-0);
     font-size: 14px;
     line-height: 1.5;
@@ -147,22 +147,24 @@ a {
   background-color: var(--purple-0);
   color: var(--white-0);
   text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   padding: 10px 20px;
   border-radius: 10px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 220px;
-  height: 50px;
+  width: 180px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 
 #get-demo-btn:hover{
-    transform: scale(1.05);
+    transform: translateY(-3px) scale(1.005) translateZ(0);
+    transition: transform 0.3s ease;
 }
 
 /*LANDING PAGE */
@@ -623,6 +625,9 @@ line-height: 26px;}
     background-color: #fff;
   }
 
+  #getting-started {
+    scroll-margin-top: 80px; 
+  }
 /* SigLens Differentiator  */
 
 #differentiator-section .main-heading{
@@ -633,20 +638,23 @@ line-height: 26px;}
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
+    width: 90%;
+    margin: auto;
   }
 
   .comparison-grid {
-    align-items: center;
-    justify-items: center;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 50px;
+    justify-items: stretch;
   }
 
   .comparison-card {
     background: linear-gradient(135deg, #040306, #150045);
-    width: 500px;
+    width: 100%;
+    max-width: 100%;
     border-radius: 10px;
-    padding: 30px;
+    padding: 50px 30px;
     text-align: center;
     border: 1px solid rgba(198, 177, 221, 0.4);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -679,6 +687,7 @@ line-height: 26px;}
     margin: 0;
     color: var(--white-0);
     flex-grow: 1;
+    font-weight: 300;
   }
 
   .highlight {
@@ -881,6 +890,7 @@ line-height: 26px;}
 .demo-text {
     flex: 1;
     padding-right: 40px;
+    padding-top: 40px;
 }
 
 .demo-text h1 {
@@ -1113,7 +1123,6 @@ line-height: 26px;}
     }
 
     .comparison-card {
-        width: 300px;
         padding: 20px;
         border-radius: 15px;
     }
