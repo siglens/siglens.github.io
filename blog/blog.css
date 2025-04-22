@@ -62,6 +62,15 @@ body {
     background: rgba(180, 166, 230, 0.3);
 }
 
+.img-wrapper {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.img-wrapper .card-img{
+    transform: scale(1.2);
+}
+
 .card-title {
     color: var(--purple-2);
     font-weight: 500;
