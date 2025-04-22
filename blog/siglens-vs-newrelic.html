@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SigLens | Rethinking Elasticsearch? Choose SigLens</title>
+    <title>SigLens | Is New Relic Burning Your Budget? Meet SigLens</title>
     <link rel="icon" href="../favicon.svg">
 
     <!-- Font Family -->
@@ -27,26 +27,26 @@
     <!-- Include Prism.js CSS -->
     <link rel="stylesheet" href="./dark-theme-prismjs.css">
 
-    <link rel="canonical" href="https://www.siglens.com/blog/siglens-vs-elasticsearch.html">
+    <link rel="canonical" href="https://www.siglens.com/blog/siglens-vs-newrelic.html">
     <!--OG Tags-->
-    <meta property="og:url" content="https://www.siglens.com/blog/siglens-vs-elasticsearch.html" />
-    <meta property="og:title" content="SigLens vs Elasticsearch" />
+    <meta property="og:url" content="https://www.siglens.com/blog/siglens-vs-newrelic.html" />
+    <meta property="og:title" content="New Relic Burning Your Budget? Meet SigLens" />
     <meta name="description" property="og:description"
-        content="SigLens- Considering Alternatives to Elasticsearch? Discover Why SigLens Is Built for Modern Observability" />
+        content="SigLens - Is New Relic Slowing You Down (and Draining Your Budget)? Meet Siglens. " />
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png" />
-    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png" />
+    <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png" />
+    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png" />
     <meta property="og:image:type" content="image/jpg" />
-    <meta name="image" property="og:image" content="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png">
+    <meta name="image" property="og:image" content="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
 
     <!--Twitter OG Tag-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@siglens.com" />
-    <meta name="twitter:image" content="https://www.siglens.com/assets/Considering-Alternatives-to-Elasticsearch.png">
+    <meta name="twitter:image" content="https://www.siglens.com/assets/siglens-vs-newrelic-cover-Img.png">
     </meta>
-    <meta name="twitter:image:alt" content="SigLens vs Elasticsearch" />
+    <meta name="twitter:image:alt" content="New Relic Burning Your Budget? Meet SigLens" />
     <style>
         .sub-heading {
             margin-top: 24px !important;
@@ -62,7 +62,6 @@
             font-weight: 500;
             box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
         }
-
         #github-siglens-btn {
             margin-top: 20px;
             background: linear-gradient(270deg, #161828, #333B64);
@@ -85,7 +84,6 @@
         #github-siglens-btn .fa-github {
             font-size: 20px !important;
         }
-
 
         @media (max-width: 767.98px) {
 
@@ -169,10 +167,8 @@
     </nav>
 
     <div class="container my-md-5 pt-5 my-2 blog-post">
-
-
         <div class="container-md">
-            <img class="mt-3 ss-vs-ch" src="../assets/Considering-Alternatives-to-Elasticsearch.png" alt="SigLens vs Elasticsearch"/>
+            <img class="mt-3 ss-vs-ch" src="../assets/siglens-vs-newrelic-cover-Img.png" alt="New Relic Burning Your Budget? Meet SigLens"/>
             <div class="d-flex">
                 <div id="sidebar">
                     <nav id="sidebar-nav">
@@ -180,149 +176,141 @@
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section0">
                                     <h5>Article Navigator</h5>
                                 </a></li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section1">Elasticsearch: Powerful But Painful
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section1">The Growing Pain: New Relic's Hidden Trade-Offs
                                 </a></li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Meet SigLens: Log Analytics Engineered for Real-Time Speed</a>
-                            </li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section2">Introducing SigLens: Built for Real-Time Scale and Simplicity
+                            </a></li>
                             <ul class="sub-navbar flex-column">
-                                <li class="nav-item"><a class="section-nav-link" href="#section2-1">Sub-Second Query Speed: No Indexing Required</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section2-2">Up to 80% Lower Infra Costs</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section2-3">Simpler Setup, Zero Tuning</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section2-4"> Dev-Friendly, B2D-Native</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-1"> Speed that Redefines Observability</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-2">Cost-Efficiency That Scales</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-3"> Built for Engineers, Not Just Analysts</a></li>
                             </ul>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section3">SigLens vs. Elasticsearch: The Real Breakdown</a></li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Why SigLens Is the Right Move
-                                </a>
-                            </li>
-                            <li class="nav-item main-link"><a class="section-nav-link" href="#section5">
-                                Ready to Make the Switch?
-                                </a>
-                            </li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section3">Head-to-Head: SigLens vs. New Relic</a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Real-World Impact: What Engineers Are Saying</a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section5">Migration? Easier Than You Think</a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section6">The Bottom Line: Why Stay Stuck?</a></li>
+                            <li class="nav-item main-link"><a class="section-nav-link" href="#section7">Ready to Try It?</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div id="all-sections" class="container-md">
                     <div id="section0" class="d-flex flex-column align-items-center">
                         <div class="para-bold mb-2 mt-4">
-                            For over a decade,
-                            <strong style="font-size: 20px;">Elasticsearch</strong> has been the cornerstone of log analytics.
-                            It’s powerful, flexible, and widely adopted. But if you’ve run it in production,
-                            you know this power comes with a price, <strong style="font-size: 20px;">both in dollars and in engineering hours.
-                            </strong>
+                            If you’ve ever found yourself waiting on a query to load or dreading the next invoice from your observability provider, you’re not alone. For many engineering teams,
+                            <strong style="font-size: 20px;"> New Relic started off as a powerful ally</strong> but over time, the cracks began to show. Performance bottlenecks, Vendor lock-ins, Increasing costs, Complex configurations,
+                            and that creeping feeling that your observability tool might be doing more harm than good.
                         </div>
                         <div class="para-bold mb-3">
-                            Elasticsearch wasn’t built for observability. It was built for search.
-                            And as logs, traces, and metrics converge into real-time debugging pipelines,
-                            <strong style="font-size: 20px;">teams are discovering the cracks.</strong>
-                        </div>
-                        <div class="para-bold mb-4">
-                            That’s where <strong style="font-size: 20px;">SigLens</strong> steps in with speed, scale, and
-                            simplicity built specifically for the modern observability stack.
+                            This is where <strong style="font-size: 20px;">SigLens</strong> steps in a new observability engine built from the ground up to handle scale, speed, and cost-efficiency <i>without</i> the complexity.
                         </div>
                     </div>
                     <div id="section1" class="section">
                         <div>
-                            <h1 class="heading">Elasticsearch: Powerful But Painful
+                            <h1 class="heading">The Growing Pain: New Relic's Hidden Trade-Offs
                             </h1>
                             <div>
                                 <div class="blog-para">
-                                    <p class="mt-2">Let’s be clear, Elasticsearch is still a solid tool.
-                                        But for log analytics at today’s scale, it's starting to show its age.
+                                    <p class="mt-2">
+                                        On paper, New Relic offers a robust platform with attractive dashboards and a wide array of features. But as your infrastructure scales, the platform’s limitations start to surface:
                                     </p>
-                                    <ul class="para-bold">
-                                        <li><strong style="font-size: 18px;">Heavy indexing overhead</strong> leads to massive infra costs.
+                                    <ul>
+                                        <li><span class="font-weight-bold">Performance drops</span> during high-volume ingestion windows.
                                         </li>
-                                        <li><strong style="font-size: 18px;">Query latency spikes</strong> as data volume grows.
+                                        <li><span class="font-weight-bold">Longer query latency</span> when debugging across massive datasets.
                                         </li>
-                                        <li><strong style="font-size: 18px;">Complex tuning and maintenance</strong> drain valuable engineering time.
+                                        <li><span class="font-weight-bold">Complex setup and tuning,</span> requiring constant optimization.
                                         </li>
-                                        <li><strong style="font-size: 18px;">Storage bloat</strong> from duplicated indexes and replicas.
-                                        </li>
-                                        <li><strong style="font-size: 18px;">Painful scale-ups</strong> requiring clusters, sharding, and downtime risk.
+                                        <li><span class="font-weight-bold">Escalating costs,</span> especially when dealing with high-cardinality logs.
                                         </li>
                                     </ul>
                                     <p class="mt-2 mb-2">
-                                        For small projects or simple use cases, it works fine. But modern systems demand
-                                        <span class="font-weight-bold">sub-second visibility across millions of logs without hiring a full-time search engineer.</span>
+                                        It’s not that New Relic doesn’t work but for many teams, it’s simply not keeping up with the
+                                         <span class="font-weight-bold">demands of real-time, cost-sensitive engineering workflows.</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="section2" class="section mt-4">
-                        <h1 class="heading">Meet SigLens: Log Analytics Engineered for Real-Time Speed
+                        <h1 class="heading">Introducing SigLens: Built for Real-Time Scale and Simplicity
                         </h1>
-                        <p class="mt-2">
-                            SigLens is built with one core principle:
-                            <span class="font-weight-bold">Logs should be fast, cheap, and easy—at any scale.</span>
-                            No more duct-taping dashboards or babysitting clusters.
-                        </p>
-                        <p class="mt-2 mb-2">
-                            Here’s what makes it different:
-                        </p>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section2-1"><span class="font-weight-bold">⚡️Sub-Second Query Speed: No Indexing Required</span>
-                            </h2>
-                            <div class="mt-2">Unlike Elasticsearch, which relies on indexing everything upfront,
-                                SigLens uses a <span class="font-weight-bold">stream-first architecture</span> that supports
-                                <span class="font-weight-bold">real-time queries on live or historical data without costly pre-processing.</span>
+                            <div class="blog-para">
+                                <p class="mt-2">At SigLens, we asked a simple question: <i>What if observability didn’t have to be a trade-off between performance, usability, and cost?</i>
+                                </p>
+                                <p class="mt-2">The result is a <span class="font-weight-bold">stream-first architecture</span> designed for real-time analytics at scale without the tuning, without the bloated bills, and without the engineering overhead.
+                                </p>
                             </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section2-2"><span class="font-weight-bold">💰 Up to 80% Lower Infra Costs</span>
+                            <h2 class="sub-heading mt-2 section" id="section2-1"> <span class="font-weight-bold">⚡ Speed that Redefines Observability</span>
                             </h2>
-                            <p class="mt-2 mb-2">SigLens’s compression-first design drastically reduces storage and compute costs.
-                                No giant indexes. No hot/warm/cold tiers to manage.
-                            </p>
+                            <div class="mt-2">SigLens delivers <span class="font-weight-bold">sub-second search speeds,</span> even across billions of log entries. There’s no need to pre-index or warm up queries. You get answers instantly, whether you’re investigating an outage or digging into deployment issues.
+                            </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section2-3"><span class="font-weight-bold">🧠 Simpler Setup, Zero Tuning</span>
+                            <h2 class="sub-heading mt-2 section" id="section2-2"><span class="font-weight-bold">💸 Cost-Efficiency That Scales</span>
                             </h2>
-                            <p class="mt-2 mb-2">Say goodbye to fiddling with shards, replicas, or JVM settings.
-                                SigLens auto-scales with your data and works out-of-the-box.
-                            </p>
+                            <div class="mt-2">
+                                Our pricing is transparent, scalable, and dramatically more affordable, <span class="font-weight-bold">up to 80% lower</span>
+                                compared to legacy platforms like New Relic. No hidden ingestion fees. No inflated retention costs. And while New Relic charges per active user (which adds up fast), even teams with low data volume can see invoices skyrocket with just 20+ users.
+                            </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section2-4"><span class="font-weight-bold">🛠️ Dev-Friendly, B2D-Native</span>
+                            <h2 class="sub-heading mt-2 section" id="section2-3"> <span class="font-weight-bold">🧘 Built for Engineers, Not Just Analysts</span>
                             </h2>
-                            <p class="mt-2 mb-2">SigLens is API-first, CLI-supported, and integrates seamlessly with tools like Grafana, Prometheus,
-                                 and Fluentd. Built for engineers who value <span class="font-weight-bold">speed and clarity over complexity.</span>
-                            </p>
+                            <div class="mt-2">From CLI to UI, SigLens is designed to integrate smoothly into your workflow. It’s schema-less, easy to deploy, and doesn’t require weeks of configuration or tuning to get started.
+                            </div>
                         </div>
                     </div>
                     <div id="section3" class="section mt-4">
                         <div>
-                            <h1 class="heading">SigLens vs. Elasticsearch: The Real Breakdown
+                            <h1 class="heading">Head-to-Head: SigLens vs. New Relic
                             </h1>
-                            <img id="elasticsearchImg" src="../assets/siglens-vs-elasticsearch-blog.png" alt="SigLens vs. Elasticsearch">
+                            <img id="newrelicImg" src="../assets/siglens-vs-newrelic-Img.png" alt="SigLens vs. New Relic">
                         </div>
                     </div>
-
-                    <div id="section4" class="section">
+                    <div id="section4" class="section mt-4">
+                        <h1 class="heading">Real-World Impact: What Engineers Are Saying
+                        </h1>
                         <div>
-                            <h1 class="heading">Why SigLens Is the Right Move
-                            </h1>
-                            <div class="blog-para mt-3">
-                                Elasticsearch will always have its place. But if your use case is real-time log analytics, with a need for speed, scale,
-                                and cost-efficiency, then SigLens is the purpose-built solution you’ve been looking for.
+                            <div class="blog-para">
+                                <p class="mt-2">
+                                    One of our users, a DevOps lead at a cloud-native startup, switched from New Relic to SigLens after multiple incidents where <span class="font-weight-bold">query latency during outages</span> made diagnosis impossible. With SigLens, they now run real-time queries across months of logs
+                                    <span class="font-weight-bold">instantly</span> with <span class="font-weight-bold">80% cost savings</span> to match.
+                                </p>
                             </div>
-                            <ul>
-                                <div class="mt-2">💥 No more slow queries or dead dashboards
-                                </div>
-                                <div class="mt-2">💸 No more burning money on hot nodes and replica sets
-                                </div>
-                                <div class="mt-2">🧘 No more late-night tuning sessions
-                                </div>
-                            </ul>
                         </div>
                     </div>
                     <div id="section5" class="section mt-4">
+                        <h1 class="heading">Migration? Easier Than You Think
+                        </h1>
                         <div>
-                            <h1 class="heading">Ready to Make the Switch?
-                            </h1>
-                            <div class="blog-para mt-3">
-                                Whether you're hitting scale issues or just tired of overpaying for observability, SigLens is built for teams like yours.
+                            <div class="blog-para">
+                                <p class="mt-2">
+                                    Moving to SigLens doesn’t mean starting from scratch. We support common ingestion tools like Fluentd and Logstash, integrate with Grafana, and offer white-glove onboarding to help you hit the ground running.
+                                </p>
                             </div>
+                        </div>
+                    </div>
+                    <div id="section6" class="section mt-4">
+                        <h1 class="heading">The Bottom Line: Why Stay Stuck?
+                        </h1>
+                        <div>
+                            <div class="blog-para">
+                                <p class="mt-2">
+                                    New Relic was a great tool for yesterday’s observability problems. But if you’re looking for <span class="font-weight-bold">real-time answers, cost-effective scale, and a platform that grows with you,</span> it’s time to consider what’s next.
+                                </p>
+                                <p class="mt-2">
+                                   <span class="font-weight-bold">SigLens is not just an alternative, it’s the future of observability.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="section7" class="section mt-4">
+                        <div>
+                            <h1 class="heading">Ready to Try It?
+                            </h1>
                             <div class="d-flex flex-column flex-md-row align-items-center">
                                 <div id="try-siglens-btn"
                                     onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">
